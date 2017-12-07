@@ -14,6 +14,7 @@
 		C7D74DF41FD85CDF00261F2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D74DF21FD85CDF00261F2D /* LaunchScreen.storyboard */; };
 		C7D74DFF1FD85CDF00261F2D /* wordsmithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DFE1FD85CDF00261F2D /* wordsmithTests.swift */; };
 		C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */; };
+		D96B81191FD9B5460045381E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C7D74E051FD85CDF00261F2D /* wordsmithUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordsmithUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordsmithUITests.swift; sourceTree = "<group>"; };
 		C7D74E0B1FD85CDF00261F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D96B81181FD9B5460045381E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */,
 				C7D74DEB1FD85CDF00261F2D /* ViewController.swift */,
+				D96B81181FD9B5460045381E /* CollectionViewCell.swift */,
 				C7D74DED1FD85CDF00261F2D /* Main.storyboard */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
 				C7D74DF21FD85CDF00261F2D /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				C7D74DEC1FD85CDF00261F2D /* ViewController.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
+				D96B81191FD9B5460045381E /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +511,7 @@
 				C7D74E101FD85CDF00261F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7D74E111FD85CDF00261F2D /* Build configuration list for PBXNativeTarget "wordsmithTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				C7D74E131FD85CDF00261F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7D74E141FD85CDF00261F2D /* Build configuration list for PBXNativeTarget "wordsmithUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				C7D74E161FD85CDF00261F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
