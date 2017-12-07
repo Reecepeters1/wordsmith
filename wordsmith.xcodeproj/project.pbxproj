@@ -15,6 +15,7 @@
 		C7D74DF41FD85CDF00261F2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D74DF21FD85CDF00261F2D /* LaunchScreen.storyboard */; };
 		C7D74DFF1FD85CDF00261F2D /* wordsmithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DFE1FD85CDF00261F2D /* wordsmithTests.swift */; };
 		C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */; };
+		E49CD1811FD9B14B00B118F4 /* startImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E49CD1801FD9B14B00B118F4 /* startImage.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C7D74E051FD85CDF00261F2D /* wordsmithUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordsmithUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordsmithUITests.swift; sourceTree = "<group>"; };
 		C7D74E0B1FD85CDF00261F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E49CD1801FD9B14B00B118F4 /* startImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = startImage.jpg; path = ../../../Downloads/startImage.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		C7D74DE81FD85CDF00261F2D /* wordsmith */ = {
 			isa = PBXGroup;
 			children = (
+				E49CD1801FD9B14B00B118F4 /* startImage.jpg */,
 				C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */,
 				C7D74DEB1FD85CDF00261F2D /* ViewController.swift */,
 				C7D74DED1FD85CDF00261F2D /* Main.storyboard */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49CD1811FD9B14B00B118F4 /* startImage.jpg in Resources */,
 				C7D74DF41FD85CDF00261F2D /* LaunchScreen.storyboard in Resources */,
 				C7D74DF11FD85CDF00261F2D /* Assets.xcassets in Resources */,
 				C7D74DEF1FD85CDF00261F2D /* Main.storyboard in Resources */,
