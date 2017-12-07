@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myViewController.view = UIView(frame: CGRect(x: 1, y: 1, width: 1, height: 1))
         myViewController.view.backgroundColor = UIColor.red
         window?.rootViewController = myViewController
+        var testingvar = 3
         window?.makeKeyAndVisible()
         return true
     }
