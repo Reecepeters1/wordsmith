@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */; };
 		C7D74DEC1FD85CDF00261F2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DEB1FD85CDF00261F2D /* ViewController.swift */; };
 		C7D74DEF1FD85CDF00261F2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D74DED1FD85CDF00261F2D /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C7D5B0231FD9B3D600ADC122 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C7D74DE61FD85CDF00261F2D /* wordsmith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordsmith.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7D74DEB1FD85CDF00261F2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
 				C7D74DF21FD85CDF00261F2D /* LaunchScreen.storyboard */,
 				C7D74DF51FD85CDF00261F2D /* Info.plist */,
+				C7D5B0231FD9B3D600ADC122 /* Card.swift */,
 			);
 			path = wordsmith;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D74DEC1FD85CDF00261F2D /* ViewController.swift in Sources */,
+				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +511,7 @@
 				C7D74E101FD85CDF00261F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7D74E111FD85CDF00261F2D /* Build configuration list for PBXNativeTarget "wordsmithTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				C7D74E131FD85CDF00261F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7D74E141FD85CDF00261F2D /* Build configuration list for PBXNativeTarget "wordsmithUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				C7D74E161FD85CDF00261F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
