@@ -11,8 +11,11 @@ import Foundation
 class Card {
     
     var responses:[Card]?
-    //TODO: Freely drawn image
-    let speech:Int?
-    let positionInSpeech:Int?
     
+    //TODO: Freely drawn image
+    
+    var speech:Int = -1
+    var positionInSpeech:Int = -1
+
+    var isFlagged = false
 }
