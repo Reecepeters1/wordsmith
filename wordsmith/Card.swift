@@ -11,11 +11,21 @@ import Foundation
 class Card {
     
     var responses:[Card]?
-    
     //TODO: Freely drawn image
     
     var speech:Int = -1
     var positionInSpeech:Int = -1
-
+    var isCardAttached = false
     var isFlagged = false
+    
+    func getanswers(){
+        if isCardAttached{
+        //get cards
+        }
+        return
+    }
+    func getVeiw(){
+    //tbd
+    }
+    
 }
