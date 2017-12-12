@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C7A618A71FDB013700062737 /* Debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A618A61FDB013700062737 /* Debate.swift */; };
+		C772D4B61FE049CA00B8F135 /* CardHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0251FD9BD5000ADC122 /* CardHolder.swift */; };
+		C772D4B71FE049CD00B8F135 /* Debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A618A61FDB013700062737 /* Debate.swift */; };
 		C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
-		C7D5B0261FD9BD5000ADC122 /* CardHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0251FD9BD5000ADC122 /* CardHolder.swift */; };
 		C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0271FD9BDFB00ADC122 /* Flow.swift */; };
 		C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */; };
 		C7D74DEC1FD85CDF00261F2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DEB1FD85CDF00261F2D /* ViewController.swift */; };
@@ -274,6 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C772D4B71FE049CD00B8F135 /* Debate.swift in Sources */,
+				C772D4B61FE049CA00B8F135 /* CardHolder.swift in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* ViewController.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
