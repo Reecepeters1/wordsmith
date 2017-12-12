@@ -15,11 +15,11 @@ class Card {
     
     var speech:Int = -1
     var positionInSpeech:Int = -1
-    var isCardAttached = false
+    var isAResponse = false
     var isFlagged = false
     
     func getanswers(){
-        if isCardAttached{
+        if isAResponse{
         //get cards
         }
         return
