@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class TabVeiw: UIViewController {
+    fileprivate let reuseIdentifier = "tab"
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         
     }
 
-    @IBOutlet var Cardobject: UICollectionViewCell!
     
 
 }
