@@ -6,10 +6,10 @@
 //  Copyright © 2017 District196. All rights reserved.
 //
 
-import XCTest
-@testable import wordsmith
+//import XCTest
+//@testable import wordsmith
 
-class wordsmithTests: XCTestCase {
+/*class wordsmithTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -34,3 +34,4 @@ class wordsmithTests: XCTestCase {
     }
     
 }
+ */

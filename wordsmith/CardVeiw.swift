@@ -15,8 +15,14 @@ class CardVeiw: UICollectionViewCell {
     //TODO Way to store location of a Card initialized elsewhere
     
     //generic initializer.
-    init() {
+    /*init() {
+        super.init()
         storedCard = nil
+    }
+    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     func createPDFimage(){
     //will be used for creating pdf of all aggregated images

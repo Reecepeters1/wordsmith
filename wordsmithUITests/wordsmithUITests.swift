@@ -6,7 +6,7 @@
 //  Copyright © 2017 District196. All rights reserved.
 //
 
-import XCTest
+/*import XCTest
 
 class wordsmithUITests: XCTestCase {
         
@@ -34,3 +34,4 @@ class wordsmithUITests: XCTestCase {
     }
     
 }
+*/

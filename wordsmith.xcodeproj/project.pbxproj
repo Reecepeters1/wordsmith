@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C72CB80C1FEADA3800662255 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C7A618A61FDB013700062737 /* Debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debate.swift; sourceTree = "<group>"; };
 		C7D5B0231FD9B3D600ADC122 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C7D5B0251FD9BD5000ADC122 /* CardHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardHolder.swift; sourceTree = "<group>"; };
@@ -90,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C72CB80B1FEADA3800662255 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C72CB80C1FEADA3800662255 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C7D74DDD1FD85CDF00261F2D = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +106,7 @@
 				C7D74DFD1FD85CDF00261F2D /* wordsmithTests */,
 				C7D74E081FD85CDF00261F2D /* wordsmithUITests */,
 				C7D74DE71FD85CDF00261F2D /* Products */,
+				C72CB80B1FEADA3800662255 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
