@@ -10,7 +10,7 @@ import Foundation
 
 class Flow {
     
-    var position:[[CardHolder]]?
+    var position:[[CardView]]?
     
     
 }

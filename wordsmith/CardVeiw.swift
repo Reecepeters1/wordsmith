@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardVeiw: UICollectionViewCell {
+class CardView: UICollectionViewCell {
     //copy of card holder test class
     let storedCard:Card?
     
@@ -24,9 +24,8 @@ class CardVeiw: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func createPDFimage(){
-    //will be used for creating pdf of all aggregated images
-    }
+    
+    
     func showcard(){
     //main methods to be used for showing card in the flow veiw
     }

@@ -291,6 +291,7 @@
 			files = (
 				D9D84A9D1FE19DE70019328F /* wordsmithUITests.swift in Sources */,
 				D9D84A9C1FE19DE30019328F /* wordsmithTests.swift in Sources */,
+				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
@@ -298,7 +299,6 @@
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
-				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
