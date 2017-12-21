@@ -19,7 +19,6 @@
 		D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */; };
 		D9CF424E1FEAD48F00B31A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CF424D1FEAD48F00B31A05 /* Main.storyboard */; };
 		D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */; };
-		D9D84A9A1FE19DDD0019328F /* CardHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0251FD9BD5000ADC122 /* CardHolder.swift */; };
 		D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A618A61FDB013700062737 /* Debate.swift */; };
 		D9D84A9C1FE19DE30019328F /* wordsmithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DFE1FD85CDF00261F2D /* wordsmithTests.swift */; };
 		D9D84A9D1FE19DE70019328F /* wordsmithUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */; };
@@ -46,7 +45,6 @@
 		C72CB80C1FEADA3800662255 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C7A618A61FDB013700062737 /* Debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debate.swift; sourceTree = "<group>"; };
 		C7D5B0231FD9B3D600ADC122 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		C7D5B0251FD9BD5000ADC122 /* CardHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardHolder.swift; sourceTree = "<group>"; };
 		C7D5B0271FD9BDFB00ADC122 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		C7D74DE61FD85CDF00261F2D /* wordsmith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordsmith.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,12 +126,11 @@
 				D96B81181FD9B5460045381E /* CardVeiw.swift */,
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
 				D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */,
-				D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
+				D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */,
 				D9CF424D1FEAD48F00B31A05 /* Main.storyboard */,
 				C7D74DF51FD85CDF00261F2D /* Info.plist */,
 				C7D5B0231FD9B3D600ADC122 /* Card.swift */,
-				C7D5B0251FD9BD5000ADC122 /* CardHolder.swift */,
 				C7D5B0271FD9BDFB00ADC122 /* Flow.swift */,
 				C7A618A61FDB013700062737 /* Debate.swift */,
 			);
@@ -294,15 +291,14 @@
 			files = (
 				D9D84A9D1FE19DE70019328F /* wordsmithUITests.swift in Sources */,
 				D9D84A9C1FE19DE30019328F /* wordsmithTests.swift in Sources */,
+				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
-				D9D84A9A1FE19DDD0019328F /* CardHolder.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
-				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

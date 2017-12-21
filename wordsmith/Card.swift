@@ -28,4 +28,8 @@ class Card {
     //tbd
     }
     
+    func createPDFimage(){
+        //will be used for creating pdf of all aggregated images
+    }
+    
 }
