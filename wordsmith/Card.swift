@@ -32,4 +32,13 @@ class Card {
         //will be used for creating pdf of all aggregated images
     }
     
+    func getFlagged() -> Bool {
+        return isFlagged
+    }
+    
+    func setFlagged(isFlag: Bool) {
+        isFlagged = isFlag
+        return
+    }
+    
 }
