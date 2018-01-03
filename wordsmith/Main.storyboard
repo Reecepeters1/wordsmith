@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l8F-Z5-gZY">
-                                <rect key="frame" x="0.0" y="28" width="1366" height="1004"/>
+                                <rect key="frame" x="-20" y="119" width="1366" height="1004"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="htA-gL-sr0" kind="embed" id="cqK-Td-CHU"/>
@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qL6-6m-8hU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="-696"/>
+            <point key="canvasLocation" x="2837" y="-696"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Oty-5b-0jX">
@@ -78,25 +78,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQt-ni-YVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="438"/>
+            <point key="canvasLocation" x="2837" y="547"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="XW2-nw-FjU">
             <objects>
                 <collectionViewController id="h7z-Hq-fKH" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5fA-s4-5UB">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="5fA-s4-5UB">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="897"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="azr-6d-Da0"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card" id="lFG-Av-hMG">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="125"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="175" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <size key="customSize" width="175" height="125"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -107,7 +109,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itb-ZI-ssH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="1521"/>
+            <point key="canvasLocation" x="2837" y="1810"/>
         </scene>
     </scenes>
 </document>
