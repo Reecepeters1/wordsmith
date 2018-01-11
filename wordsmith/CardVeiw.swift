@@ -9,24 +9,53 @@
 import UIKit
 
 class CardView: UICollectionViewCell {
-    //copy of card holder test class
-    let storedCard:Card?
     
-    //TODO Way to store location of a Card initialized elsewhere
+    var color: UIColor
+    var strokeWidth: Int
+    var path: UIBezierPath
+    var startPoint: CGPoint
+    var isDrawing: Bool
+    var width: Int
+    var length: Int
     
-    //generic initializer.
-    /*init() {
-        super.init()
-        storedCard = nil
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        <#code#>
     }
-    */
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        <#code#>
+    }
+    
+    override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
+        <#code#>
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        <#code#>
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        <#code#>
+    }
+    
+    func storeCard(card: Card){
+        //Text that stores card
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
-    func showcard(){
-    //main methods to be used for showing card in the flow veiw
+    func showcard(card: Card){
+    //main methods to be used for showing card in the cardView
+    }
+    
+    func setColor(color: UIColor) {
+        //Sets brush color
+    }
+    
+    func setBrushWidth(width: Int) {
+        //Sets brush width
     }
 }
