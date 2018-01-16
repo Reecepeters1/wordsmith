@@ -11,31 +11,50 @@ import UIKit
 class CardView: UICollectionViewCell {
     
     var color: UIColor
-    var strokeWidth: Int
+    var strokeWidth: CGFloat
     var path: UIBezierPath
     var startPoint: CGPoint
     var isDrawing: Bool
-    var width: Int
-    var length: Int
+    
+    override func layoutSubviews() {
+        color = UIColor.black
+        strokeWidth = 10
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        <#code#>
+        guard isDrawing else { return }
+        isDrawing = true
+        guard let touch = touches.first else { return }
+        startPoint = touch.location(in: self)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        <#code#>
-    }
-    
-    override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
-        <#code#>
+        guard isDrawing else { return }
+        isDrawing = false
+        startPoint.x = -1
+        startPoint.y = -1
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        <#code#>
+        guard isDrawing else { return }
+        guard let touch = touches.first else { return }
+        let touchPoint = touch.location(in: self)
+        
+        path = UIBezierPath()
+        path.move(to: startPoint)
+        path.addLine(to: touchPoint)
+        startPoint = touchPoint
+        
+        drawShapeLayer()
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        <#code#>
+    func drawShapeLayer() {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.lineWidth = strokeWidth
+        self.layer.addSublayer(shapeLayer)
+        self.setNeedsDisplay()
     }
     
     func storeCard(card: Card){
