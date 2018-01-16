@@ -14,7 +14,6 @@ class Card {
     
     var responses:[Card]?
     //TODO: Freely drawn image
-    
     var speech:Int = -1
     var positionInSpeech:Int = -1
     var isAResponse = false
