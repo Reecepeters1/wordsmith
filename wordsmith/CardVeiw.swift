@@ -10,21 +10,11 @@ import UIKit
 
 class CardView: UICollectionViewCell {
     //copy of card holder test class
-    let storedCard:Card?
-    
+    //let storedCard:Card? = nil
     //TODO Way to store location of a Card initialized elsewhere
     
-    //generic initializer.
-    /*init() {
-        super.init()
-        storedCard = nil
-    }
-    */
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+ 
+    //@IBOutlet var cardimageonmaster: UIImageView!
     
     
     func showcard(){

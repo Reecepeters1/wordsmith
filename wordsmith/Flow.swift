@@ -8,9 +8,13 @@
 
 import Foundation
 
-class Flow {
+struct Flow {
+    var flow : [CardView]
+    let defaultvalue:CardView
     
-    var position:[[CardView]]?
-    
-    
+    /*init(){
+        for index in 1...10{
+            flow.insert(defaultvalue, at: index)
+    }
+    }*/
 }
