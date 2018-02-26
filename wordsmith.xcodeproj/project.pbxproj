@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C77A1FC82018F8A400060322 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC72018F8A400060322 /* Storage.swift */; };
 		C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
+		C7BEB32D2035FC0C0090EBF0 /* DebateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BEB32C2035FC0C0090EBF0 /* DebateCell.swift */; };
 		C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0271FD9BDFB00ADC122 /* Flow.swift */; };
 		C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */; };
@@ -45,9 +45,9 @@
 
 /* Begin PBXFileReference section */
 		C72CB80C1FEADA3800662255 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		C77A1FC72018F8A400060322 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		C77A1FC92018F9AF00060322 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		C7A618A61FDB013700062737 /* Debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debate.swift; sourceTree = "<group>"; };
+		C7BEB32C2035FC0C0090EBF0 /* DebateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebateCell.swift; sourceTree = "<group>"; };
 		C7D5B0231FD9B3D600ADC122 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C7D5B0271FD9BDFB00ADC122 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		C7D74DE61FD85CDF00261F2D /* wordsmith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordsmith.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,8 +137,8 @@
 				C7D5B0231FD9B3D600ADC122 /* Card.swift */,
 				C7D5B0271FD9BDFB00ADC122 /* Flow.swift */,
 				C7A618A61FDB013700062737 /* Debate.swift */,
-				C77A1FC72018F8A400060322 /* Storage.swift */,
 				C77A1FC92018F9AF00060322 /* MainScreen.swift */,
+				C7BEB32C2035FC0C0090EBF0 /* DebateCell.swift */,
 			);
 			path = wordsmith;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				D9D84A9D1FE19DE70019328F /* wordsmithUITests.swift in Sources */,
-				C77A1FC82018F8A400060322 /* Storage.swift in Sources */,
+				C7BEB32D2035FC0C0090EBF0 /* DebateCell.swift in Sources */,
 				D9D84A9C1FE19DE30019328F /* wordsmithTests.swift in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
