@@ -17,7 +17,15 @@ class CardView: UICollectionViewCell {
     //@IBOutlet var cardimageonmaster: UIImageView!
     
     
-    func showcard(){
-    //main methods to be used for showing card in the flow veiw
+    func showcard(card: Card){
+    //main methods to be used for showing card in the cardView
+    }
+    
+    func setColor(color: UIColor) {
+        //Sets brush color
+    }
+    
+    func setBrushWidth(width: Int) {
+        //Sets brush width
     }
 }

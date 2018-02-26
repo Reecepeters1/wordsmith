@@ -12,6 +12,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        for _ in 1...10 {
+            MainScreen.debates.append(Debate(title: "Stuff", roundNumber: 10, otherTeam: "Stuff", judgeName: "Stuff"))
+        }
+        
+        
+        
         // Override point for customization after application launch.
         /*let myViewController = UIViewController()
         myViewController.view = UIView(frame: CGRect(x: 1, y: 1, width: 1, height: 1))
@@ -39,9 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
 
 
 }

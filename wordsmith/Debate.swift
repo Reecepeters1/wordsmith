@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import os.log
 
-class Debate {
+class Debate: NSObject {
     
     var positions:[Flow]?
     var title:String?
@@ -18,11 +19,39 @@ class Debate {
     var winLoss:Bool?
     var judgeName:String?
     var dateCreated:Date?
-    
+    var tournament: String?
     
     //generic init
-    init() {
-        
+    override init() {
+        super.init()
+        otherTeam = Debate.randomString(length: 10)
     }
+    
+    init(title: String, roundNumber: Int, otherTeam: String, judgeName: String) {
+        super.init()
+        self.title = title
+        self.roundNumber = roundNumber
+        self.otherTeam = Debate.randomString(length: 5)
+        self.judgeName = judgeName
+    }
+    
+    private static func randomString(length: Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
+    }
+    
+    
+
     
 }

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import QuartzCore
 
 class Card {
     
@@ -29,6 +31,15 @@ class Card {
     
     func createPDFimage(){
         //will be used for creating pdf of all aggregated images
+    }
+    
+    func getFlagged() -> Bool {
+        return isFlagged
+    }
+    
+    func setFlagged(isFlag: Bool) {
+        isFlagged = isFlag
+        return
     }
     
 }
