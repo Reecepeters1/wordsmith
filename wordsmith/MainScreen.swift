@@ -9,6 +9,7 @@
 import Foundation
 import os.log
 
+//This class contains our actual debate obects.
 public class MainScreen: NSObject {
     
     static var debates:[Debate] = []
@@ -17,6 +18,8 @@ public class MainScreen: NSObject {
 
 import UIKit
 
+
+//Governs the table that displays the list of debate objects
 class MainMenuViewController: UITableViewController {
     
     
@@ -32,23 +35,23 @@ class MainMenuViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
+    //The number of debates in the MainMenu array determines the number we want to display.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return MainScreen.debates.count
         return MainScreen.debates.count
     }
     
-    
+    //Generates a cell, the cell displays the name of the other team.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let debate = MainScreen.debates[indexPath.row]
-        cell.textLabel?.text = debate.otherTeam!
+        cell.textLabel?.text = debate.otherTeam!.appending(debate.tournament ?? "default")
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let myDetailView = storyboard?.instantiateViewController(withIdentifier: "DebateDisplay") as! DebateView
+        let myDetailView = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateDisplay") as! DebateView
         myDetailView.myDebateIndex = indexPath.row
         myDetailView.refreshUI()
         splitViewController?.showDetailViewController(myDetailView, sender: nil )
@@ -59,7 +62,7 @@ class MainMenuViewController: UITableViewController {
     
 }
 
-
+//This is the detail view displayed when preveiwing a debate
 class DebateView: UIViewController {
     
     //Whenever this property is modified, the properties refresh
@@ -96,7 +99,7 @@ class DebateView: UIViewController {
         
         let debate = MainScreen.debates[myDebateIndex]
         
-        teamName.text = debate.otherTeam!
+        teamName.text = debate.otherTeam ?? "otherPeople"
         debateTitle.text = debate.title!
         tournament.text = debate.tournament ?? "default"
         round.text = String(describing: debate.roundNumber)
