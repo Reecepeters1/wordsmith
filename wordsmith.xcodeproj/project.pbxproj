@@ -132,12 +132,12 @@
 			isa = PBXGroup;
 			children = (
 				E4A19AF12049C383000DF00A /* Interpole.swift */,
-				E4A19AEF2049C379000DF00A /* SplineView.swift */,
 				C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */,
 				C7D74DEB1FD85CDF00261F2D /* TabVeiw.swift */,
 				D96B81181FD9B5460045381E /* CardVeiw.swift */,
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
 				D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */,
+				E4A19AEF2049C379000DF00A /* SplineView.swift */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
 				D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */,
 				C7D74DF51FD85CDF00261F2D /* Info.plist */,
