@@ -60,6 +60,8 @@
 		D96B81181FD9B5460045381E /* CardVeiw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVeiw.swift; sourceTree = "<group>"; };
 		D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewLayout.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4A19AEF2049C379000DF00A /* SplineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplineView.swift; path = ../../../Desktop/tester/SplineView.swift; sourceTree = "<group>"; };
+		E4A19AF12049C383000DF00A /* Interpole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interpole.swift; path = ../../../Desktop/tester/Interpole.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +119,13 @@
 		C7D74DE81FD85CDF00261F2D /* wordsmith */ = {
 			isa = PBXGroup;
 			children = (
+				E4A19AF12049C383000DF00A /* Interpole.swift */,
 				C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */,
 				C7D74DEB1FD85CDF00261F2D /* TabVeiw.swift */,
 				D96B81181FD9B5460045381E /* CardVeiw.swift */,
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
 				D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */,
+				E4A19AEF2049C379000DF00A /* SplineView.swift */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
 				D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */,
 				C7D74DF51FD85CDF00261F2D /* Info.plist */,
@@ -280,7 +284,9 @@
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
+				E4A19AF22049C383000DF00A /* Interpole.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
+				E4A19AF02049C379000DF00A /* SplineView.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
