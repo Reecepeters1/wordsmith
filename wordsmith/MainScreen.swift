@@ -26,7 +26,7 @@ class MainMenuViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -115,7 +115,7 @@ class DebateView: UIViewController {
     //safely deletes a debate, prompts to create new debate if the MainScreen array of Debate objects is empty.
     func deleteDebate() {
         
-        if !MainScreen.debates.isEmpty {
+        if !MainScreen.debates.isEmpty && myDebateIndex < MainScreen.debates.count {
             
             
             MainScreen.debates.remove(at: myDebateIndex)
@@ -124,22 +124,30 @@ class DebateView: UIViewController {
                 myDebateIndex -= 1
                 refreshUI()
                 
-                let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "MainScreenTable") as! MainMenuViewController
-                local.tableView.reloadData()
-                local.title = "Debates"
+                //Here, viewControllers[0] is the navigation controller that houses the MainMenuViewController. That is why I am access the child.
+                (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuViewController).tableView.reloadData()
                 
-                //splitViewController?.navigationController?.show(local, sender: nil)
-                splitViewController?.viewControllers[0] = local
+                //let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "MainScreenTable") as! MainMenuViewController
+                //local.tableView.reloadData()
+                //local.title = "Debates"
+                
+                ////splitViewController?.navigationController?.show(local, sender: nil)
+                //splitViewController?.viewControllers[0] = local
                 
             } else if myDebateIndex == 0 && MainScreen.debates.count != 2 {
                 myDebateIndex += 1
                 refreshUI()
                 
-                let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "MainScreenTable") as! MainMenuViewController
-                local.tableView.reloadData()
-                local.title = "Debates"
+                //Here, viewControllers[0] is the navigation controller that houses the MainMenuViewController. That is why I am access the child.
+                (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuViewController).tableView.reloadData()
                 
-                splitViewController?.viewControllers[0] = local
+                /* Here are a set of other ways dodo above that don't quite work. I'm leaving them here incase they are ever useful
+                //let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "MainScreenTable") as! MainMenuViewController
+                //local.tableView.reloadData()
+                //local.title = "Debates"
+                
+                //splitViewController?.viewControllers[0] = local
+                 */
                 
             } } else {
                 //segue to create a new debate because the array is empty
@@ -254,6 +262,8 @@ class CreateDebateView: UIViewController {
         
         MainScreen.debates.append(local)
         
+        splitViewController?.viewControllers[0].childViewControllers[0].viewDidLoad()
+        
         let newView = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateDisplay") as! DebateView
         
         newView.myDebateIndex = MainScreen.debates.count - 1
@@ -261,6 +271,8 @@ class CreateDebateView: UIViewController {
         splitViewController?.showDetailViewController(newView, sender: nil)
         
         //performSegue(withIdentifier: "cancelDebateSegue", sender: nil)
+    
+        
     }
     
     
