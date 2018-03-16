@@ -18,6 +18,8 @@
 		C7D74DFF1FD85CDF00261F2D /* wordsmithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DFE1FD85CDF00261F2D /* wordsmithTests.swift */; };
 		C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */; };
 		D90BB18A204873E1009C7464 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
+		D95F0DBF205C306B00A09BC4 /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A19AF12049C383000DF00A /* Interpole.swift */; };
+		D95F0DC0205C306D00A09BC4 /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A19AEF2049C379000DF00A /* SplineView.swift */; };
 		D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
 		D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardVeiw.swift */; };
 		D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */; };
@@ -325,10 +327,10 @@
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
+				D95F0DBF205C306B00A09BC4 /* Interpole.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
-				E4A19AF22049C383000DF00A /* Interpole.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
-				E4A19AF02049C379000DF00A /* SplineView.swift in Sources */,
+				D95F0DC0205C306D00A09BC4 /* SplineView.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
