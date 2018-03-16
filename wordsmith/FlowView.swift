@@ -14,29 +14,41 @@ class FlowVeiw: UICollectionViewController {
     
 
     var sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    fileprivate var flow = [UICollectionViewCell]()
+    fileprivate let reuseIdentifier = "Card"
     var itemsPerRow: CGFloat = 4
+    var herpes: [CardView] = []
     var itemsPerColumn: CGFloat = 4
     var numberofitems = 10
     
     
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt position: Int) -> CardView
+    {
+        //check for it's out of bounds
+        if position > (herpes.count - 1){
+            return herpes[0]
+        }
+        return herpes[position]
+    }
+}
+extension FlowVeiw{
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-    
-
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         let x = 10
         return x
     }
     
-    
-    
     //this function creates cell and places it at the intend position
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
+    CardView
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "card", for: indexPath)
+        //1
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                      for: indexPath) as! CardView
         cell.backgroundColor = UIColor.black
         return cell
     }
@@ -50,18 +62,17 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-    
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = self.view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        /*let toppaddingspace = sectionInsets.top * (itemsPerColumn + 1)
-        let availableHeight = self.view.frame.height - toppaddingspace
-        let heightPerItem = availableHeight / itemsPerColumn
-        */
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        let availableWidth = self.view.frame.width
+        let widthPerItem = availableWidth / itemsPerRow
+
+        let availableHeight = self.view.frame.height
+        let heightPerItem = availableHeight / itemsPerColumn
+
+        return CGSize(width: widthPerItem, height: heightPerItem)
     }
-    
+
+
     //3
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -72,7 +83,7 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
     //4
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
     
@@ -82,27 +93,11 @@ extension FlowVeiw: FlowLayoutDelegate {
                         heightForCardAtIndexPath indexPath:IndexPath) -> CGFloat {
         let x = Double(self.view.frame.height)
         let y = Double(itemsPerColumn)
-        let z = x/y
+        let z = x / y
         return CGFloat(z)
     }
 }
-extension FlowVeiw : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
-        
-        
-        for item in 0 ..< 40 {
-            let indexPath = IndexPath(item: item, section: 0)
-            let herp:UICollectionViewCell
-            herp = collectionView!.dequeueReusableCell(withReuseIdentifier: "card", for: indexPath)
-            herp.backgroundColor = UIColor.black
-            self.flow.append(herp)
-            
-        }
-        self.collectionView?.reloadData()
-        textField.text = nil
-        return true
-    }
-}
+
 
 
 

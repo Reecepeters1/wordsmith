@@ -8,9 +8,10 @@
 
 import UIKit
 protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView:UICollectionView, heightForCardAtIndexPath indexPath:IndexPath) -> CGFloat
 }
-class FlowVeiwLayout: UICollectionViewFlowLayout{
+class FlowVeiwLayout: UICollectionViewLayout{
     
     
     weak var delegate: FlowLayoutDelegate!
@@ -29,7 +30,8 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     fileprivate var contentWidth: CGFloat {
-        guard let collectionView = collectionView else {
+        guard let collectionView = collectionView
+            else {
         return 0
         }
         let insets = collectionView.contentInset
@@ -37,24 +39,15 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
     }
     
     
-    // sets card height/width
+    // shows how large the cellection veiw ts
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
-    override init() {
-        super.init()
-        setup()
-    }
-    
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        setup()
-    }
     
     func setup() {
     }
+    
     
     //prepare
     override func prepare() {
@@ -67,24 +60,26 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
         let itemdouble = Double(items)
         let itemCGFloat = CGFloat(itemdouble)
         
+        
         //variable instantiations
-        let columnWidth = contentWidth / CGFloat(numberOfColumns)
+        let columnWidth = ( screenWidth / CGFloat(numberOfColumns) ) - cellPadding
         var xOffset = [CGFloat]()
-        for column in 0 ..< numberOfColumns {
-            xOffset.append(CGFloat(column) * columnWidth)
+        
+        for counter in 0 ..< numberOfColumns
+        {
+            xOffset.append(CGFloat(counter) * columnWidth)
         }
         var column = 0
-        var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
         
+        var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
         
         // actualy proccess by which we auto size card layout
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
-            
             let indexPath = IndexPath(item: item, section: 0)
             
-        
+            
             // 4
-            let CardHeight = screenHeight / (itemCGFloat / CGFloat(numberOfColumns))//read here
+            let CardHeight = screenHeight / (itemCGFloat / CGFloat(numberOfColumns))
             let height = cellPadding * 2 + CardHeight
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
@@ -99,8 +94,24 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
             yOffset[column] = yOffset[column] + height
             
             column = column < (numberOfColumns - 1) ? (column + 1) : 0
+            //check if card is end of speech
+            var temp = collectionView.cellForItem(at: indexPath) as! CardView
+            if temp.isItEndOfSpeech() == true
+            {
+                
+            }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
