@@ -321,6 +321,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="edx-Ci-GSo"/>
         <segue reference="aGb-of-g1z"/>
     </inferredMetricsTieBreakers>
 </document>
