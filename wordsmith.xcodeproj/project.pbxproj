@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
-		C7BEB32D2035FC0C0090EBF0 /* DebateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BEB32C2035FC0C0090EBF0 /* DebateCell.swift */; };
+		C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
+		C787B9FE2045CE7A00A3B498 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */; };
 		C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0271FD9BDFB00ADC122 /* Flow.swift */; };
 		C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */; };
@@ -22,7 +23,6 @@
 		D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */; };
 		D998581C201110660044CB9F /* FlowViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */; };
 		D998581D201110670044CB9F /* FlowViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */; };
-		D9CF424E1FEAD48F00B31A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CF424D1FEAD48F00B31A05 /* Main.storyboard */; };
 		D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */; };
 		D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A618A61FDB013700062737 /* Debate.swift */; };
 		D9D84A9C1FE19DE30019328F /* wordsmithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DFE1FD85CDF00261F2D /* wordsmithTests.swift */; };
@@ -57,8 +57,9 @@
 /* Begin PBXFileReference section */
 		C72CB80C1FEADA3800662255 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C77A1FC92018F9AF00060322 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		C787B9FB2045CAA900A3B498 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
 		C7A618A61FDB013700062737 /* Debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debate.swift; sourceTree = "<group>"; };
-		C7BEB32C2035FC0C0090EBF0 /* DebateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebateCell.swift; sourceTree = "<group>"; };
 		C7D5B0231FD9B3D600ADC122 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C7D5B0271FD9BDFB00ADC122 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		C7D74DE61FD85CDF00261F2D /* wordsmith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordsmith.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,8 +77,9 @@
 		D96A1F711FDEF8F600965ACD /* FlowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		D96B81181FD9B5460045381E /* CardVeiw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVeiw.swift; sourceTree = "<group>"; };
 		D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewLayout.swift; sourceTree = "<group>"; usesTabs = 0; };
-		D9CF424D1FEAD48F00B31A05 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4A19AEF2049C379000DF00A /* SplineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplineView.swift; path = ../../../Desktop/tester/SplineView.swift; sourceTree = "<group>"; };
+		E4A19AF12049C383000DF00A /* Interpole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interpole.swift; path = ../../../Desktop/tester/Interpole.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,21 +139,23 @@
 		C7D74DE81FD85CDF00261F2D /* wordsmith */ = {
 			isa = PBXGroup;
 			children = (
+				E4A19AF12049C383000DF00A /* Interpole.swift */,
 				C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */,
 				C7D74DEB1FD85CDF00261F2D /* TabVeiw.swift */,
 				D96B81181FD9B5460045381E /* CardVeiw.swift */,
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
 				D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */,
+				E4A19AEF2049C379000DF00A /* SplineView.swift */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
 				D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */,
-				D9CF424D1FEAD48F00B31A05 /* Main.storyboard */,
 				C7D74DF51FD85CDF00261F2D /* Info.plist */,
 				C7D5B0231FD9B3D600ADC122 /* Card.swift */,
 				D90BB189204873E1009C7464 /* Speech.swift */,
 				C7D5B0271FD9BDFB00ADC122 /* Flow.swift */,
 				C7A618A61FDB013700062737 /* Debate.swift */,
 				C77A1FC92018F9AF00060322 /* MainScreen.swift */,
-				C7BEB32C2035FC0C0090EBF0 /* DebateCell.swift */,
+				C787B9FB2045CAA900A3B498 /* Storyboards.swift */,
+				C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */,
 			);
 			path = wordsmith;
 			sourceTree = "<group>";
@@ -284,7 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9CF424E1FEAD48F00B31A05 /* Main.storyboard in Resources */,
+				C787B9FE2045CE7A00A3B498 /* MainMenu.storyboard in Resources */,
 				D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */,
 				C7D74DF11FD85CDF00261F2D /* Assets.xcassets in Resources */,
 			);
@@ -314,15 +318,17 @@
 				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				D9D84A9D1FE19DE70019328F /* wordsmithUITests.swift in Sources */,
-				C7BEB32D2035FC0C0090EBF0 /* DebateCell.swift in Sources */,
 				D9D84A9C1FE19DE30019328F /* wordsmithTests.swift in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
+				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
+				E4A19AF22049C383000DF00A /* Interpole.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
+				E4A19AF02049C379000DF00A /* SplineView.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
