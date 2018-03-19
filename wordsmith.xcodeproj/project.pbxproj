@@ -70,8 +70,6 @@
 		C7D74DF01FD85CDF00261F2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7D74DF51FD85CDF00261F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7D74DFA1FD85CDF00261F2D /* wordsmithTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordsmithTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7D74DFE1FD85CDF00261F2D /* wordsmithTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordsmithTests.swift; sourceTree = "<group>"; };
-		C7D74E001FD85CDF00261F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7D74E051FD85CDF00261F2D /* wordsmithUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordsmithUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordsmithUITests.swift; sourceTree = "<group>"; };
 		C7D74E0B1FD85CDF00261F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,8 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				C7D74DE81FD85CDF00261F2D /* wordsmith */,
-				C7D74DFD1FD85CDF00261F2D /* wordsmithTests */,
-				C7D74E081FD85CDF00261F2D /* wordsmithUITests */,
 				C7D74DE71FD85CDF00261F2D /* Products */,
 				C72CB80B1FEADA3800662255 /* Frameworks */,
 			);
@@ -160,24 +156,6 @@
 				C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */,
 			);
 			path = wordsmith;
-			sourceTree = "<group>";
-		};
-		C7D74DFD1FD85CDF00261F2D /* wordsmithTests */ = {
-			isa = PBXGroup;
-			children = (
-				C7D74DFE1FD85CDF00261F2D /* wordsmithTests.swift */,
-				C7D74E001FD85CDF00261F2D /* Info.plist */,
-			);
-			path = wordsmithTests;
-			sourceTree = "<group>";
-		};
-		C7D74E081FD85CDF00261F2D /* wordsmithUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */,
-				C7D74E0B1FD85CDF00261F2D /* Info.plist */,
-			);
-			path = wordsmithUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,8 +297,6 @@
 			files = (
 				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
-				D9D84A9D1FE19DE70019328F /* wordsmithUITests.swift in Sources */,
-				D9D84A9C1FE19DE30019328F /* wordsmithTests.swift in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,

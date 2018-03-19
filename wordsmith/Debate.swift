@@ -31,7 +31,7 @@ class Debate: NSObject {
         super.init()
         self.title = title
         self.roundNumber = roundNumber
-        self.otherTeam = Debate.randomString(length: 5)
+        self.otherTeam = otherTeam
         self.judgeName = judgeName
     }
     
