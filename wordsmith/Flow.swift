@@ -7,14 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
-struct Flow {
-    var flow : [CardView]
-    let defaultvalue:CardView
+class Flow: UICollectionView{
+
+    var herpes: [CardView] = []
     
-    /*init(){
-        for index in 1...10{
-            flow.insert(defaultvalue, at: index)
+    override func cellForItem(at indexPath: IndexPath) -> CardView
+    {
+        //1
+        let cell =  self.dequeueReusableCell(withReuseIdentifier: "Card",
+                                                      for: indexPath) as! CardView
+        cell.backgroundColor = UIColor.black
+        return cell
     }
-    }*/
 }

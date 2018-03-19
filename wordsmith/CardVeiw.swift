@@ -15,8 +15,16 @@ class CardView: UICollectionViewCell {
     
  
     //@IBOutlet var cardimageonmaster: UIImageView!
+    var isEndOfSpeech = false
     
-    
+    func isItEndOfSpeech() -> Bool
+    {
+        return isEndOfSpeech
+    }
+    func endspeech() -> Void
+    {
+        isEndOfSpeech = true
+    }
     func showcard(card: Card){
     //main methods to be used for showing card in the cardView
     }
