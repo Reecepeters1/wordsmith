@@ -179,6 +179,9 @@ class DebateView: UIViewController {
         deleteDebate()
     }
     
+    @IBAction func modifyDebate(_ sender: Any) {
+    }
+    
     @IBAction func createDebateButton(_ sender: Any) {
         performSegue(withIdentifier: "createDebateSegue", sender: nil)
     }
@@ -237,6 +240,8 @@ class DebateView: UIViewController {
 //Storyboard ID = CreateDebate
 //This class controls the creation of new debates - duh.
 class CreateDebateView: UIViewController {
+    
+    var isNew = false
     
     @IBOutlet weak var debatetitle: UITextField!
     
