@@ -75,27 +75,27 @@ class FlowVeiwLayout: UICollectionViewLayout{
         
         // actualy proccess by which we auto size card layout
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
+            
             let indexPath = IndexPath(item: item, section: 0)
             
             
-            // 4
             let CardHeight = screenHeight / (itemCGFloat / CGFloat(numberOfColumns))
             let height = cellPadding * 2 + CardHeight
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
-            // 5
+            
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = insetFrame
             cache.append(attributes)
             
-            // 6
+            
             contentHeight = max(contentHeight, frame.maxY)
             yOffset[column] = yOffset[column] + height
             
             column = column < (numberOfColumns - 1) ? (column + 1) : 0
             //check if card is end of speech
-            var temp = collectionView.cellForItem(at: indexPath) as! CardView
+            let temp = collectionView.cellForItem(at: indexPath) as! CardView
             if temp.isItEndOfSpeech() == true
             {
                 
