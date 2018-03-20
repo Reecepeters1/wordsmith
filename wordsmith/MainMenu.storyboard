@@ -229,6 +229,7 @@
                                 <state key="normal" title="Modify"/>
                                 <connections>
                                     <action selector="create:" destination="GPd-3y-Wnc" eventType="touchUpInside" id="DJK-Jn-3cD"/>
+                                    <segue destination="0cI-kM-v0v" kind="presentation" id="8aA-1C-Df7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-gj-uiu">
@@ -288,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gv-ck-duA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="1220"/>
+            <point key="canvasLocation" x="122" y="1209"/>
         </scene>
         <!--Debates-->
         <scene sceneID="02W-pS-Uep">
@@ -500,6 +501,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aGb-of-g1z"/>
+        <segue reference="8aA-1C-Df7"/>
     </inferredMetricsTieBreakers>
 </document>

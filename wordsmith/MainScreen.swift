@@ -290,7 +290,7 @@ class CreateDebateView: UIViewController {
         splitViewController?.showDetailViewController(newView, sender: nil)
         
         //performSegue(withIdentifier: "cancelDebateSegue", sender: nil)
-    
+        
         
     }
     
