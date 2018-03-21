@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C763EE322062BE72004A136E /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE312062BE72004A136E /* Interpole.swift */; };
+		C763EE362062BEAC004A136E /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE352062BEAC004A136E /* SplineView.swift */; };
 		C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
 		C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
 		C787B9FE2045CE7A00A3B498 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		C72CB80C1FEADA3800662255 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C763EE312062BE72004A136E /* Interpole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpole.swift; sourceTree = "<group>"; };
+		C763EE352062BEAC004A136E /* SplineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplineView.swift; sourceTree = "<group>"; };
 		C77A1FC92018F9AF00060322 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		C787B9FB2045CAA900A3B498 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				C77A1FC92018F9AF00060322 /* MainScreen.swift */,
 				C787B9FB2045CAA900A3B498 /* Storyboards.swift */,
 				C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */,
+				C763EE312062BE72004A136E /* Interpole.swift */,
+				C763EE352062BEAC004A136E /* SplineView.swift */,
 			);
 			path = wordsmith;
 			sourceTree = "<group>";
@@ -299,12 +305,14 @@
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
+				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
+				C763EE362062BEAC004A136E /* SplineView.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

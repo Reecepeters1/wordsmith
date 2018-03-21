@@ -164,8 +164,7 @@ class DebateView: UIViewController {
                  */
                 
             } } else {
-                //segue to create a new debate because the array is empty
-                return
+                performSegue(withIdentifier: "createDebateSegue", sender: nil)
             }
             
         
@@ -199,9 +198,12 @@ class DebateView: UIViewController {
     
     //Okay, so, this updates all the properties to reflect the new index value. It loads the view if needed.
     func refreshUI() {
+        
         loadViewIfNeeded()
         
-        
+        if MainScreen.debates.isEmpty {
+            performSegue(withIdentifier: "createDebateSegue", sender: nil)
+        }
         
         if !MainScreen.debates.isEmpty && myDebateIndex < MainScreen.debates.count {
             let debate = MainScreen.debates[myDebateIndex]
