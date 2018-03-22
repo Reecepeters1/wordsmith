@@ -16,18 +16,16 @@ class FlowVeiwLayout: UICollectionViewLayout{
     
     weak var delegate: FlowLayoutDelegate!
     
-    // placeholder values
-    //public var position = CardView[1][1]() dunno if we need this yet
-
-    var numberOfColumns = 8
-    var cellPadding: CGFloat = 6
+    
+    // var
+    var numberOfColumns = 0
+    var cellPadding: CGFloat = 8
     var contentHeight: CGFloat = 0
     var screenWidth = UIScreen.main.bounds.size.width
     var screenHeight = UIScreen.main.bounds.size.height
     
     // fuck if I know what this is
     var cache = [UICollectionViewLayoutAttributes]()
-    
     
     fileprivate var contentWidth: CGFloat {
         guard let collectionView = collectionView
@@ -39,30 +37,72 @@ class FlowVeiwLayout: UICollectionViewLayout{
     }
     
     
-    // shows how large the cellection veiw ts
+   //dictates collection view scroll area
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
     
-    func setup() {
+    //dictates amount of items in a column
+    func columnIndexForItemAt(indexPath: IndexPath) -> Int {
+        return indexPath.item % numberOfColumns
+        
     }
     
+    func calculateItemFrame(indexPath: IndexPath, columnIndex: Int, columnYoffset: CGFloat) -> CGRect {
+        return CGRect.zero
+    }
     
-    //prepare
-    override func prepare() {
-        // 1
+    //blank for now
+    func calculateItemsSize() {
+        
+    }
+
+    
+
+   
+    override func prepare(){
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
-        // variable casting for numer of items
+        //variable manipulation prework
+        cache.removeAll()
+        //set y offset to zero
+        var yOffset = [CGFloat](repeating: 0, count: columnIndexForItemAt(indexPath: IndexPath))
+        var xOffset = [CGFloat](repeating: 0, count: numberOfColumns)
+        
+        
+        //item casting and variable instantiations
         let items = collectionView.numberOfItems(inSection: 0)
         let itemdouble = Double(items)
         let itemCGFloat = CGFloat(itemdouble)
         
+        let CellHeight = screenHeight / (itemCGFloat / CGFloat(numberOfColumns))
+        let CellWidth = CellHeight + CellHeight * 0.3
+        
+     
+            // actualy proccess by which we auto size card layout
+            for item in 0 ..< collectionView.numberOfItems(inSection: 0)
+            {
+                let indexPath = IndexPath(item: items, section: 0)
+                
+                
+                
+                
+
+                let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: columnWidth)
+                let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
+
+        }
+        
+    }
+    
+    
+    //
+    /*override func prepare()
         
         //variable instantiations
-        let columnWidth = ( screenWidth / CGFloat(numberOfColumns) ) - cellPadding
+        let columnWidth = ( screenWidth / CGFloat(numberOfColumns) )
         var xOffset = [CGFloat]()
         
         for counter in 0 ..< numberOfColumns
@@ -81,7 +121,10 @@ class FlowVeiwLayout: UICollectionViewLayout{
             
             let CardHeight = screenHeight / (itemCGFloat / CGFloat(numberOfColumns))
             let height = cellPadding * 2 + CardHeight
-            let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
+            
+            
+            
+            let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: columnWidth)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
             
@@ -92,8 +135,8 @@ class FlowVeiwLayout: UICollectionViewLayout{
             
             contentHeight = max(contentHeight, frame.maxY)
             yOffset[column] = yOffset[column] + height
-            
             column = column < (numberOfColumns - 1) ? (column + 1) : 0
+            
             //check if card is end of speech
             let temp = collectionView.cellForItem(at: indexPath) as! CardView
             if temp.isItEndOfSpeech() == true
@@ -101,7 +144,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
                 
             }
         }
-    }
+    }*/
     
     
     
@@ -124,6 +167,9 @@ class FlowVeiwLayout: UICollectionViewLayout{
         }
         return visibleLayoutAttributes
     }
+    
+    
+    //returns layout attribute for a specific item
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return cache[indexPath.item]
     }

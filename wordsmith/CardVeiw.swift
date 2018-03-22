@@ -9,12 +9,13 @@
 import UIKit
 
 class CardView: UICollectionViewCell {
-    //copy of card holder test class
+    @IBOutlet var cardimage: UIImageView!
+    
     //let storedCard:Card? = nil
     //TODO Way to store location of a Card initialized elsewhere
     
  
-    //@IBOutlet var cardimageonmaster: UIImageView!
+    
     var isEndOfSpeech = false
     
     func isItEndOfSpeech() -> Bool
@@ -25,6 +26,10 @@ class CardView: UICollectionViewCell {
     {
         isEndOfSpeech = true
     }
+    func displayContent(image: UIImage){
+        cardimage.image = image
+    }
+    
     func showcard(card: Card){
     //main methods to be used for showing card in the cardView
     }
