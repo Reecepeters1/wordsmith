@@ -13,11 +13,15 @@ import QuartzCore
 class Card {
     
     var responses:[Card]?
-    //TODO: Freely drawn image
+    var drawing: [CAShapeLayer]
     var speech:Int = -1
     var positionInSpeech:Int = -1
     var isAResponse = false
     var isFlagged = false
+    
+    init(draw: [CAShapeLayer]) {
+        drawing = draw
+    }
     
     func getanswers(){
         if isAResponse{
@@ -25,8 +29,8 @@ class Card {
         }
         return
     }
-    func getVeiw(){
-    //tbd
+    func getVeiw() -> [CAShapeLayer] {
+        return drawing
     }
     
     func createPDFimage(){

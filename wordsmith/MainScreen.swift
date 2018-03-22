@@ -9,7 +9,7 @@
 import Foundation
 import os.log
 
-//This class contains our actual debate obects.
+//This class contains our actual debate objects.
 public class MainScreen: NSObject {
     
     static var debates:[Debate] = []
@@ -37,12 +37,13 @@ class MainMenuViewController: UITableViewController {
     // MARK: - Table view data source
     //The number of debates in the MainMenu array determines the number we want to display.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return MainScreen.debates.count
+
         return MainScreen.debates.count
     }
     
-    //Generates a cell, the cell displays the name of the other team.
+    //Generates a cell, the cell displays the name of the other team as well as the tournament
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let debate = MainScreen.debates[indexPath.row]
         cell.textLabel?.text = debate.otherTeam!.appending(debate.tournament ?? "default")
@@ -52,23 +53,28 @@ class MainMenuViewController: UITableViewController {
     
     //Updates the detail view to display the debate at the currently selected row
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let myDetailView = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateDisplay") as! DebateView
         myDetailView.myDebateIndex = indexPath.row
         myDetailView.refreshUI()
+        
         splitViewController?.showDetailViewController(myDetailView, sender: nil )
     }
     
-    //indicates the rows is in fact editable.
+    //indicates the row is in fact editable.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     //Deletes the debate at the selected index. This function also updates the detail and table views.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete && !MainScreen.debates.isEmpty) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
             
-            MainScreen.debates.remove(at: indexPath.row)
-            tableView.reloadData()
+            if !MainScreen.debates.isEmpty {
+                MainScreen.debates.remove(at: indexPath.row)
+                tableView.reloadData()
+            }
             
             let myDetailView = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateDisplay") as! DebateView
             
@@ -78,14 +84,22 @@ class MainMenuViewController: UITableViewController {
                     myDetailView.refreshUI()
                     splitViewController?.showDetailViewController(myDetailView, sender: nil )
                     
+                } else if MainScreen.debates.isEmpty {
+                    //prompt for creation of new debate, because the array is empty
+                    myDetailView.performSegue(withIdentifier: "createDebateSegue", sender: nil)
+                    
                 } else {
+                    
                     myDetailView.myDebateIndex = indexPath.row - 1
                     myDetailView.refreshUI()
                     splitViewController?.showDetailViewController(myDetailView, sender: nil )
+                    
                 }
                 
             } else {
                 //prompt for creation of new debate, because the array is empty
+                myDetailView.performSegue(withIdentifier: "createDebateSegue", sender: nil)
+                
             }
         }
     }
@@ -165,6 +179,9 @@ class DebateView: UIViewController {
         deleteDebate()
     }
     
+    @IBAction func modifyDebate(_ sender: Any) {
+    }
+    
     @IBAction func createDebateButton(_ sender: Any) {
         performSegue(withIdentifier: "createDebateSegue", sender: nil)
     }
@@ -223,6 +240,8 @@ class DebateView: UIViewController {
 //Storyboard ID = CreateDebate
 //This class controls the creation of new debates - duh.
 class CreateDebateView: UIViewController {
+    
+    var isNew = false
     
     @IBOutlet weak var debatetitle: UITextField!
     
