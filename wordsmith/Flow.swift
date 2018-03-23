@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-class Flow: UICollectionView{
+class Flow{
 
     var herpes: [CardView] = []
     
-    override func cellForItem(at indexPath: IndexPath) -> CardView
-    {
-        //1
-        let cell =  self.dequeueReusableCell(withReuseIdentifier: "Card",
-                                                      for: indexPath) as! CardView
-        cell.backgroundColor = UIColor.black
-        return cell
+    func returnflow() -> [CardView] {
+        return herpes
     }
+    func getcardcard(Index: Int) -> UICollectionViewCell{
+        return herpes[Index]
+        
+    }
+    
 }

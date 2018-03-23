@@ -13,24 +13,14 @@ class FlowVeiw: UICollectionViewController {
     //public var itemPerRow = 4 placeholderfornow
     
 
-    var sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    var sectionInsets = UIEdgeInsets(top: 40.0, left: 20.0, bottom: 40.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
     var itemsPerRow: CGFloat = 4
-    var herpes: [CardView] = []
+    
     var itemsPerColumn: CGFloat = 4
     var numberofitems = 10
+    var siphylis: Flow?
     
-    
-
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt position: Int) -> CardView
-    {
-        //check for it's out of bounds
-        if position > (herpes.count - 1){
-            return herpes[0]
-        }
-        return herpes[position]
-    }
 }
 extension FlowVeiw{
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -47,9 +37,8 @@ extension FlowVeiw{
     CardView
     {
         //1
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
-                                                      for: indexPath) as! CardView
-        cell.backgroundColor = UIColor.black
+        let cell = siphylis.
+        
         return cell
     }
 
@@ -64,10 +53,10 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let availableWidth = self.view.frame.width
-        let widthPerItem = availableWidth / itemsPerRow
+        let widthPerItem = availableWidth / itemsPerRow - sectionInsets.left
 
         let availableHeight = self.view.frame.height
-        let heightPerItem = availableHeight / itemsPerColumn
+        let heightPerItem = availableHeight / itemsPerColumn - sectionInsets.top
 
         return CGSize(width: widthPerItem, height: heightPerItem)
     }
