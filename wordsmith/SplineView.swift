@@ -120,6 +120,7 @@ class SplineView: UIView {
     }
     
     func newPath() {
+        
         storeLayer.append(CAShapeLayer())
         storeLayer[index].fillColor = nil
         storeLayer[index].strokeColor = color.cgColor
@@ -127,8 +128,10 @@ class SplineView: UIView {
         storeLayer[index].lineCap = kCALineCapRound
         storeLayer[index].path = CGMutablePath()
         layer.addSublayer(storeLayer[index])
+        
         drawLayer.removeFromSuperlayer()
         layer.addSublayer(drawLayer)
+        
     }
     
     func getCard() -> Card {

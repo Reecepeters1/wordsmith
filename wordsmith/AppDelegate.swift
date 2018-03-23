@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         for _ in 1...10 {
             MainScreen.debates.append(Debate(title: "Stuff", roundNumber: 10, otherTeam: "Stuff", judgeName: "Stuff"))
         }
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myViewController.view.backgroundColor = UIColor.red
         window?.rootViewController = myViewController
         window?.makeKeyAndVisible()*/
+        
         return true
         }
 
