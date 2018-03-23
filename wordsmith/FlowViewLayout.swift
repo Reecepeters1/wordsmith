@@ -67,17 +67,19 @@ class FlowVeiwLayout: UICollectionViewLayout{
         }
         //variable manipulation prework
         cache.removeAll()
-        //set y offset to zero
-        var yOffset = [CGFloat](repeating: 0, count: columnIndexForItemAt(indexPath: IndexPath))
-        var xOffset = [CGFloat](repeating: 0, count: numberOfColumns)
-        
-        
-        //item casting and variable instantiations
+       
+        //items casting and variable instantiations
         let items = collectionView.numberOfItems(inSection: 0)
         let itemdouble = Double(items)
-        let itemCGFloat = CGFloat(itemdouble)
+        let itemsCGFloat = CGFloat(itemdouble)
         
-        let CellHeight = screenHeight / (itemCGFloat / CGFloat(numberOfColumns))
+        
+        //set y and x offset to zero
+        var yOffset = [CGFloat](repeating: 0, count: items)
+        var xOffset = [CGFloat](repeating: 0, count: items)
+        
+        
+        let CellHeight = screenHeight / (itemsCGFloat / CGFloat(numberOfColumns))
         let CellWidth = CellHeight + CellHeight * 0.3
         
      
@@ -86,19 +88,55 @@ class FlowVeiwLayout: UICollectionViewLayout{
             {
                 let indexPath = IndexPath(item: items, section: 0)
                 
+                //item casting
+                let itemdouble = Double(item)
+                let itemCGFloat = CGFloat(itemdouble)
                 
                 
+                if item == 1 {
+                yOffset[items] = cellPadding
+                xOffset[items] = cellPadding
+                }
                 
-
-                let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: columnWidth)
+                //calculate the corrdinates here
+                else
+                {
+                    let temp = collectionView.cellForItem(at: indexPath) as! CardView
+                    if temp.isItEndOfSpeech() == true
+                    {
+                        yOffset[items] = cellPadding
+                        xOffset[items] = cellPadding * itemCGFloat + itemCGFloat * CellWidth
+                    }
+                    else
+                    
+                }
+                
+                
+                //Check if it's a different speech
+                
+                let temp = collectionView.cellForItem(at: indexPath) as! CardView
+                if temp.isItEndOfSpeech() == true
+                {
+                    
+                }
+                
+                
+                let frame = CGRect(x: xOffset[items], y: yOffset[item], width: CellHeight, height: CellWidth)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
+                
+                
+                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+                attributes.frame = insetFrame
+                cache.append(attributes)
+                
+                
 
         }
         
     }
     
     
-    //
+    //this is depreciated RIP old parthner
     /*override func prepare()
         
         //variable instantiations

@@ -8,8 +8,17 @@
 
 import Foundation
 import UIKit
-struct Flow{
+
+class Flow{
 
     var herpes: [CardView] = []
+    
+    func returnflow() -> [CardView] {
+        return herpes
+    }
+    func getcardcard(Index: Int) -> UICollectionViewCell{
+        return herpes[Index]
+        
+    }
     
 }

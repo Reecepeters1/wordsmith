@@ -19,8 +19,7 @@ class FlowVeiw: UICollectionViewController {
     
     var itemsPerColumn: CGFloat = 4
     var numberofitems = 10
-    
-    
+    var siphylis: Flow?
     
 }
 extension FlowVeiw{
@@ -38,7 +37,7 @@ extension FlowVeiw{
     CardView
     {
         //1
-        let cell = Flow.herpes[indexPath.item]
+        let cell = siphylis.
         
         return cell
     }
