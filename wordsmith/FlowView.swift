@@ -10,7 +10,7 @@ import UIKit
 
 
 class FlowVeiw: UICollectionViewController {
-    var index:Int
+    var index:Int = 0
     
     var sectionInsets = UIEdgeInsets(top: 40.0, left: 20.0, bottom: 40.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
