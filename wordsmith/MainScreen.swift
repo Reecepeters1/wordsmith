@@ -10,7 +10,7 @@ import Foundation
 import os.log
 
 //This class contains our actual debate objects.
-public class MainScreen: NSObject {
+public class MainMenuData: NSObject {
     
     static var debates:[Debate] = []
     
@@ -18,15 +18,11 @@ public class MainScreen: NSObject {
 
 import UIKit
 
-// Sotryboard id == MainScreenTable
-//Governs the table that displays the list of debate objects
-class MainMenuViewController: UITableViewController {
-    
-    
+class MainMenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,164 +31,73 @@ class MainMenuViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    //The number of debates in the MainMenu array determines the number we want to display.
+    
+    /*override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }*/
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return MainScreen.debates.count
+        
+        return MainMenuData.debates.count
     }
     
-    //Generates a cell, the cell displays the name of the other team as well as the tournament
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let debate = MainScreen.debates[indexPath.row]
-        cell.textLabel?.text = debate.otherTeam ?? "default".appending(debate.tournament ?? "default")
-
-        return cell
-    }
     
-    //Updates the detail view to display the debate at the currently selected row
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "debateCell", for: indexPath)
         
-        let myDetailView = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateDisplay") as! DebateView
-        myDetailView.myDebateIndex = indexPath.row
-        myDetailView.refreshUI()
-        
-        splitViewController?.showDetailViewController(myDetailView, sender: nil )
-    }
+     var localString = MainMenuData.debates[indexPath.row].otherTeam ?? "slytherine"
+     localString.append(" ")
+     localString.append(MainMenuData.debates[indexPath.row].tournament ?? "Hogwarts")
+     
+    cell.textLabel?.text? = localString
     
-    //indicates the row is in fact editable.
+     return cell
+     }
+ 
+    
+    
+    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
         return true
     }
     
-    //Deletes the debate at the selected index. This function also updates the detail and table views.
+    
+    
+    // Enables deletion of debates from the table.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+        if editingStyle == .delete {
             
-            if !MainScreen.debates.isEmpty {
-                MainScreen.debates.remove(at: indexPath.row)
-                tableView.reloadData()
-            }
+            MainMenuData.debates.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             
-            let myDetailView = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateDisplay") as! DebateView
-            
-            if !MainScreen.debates.isEmpty && indexPath.row < MainScreen.debates.count {
-                if indexPath.row == 0 && MainScreen.debates.count >= 2 {
-                    myDetailView.myDebateIndex = 1
-                    myDetailView.refreshUI()
-                    splitViewController?.showDetailViewController(myDetailView, sender: nil )
-                    
-                } else {
-                    
-                    myDetailView.myDebateIndex = indexPath.row - 1
-                    myDetailView.refreshUI()
-                    splitViewController?.showDetailViewController(myDetailView, sender: nil )
-                    
-                }
-                
-            } else if !MainScreen.debates.isEmpty && indexPath.row == MainScreen.debates.count {
-                //displays the debate at the end of the MainScreen.debates
-                myDetailView.myDebateIndex = MainScreen.debates.count - 1
-                myDetailView.refreshUI()
-                splitViewController?.showDetailViewController(myDetailView, sender: nil )
-                
-            } else {
-                splitViewController?.showDetailViewController(AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebateView"), sender: nil)
-            }
         }
     }
     
+    @IBAction func createDebate(_ sender: UIBarButtonItem) {
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
+        splitViewController?.showDetailViewController(local, sender: nil)
+    }
     
-    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
 
-//This is the detail view displayed when preveiwing a debate
-class DebateView: UIViewController {
-    
-    //Contains a refrence to the index value of the Debate Array at the current row
-    var myDebateIndex = 0
-    
-    static var currentIndexToDelete = 0
-    
-    //Set of properties used to define a Debate. Currently only user defined properties
-    @IBOutlet weak var debateTitle: UILabel!
-    @IBOutlet weak var teamName: UILabel!
-    @IBOutlet weak var tournament: UILabel!
-    @IBOutlet weak var round: UILabel!
-    @IBOutlet weak var judge: UILabel!
-    @IBOutlet weak var win: UILabel!
-    
-    
-    //safely deletes a debate, prompts to create new debate if the MainScreen array of Debate objects is empty.
-    func deleteDebate() {
-        
-        if !MainScreen.debates.isEmpty && myDebateIndex < MainScreen.debates.count {
-            
-            
-            MainScreen.debates.remove(at: myDebateIndex)
-            
-            if  myDebateIndex != 0 {
-                myDebateIndex -= 1
-                refreshUI()
-                
-                //Here, viewControllers[0] is the navigation controller that houses the MainMenuViewController. That is why I am access the child.
-                (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuViewController).tableView.reloadData()
-                
-                //let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "MainScreenTable") as! MainMenuViewController
-                //local.tableView.reloadData()
-                //local.title = "Debates"
-                
-                ////splitViewController?.navigationController?.show(local, sender: nil)
-                //splitViewController?.viewControllers[0] = local
-                
-            } else if myDebateIndex == 0 && MainScreen.debates.count >= 2 {
-                myDebateIndex += 1
-                refreshUI()
-                
-                //Here, viewControllers[0] is the navigation controller that houses the MainMenuViewController. That is why I am access the child.
-                try? (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuViewController).tableView.reloadData() 
-                
-                
-                /* Here are a set of other ways dodo above that don't quite work. I'm leaving them here incase they are ever useful
-                //let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "MainScreenTable") as! MainMenuViewController
-                //local.tableView.reloadData()
-                //local.title = "Debates"
-                
-                //splitViewController?.viewControllers[0] = local
-                 */
-                
-            } } else {
-                performSegue(withIdentifier: "createDebateSegue", sender: nil)
-            }
-            
-        
-        
-    }
-    
-    /* So, you hit the delete button. It asks the user for confirmation then deletes the debate currently refrenced in myDebateIndex */
-    @IBAction func deleteDebateButton(_ sender: Any)
-    {
-        
-        deleteDebate()
-    }
-    
-    @IBAction func modifyDebate(_ sender: Any) {
-        
-        performSegue(withIdentifier: "Modify", sender: nil)
-    }
-    
-    @IBAction func createDebateButton(_ sender: Any) {
-        
-        performSegue(withIdentifier: "createDebateSegue", sender: nil)
-        
-    }
+class DebateDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshUI()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -201,41 +106,78 @@ class DebateView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //Okay, so, this updates all the properties to reflect the new index value. It loads the view if needed.
-    func refreshUI() {
+    @IBAction func modify(_ sender: Any) {
         
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "ModifyDebate")
         
+        splitViewController?.showDetailViewController(local, sender: nil)
         
-        if MainScreen.debates.isEmpty {
-            performSegue(withIdentifier: "createDebateSegue", sender: nil)
-        }
-        
-        loadViewIfNeeded()
-        
-        if myDebateIndex < MainScreen.debates.count {
-            
-            print(myDebateIndex)
-            print(MainScreen.debates.count)
-            
-            let debate = MainScreen.debates[myDebateIndex]
-        
-            teamName.text = debate.otherTeam ?? "otherPeople"
-            debateTitle.text = debate.title!
-            tournament.text = debate.tournament ?? "default"
-            round.text = String(describing: debate.roundNumber)
-            judge.text = debate.judgeName
-        
-            if debate.winLoss == nil {
-                win.text = "Unkown"
-            } else if debate.winLoss! {
-                win.text = "Win"
-            } else {
-            win.text = "False"
-            }
-        } else {
-            print("You done tried to display an index value that doesn't exist! What are you even doing with your life!")
-        }
     }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
+
+class CreateDebateViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView")
+        
+        splitViewController?.showDetailViewController(local, sender: nil)
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
+
+class ModifyDebateViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView")
+        
+        splitViewController?.showDetailViewController(local, sender: nil)
+        
+    }
+    
     
     
     /*
@@ -250,83 +192,3 @@ class DebateView: UIViewController {
     
 }
 
-//Storyboard ID = CreateDebate
-//This class controls the creation of new debates - duh.
-class CreateDebateView: UIViewController {
-    
-    var isNew = false
-    
-    @IBOutlet weak var debatetitle: UITextField!
-    
-    @IBOutlet weak var team: UITextField!
-    
-    @IBOutlet weak var tournament: UITextField!
-    
-    @IBOutlet weak var round: UITextField!
-    
-    @IBOutlet weak var judge: UITextField!
-    
-    override func viewDidLoad() {
-        
-        debatetitle.placeholder = "Title"
-        team.placeholder = "Team"
-        tournament.placeholder = "tournament"
-        round.placeholder = "round"
-        judge.placeholder = "Judge"
-        
-    }
-    
-    //The segue happens regardless of this function, this is here in case I need to add aything that happens when canceled is pressed.
-    @IBAction func cancel(_ sender: Any) {
-        
-        
-    }
-    
-    //This functions creates a Debate using the user supplied text, then adds it to the MainScreen array of Debate objects.
-    @IBAction func create(_ sender: Any) {
-        let mydebate = debatetitle.text ?? "The Devil VS J.C Webster"
-        let myteam = team.text ?? "Molach"
-        let mytournament = tournament.text ?? "The Center of the Mind"
-        let myround =  Int(round!.text!) ?? 666
-        let myjudge = judge.text ?? "Thy Self"
-        
-        let local = Debate(title: mydebate, roundNumber: myround, otherTeam: myteam, judgeName: myjudge)
-        
-        local.tournament = mytournament
-        
-        MainScreen.debates.append(local)
-        
-        splitViewController?.loadView()
-        
-        splitViewController?.viewControllers[0].childViewControllers[0].viewDidLoad()
-        
-        let newView = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateDisplay") as! DebateView
-        
-        newView.myDebateIndex = MainScreen.debates.count - 1
-        
-        splitViewController?.showDetailViewController(newView, sender: nil)
-        
-        //performSegue(withIdentifier: "cancelDebateSegue", sender: nil)
-        
-        
-    }
-    
-   
-    
-    
-}
-
-
-public class ModifyDebateView: UIViewController {
-    public override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-    }
-    
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-}
