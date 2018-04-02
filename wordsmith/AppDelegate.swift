@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         for _ in 1...10 {
-            MainScreen.debates.append(Debate(title: "Stuff", roundNumber: 10, otherTeam: "Stuff", judgeName: "Stuff"))
+            MainMenuData.debates.append(Debate(title: "Stuff", roundNumber: 10, otherTeam: "Stuff", judgeName: "Stuff"))
         }
         
         
