@@ -46,7 +46,7 @@ class MainMenuViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let debate = MainScreen.debates[indexPath.row]
-        cell.textLabel?.text = debate.otherTeam!.appending(debate.tournament ?? "default")
+        cell.textLabel?.text = debate.otherTeam ?? "default".appending(debate.tournament ?? "default")
 
         return cell
     }
@@ -84,10 +84,6 @@ class MainMenuViewController: UITableViewController {
                     myDetailView.refreshUI()
                     splitViewController?.showDetailViewController(myDetailView, sender: nil )
                     
-                } else if MainScreen.debates.isEmpty {
-                    //prompt for creation of new debate, because the array is empty
-                    myDetailView.performSegue(withIdentifier: "createDebateSegue", sender: nil)
-                    
                 } else {
                     
                     myDetailView.myDebateIndex = indexPath.row - 1
@@ -96,10 +92,14 @@ class MainMenuViewController: UITableViewController {
                     
                 }
                 
-            } else {
-                //prompt for creation of new debate, because the array is empty
-                myDetailView.performSegue(withIdentifier: "createDebateSegue", sender: nil)
+            } else if !MainScreen.debates.isEmpty && indexPath.row == MainScreen.debates.count {
+                //displays the debate at the end of the MainScreen.debates
+                myDetailView.myDebateIndex = MainScreen.debates.count - 1
+                myDetailView.refreshUI()
+                splitViewController?.showDetailViewController(myDetailView, sender: nil )
                 
+            } else {
+                splitViewController?.showDetailViewController(AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebateView"), sender: nil)
             }
         }
     }
@@ -148,12 +148,13 @@ class DebateView: UIViewController {
                 ////splitViewController?.navigationController?.show(local, sender: nil)
                 //splitViewController?.viewControllers[0] = local
                 
-            } else if myDebateIndex == 0 && MainScreen.debates.count != 2 {
+            } else if myDebateIndex == 0 && MainScreen.debates.count >= 2 {
                 myDebateIndex += 1
                 refreshUI()
                 
                 //Here, viewControllers[0] is the navigation controller that houses the MainMenuViewController. That is why I am access the child.
-                (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuViewController).tableView.reloadData()
+                try? (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuViewController).tableView.reloadData() 
+                
                 
                 /* Here are a set of other ways dodo above that don't quite work. I'm leaving them here incase they are ever useful
                 //let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "MainScreenTable") as! MainMenuViewController
@@ -164,8 +165,7 @@ class DebateView: UIViewController {
                  */
                 
             } } else {
-                //segue to create a new debate because the array is empty
-                return
+                performSegue(withIdentifier: "createDebateSegue", sender: nil)
             }
             
         
@@ -180,10 +180,14 @@ class DebateView: UIViewController {
     }
     
     @IBAction func modifyDebate(_ sender: Any) {
+        
+        performSegue(withIdentifier: "Modify", sender: nil)
     }
     
     @IBAction func createDebateButton(_ sender: Any) {
+        
         performSegue(withIdentifier: "createDebateSegue", sender: nil)
+        
     }
     
     override func viewDidLoad() {
@@ -199,11 +203,20 @@ class DebateView: UIViewController {
     
     //Okay, so, this updates all the properties to reflect the new index value. It loads the view if needed.
     func refreshUI() {
+        
+        
+        
+        if MainScreen.debates.isEmpty {
+            performSegue(withIdentifier: "createDebateSegue", sender: nil)
+        }
+        
         loadViewIfNeeded()
         
-        
-        
-        if !MainScreen.debates.isEmpty && myDebateIndex < MainScreen.debates.count {
+        if myDebateIndex < MainScreen.debates.count {
+            
+            print(myDebateIndex)
+            print(MainScreen.debates.count)
+            
             let debate = MainScreen.debates[myDebateIndex]
         
             teamName.text = debate.otherTeam ?? "otherPeople"
@@ -279,7 +292,11 @@ class CreateDebateView: UIViewController {
         
         let local = Debate(title: mydebate, roundNumber: myround, otherTeam: myteam, judgeName: myjudge)
         
+        local.tournament = mytournament
+        
         MainScreen.debates.append(local)
+        
+        splitViewController?.loadView()
         
         splitViewController?.viewControllers[0].childViewControllers[0].viewDidLoad()
         
@@ -290,11 +307,26 @@ class CreateDebateView: UIViewController {
         splitViewController?.showDetailViewController(newView, sender: nil)
         
         //performSegue(withIdentifier: "cancelDebateSegue", sender: nil)
-    
+        
         
     }
+    
+   
     
     
 }
 
 
+public class ModifyDebateView: UIViewController {
+    public override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+    }
+    
+    override public func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+}

@@ -35,9 +35,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Modify"/>
                                 <connections>
-                                    <action selector="deleteDebate:" destination="0cI-kM-v0v" eventType="touchUpInside" id="DW2-bY-Aq5"/>
                                     <action selector="modifyDebate:" destination="0cI-kM-v0v" eventType="touchUpInside" id="tnb-Np-QI9"/>
-                                    <segue destination="ceT-JZ-MVc" kind="presentation" id="JmT-5G-YBH"/>
+                                    <segue destination="ceT-JZ-MVc" kind="show" identifier="Modify" id="JmT-5G-YBH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="to4-p9-6CG">
@@ -149,15 +148,15 @@
             </objects>
             <point key="canvasLocation" x="121.87499999999999" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--Modify Debate View-->
         <scene sceneID="zew-ej-6DU">
             <objects>
-                <viewController id="ceT-JZ-MVc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModifyDebateView" id="ceT-JZ-MVc" customClass="ModifyDebateView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ERR-5r-i08"/>
                         <viewControllerLayoutGuide type="bottom" id="a67-xg-ZzJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="krT-cw-8yN">
+                    <view key="view" contentMode="scaleToFill" id="krT-cw-8yN" customClass="ModifyDebateView">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -229,6 +228,7 @@
                                 <state key="normal" title="Modify"/>
                                 <connections>
                                     <action selector="create:" destination="GPd-3y-Wnc" eventType="touchUpInside" id="DJK-Jn-3cD"/>
+                                    <segue destination="0cI-kM-v0v" kind="show" id="8aA-1C-Df7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-gj-uiu">
@@ -288,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gv-ck-duA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="1220"/>
+            <point key="canvasLocation" x="121.87499999999999" y="1219.53125"/>
         </scene>
         <!--Debates-->
         <scene sceneID="02W-pS-Uep">
@@ -483,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7x9-U1-kkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542" y="1220"/>
+            <point key="canvasLocation" x="-541" y="1220"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="quI-TZ-S8c">
@@ -500,6 +500,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aGb-of-g1z"/>
+        <segue reference="8aA-1C-Df7"/>
     </inferredMetricsTieBreakers>
 </document>
