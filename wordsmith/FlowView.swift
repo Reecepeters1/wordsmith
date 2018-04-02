@@ -17,12 +17,12 @@ class FlowVeiw: UICollectionViewController {
     var copyover:[Speech]
     var syphilis:Flow
     var itemsPerRow:CGFloat
-    
+    var itemsPerColumn:CGFloat
     init(){
         copyover = []
         syphilis = Flow(array: copyover)
-        itemsPerRow = CGFloat(syphilis.longestcolumn())
-        
+        itemsPerColumn = CGFloat(syphilis.longestcolumn())
+        itemsPerRow = CGFloat(syphilis.Speeches.count)
     }
     
     //throws a hissy fit if I don't have this for some reason
