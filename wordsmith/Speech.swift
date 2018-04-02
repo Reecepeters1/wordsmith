@@ -8,15 +8,22 @@
 
 import Foundation
 class Speech{
-    var herpes: [CardView] = []
     
+    var herpes: [CardView]
+
+    init(array: [CardView]){
+        if array.isEmpty == true{
+            herpes = []
+        }
+        herpes = array
+        
+    }
     func getcount() -> Int{
         return herpes.count
     }
     
     func getcard(Index: Int) -> CardView{
         return herpes[Index]
-        
     }
 }
 

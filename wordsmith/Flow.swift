@@ -14,8 +14,9 @@ class Flow{
     var Speeches: [Speech]
     
     init(array: [Speech]){
-        if array = nil{
-            
+        if array.isEmpty == true
+        {
+            Speeches = []
         }
         self.Speeches = array
     }
@@ -27,8 +28,9 @@ class Flow{
     //add a speech
     func addSpeech() -> Void
     {
-        let newspeech:
-        Speeches.append(newspeech)
+        //let placeholder: [CardView] = []
+
+        //Speeches.append(newspeech)
     }
     
     //remove a speech at the specified index
