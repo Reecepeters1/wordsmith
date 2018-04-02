@@ -7,3 +7,18 @@
 //
 
 import Foundation
+class Speech{
+    var herpes: [CardView] = []
+    
+    func getcount() -> Int{
+        return herpes.count
+    }
+    
+    func getcard(Index: Int) -> CardView{
+        return herpes[Index]
+        
+    }
+}
+
+
+

@@ -10,16 +10,25 @@ import UIKit
 
 
 class FlowVeiw: UICollectionViewController {
-    //public var itemPerRow = 4 placeholderfornow
+    var index:Int
     
-
     var sectionInsets = UIEdgeInsets(top: 40.0, left: 20.0, bottom: 40.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
-    var itemsPerRow: CGFloat = 4
+    var copyover:[Speech]
+    var syphilis:Flow
+    var itemsPerRow:CGFloat
     
-    var itemsPerColumn: CGFloat = 4
-    var numberofitems = 10
-    var siphylis: Flow?
+    init(){
+        copyover = []
+        syphilis = Flow(array: copyover)
+        itemsPerRow = CGFloat(syphilis.longestcolumn())
+        
+    }
+    
+    //throws a hissy fit if I don't have this for some reason
+    required init(coder decoder: NSCoder) {
+        super.init(coder: decoder)!
+    }
     
 }
 extension FlowVeiw{
@@ -33,15 +42,13 @@ extension FlowVeiw{
     }
     
     //this function creates cell and places it at the intend position
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
-    CardView
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
-        //1
-        let cell = siphylis.
-        
+        //this needs to be fixed in the future
+        let cell = syphilis.getcard(Speech: indexPath.item, Index: indexPath.row)
         return cell
     }
-
+    
 }
 
 
@@ -54,14 +61,14 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
         
         let availableWidth = self.view.frame.width
         let widthPerItem = availableWidth / itemsPerRow - sectionInsets.left
-
+        
         let availableHeight = self.view.frame.height
         let heightPerItem = availableHeight / itemsPerColumn - sectionInsets.top
-
+        
         return CGSize(width: widthPerItem, height: heightPerItem)
     }
-
-
+    
+    
     //3
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -86,6 +93,7 @@ extension FlowVeiw: FlowLayoutDelegate {
         return CGFloat(z)
     }
 }
+
 
 
 
