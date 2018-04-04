@@ -23,10 +23,18 @@ class FlowVeiw: UICollectionViewController {
         syphilis = Flow(array: copyover)
         itemsPerColumn = CGFloat(syphilis.longestcolumn())
         itemsPerRow = CGFloat(syphilis.Speeches.count)
+        super.init(collectionViewLayout: UICollectionViewLayout())
+        
+       
     }
     
     //throws a hissy fit if I don't have this for some reason
     required init(coder decoder: NSCoder) {
+        copyover = []
+        syphilis = Flow(array: copyover)
+        itemsPerColumn = CGFloat(syphilis.longestcolumn())
+        itemsPerRow = CGFloat(syphilis.Speeches.count)
+        
         super.init(coder: decoder)!
     }
     
