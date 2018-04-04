@@ -13,14 +13,16 @@ class Flow{
     
     var Speeches: [Speech]
     
-    init(array: [Speech]){
-        if array == nil{
-            
-        }
+    init(array: [Speech])
+    {
+        //todo bounds
+        //if array == nil{
+        //}
         self.Speeches = array
     }
     
-    func returnflow() -> [Speech] {
+    func returnflow() -> [Speech]
+    {
         return Speeches
     }
     

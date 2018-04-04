@@ -11,7 +11,7 @@ protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView:UICollectionView, heightForCardAtIndexPath indexPath:IndexPath) -> CGFloat
 }
-class FlowVeiwLayout: UICollectionViewLayout{
+class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     weak var delegate: FlowLayoutDelegate!
@@ -77,7 +77,8 @@ class FlowVeiwLayout: UICollectionViewLayout{
             }
                 
                 //calculate the corrdinates here
-            else{
+            else
+            {
                 let temp = collectionView.cellForItem(at: indexPath) as! CardView
                 
                 yOffset += cellPadding
@@ -85,9 +86,8 @@ class FlowVeiwLayout: UICollectionViewLayout{
                 if temp.isItEndOfSpeech() == true
                 {
                     xOffset += cellPadding * itemCGFloat + itemCGFloat * CellWidth
-                    
                 }
-                
+            
                 //creates and indents the frame to be place inside cache
                 let frame = CGRect(x: xOffset, y: yOffset, width: CellWidth, height: CellHeight)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
@@ -154,8 +154,10 @@ class FlowVeiwLayout: UICollectionViewLayout{
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
         // Loop through the cache and look for items in the rect
-        for attributes in cache {
-            if attributes.frame.intersects(rect) {
+        for attributes in cache
+        {
+            if attributes.frame.intersects(rect)
+            {
                 visibleLayoutAttributes.append(attributes)
             }
         }
@@ -164,7 +166,8 @@ class FlowVeiwLayout: UICollectionViewLayout{
     
     
     //returns layout attribute for a specific item
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
+    {
         return cache[indexPath.item]
     }
 }
