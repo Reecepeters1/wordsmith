@@ -14,9 +14,8 @@ class Flow{
     var Speeches: [Speech]
     
     init(array: [Speech]){
-        if array.isEmpty == true
-        {
-            Speeches = []
+        if array == nil{
+            
         }
         self.Speeches = array
     }
