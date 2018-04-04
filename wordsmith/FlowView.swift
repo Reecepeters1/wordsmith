@@ -18,6 +18,7 @@ class FlowVeiw: UICollectionViewController {
     var syphilis:Flow
     var itemsPerRow:CGFloat
     var itemsPerColumn:CGFloat
+    
     init(){
         copyover = []
         syphilis = Flow(array: copyover)
