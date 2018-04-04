@@ -105,6 +105,11 @@ class DebateDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func launch(_ sender: Any) {
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView")
+        
+        splitViewController?.viewControllers[0] = local
+    }
     
     @IBAction func modify(_ sender: Any) {
         

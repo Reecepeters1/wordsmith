@@ -120,7 +120,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="LAUNCH"/>
                                 <connections>
-                                    <action selector="modify:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="lDJ-Lw-WVs"/>
+                                    <action selector="launch:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="svi-fZ-8hw"/>
                                     <segue destination="IYh-sV-W1v" kind="presentation" id="CI4-0x-wkX"/>
                                 </connections>
                             </button>
@@ -129,9 +129,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="DELETE"/>
-                                <connections>
-                                    <action selector="modify:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="8b8-7x-lIK"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -186,7 +183,7 @@
         <!--View Controller-->
         <scene sceneID="Uw9-Jh-6wP">
             <objects>
-                <viewController id="IYh-sV-W1v" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="masterView" id="IYh-sV-W1v" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JQ2-Kg-fvW">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JW2-OJ-feM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441.796875" y="751.5625"/>
+            <point key="canvasLocation" x="1752" y="624"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="hY0-W9-048">
@@ -222,7 +219,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WHu-Qd-pi1">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="WHu-Qd-pi1">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -239,7 +236,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhC-5e-36n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="1478"/>
+            <point key="canvasLocation" x="1752" y="1944"/>
         </scene>
         <!--Debates-->
         <scene sceneID="VnT-Jt-0n5">
