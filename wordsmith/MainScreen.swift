@@ -55,7 +55,12 @@ class MainMenuTableViewController: UITableViewController {
      return cell
      }
  
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView") as! DebateDetailViewController
+        local.debateIndex = indexPath.row
+        splitViewController?.showDetailViewController(local, sender: nil)
+    }
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -95,9 +100,18 @@ class MainMenuTableViewController: UITableViewController {
 
 class DebateDetailViewController: UIViewController {
     
+    var debateIndex:Int = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (MainMenuData.debates.isEmpty) {
+            
+            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
+            splitViewController?.showDetailViewController(local, sender: nil)
+            
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -106,8 +120,8 @@ class DebateDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func launch(_ sender: Any) {
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView")
-        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView") as! TransferViewController
+        local.debateIndex = debateIndex
         splitViewController?.viewControllers[0] = local
     }
     
@@ -132,6 +146,8 @@ class DebateDetailViewController: UIViewController {
 }
 
 class CreateDebateViewController: UIViewController {
+    
+    var debateIndex:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,6 +180,8 @@ class CreateDebateViewController: UIViewController {
 
 class ModifyDebateViewController: UIViewController {
     
+    var debateIndex:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -177,7 +195,7 @@ class ModifyDebateViewController: UIViewController {
     
     @IBAction func cancel(_ sender: Any) {
         
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView")
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView") as! DebateDetailViewController
         
         splitViewController?.showDetailViewController(local, sender: nil)
         
