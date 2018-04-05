@@ -77,12 +77,13 @@ class MainMenuTableViewController: UITableViewController {
             
             MainMenuData.debates.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            splitViewController?.viewControllers[1].viewDidLoad()
             
         }
     }
     
     @IBAction func createDebate(_ sender: UIBarButtonItem) {
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
         splitViewController?.showDetailViewController(local, sender: nil)
     }
     
@@ -112,6 +113,8 @@ class DebateDetailViewController: UIViewController {
             splitViewController?.showDetailViewController(local, sender: nil)
             
         }
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -119,6 +122,9 @@ class DebateDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
     @IBAction func launch(_ sender: Any) {
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView") as! TransferViewController
         local.debateIndex = debateIndex
@@ -127,8 +133,8 @@ class DebateDetailViewController: UIViewController {
     
     @IBAction func modify(_ sender: Any) {
         
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "ModifyDebate")
-        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "ModifyDebate") as! ModifyDebateViewController
+        local.debateIndex = debateIndex
         splitViewController?.showDetailViewController(local, sender: nil)
         
     }
@@ -147,7 +153,7 @@ class DebateDetailViewController: UIViewController {
 
 class CreateDebateViewController: UIViewController {
     
-    var debateIndex:Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,7 +167,7 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView")
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView") as! DebateDetailViewController
         
         splitViewController?.showDetailViewController(local, sender: nil)
     }
@@ -196,7 +202,7 @@ class ModifyDebateViewController: UIViewController {
     @IBAction func cancel(_ sender: Any) {
         
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView") as! DebateDetailViewController
-        
+        local.debateIndex = debateIndex
         splitViewController?.showDetailViewController(local, sender: nil)
         
     }
