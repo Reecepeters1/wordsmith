@@ -162,6 +162,20 @@ class DebateDetailViewController: UIViewController {
 
 class CreateDebateViewController: UIViewController {
     
+    private enum defaults {
+        
+    }
+    
+    
+    @IBOutlet weak var titleFIeld: UITextField!
+    
+    @IBOutlet weak var roundField: UITextField!
+    
+    @IBOutlet weak var opponentField: UITextField!
+    
+    @IBOutlet weak var judgeField: UITextField!
+    
+    @IBOutlet weak var tournamentField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,6 +193,10 @@ class CreateDebateViewController: UIViewController {
         
         splitViewController?.showDetailViewController(local, sender: nil)
     }
+    
+    @IBAction func create(_ sender: Any) {
+    }
+    
     
     /*
      // MARK: - Navigation

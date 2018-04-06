@@ -408,13 +408,6 @@
                                     <action selector="cancel:" destination="wNZ-Z7-u2o" eventType="touchUpInside" id="CW3-pi-o7O"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7y-Sr-s7h">
-                                <rect key="frame" x="440" y="212" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qa-OW-bFz">
                                 <rect key="frame" x="151" y="217" width="33.5" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -428,12 +421,27 @@
                                 <state key="normal" title="CREATE"/>
                                 <connections>
                                     <action selector="cancel:" destination="lWX-mV-x2v" eventType="touchUpInside" id="HS6-wx-DGM"/>
+                                    <action selector="create:" destination="wNZ-Z7-u2o" eventType="touchUpInside" id="9CQ-J7-be2"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7y-Sr-s7h">
+                                <rect key="frame" x="440" y="208" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="aO1-8U-bbX"/>
                     </view>
+                    <connections>
+                        <outlet property="judgeField" destination="k97-18-uMP" id="WmE-vd-rYD"/>
+                        <outlet property="opponentField" destination="Ez8-N5-MMQ" id="9pa-3E-Ft8"/>
+                        <outlet property="roundField" destination="Wd5-kB-e5f" id="UfX-Vd-p1X"/>
+                        <outlet property="titleFIeld" destination="a7y-Sr-s7h" id="GDn-b0-JQZ"/>
+                        <outlet property="tournamentField" destination="3v4-zl-8U6" id="hwR-wW-b1L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMy-rf-iaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
