@@ -75,9 +75,17 @@ class MainMenuTableViewController: UITableViewController {
         
         if editingStyle == .delete {
             
+            let temp = indexPath.row - 1
+            
+            
             MainMenuData.debates.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            splitViewController?.viewControllers[1].viewDidLoad()
+            
+            //segue to create viw if the array is now empty.
+            
+            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+            local.debateIndex = temp
+            splitViewController?.showDetailViewController(local, sender: nil)
             
         }
     }
