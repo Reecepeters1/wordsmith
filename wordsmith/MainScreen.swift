@@ -111,7 +111,6 @@ class DebateDetailViewController: UIViewController {
     
     var debateIndex:Int = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -134,9 +133,11 @@ class DebateDetailViewController: UIViewController {
     
     
     @IBAction func launch(_ sender: Any) {
+        print("starting transfer")
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView") as! TransferViewController
         local.debateIndex = debateIndex
         splitViewController?.viewControllers[0] = local
+        print("Transfer Complete")
     }
     
     @IBAction func modify(_ sender: Any) {
@@ -160,7 +161,6 @@ class DebateDetailViewController: UIViewController {
 }
 
 class CreateDebateViewController: UIViewController {
-    
     
     
     override func viewDidLoad() {
@@ -200,6 +200,7 @@ class ModifyDebateViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
     }
     
     override func didReceiveMemoryWarning() {

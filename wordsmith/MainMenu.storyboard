@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="-237.30468749999997" y="752.34375"/>
         </scene>
-        <!--View Controller-->
+        <!--Transfer View Controller-->
         <scene sceneID="Uw9-Jh-6wP">
             <objects>
-                <viewController storyboardIdentifier="masterView" id="IYh-sV-W1v" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="masterView" id="IYh-sV-W1v" customClass="TransferViewController" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JQ2-Kg-fvW">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
