@@ -195,6 +195,11 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func create(_ sender: Any) {
+        
+        
+        
+        MainMenuData.debates.append(local)
+        
     }
     
     
