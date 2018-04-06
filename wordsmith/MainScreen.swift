@@ -198,7 +198,7 @@ class CreateDebateViewController: UIViewController {
         
         
         
-        MainMenuData.debates.append(local)
+        
         
     }
     
