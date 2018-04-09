@@ -46,9 +46,9 @@ class MainMenuTableViewController: UITableViewController {
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "debateCell", for: indexPath)
         
-     var localString = MainMenuData.debates[indexPath.row].otherTeam ?? "slytherine"
+     var localString = MainMenuData.debates[indexPath.row].otherTeam
      localString.append(" ")
-     localString.append(MainMenuData.debates[indexPath.row].tournament ?? "Hogwarts")
+     localString.append(MainMenuData.debates[indexPath.row].tournament)
      
     cell.textLabel?.text? = localString
     
@@ -57,7 +57,7 @@ class MainMenuTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView") as! DebateDetailViewController
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         local.debateIndex = indexPath.row
         splitViewController?.showDetailViewController(local, sender: nil)
     }
@@ -110,6 +110,17 @@ class MainMenuTableViewController: UITableViewController {
 class DebateDetailViewController: UIViewController {
     
     var debateIndex:Int = 0
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var roundLabel: UILabel!
+    
+    @IBOutlet weak var opponentLabel: UILabel!
+    
+    @IBOutlet weak var winLossLabel: UILabel!
+    
+    @IBOutlet weak var tournamentLabel: UILabel!
+    @IBOutlet weak var judgeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,16 +200,26 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView") as! DebateDetailViewController
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         
         splitViewController?.showDetailViewController(local, sender: nil)
     }
     
     @IBAction func create(_ sender: Any) {
         
+        let localnum = Int(roundField.text ?? "0")
+        
+        let localDebate = Debate(title: titleFIeld.text, roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
+        
+        MainMenuData.debates.append(localDebate)
+        
+        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        local.debateIndex = MainMenuData.debates.count - 1
         
         
-        
+        splitViewController?.showDetailViewController(local, sender: nil)
         
     }
     
@@ -219,6 +240,16 @@ class ModifyDebateViewController: UIViewController {
     
     var debateIndex:Int = 0
     
+    @IBOutlet weak var titleLabel: UITextField!
+    
+    @IBOutlet weak var roundLabel: UITextField!
+    
+    @IBOutlet weak var opponentLabel: UITextField!
+    
+    @IBOutlet weak var judgeLabel: UITextField!
+
+    @IBOutlet weak var tournamentLabel: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -233,12 +264,14 @@ class ModifyDebateViewController: UIViewController {
     
     @IBAction func cancel(_ sender: Any) {
         
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView") as! DebateDetailViewController
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         local.debateIndex = debateIndex
         splitViewController?.showDetailViewController(local, sender: nil)
         
     }
     
+    @IBAction func modify(_ sender: Any) {
+    }
     
     
     /*

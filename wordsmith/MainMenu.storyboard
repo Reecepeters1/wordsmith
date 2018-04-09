@@ -14,7 +14,7 @@
         <!--Debate Detail View Controller-->
         <scene sceneID="fno-xO-nLT">
             <objects>
-                <viewController storyboardIdentifier="DebateView" id="9lZ-Vt-j78" customClass="DebateDetailViewController" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="debateView" id="9lZ-Vt-j78" customClass="DebateDetailViewController" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qdk-4O-Un0">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,6 +190,12 @@
                         <viewLayoutGuide key="safeArea" id="Kib-EX-qAe"/>
                     </view>
                     <connections>
+                        <outlet property="judgeLabel" destination="PHE-Di-2Ph" id="BJW-Gz-oFc"/>
+                        <outlet property="opponentLabel" destination="TPU-Ih-kUZ" id="eNN-6Q-ob7"/>
+                        <outlet property="roundLabel" destination="Zdi-Fk-PNR" id="quU-cm-7xy"/>
+                        <outlet property="titleLabel" destination="ePJ-Cg-wqI" id="Eso-p0-5Y8"/>
+                        <outlet property="tournamentLabel" destination="Pap-DP-jaC" id="Tqa-ff-OIe"/>
+                        <outlet property="winLossLabel" destination="KL3-GY-18J" id="Nf6-RP-mad"/>
                         <segue destination="lWX-mV-x2v" kind="showDetail" identifier="CreateDebate" id="Ojd-qa-Svb"/>
                         <segue destination="wNZ-Z7-u2o" kind="showDetail" identifier="ModifyDebate" id="qV2-Va-yYS"/>
                     </connections>
@@ -546,12 +552,20 @@
                                 <state key="normal" title="MODIFY"/>
                                 <connections>
                                     <action selector="cancel:" destination="lWX-mV-x2v" eventType="touchUpInside" id="MKv-mh-bP1"/>
+                                    <action selector="modify:" destination="lWX-mV-x2v" eventType="touchUpInside" id="f1P-ml-sZD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="8he-e6-3Bl"/>
                     </view>
+                    <connections>
+                        <outlet property="judgeLabel" destination="Lau-gp-jjC" id="Qbx-13-wlA"/>
+                        <outlet property="opponentLabel" destination="gql-mx-bPE" id="G4j-Ii-kcI"/>
+                        <outlet property="roundLabel" destination="kAj-3f-CJ4" id="J8L-vP-i0H"/>
+                        <outlet property="titleLabel" destination="N0o-Qi-y46" id="7iD-wR-7SE"/>
+                        <outlet property="tournamentLabel" destination="4XG-PN-HxR" id="FSR-Ak-lGj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnz-Lj-ssN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
