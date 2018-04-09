@@ -48,6 +48,10 @@ class Debate: NSObject {
         super.init()
         
     }
+    func addflow(){
+        let temp = Flow()
+        positions.append(temp)
+    }
     
     
     
