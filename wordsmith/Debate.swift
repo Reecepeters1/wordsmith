@@ -11,7 +11,7 @@ import os.log
 
 class Debate: NSObject {
     
-    var positions:[Flow]?
+    var positions:[Flow] = []
     var title:String?
     var roundNumber:Int?
     var otherTeam:String?
@@ -33,6 +33,10 @@ class Debate: NSObject {
         self.roundNumber = roundNumber
         self.otherTeam = otherTeam
         self.judgeName = judgeName
+    }
+    func addflow(){
+        let temp = Flow()
+        positions.append(temp)
     }
     
     private static func randomString(length: Int) -> String {

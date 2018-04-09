@@ -14,34 +14,26 @@ class FlowVeiw: UICollectionViewController{
     var index:Int = -1
     var sectionInsets = UIEdgeInsets(top: 40.0, left: 20.0, bottom: 40.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
-    var copyover:[Speech]
-    var syphilis:Flow
+    var copyover:[Speech] = []
+    
+    var syphilis = Flow()
+    
     var itemsPerRow:CGFloat
+    var generic = CardView()
     var itemsPerColumn:CGFloat
     
-    
+    itemsPerColumn = CGFloat(syphilis.longestcolumn())
+    itemsPerRow = CGFloat(syphilis.Speeches.count) + 1
 
-    
-    //throws a hissy fit if I don't have this for some reason
-    required init(coder decoder: NSCoder) {
-        copyover = []
-        syphilis = Flow(array: copyover)
-        itemsPerColumn = CGFloat(syphilis.longestcolumn())
-        itemsPerRow = CGFloat(syphilis.Speeches.count) + 1
-        super.init(coder: decoder)!
-    }
     
 }
 extension FlowVeiw{
     
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
-        if
         for forloopcounter1 in 0...(syphilis.Speeches.count - 1){
-            
             for forloopcounter2 in 0...(syphilis.Speeches[forloopcounter1].getcount() - 1) {
-                
-                if counter == index{
+                if counter == index {
                     return syphilis.Speeches[forloopcounter1].getcard(Index: forloopcounter2)
                 }
                 else{
@@ -49,7 +41,7 @@ extension FlowVeiw{
                 }
             }
         }
-        
+        return generic
     }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -66,8 +58,11 @@ extension FlowVeiw{
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
         
-        let cell = self.dequeueReusableCell(index: indexPath.item)
-        return cell
+        //let cell = self.dequeueReusableCell(index: indexPath.item)
+        //if cell == nil{
+            return generic
+        //}
+        //return cell
     }
     
     /*func gettrueindex(Index: IndexPath){

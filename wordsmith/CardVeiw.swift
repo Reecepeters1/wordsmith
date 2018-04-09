@@ -14,7 +14,7 @@ class CardView: UICollectionViewCell {
     //let storedCard:Card? = nil
     //TODO Way to store location of a Card initialized elsewhere
     
- 
+    
     
     var isEndOfSpeech = false
     
