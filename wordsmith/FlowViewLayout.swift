@@ -7,10 +7,7 @@
 
 
 import UIKit
-protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView:UICollectionView, heightForCardAtIndexPath indexPath:IndexPath) -> CGFloat
-}
+
 class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
@@ -41,7 +38,7 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     override func prepare(){
-        guard cache.isEmpty == true, let collectionView = FlowVeiw() else {
+        guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
         //clear the cache for repopulation
@@ -72,8 +69,8 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
             let itemCGFloat = CGFloat(itemdouble)
             
             if item == 0{
-                yOffset = cellPadding
-                xOffset = cellPadding
+                yOffset = 50
+                xOffset = 20
             }
                 
                 //calculate the corrdinates here

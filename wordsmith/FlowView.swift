@@ -8,32 +8,40 @@
 import Foundation
 import UIKit
 
+//see the bottom to see th eextension for this
+protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, heightForCardAtIndexPath indexPath: IndexPath) -> CGFloat
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+}
 
 class FlowVeiw: UICollectionViewController{
     
     
     var index:Int = -1
-    var sectionInsets = UIEdgeInsets(top: 40.0, left: 20.0, bottom: 40.0, right: 20.0)
+    var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
     var copyover:[Speech] = []
+    var currentflow: Int = 0
+    var syphilis:Flow = MainMenuData.debates[index].positions[currentflow]
     
-    var syphilis = Flow()
-    
-    var itemsPerRow:CGFloat
+    //var itemsPerRow:CGFloat
     var generic = CardView()
-    var itemsPerColumn:CGFloat
-    var currentflow = 0
+    var itemsPerColumn:CGFloat = syphilis.longestcolumn()
     
-
+    
+    override func viewDidLoad() {
+        self.collectionView!.dataSource = self
+    }
     
 }
 extension FlowVeiw{
     
-    
-    func returnaddspeechcard(index: int?) -> UICollectionViewCell
-    {
-        collectionView?.dequeueReusableCell(withReuseIdentifier: "addspeech", for: )
-    }
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
 
@@ -56,32 +64,42 @@ extension FlowVeiw{
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        let temp = debates[index].positions[currentflow]
         var count = 0
-        for counter1 in 0...(temp.Speeches.count - 1){
-            for counter2 in 0...(temp.Speeches[counter1].getcount() - 1)
+        if MainMenuData.debates[index].positions[0].Speeches.count == 0{
+            return 1
+        }
+        for counter1 in 0...(MainMenuData.debates[index].positions[currentflow].Speeches.count - 1){
+            for _ in 0...(MainMenuData.debates[index].positions[currentflow].Speeches[counter1].getcount() - 1)
             {
-                
+                count += 1
             }
         }
+        
+        return count
         
     }
     
     //this function creates cell and places it at the intend position
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
+        var cell = dequeueReusableCell(index: indexPath.row)
         
-        //let cell = self.dequeueReusableCell(index: indexPath.item)
-        //if cell == nil{
+        if cell.isEndOfSpeech == true{
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
+            return cell
+        }
+        cell = self.dequeueReusableCell(index: indexPath.item)
+        if cell == nil{
             return generic
-        //}
-        //return cell
+        }
+        return cell
     }
     
-    /*func gettrueindex(Index: IndexPath){
-        var item = Index.item
-        for 0...syphilis.count
-    }*/
+    func gettrueindex(Index: IndexPath){
+        //TODO
+        //var item = Index.item
+        //for 0...syphilis.count
+    }
     
 }
 
@@ -93,24 +111,25 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let availableWidth = self.view.frame.width
-        let widthPerItem = availableWidth / itemsPerRow - sectionInsets.left
-        
+
         let availableHeight = self.view.frame.height
-        let heightPerItem = availableHeight / itemsPerColumn - sectionInsets.top
+        let heightPerItem = availableHeight / itemsPerColumn
         
-        return CGSize(width: widthPerItem, height: heightPerItem)
+        return CGSize(width: heightPerItem, height: heightPerItem)
     }
     
     
-    //3
+    //return spacing between cards between rows
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
+        //TODO adjust for end spech value speech
+        //let availableHeight = self.view.frame.height
+        //let heightPerItem = availableHeight / itemsPerColumn
         return sectionInsets
     }
     
-    //4
+    //return spacing between cards between columns
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

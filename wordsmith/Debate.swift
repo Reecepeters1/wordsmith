@@ -11,7 +11,7 @@ import os.log
 
 class Debate: NSObject {
     
-    var positions:[Flow]?
+    var positions:[Flow] = []
     var title:String
     var roundNumber:Int? //always check for nil when acessing this value
     var otherTeam:String
@@ -20,6 +20,8 @@ class Debate: NSObject {
     var judgeName:String
     var dateCreated:Date?
     var tournament: String
+    // this value is used init the first flow in a debate should be completely empty tho
+    var firstflow = Flow()
     
     //sets all of the fields, exept for the date fields
     init(title: String, roundNumber: Int, otherTeam: String, winLoss: Bool, judgeName: String, tournament: String) {
@@ -30,6 +32,7 @@ class Debate: NSObject {
         self.otherTeam = otherTeam
         self.judgeName = judgeName
         self.tournament = tournament
+        self.positions.append(firstflow)
         //set date created to current date
         //set expiration date to 1 month later
         
@@ -38,13 +41,14 @@ class Debate: NSObject {
     
     init(title: String?, roundNumber: Int?, otherTeam: String?, winLoss: Bool?, judgeName: String?, tournament: String?) {
         
+        
         self.title = title ?? " "
         self.roundNumber = roundNumber
         self.winLoss = winLoss
         self.otherTeam = otherTeam ?? " "
         self.judgeName = judgeName ?? " "
         self.tournament = tournament ?? " "
-        
+        self.positions.append(firstflow)
         super.init()
         
     }
