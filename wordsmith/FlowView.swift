@@ -19,21 +19,16 @@ class FlowVeiw: UICollectionViewController{
     
     var syphilis = Flow()
     
-    var itemsPerRow:CGFloat
-    var generic = CardView()
-    var itemsPerColumn:CGFloat
-    var currentflow = 0
+    //var itemsPerRow:CGFloat
+    //var generic = CardView()
+    //var itemsPerColumn:CGFloat
+    var currentflow: Int = 0
     
 
     
 }
 extension FlowVeiw{
     
-    
-    func returnaddspeechcard(index: int?) -> UICollectionViewCell
-    {
-        collectionView?.dequeueReusableCell(withReuseIdentifier: "addspeech", for: )
-    }
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
 
@@ -56,32 +51,42 @@ extension FlowVeiw{
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        let temp = debates[index].positions[currentflow]
         var count = 0
-        for counter1 in 0...(temp.Speeches.count - 1){
-            for counter2 in 0...(temp.Speeches[counter1].getcount() - 1)
+        if MainMenuData.debates[index].positions[0].Speeches.count == 0{
+            return 1
+        }
+        for counter1 in 0...(MainMenuData.debates[index].positions[currentflow].Speeches.count - 1){
+            for _ in 0...(MainMenuData.debates[index].positions[currentflow].Speeches[counter1].getcount() - 1)
             {
-                
+                count += 1
             }
         }
+        
+        return count
         
     }
     
     //this function creates cell and places it at the intend position
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
+        var cell = dequeueReusableCell(index: indexPath.row)
         
-        //let cell = self.dequeueReusableCell(index: indexPath.item)
-        //if cell == nil{
+        if cell.isEndOfSpeech == true{
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
+            return cell
+        }
+        cell = self.dequeueReusableCell(index: indexPath.item)
+        if cell == nil{
             return generic
-        //}
-        //return cell
+        }
+        return cell
     }
     
-    /*func gettrueindex(Index: IndexPath){
-        var item = Index.item
-        for 0...syphilis.count
-    }*/
+    func gettrueindex(Index: IndexPath){
+        //TODO
+        //var item = Index.item
+        //for 0...syphilis.count
+    }
     
 }
 
@@ -103,14 +108,14 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
     }
     
     
-    //3
+    //return spacing between cards
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
     
-    //4
+    //return spacing between cards
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

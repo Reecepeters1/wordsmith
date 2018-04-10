@@ -41,7 +41,7 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     override func prepare(){
-        guard cache.isEmpty == true, let collectionView = FlowVeiw() else {
+        guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
         //clear the cache for repopulation
@@ -72,8 +72,8 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
             let itemCGFloat = CGFloat(itemdouble)
             
             if item == 0{
-                yOffset = cellPadding
-                xOffset = cellPadding
+                yOffset = 50
+                xOffset = 20
             }
                 
                 //calculate the corrdinates here
