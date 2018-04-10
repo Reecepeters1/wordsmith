@@ -18,13 +18,14 @@ class CardView: UICollectionViewCell {
     
     var isEndOfSpeech = false
     
-    func isItEndOfSpeech() -> Bool
-    {
+    func isItEndOfSpeech() -> Bool{
         return isEndOfSpeech
     }
-    func endspeech() -> Void
-    {
+    func endspeech() -> Void{
         isEndOfSpeech = true
+    }
+    func  notendspeech() -> Void{
+        isEndOfSpeech = false
     }
     func displayContent(image: UIImage){
         cardimage.image = image

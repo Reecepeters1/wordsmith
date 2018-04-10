@@ -12,31 +12,45 @@ import os.log
 class Debate: NSObject {
     
     var positions:[Flow] = []
-    var title:String?
-    var roundNumber:Int?
-    var otherTeam:String?
+    var title:String
+    var roundNumber:Int? //always check for nil when acessing this value
+    var otherTeam:String
     var expirationDate:Date?
-    var winLoss:Bool?
-    var judgeName:String?
+    var winLoss:Bool? //always check for nil when acessing this value
+    var judgeName:String
     var dateCreated:Date?
-    var tournament: String?
+    var tournament: String
+    // this value is used init the first flow in a debate should be completely empty tho
+    var firstflow = Flow()
     
-    //generic init
-    override init() {
-        super.init()
-        otherTeam = Debate.randomString(length: 10)
-    }
-    
-    init(title: String, roundNumber: Int, otherTeam: String, judgeName: String) {
-        super.init()
+    //sets all of the fields, exept for the date fields
+    init(title: String, roundNumber: Int, otherTeam: String, winLoss: Bool, judgeName: String, tournament: String) {
+        
         self.title = title
         self.roundNumber = roundNumber
+        self.winLoss = winLoss
         self.otherTeam = otherTeam
         self.judgeName = judgeName
+        self.tournament = tournament
+        self.positions.append(firstflow)
+        //set date created to current date
+        //set expiration date to 1 month later
+        
+        super.init()
     }
-    func addflow(){
-        let temp = Flow()
-        positions.append(temp)
+    
+    init(title: String?, roundNumber: Int?, otherTeam: String?, winLoss: Bool?, judgeName: String?, tournament: String?) {
+        
+        
+        self.title = title ?? " "
+        self.roundNumber = roundNumber
+        self.winLoss = winLoss
+        self.otherTeam = otherTeam ?? " "
+        self.judgeName = judgeName ?? " "
+        self.tournament = tournament ?? " "
+        self.positions.append(firstflow)
+        super.init()
+        
     }
     
     private static func randomString(length: Int) -> String {
