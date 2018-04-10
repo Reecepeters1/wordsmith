@@ -19,6 +19,7 @@
 		C7D74DF11FD85CDF00261F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D74DF01FD85CDF00261F2D /* Assets.xcassets */; };
 		C7D74DFF1FD85CDF00261F2D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */; };
+		C7E632A420768872003A7ADB /* transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E632A320768872003A7ADB /* transfer.swift */; };
 		D90BB18A204873E1009C7464 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
 		D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
 		D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardVeiw.swift */; };
@@ -80,6 +81,7 @@
 		C7D74DFA1FD85CDF00261F2D /* wordsmithTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordsmithTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D74E051FD85CDF00261F2D /* wordsmithUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordsmithUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordsmithUITests.swift; sourceTree = "<group>"; };
+		C7E632A320768872003A7ADB /* transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transfer.swift; sourceTree = "<group>"; };
 		D90BB189204873E1009C7464 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		D96A1F711FDEF8F600965ACD /* FlowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		D96B81181FD9B5460045381E /* CardVeiw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVeiw.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				C7D5B0271FD9BDFB00ADC122 /* Flow.swift */,
 				C7A618A61FDB013700062737 /* Debate.swift */,
 				C77A1FC92018F9AF00060322 /* MainScreen.swift */,
+				C7E632A320768872003A7ADB /* transfer.swift */,
 				C787B9FB2045CAA900A3B498 /* Storyboards.swift */,
 				C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */,
 				C763EE312062BE72004A136E /* Interpole.swift */,
@@ -320,6 +323,7 @@
 				E40321112076872300BC548A /* DrawView.swift in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
+				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,

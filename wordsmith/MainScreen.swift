@@ -46,16 +46,21 @@ class MainMenuTableViewController: UITableViewController {
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "debateCell", for: indexPath)
         
-     var localString = MainMenuData.debates[indexPath.row].otherTeam ?? "slytherine"
+     var localString = MainMenuData.debates[indexPath.row].otherTeam
      localString.append(" ")
-     localString.append(MainMenuData.debates[indexPath.row].tournament ?? "Hogwarts")
+     localString.append(MainMenuData.debates[indexPath.row].tournament)
      
     cell.textLabel?.text? = localString
     
      return cell
      }
  
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        local.debateIndex = indexPath.row
+        splitViewController?.showDetailViewController(local, sender: nil)
+    }
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -70,14 +75,23 @@ class MainMenuTableViewController: UITableViewController {
         
         if editingStyle == .delete {
             
+            let temp = indexPath.row - 1
+            
+            
             MainMenuData.debates.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            //segue to create viw if the array is now empty.
+            
+            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+            local.debateIndex = temp
+            splitViewController?.showDetailViewController(local, sender: nil)
             
         }
     }
     
     @IBAction func createDebate(_ sender: UIBarButtonItem) {
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
         splitViewController?.showDetailViewController(local, sender: nil)
     }
     
@@ -95,8 +109,29 @@ class MainMenuTableViewController: UITableViewController {
 
 class DebateDetailViewController: UIViewController {
     
+    var debateIndex:Int = 0
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var roundLabel: UILabel!
+    
+    @IBOutlet weak var opponentLabel: UILabel!
+    
+    @IBOutlet weak var winLossLabel: UILabel!
+    
+    @IBOutlet weak var tournamentLabel: UILabel!
+    @IBOutlet weak var judgeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (MainMenuData.debates.isEmpty) {
+            
+            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
+            splitViewController?.showDetailViewController(local, sender: nil)
+            
+        }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -106,10 +141,20 @@ class DebateDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    @IBAction func launch(_ sender: Any) {
+        print("starting transfer")
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView") as! TransferViewController
+        local.debateIndex = debateIndex
+        splitViewController?.viewControllers[0] = local
+        print("Transfer Complete")
+    }
+    
     @IBAction func modify(_ sender: Any) {
         
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "ModifyDebate")
-        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "ModifyDebate") as! ModifyDebateViewController
+        local.debateIndex = debateIndex
         splitViewController?.showDetailViewController(local, sender: nil)
         
     }
@@ -128,6 +173,21 @@ class DebateDetailViewController: UIViewController {
 
 class CreateDebateViewController: UIViewController {
     
+    private enum defaults {
+        
+    }
+    
+    
+    @IBOutlet weak var titleFIeld: UITextField!
+    
+    @IBOutlet weak var roundField: UITextField!
+    
+    @IBOutlet weak var opponentField: UITextField!
+    
+    @IBOutlet weak var judgeField: UITextField!
+    
+    @IBOutlet weak var tournamentField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -140,10 +200,29 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView")
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         
         splitViewController?.showDetailViewController(local, sender: nil)
     }
+    
+    @IBAction func create(_ sender: Any) {
+        
+        let localnum = Int(roundField.text ?? "0")
+        
+        let localDebate = Debate(title: titleFIeld.text, roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
+        
+        MainMenuData.debates.append(localDebate)
+        
+        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        local.debateIndex = MainMenuData.debates.count - 1
+        
+        
+        splitViewController?.showDetailViewController(local, sender: nil)
+        
+    }
+    
     
     /*
      // MARK: - Navigation
@@ -159,10 +238,23 @@ class CreateDebateViewController: UIViewController {
 
 class ModifyDebateViewController: UIViewController {
     
+    var debateIndex:Int = 0
+    
+    @IBOutlet weak var titleLabel: UITextField!
+    
+    @IBOutlet weak var roundLabel: UITextField!
+    
+    @IBOutlet weak var opponentLabel: UITextField!
+    
+    @IBOutlet weak var judgeLabel: UITextField!
+
+    @IBOutlet weak var tournamentLabel: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -172,12 +264,14 @@ class ModifyDebateViewController: UIViewController {
     
     @IBAction func cancel(_ sender: Any) {
         
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateView")
-        
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        local.debateIndex = debateIndex
         splitViewController?.showDetailViewController(local, sender: nil)
         
     }
     
+    @IBAction func modify(_ sender: Any) {
+    }
     
     
     /*
