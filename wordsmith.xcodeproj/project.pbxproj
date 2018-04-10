@@ -27,11 +27,10 @@
 		D998581D201110670044CB9F /* FlowViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */; };
 		D9A90EF620616B63005BE47E /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0271FD9BDFB00ADC122 /* Flow.swift */; };
 		D9A90EF720616B63005BE47E /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0271FD9BDFB00ADC122 /* Flow.swift */; };
-		D9A90EF9206174A7005BE47E /* collectiontester.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A90EF8206174A7005BE47E /* collectiontester.storyboard */; };
-		D9A90EFA206174E2005BE47E /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A19AEF2049C379000DF00A /* SplineView.swift */; };
-		D9A90EFB206174E2005BE47E /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A19AEF2049C379000DF00A /* SplineView.swift */; };
-		D9A90EFC206174E4005BE47E /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A19AF12049C383000DF00A /* Interpole.swift */; };
-		D9A90EFD206174E5005BE47E /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A19AF12049C383000DF00A /* Interpole.swift */; };
+		D9A90EFA206174E2005BE47E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		D9A90EFB206174E2005BE47E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		D9A90EFC206174E4005BE47E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		D9A90EFD206174E5005BE47E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */; };
 		D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A618A61FDB013700062737 /* Debate.swift */; };
 		D9E37714205ADDFD00059825 /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
@@ -42,6 +41,8 @@
 		D9E37719205ADE1A00059825 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		D9E3771A205ADE1D00059825 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
 		D9E3771B205ADE1D00059825 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
+		E40321112076872300BC548A /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40321102076872300BC548A /* DrawView.swift */; };
+		E403211320768D4900BC548A /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E403211220768D4800BC548A /* JoystickView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewLayout.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D9A90EF8206174A7005BE47E /* collectiontester.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = collectiontester.storyboard; sourceTree = "<group>"; };
 		D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E40321102076872300BC548A /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		E403211220768D4800BC548A /* JoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */,
+				D9A90EF8206174A7005BE47E /* collectiontester.storyboard */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -168,16 +172,10 @@
 				C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */,
 				C763EE312062BE72004A136E /* Interpole.swift */,
 				C763EE352062BEAC004A136E /* SplineView.swift */,
+				E40321102076872300BC548A /* DrawView.swift */,
+				E403211220768D4800BC548A /* JoystickView.swift */,
 			);
 			path = wordsmith;
-			sourceTree = "<group>";
-		};
-		D9A90EF5206169BD005BE47E /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +289,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C787B9FE2045CE7A00A3B498 /* MainMenu.storyboard in Resources */,
-				D9A90EF9206174A7005BE47E /* collectiontester.storyboard in Resources */,
 				D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */,
 				C7D74DF11FD85CDF00261F2D /* Assets.xcassets in Resources */,
 			);
@@ -320,11 +317,13 @@
 			files = (
 				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
+				E40321112076872300BC548A /* DrawView.swift in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
+				E403211320768D4900BC548A /* JoystickView.swift in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
@@ -339,8 +338,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A90EF620616B63005BE47E /* Flow.swift in Sources */,
-				D9A90EFC206174E4005BE47E /* Interpole.swift in Sources */,
-				D9A90EFA206174E2005BE47E /* SplineView.swift in Sources */,
+				D9A90EFC206174E4005BE47E /* (null) in Sources */,
+				D9A90EFA206174E2005BE47E /* (null) in Sources */,
 				D998581C201110660044CB9F /* FlowViewLayout.swift in Sources */,
 				C7D74DFF1FD85CDF00261F2D /* (null) in Sources */,
 				D9E37718205ADE1900059825 /* Card.swift in Sources */,
@@ -355,8 +354,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A90EF720616B63005BE47E /* Flow.swift in Sources */,
-				D9A90EFD206174E5005BE47E /* Interpole.swift in Sources */,
-				D9A90EFB206174E2005BE47E /* SplineView.swift in Sources */,
+				D9A90EFD206174E5005BE47E /* (null) in Sources */,
+				D9A90EFB206174E2005BE47E /* (null) in Sources */,
 				D998581D201110670044CB9F /* FlowViewLayout.swift in Sources */,
 				C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */,
 				D9E37719205ADE1A00059825 /* Card.swift in Sources */,
