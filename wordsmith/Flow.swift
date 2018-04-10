@@ -11,15 +11,7 @@ import UIKit
 
 class Flow{
     
-    var Speeches: [Speech]
-    
-    init(array: [Speech])
-    {
-        //todo bounds
-        //if array == nil{
-        //}
-        self.Speeches = array
-    }
+    var Speeches: [Speech] = []
     
     func returnflow() -> [Speech]
     {
@@ -56,14 +48,15 @@ class Flow{
     //returns longest column this is to makes sure that when we do the calculations for card sizing that they are sized to the largest column so they all fit on the screen
     func longestcolumn() -> Int{
         //counter
-        var biggestsize = 1
+        var biggestsize = 0
+        if Speeches.count != 0 {
         //for loop
-        /*
-        for i in 0...(Speeches.count - 1){
-            if Speeches[i].getcount() > biggestsize{
-                biggestsize = Speeches[i].getcount()
+            for i in 0...(Speeches.count - 1){
+                if Speeches[i].getcount() > biggestsize{
+                    biggestsize = Speeches[i].getcount()
+                }
             }
-        } */
+        }
         //we add + 1 so we can have space to add creating speech/cards buttons later on
         return biggestsize + 1
     }

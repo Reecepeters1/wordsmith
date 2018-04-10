@@ -14,7 +14,7 @@
         <!--Debate Detail View Controller-->
         <scene sceneID="fno-xO-nLT">
             <objects>
-                <viewController storyboardIdentifier="DebateView" id="9lZ-Vt-j78" customClass="DebateDetailViewController" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="debateView" id="9lZ-Vt-j78" customClass="DebateDetailViewController" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qdk-4O-Un0">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,13 +40,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St7-Jd-5bT">
-                                <rect key="frame" x="135" y="510" width="50" height="27"/>
+                                <rect key="frame" x="134.5" y="510" width="50" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win/Loss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0G-87-kKf">
-                                <rect key="frame" x="135" y="595" width="71" height="21"/>
+                                <rect key="frame" x="134.5" y="595" width="71" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RpJ-KI-9aT"/>
                                 </constraints>
@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exp-Hs-o8h">
-                                <rect key="frame" x="135" y="636" width="49" height="21"/>
+                                <rect key="frame" x="134.5" y="636" width="49" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="TxR-r8-skK"/>
                                 </constraints>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tournament" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i99-f3-jbe">
-                                <rect key="frame" x="135" y="677" width="92" height="21"/>
+                                <rect key="frame" x="134.5" y="677" width="92" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="mPy-Zv-q88"/>
                                 </constraints>
@@ -73,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kp-tz-tdv">
-                                <rect key="frame" x="135" y="83" width="102" height="21"/>
+                                <rect key="frame" x="134.5" y="83" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,37 +85,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdi-Fk-PNR">
-                                <rect key="frame" x="262" y="510" width="42" height="27"/>
+                                <rect key="frame" x="261.5" y="510" width="42" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPU-Ih-kUZ">
-                                <rect key="frame" x="262" y="557" width="42" height="21"/>
+                                <rect key="frame" x="261.5" y="557" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KL3-GY-18J">
-                                <rect key="frame" x="262" y="598" width="42" height="21"/>
+                                <rect key="frame" x="261.5" y="598" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHE-Di-2Ph">
-                                <rect key="frame" x="262" y="639" width="42" height="21"/>
+                                <rect key="frame" x="261.5" y="639" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pap-DP-jaC">
-                                <rect key="frame" x="262" y="680" width="42" height="21"/>
+                                <rect key="frame" x="261.5" y="680" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAb-7x-vfL">
-                                <rect key="frame" x="135" y="554" width="77" height="21"/>
+                                <rect key="frame" x="134.5" y="554" width="77" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="P8c-QZ-tlZ"/>
                                 </constraints>
@@ -190,6 +190,12 @@
                         <viewLayoutGuide key="safeArea" id="Kib-EX-qAe"/>
                     </view>
                     <connections>
+                        <outlet property="judgeLabel" destination="PHE-Di-2Ph" id="BJW-Gz-oFc"/>
+                        <outlet property="opponentLabel" destination="TPU-Ih-kUZ" id="eNN-6Q-ob7"/>
+                        <outlet property="roundLabel" destination="Zdi-Fk-PNR" id="quU-cm-7xy"/>
+                        <outlet property="titleLabel" destination="ePJ-Cg-wqI" id="Eso-p0-5Y8"/>
+                        <outlet property="tournamentLabel" destination="Pap-DP-jaC" id="Tqa-ff-OIe"/>
+                        <outlet property="winLossLabel" destination="KL3-GY-18J" id="Nf6-RP-mad"/>
                         <segue destination="lWX-mV-x2v" kind="showDetail" identifier="CreateDebate" id="Ojd-qa-Svb"/>
                         <segue destination="wNZ-Z7-u2o" kind="showDetail" identifier="ModifyDebate" id="qV2-Va-yYS"/>
                     </connections>
@@ -270,7 +276,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhC-5e-36n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752" y="1944"/>
+            <point key="canvasLocation" x="1751.953125" y="1943.359375"/>
         </scene>
         <!--Debates-->
         <scene sceneID="VnT-Jt-0n5">
@@ -562,12 +568,20 @@
                                 <state key="normal" title="MODIFY"/>
                                 <connections>
                                     <action selector="cancel:" destination="lWX-mV-x2v" eventType="touchUpInside" id="MKv-mh-bP1"/>
+                                    <action selector="modify:" destination="lWX-mV-x2v" eventType="touchUpInside" id="f1P-ml-sZD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="8he-e6-3Bl"/>
                     </view>
+                    <connections>
+                        <outlet property="judgeLabel" destination="Lau-gp-jjC" id="Qbx-13-wlA"/>
+                        <outlet property="opponentLabel" destination="gql-mx-bPE" id="G4j-Ii-kcI"/>
+                        <outlet property="roundLabel" destination="kAj-3f-CJ4" id="J8L-vP-i0H"/>
+                        <outlet property="titleLabel" destination="N0o-Qi-y46" id="7iD-wR-7SE"/>
+                        <outlet property="tournamentLabel" destination="4XG-PN-HxR" id="FSR-Ak-lGj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnz-Lj-ssN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
