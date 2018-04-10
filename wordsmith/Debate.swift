@@ -49,8 +49,9 @@ class Debate: NSObject {
         
     }
     func addflow(){
+        
         let temp = Flow()
-        positions.append(temp)
+        
     }
     
     
