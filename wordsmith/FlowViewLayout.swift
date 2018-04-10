@@ -7,10 +7,7 @@
 
 
 import UIKit
-protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView:UICollectionView, heightForCardAtIndexPath indexPath:IndexPath) -> CGFloat
-}
+
 class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     

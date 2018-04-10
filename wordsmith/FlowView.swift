@@ -8,23 +8,36 @@
 import Foundation
 import UIKit
 
+//see the bottom to see th eextension for this
+protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, heightForCardAtIndexPath indexPath: IndexPath) -> CGFloat
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+}
 
 class FlowVeiw: UICollectionViewController{
     
     
     var index:Int = -1
-    var sectionInsets = UIEdgeInsets(top: 40.0, left: 20.0, bottom: 40.0, right: 20.0)
+    var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
     var copyover:[Speech] = []
-    
-    var syphilis = Flow()
+    var currentflow: Int = 0
+    var syphilis:Flow = MainMenuData.debates[index].positions[currentflow]
     
     //var itemsPerRow:CGFloat
-    //var generic = CardView()
-    //var itemsPerColumn:CGFloat
-    var currentflow: Int = 0
+    var generic = CardView()
+    var itemsPerColumn:CGFloat = syphilis.longestcolumn()
     
-
+    
+    override func viewDidLoad() {
+        self.collectionView!.dataSource = self
+    }
     
 }
 extension FlowVeiw{
@@ -98,24 +111,25 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let availableWidth = self.view.frame.width
-        let widthPerItem = availableWidth / itemsPerRow - sectionInsets.left
-        
+
         let availableHeight = self.view.frame.height
-        let heightPerItem = availableHeight / itemsPerColumn - sectionInsets.top
+        let heightPerItem = availableHeight / itemsPerColumn
         
-        return CGSize(width: widthPerItem, height: heightPerItem)
+        return CGSize(width: heightPerItem, height: heightPerItem)
     }
     
     
-    //return spacing between cards
+    //return spacing between cards between rows
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
+        //TODO adjust for end spech value speech
+        //let availableHeight = self.view.frame.height
+        //let heightPerItem = availableHeight / itemsPerColumn
         return sectionInsets
     }
     
-    //return spacing between cards
+    //return spacing between cards between columns
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

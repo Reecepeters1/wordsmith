@@ -34,6 +34,7 @@
 		D9A90EFD206174E5005BE47E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */; };
 		D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A618A61FDB013700062737 /* Debate.swift */; };
+		D9D9BB50207D257300F1371E /* layoutattributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9BB4F207D257300F1371E /* layoutattributes.swift */; };
 		D9E37714205ADDFD00059825 /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
 		D9E37715205ADDFE00059825 /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
 		D9E37716205ADE0E00059825 /* CardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardVeiw.swift */; };
@@ -86,6 +87,7 @@
 		D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewLayout.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D9A90EF8206174A7005BE47E /* collectiontester.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = collectiontester.storyboard; sourceTree = "<group>"; };
 		D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D9D9BB4F207D257300F1371E /* layoutattributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutattributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				C7D74DEB1FD85CDF00261F2D /* TabVeiw.swift */,
 				D96B81181FD9B5460045381E /* CardVeiw.swift */,
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
+				D9D9BB4F207D257300F1371E /* layoutattributes.swift */,
 				D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
 				D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */,
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
+				D9D9BB50207D257300F1371E /* layoutattributes.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
