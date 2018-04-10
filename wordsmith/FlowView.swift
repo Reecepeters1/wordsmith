@@ -11,6 +11,7 @@ import UIKit
 
 class FlowVeiw: UICollectionViewController{
     
+    
     var index:Int = -1
     var sectionInsets = UIEdgeInsets(top: 40.0, left: 20.0, bottom: 40.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
@@ -21,19 +22,24 @@ class FlowVeiw: UICollectionViewController{
     var itemsPerRow:CGFloat
     var generic = CardView()
     var itemsPerColumn:CGFloat
+    var currentflow = 0
     
-    itemsPerColumn = CGFloat(syphilis.longestcolumn())
-    itemsPerRow = CGFloat(syphilis.Speeches.count) + 1
 
     
 }
 extension FlowVeiw{
     
+    
+    func returnaddspeechcard(index: int?) -> UICollectionViewCell
+    {
+        collectionView?.dequeueReusableCell(withReuseIdentifier: "addspeech", for: )
+    }
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
+
         for forloopcounter1 in 0...(syphilis.Speeches.count - 1){
             for forloopcounter2 in 0...(syphilis.Speeches[forloopcounter1].getcount() - 1) {
-                if counter == index {
+                if counter == index{
                     return syphilis.Speeches[forloopcounter1].getcard(Index: forloopcounter2)
                 }
                 else{
@@ -50,8 +56,15 @@ extension FlowVeiw{
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        let x = 10
-        return x
+        let temp = debates[index].positions[currentflow]
+        var count = 0
+        for counter1 in 0...(temp.Speeches.count - 1){
+            for counter2 in 0...(temp.Speeches[counter1].getcount() - 1)
+            {
+                
+            }
+        }
+        
     }
     
     //this function creates cell and places it at the intend position

@@ -11,7 +11,7 @@ import QuartzCore
 
 class Card {
     
-    var responses:[Card]?
+    var responses:[Int] = []
     var drawing: [CAShapeLayer]
     var speech:Int = -1
     var positionInSpeech:Int = -1
