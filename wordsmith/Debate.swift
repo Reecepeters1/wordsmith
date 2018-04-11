@@ -9,7 +9,7 @@
 import Foundation
 import os.log
 
-class Debate: NSObject {
+public class Debate: NSObject {
     
     var positions:[Flow] = []
     var title:String
@@ -52,6 +52,13 @@ class Debate: NSObject {
         super.init()
         
     }
+    func addflow(){
+        
+        let temp = Flow()
+        
+    }
+    
+    
     
     private static func randomString(length: Int) -> String {
         

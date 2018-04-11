@@ -12,7 +12,7 @@ import os.log
 //This class contains our actual debate objects.
 public class MainMenuData: NSObject {
     
-    static var debates:[Debate] = []
+    public static var debates:[Debate] = []
     
 }
 
@@ -21,6 +21,7 @@ import UIKit
 class MainMenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
     }
@@ -40,6 +41,7 @@ class MainMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return MainMenuData.debates.count
+        
     }
     
     
@@ -125,12 +127,27 @@ class DebateDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //if the view is empty, automatically transitions to create a debate view.
         if (MainMenuData.debates.isEmpty) {
             
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
             splitViewController?.showDetailViewController(local, sender: nil)
             
+        } else if (debateIndex < MainMenuData.debates.count) {
+            let debate = MainMenuData.debates[debateIndex]
+            
+            titleLabel.text = debate.title
+            roundLabel.text = "\(debate.roundNumber ?? 0)"
+            opponentLabel.text = debate.otherTeam
+            winLossLabel.text = "\(debate.winLoss ?? true)"
+            tournamentLabel.text = debate.tournament
+            judgeLabel.text = debate.judgeName
+            
+        } else {
+            debateIndex = 0
+            viewDidLoad()
         }
+        
         
         
         // Do any additional setup after loading the view.
@@ -173,10 +190,6 @@ class DebateDetailViewController: UIViewController {
 
 class CreateDebateViewController: UIViewController {
     
-    private enum defaults {
-        
-    }
-    
     
     @IBOutlet weak var titleFIeld: UITextField!
     
@@ -199,26 +212,37 @@ class CreateDebateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //transitions back to DebateDetailViewController
     @IBAction func cancel(_ sender: Any) {
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
-        
-        splitViewController?.showDetailViewController(local, sender: nil)
+        //displays a detailview at index zero of MainMenuData.debates, if empty you are not allowed to leave until a debate is created.
+        if (!MainMenuData.debates.isEmpty) {
+            
+            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+            splitViewController?.showDetailViewController(local, sender: nil)
+        }
     }
     
+    
+    //creates a new debate using the text fields. Then appends it to the end of the MainMenuData.debates array.
     @IBAction func create(_ sender: Any) {
         
         let localnum = Int(roundField.text ?? "0")
         
+        //creates new debate. The unwrapping of optionals is handeled by the Debate class
         let localDebate = Debate(title: titleFIeld.text, roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
         
         MainMenuData.debates.append(localDebate)
         
+        //This will crash in portrait alignment
+        //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
+        //then we need to refresh the data assosicated with the tableView. The tableView then rengenerates the table to match MainMenuData.debates
         (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
         
+        //creates new DebateDetailViewController which displays the last debate in the MainMenuData.debates array.
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         local.debateIndex = MainMenuData.debates.count - 1
         
-        
+        //shows the newly created view.
         splitViewController?.showDetailViewController(local, sender: nil)
         
     }
@@ -236,8 +260,12 @@ class CreateDebateViewController: UIViewController {
     
 }
 
+/*
+ THe ModifyDebateViewController handles the modification of existing debates. It takes the strings from label and uses them to create a new debate, which remplaces the old debate at index value.
+ */
 class ModifyDebateViewController: UIViewController {
     
+    //index value of target debate. This class assumes that the debateIndex refrancs an currently occupied index in MainMenuData.debates
     var debateIndex:Int = 0
     
     @IBOutlet weak var titleLabel: UITextField!
@@ -250,9 +278,15 @@ class ModifyDebateViewController: UIViewController {
 
     @IBOutlet weak var tournamentLabel: UITextField!
     
+    //When the view is loaded, the old texts for the various properties are loaded. This ensures that only values that the user wants to modify get modfied.
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let localDebate = MainMenuData.debates[debateIndex]
+        titleLabel.text = localDebate.title
+        roundLabel.text = "\(localDebate.roundNumber ?? 0)"
+        opponentLabel.text = localDebate.otherTeam
+        judgeLabel.text = localDebate.judgeName
+        tournamentLabel.text = localDebate.tournament
         // Do any additional setup after loading the view.
         
     }
@@ -262,15 +296,42 @@ class ModifyDebateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //returns to DebateView with no modifications performed
     @IBAction func cancel(_ sender: Any) {
         
+        //creates a new DebateDetailViewController and then shows that as the new detail view controller
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         local.debateIndex = debateIndex
         splitViewController?.showDetailViewController(local, sender: nil)
         
     }
     
+    //modifies the debate at debateIndex in order to match the values supplied in the textfields.
     @IBAction func modify(_ sender: Any) {
+        
+        let localInt = Int(roundLabel.text ?? "0")
+        
+        //The unwrapping of optionals is handled by the debate class
+        let localDebate = Debate(title: titleLabel.text, roundNumber: localInt, otherTeam: opponentLabel.text, winLoss: nil, judgeName: judgeLabel.text, tournament: tournamentLabel.text)
+        
+        //The date created/date to expire are kept the same across modifications
+        localDebate.dateCreated = MainMenuData.debates[debateIndex].dateCreated
+        localDebate.expirationDate = MainMenuData.debates[debateIndex].expirationDate
+
+        
+        MainMenuData.debates[debateIndex] = localDebate
+        
+        //This will crash in portrait alignment
+        //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
+        //then we need to refresh the data assosicated with the tableView. The tableView then rengenerates the table to match MainMenuData.debates
+        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        
+        //creates a new DebateDetailViewController and then shows that as the new detail view controller
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        local.debateIndex = debateIndex
+        splitViewController?.showDetailViewController(local, sender: nil)
+        
+        
     }
     
     
