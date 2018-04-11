@@ -8,6 +8,18 @@
 
 import UIKit
 
+protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, heightForCardAtIndexPath indexPath: IndexPath) -> CGFloat
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+}
+
+
 class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
@@ -38,7 +50,7 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     override func prepare(){
-        guard cache.isEmpty == true, let collectionView = collectionView else {
+        guard cache.isEmpty == true, let collectionView = collectionView FlowVeiw else {
             return
         }
         //clear the cache for repopulation

@@ -21,6 +21,7 @@
 		C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */; };
 		C7E632A420768872003A7ADB /* transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E632A320768872003A7ADB /* transfer.swift */; };
 		D90BB18A204873E1009C7464 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
+		D946A79D207E778200171CBD /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D946A79C207E778200171CBD /* Collection.swift */; };
 		D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
 		D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardVeiw.swift */; };
 		D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */; };
@@ -84,6 +85,7 @@
 		C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordsmithUITests.swift; sourceTree = "<group>"; };
 		C7E632A320768872003A7ADB /* transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transfer.swift; sourceTree = "<group>"; };
 		D90BB189204873E1009C7464 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
+		D946A79C207E778200171CBD /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		D96A1F711FDEF8F600965ACD /* FlowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		D96B81181FD9B5460045381E /* CardVeiw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVeiw.swift; sourceTree = "<group>"; };
 		D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewLayout.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -161,6 +163,7 @@
 				C7D74DEB1FD85CDF00261F2D /* TabVeiw.swift */,
 				D96B81181FD9B5460045381E /* CardVeiw.swift */,
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
+				D946A79C207E778200171CBD /* Collection.swift */,
 				D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */,
 				D9D9BB4F207D257300F1371E /* layoutattributes.swift */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
@@ -326,6 +329,7 @@
 				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
+				D946A79D207E778200171CBD /* Collection.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
 				E403211320768D4900BC548A /* (null) in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
