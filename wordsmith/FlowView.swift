@@ -34,6 +34,16 @@ class FlowVeiw: UICollectionViewController{
     var generic = CardView()
     var itemsPerColumn:CGFloat = syphilis.longestcolumn()
     
+    var itemSize: CGSize {
+        get{
+        
+        }
+        set{
+            
+        }
+        
+    }
+    
     
     override func viewDidLoad() {
         self.collectionView!.dataSource = self

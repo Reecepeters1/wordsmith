@@ -43,8 +43,8 @@
 		D9E37719205ADE1A00059825 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		D9E3771A205ADE1D00059825 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
 		D9E3771B205ADE1D00059825 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
-		E40321112076872300BC548A /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40321102076872300BC548A /* DrawView.swift */; };
-		E403211320768D4900BC548A /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E403211220768D4800BC548A /* JoystickView.swift */; };
+		E40321112076872300BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E403211320768D4900BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,8 +161,8 @@
 				C7D74DEB1FD85CDF00261F2D /* TabVeiw.swift */,
 				D96B81181FD9B5460045381E /* CardVeiw.swift */,
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
-				D9D9BB4F207D257300F1371E /* layoutattributes.swift */,
 				D98C26311FE83E8A004CD5A7 /* FlowViewLayout.swift */,
+				D9D9BB4F207D257300F1371E /* layoutattributes.swift */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
 				D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */,
 				C7D74DF51FD85CDF00261F2D /* Info.plist */,
@@ -176,8 +176,6 @@
 				C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */,
 				C763EE312062BE72004A136E /* Interpole.swift */,
 				C763EE352062BEAC004A136E /* SplineView.swift */,
-				E40321102076872300BC548A /* DrawView.swift */,
-				E403211220768D4800BC548A /* JoystickView.swift */,
 			);
 			path = wordsmith;
 			sourceTree = "<group>";
@@ -322,14 +320,14 @@
 				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				D9D9BB50207D257300F1371E /* layoutattributes.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
-				E40321112076872300BC548A /* DrawView.swift in Sources */,
+				E40321112076872300BC548A /* (null) in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
 				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
-				E403211320768D4900BC548A /* JoystickView.swift in Sources */,
+				E403211320768D4900BC548A /* (null) in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
