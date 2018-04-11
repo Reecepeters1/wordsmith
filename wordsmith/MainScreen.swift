@@ -12,7 +12,7 @@ import os.log
 //This class contains our actual debate objects.
 public class MainMenuData: NSObject {
     
-    static var debates:[Debate] = []
+    public static var debates:[Debate] = []
     
 }
 
@@ -41,6 +41,7 @@ class MainMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return MainMenuData.debates.count
+        
     }
     
     

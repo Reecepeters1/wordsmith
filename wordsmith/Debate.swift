@@ -9,7 +9,7 @@
 import Foundation
 import os.log
 
-class Debate: NSObject {
+public class Debate: NSObject {
     
     var positions:[Flow] = []
     var title:String
