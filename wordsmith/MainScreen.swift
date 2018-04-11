@@ -113,6 +113,8 @@ class DebateDetailViewController: UIViewController {
     
     var debateIndex:Int = 0
     
+    @IBOutlet weak var popUp: UIView!
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var roundLabel: UILabel!
@@ -128,6 +130,10 @@ class DebateDetailViewController: UIViewController {
         super.viewDidLoad()
         
         //if the view is empty, automatically transitions to create a debate view.
+        
+        //hides the popup that appears when one tries to delete a Debate
+        popUp.isHidden = true
+        
         if (MainMenuData.debates.isEmpty) {
             
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
@@ -159,15 +165,21 @@ class DebateDetailViewController: UIViewController {
     }
     
     
-    
+    //The launch button transitions to the set of views used to display Debate rounds.
     @IBAction func launch(_ sender: Any) {
+        
         print("starting transfer")
+        
+        //This creates a copy of the TrasferViewController, then pushes that into the root view of the splitViewController.
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView") as! TransferViewController
+        
+        //This index is used to track the debate that ought to be accessed. 
         local.debateIndex = debateIndex
         splitViewController?.viewControllers[0] = local
         print("Transfer Complete")
     }
     
+    //Shows the ModifyDebateView which enables modification of the Debate at the current index
     @IBAction func modify(_ sender: Any) {
         
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "ModifyDebate") as! ModifyDebateViewController
@@ -175,6 +187,32 @@ class DebateDetailViewController: UIViewController {
         splitViewController?.showDetailViewController(local, sender: nil)
         
     }
+    
+    //When a user hits the delete button, this shows the popUp view
+    @IBAction func deleteOpenPopUp(_ sender: Any) {
+        popUp.isHidden = false
+    }
+    
+    //Hides the popUp view if the user cancels
+    @IBAction func cancelDeletion(_ sender: Any) {
+        popUp.isHidden = true
+    }
+    
+    //This function assumes that the current Debate Index is a valid index.
+    //It deletes the debate at the current Index
+    @IBAction func deleteCurrentDebate(_ sender: Any) {
+        
+        MainMenuData.debates.remove(at: debateIndex)
+        
+        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        
+        debateIndex -= 1
+        
+        viewDidLoad()
+        
+    }
+    
+    
     
     /*
      // MARK: - Navigation
@@ -216,9 +254,10 @@ class CreateDebateViewController: UIViewController {
     @IBAction func cancel(_ sender: Any) {
         //displays a detailview at index zero of MainMenuData.debates, if empty you are not allowed to leave until a debate is created.
         if (!MainMenuData.debates.isEmpty) {
-            
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
             splitViewController?.showDetailViewController(local, sender: nil)
+        } else {
+            print("Attempting to leave CreateDebate view before any Debates have been created in MainMenuData.debates")
         }
     }
     
