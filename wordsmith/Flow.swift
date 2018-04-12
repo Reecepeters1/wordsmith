@@ -13,6 +13,8 @@ class Flow{
     
     var Speeches: [Speech] = []
     
+    init() {
+    }
     func returnflow() -> [Speech]
     {
         return Speeches

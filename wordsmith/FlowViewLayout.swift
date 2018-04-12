@@ -50,7 +50,7 @@ class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     override func prepare(){
-        guard cache.isEmpty == true, let collectionView = collectionView FlowVeiw else {
+        guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
         //clear the cache for repopulation

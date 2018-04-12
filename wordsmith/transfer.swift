@@ -14,7 +14,7 @@ class TransferViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        (childViewControllers[0] as! FlowVeiw).index = debateIndex
+        (childViewControllers[0] as! FlowVeiw).debateindex = debateIndex
         // Do any additional setup after loading the view.
     }
 
