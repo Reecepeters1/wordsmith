@@ -26,29 +26,25 @@ class FlowVeiw: UICollectionViewController{
     var generic = CardView()
     var itemsPerColumn:CGFloat
     
-
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        syphilis = MainMenuData.debates[debateindex].positions[currentflow]
-        itemsPerColumn = CGFloat(syphilis.longestcolumn())
-    }
-    
-    
     func setdebateindex(i: Int){
         self.debateindex = i
+    }
+    required init?(coder aDecoder: NSCoder) {
+        self.syphilis = MainMenuData.debates[debateindex].positions[currentflow]
+        self.itemsPerColumn = CGFloat(syphilis.longestcolumn())
+        super.init(coder: aDecoder)
     }
     
     
     override func viewDidLoad() {
-        //self.collectionView!.dataSource = self
+        
     }
 }
 
 extension FlowVeiw{
+    
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
-        
         for forloopcounter1 in 0...(syphilis.Speeches.count - 1){
             for forloopcounter2 in 0...(syphilis.Speeches[forloopcounter1].getcount() - 1) {
                 if counter == index{

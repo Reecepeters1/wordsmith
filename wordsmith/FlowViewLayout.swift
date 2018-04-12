@@ -20,21 +20,17 @@ protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
 }
 
 
-public class FlowVeiwLayout: UICollectionViewFlowLayout{
+class FlowVeiwLayout: UICollectionViewLayout{
     
     
     weak var delegate: FlowLayoutDelegate!
     
     
     // var
-    var numberOfColumns = 0
-    var cellPadding: CGFloat = 8
+    var numberOfColumns = 1
+    var cellPadding: CGFloat = 6
     var contentHeight: CGFloat = 0
-    var screenWidth = UIScreen.main.bounds.size.width
-    var screenHeight = UIScreen.main.bounds.size.height
     
-    //array that holds attribute of the cards
-    var cache = [UICollectionViewLayoutAttributes]()
     
     fileprivate var contentWidth: CGFloat {
         guard let collectionView = collectionView
@@ -44,6 +40,32 @@ public class FlowVeiwLayout: UICollectionViewFlowLayout{
         let insets = collectionView.contentInset
         return collectionView.bounds.width - (insets.left + insets.right)
     }
+    override var collectionViewContentSize: CGSize {
+        return CGSize(width: contentWidth, height: contentHeight)
+    }
+    
+    var screenWidth:CGFloat{
+        guard let collectionView = collectionView
+            else{
+                return UIScreen.main.bounds.width
+        }
+        return collectionView.bounds.width
+        
+    }
+    var screenHeight:CGFloat{
+        guard let collectionView = collectionView
+            else{
+                return UIScreen.main.bounds.height
+        }
+        
+        return collectionView.bounds.height
+    }
+    
+    
+    //array that holds attribute of the cards
+    var cache = [UICollectionViewLayoutAttributes]()
+    
+    
     
     
     
@@ -67,8 +89,7 @@ public class FlowVeiwLayout: UICollectionViewFlowLayout{
         var xOffset:CGFloat = 0
         
         
-        let CellHeight = screenHeight / (itemsCGFloat / CGFloat(numberOfColumns))
-        let CellWidth = CellHeight + CellHeight * 0.3
+        let CellHeight = delegate.
         
         
         // actualy proccess by which we auto size card layout
