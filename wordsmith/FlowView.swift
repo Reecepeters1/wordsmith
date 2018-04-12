@@ -26,13 +26,18 @@ class FlowVeiw: UICollectionViewController{
     var generic = CardView()
     var itemsPerColumn:CGFloat
     
-    init()
-    {
+
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
         syphilis = MainMenuData.debates[debateindex].positions[currentflow]
         itemsPerColumn = CGFloat(syphilis.longestcolumn())
     }
-
     
+    
+    func setdebateindex(i: Int){
+        self.debateindex = i
+    }
     
     
     override func viewDidLoad() {

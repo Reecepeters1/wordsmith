@@ -20,7 +20,7 @@ protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
 }
 
 
-class FlowVeiwLayout: UICollectionViewFlowLayout{
+public class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     weak var delegate: FlowLayoutDelegate!
