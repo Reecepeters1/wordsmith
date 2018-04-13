@@ -43,6 +43,7 @@ class FlowVeiw: UICollectionViewController{
 
 extension FlowVeiw{
     
+    
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
         for forloopcounter1 in 0...(syphilis.Speeches.count - 1){
@@ -58,9 +59,11 @@ extension FlowVeiw{
         return generic
     }
     
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
@@ -79,18 +82,22 @@ extension FlowVeiw{
         
     }
     
+   
+    
     //this function creates cell and places it at the intend position
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
-        var cell = dequeueReusableCell(index: indexPath.row)
+        
+        var cell = dequeueReusableCell(index: indexPath.item)
+        
+        //check for nil
+        if cell == nil{
+            return generic
+        }
         
         if cell.isEndOfSpeech == true{
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
             return cell
-        }
-        cell = self.dequeueReusableCell(index: indexPath.item)
-        if cell == nil{
-            return generic
         }
         return cell
     }

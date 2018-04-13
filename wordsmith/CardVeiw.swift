@@ -10,8 +10,11 @@ import UIKit
 
 class CardView: UICollectionViewCell {
     @IBOutlet var cardimage: UIImageView!
+    let storedCard:Card
+    init(draw: [CAShapeLayer]) {
+        self.storedCard = Card(draw: draw)
+    }
     
-    //let storedCard:Card? = nil
     //TODO Way to store location of a Card initialized elsewhere
     
     

@@ -89,15 +89,17 @@ class FlowVeiwLayout: UICollectionViewLayout{
         var xOffset:CGFloat = 0
         
         
-        let CellHeight = delegate.
+        
         
         
         // actualy proccess by which we auto size card layout
         for item in 0 ..< collectionView.numberOfItems(inSection: 0)
         {
             let indexPath = IndexPath(item: items, section: 0)
+            let CellHeight = delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath)
+            let CellWidth = CellHeight
             
-            //item(the interator) casting
+            //item(the interator) castingto CGFloat so the math works
             let itemdouble = Double(item)
             let itemCGFloat = CGFloat(itemdouble)
             
