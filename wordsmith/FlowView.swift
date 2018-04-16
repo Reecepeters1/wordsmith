@@ -23,7 +23,7 @@ class FlowVeiw: UICollectionViewController{
     var syphilis:Flow
     
     //var itemsPerRow:CGFloat
-    var generic = CardView()
+    var generic = UICollectionViewCell()
     var itemsPerColumn:CGFloat
     
     func setdebateindex(i: Int){
@@ -56,7 +56,8 @@ extension FlowVeiw{
                 }
             }
         }
-        return generic
+        //this should never run
+        return generic as! CardView
     }
     
     
@@ -92,7 +93,7 @@ extension FlowVeiw{
         
         //check for nil
         if cell == nil{
-            return generic
+            return generic as! CardView
         }
         
         if cell.isEndOfSpeech == true{
