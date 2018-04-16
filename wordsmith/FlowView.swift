@@ -26,29 +26,26 @@ class FlowVeiw: UICollectionViewController{
     var generic = CardView()
     var itemsPerColumn:CGFloat
     
-
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        syphilis = MainMenuData.debates[debateindex].positions[currentflow]
-        itemsPerColumn = CGFloat(syphilis.longestcolumn())
-    }
-    
-    
     func setdebateindex(i: Int){
         self.debateindex = i
+    }
+    required init?(coder aDecoder: NSCoder) {
+        self.syphilis = MainMenuData.debates[debateindex].positions[currentflow]
+        self.itemsPerColumn = CGFloat(syphilis.longestcolumn())
+        super.init(coder: aDecoder)
     }
     
     
     override func viewDidLoad() {
-        //self.collectionView!.dataSource = self
+        
     }
 }
 
 extension FlowVeiw{
+    
+    
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
-        
         for forloopcounter1 in 0...(syphilis.Speeches.count - 1){
             for forloopcounter2 in 0...(syphilis.Speeches[forloopcounter1].getcount() - 1) {
                 if counter == index{
@@ -62,9 +59,11 @@ extension FlowVeiw{
         return generic
     }
     
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
@@ -83,18 +82,22 @@ extension FlowVeiw{
         
     }
     
+   
+    
     //this function creates cell and places it at the intend position
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
-        var cell = dequeueReusableCell(index: indexPath.row)
+        
+        var cell = dequeueReusableCell(index: indexPath.item)
+        
+        //check for nil
+        if cell == nil{
+            return generic
+        }
         
         if cell.isEndOfSpeech == true{
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
             return cell
-        }
-        cell = self.dequeueReusableCell(index: indexPath.item)
-        if cell == nil{
-            return generic
         }
         return cell
     }
