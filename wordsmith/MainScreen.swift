@@ -367,10 +367,8 @@ class ModifyDebateViewController: UIViewController {
         //This will crash in portrait alignment
         //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
         //then we need to refresh the data assosicated with the tableView. The tableView then rengenerates the table to match MainMenuData.debates
-        let adasdasdasdasdasd = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "DebateTable")
-        let aaaaaaaaaaaaaaaaa = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "navBoard")
-        aaaaaaaaaaaaaaaaa.addChildViewController(adasdasdasdasdasd)
-        splitViewController?.addChildViewController(aaaaaaaaaaaaaaaaa)
+        
+        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
         
         
         //creates a new DebateDetailViewController and then shows that as the new detail view controller
