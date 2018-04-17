@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-//see the bottom to see th eextension for this
+//see the bottom to see the eextension for this
 
 
 class FlowVeiw: UICollectionViewController{
@@ -18,7 +18,7 @@ class FlowVeiw: UICollectionViewController{
     var debateindex:Int = 0
     var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
-    var copyover:[Speech] = []
+    var copyover:[Speech]
     var currentflow:Int = 0
     var syphilis:Flow
     
@@ -32,6 +32,7 @@ class FlowVeiw: UICollectionViewController{
     required init?(coder aDecoder: NSCoder) {
         self.syphilis = MainMenuData.debates[debateindex].positions[currentflow]
         self.itemsPerColumn = CGFloat(syphilis.longestcolumn())
+        copyover = []
         super.init(coder: aDecoder)
     }
     
