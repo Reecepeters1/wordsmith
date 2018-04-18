@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1x-9Y-p8s">
-                                <rect key="frame" x="-111" y="701" width="640" height="720"/>
+                                <rect key="frame" x="32" y="20" width="640" height="720"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Warning: Deletion is Permanent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAA-ah-MJS">
