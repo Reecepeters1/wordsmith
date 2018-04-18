@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        MainMenuData.debates.append(Debate(title: nil, roundNumber: nil, otherTeam: nil, winLoss: nil, judgeName: nil, tournament: nil))
+        //MainMenuData.debates.append(Debate(title: nil, roundNumber: nil, otherTeam: nil, winLoss: nil, judgeName: nil, tournament: nil))
         
         // Override point for customization after application launch.
         /*let myViewController = UIViewController()

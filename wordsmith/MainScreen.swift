@@ -156,7 +156,7 @@ class DebateDetailViewController: UIViewController {
             
             judgeLabel.text = debate.judgeName
             
-            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
+            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
             splitViewController?.showDetailViewController(local, sender: nil)
             
         } else if (debateIndex < MainMenuData.debates.count && debateIndex >= 0) {
@@ -312,6 +312,7 @@ class CreateDebateViewController: UIViewController {
         //creates new DebateDetailViewController which displays the last debate in the MainMenuData.debates array.
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         local.debateIndex = MainMenuData.debates.count - 1
+        local.debate = MainMenuData.debates[MainMenuData.debates.count - 1]
         
         //shows the newly created view.
         splitViewController?.showDetailViewController(local, sender: nil)
