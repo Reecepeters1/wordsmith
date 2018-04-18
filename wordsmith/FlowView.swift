@@ -142,8 +142,8 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
 extension FlowVeiw: FlowLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         heightForCardAtIndexPath indexPath:IndexPath) -> CGFloat {
-        let x = Double(self.view.frame.height)
-        let y = Double(itemsPerColumn)
+        let x = self.view.frame.height
+        let y = itemsPerColumn
         let z = x / y
         return CGFloat(z)
     }

@@ -51,14 +51,16 @@ class Flow{
     func longestcolumn() -> Int{
         //counter
         var biggestsize = 0
-        if Speeches.count != 0 {
+        if Speeches.count == 0{
+            return 1
+        }
         //for loop
-            for i in 0...(Speeches.count - 1){
-                if Speeches[i].getcount() > biggestsize{
-                    biggestsize = Speeches[i].getcount()
-                }
+        for i in 0...(Speeches.count - 1){
+            if Speeches[i].getcount() > biggestsize{
+                biggestsize = Speeches[i].getcount()
             }
         }
+        
         //we add + 1 so we can have space to add creating speech/cards buttons later on
         return biggestsize + 1
     }
