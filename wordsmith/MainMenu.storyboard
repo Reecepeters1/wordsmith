@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JW2-OJ-feM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="230"/>
+            <point key="canvasLocation" x="513" y="752"/>
         </scene>
         <!--Draw View-->
         <scene sceneID="OJc-xn-lj7">
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dD-0Y-x8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611" y="1528"/>
+            <point key="canvasLocation" x="1315" y="1606"/>
         </scene>
         <!--Flow Veiw-->
         <scene sceneID="hY0-W9-048">
@@ -286,7 +286,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="bhD-tR-Bzn">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="addcard" id="bhD-tR-Bzn">
                                 <rect key="frame" x="60" y="100" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -294,21 +294,27 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="WHu-Qd-pi1" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Card" id="WHu-Qd-pi1" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
                                 <rect key="frame" x="120" y="0.0" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdo-jm-Blm">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12a-II-TNM">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSH-AO-2Kr">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
                                     </subviews>
                                 </view>
                                 <size key="customSize" width="250" height="250"/>
+                                <connections>
+                                    <outlet property="cardimage" destination="12a-II-TNM" id="kQo-Vy-wKQ"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -319,7 +325,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhC-5e-36n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445.89843749999994" y="1561.328125"/>
+            <point key="canvasLocation" x="513" y="1567"/>
         </scene>
         <!--Debates-->
         <scene sceneID="VnT-Jt-0n5">
@@ -363,7 +369,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDX-fq-lR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1592" y="-759"/>
+            <point key="canvasLocation" x="513" y="-759"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pc0-bi-tan">
@@ -510,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMy-rf-iaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1410" y="1994"/>
+            <point key="canvasLocation" x="-1028" y="1606"/>
         </scene>
         <!--Modify Debate View Controller-->
         <scene sceneID="4z0-Rs-Pz3">
@@ -627,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnz-Lj-ssN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208" y="2562"/>
+            <point key="canvasLocation" x="-237" y="1606"/>
         </scene>
     </scenes>
 </document>

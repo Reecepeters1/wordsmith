@@ -75,28 +75,25 @@ class FlowVeiwLayout: UICollectionViewLayout{
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
+        
         //clear the cache for repopulation
         cache.removeAll()
         
         //items casting and variable instantiations
         let items = collectionView.numberOfItems(inSection: 0)
-        let itemdouble = Double(items)
-        let itemsCGFloat = CGFloat(itemdouble)
-        
+        let itemsdouble = Double(items)
+        let itemsCGFloat = CGFloat(itemsdouble)
         
         //set y and x offset to zero
         var yOffset:CGFloat = 0
         var xOffset:CGFloat = 0
         
-        
-        
-        
-        
         // actualy proccess by which we auto size card layout
         for item in 0 ..< collectionView.numberOfItems(inSection: 0)
         {
-            let indexPath = IndexPath(item: items, section: 0)
-            let CellHeight = delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath)
+            let indexPath = IndexPath(item: item, section: 0)
+
+            let CellHeight = CGFloat(100) //delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath) 
             let CellWidth = CellHeight
             
             //item(the interator) castingto CGFloat so the math works
