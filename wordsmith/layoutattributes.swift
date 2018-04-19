@@ -9,5 +9,5 @@
 import Foundation
 import UIKit
 class layoutattributes: UICollectionViewLayoutAttributes{
-    
+    //this will potentially have to exist at some point
 }
