@@ -198,11 +198,12 @@
                         <outlet property="winLossLabel" destination="KL3-GY-18J" id="Nf6-RP-mad"/>
                         <segue destination="lWX-mV-x2v" kind="showDetail" identifier="CreateDebate" id="Ojd-qa-Svb"/>
                         <segue destination="wNZ-Z7-u2o" kind="showDetail" identifier="ModifyDebate" id="qV2-Va-yYS"/>
+                        <segue destination="IYh-sV-W1v" kind="presentation" identifier="pushToFlow" id="on4-ym-C2x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5H-L1-HEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-237.30468749999997" y="752.34375"/>
+            <point key="canvasLocation" x="-218" y="752"/>
         </scene>
         <!--Transfer View Controller-->
         <scene sceneID="Uw9-Jh-6wP">

@@ -207,7 +207,7 @@ class DebateDetailViewController: UIViewController {
         
         //This index is used to track the debate that ought to be accessed. 
         local.debateIndex = debateIndex
-        splitViewController?.viewControllers[0] = local
+        performSegue(withIdentifier: "pushToFlow", sender: nil)
         //print("Transfer Complete")
     }
     
