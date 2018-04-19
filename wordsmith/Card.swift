@@ -17,9 +17,11 @@ class Card {
     var positionInSpeech:Int = -1
     var isAResponse = false
     var isFlagged = false
+    var image: UIImage = UIImage()
     
     init(draw: [CAShapeLayer]) {
         drawing = draw
+        image = createPDFimage()
     }
     
     func getanswers(){
@@ -32,8 +34,9 @@ class Card {
         return drawing
     }
     
-    func createPDFimage(){
+    func createPDFimage() -> UIImage {
         //will be used for creating pdf of all aggregated images
+        return #imageLiteral(resourceName: "startImage")
     }
     
     func getFlagged() -> Bool {

@@ -13,9 +13,16 @@ class DrawView: UIViewController {
     
     @IBOutlet weak var drawing: SplineView!
     
+    @IBOutlet weak var buttonPanel: ButtonView!
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
-        drawing.layer.borderWidth = 1
-        drawing.layer.borderColor = UIColor.black.cgColor
+
     }
     
     

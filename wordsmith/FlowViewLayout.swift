@@ -49,7 +49,7 @@ public class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     
-    override func prepare(){
+    override public func prepare(){
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
@@ -159,7 +159,7 @@ public class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
         // Loop through the cache and look for items in the rect
@@ -175,7 +175,7 @@ public class FlowVeiwLayout: UICollectionViewFlowLayout{
     
     
     //returns layout attribute for a specific item
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
     {
         return cache[indexPath.item]
     }

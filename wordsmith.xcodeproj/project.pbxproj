@@ -46,6 +46,10 @@
 		D9E3771B205ADE1D00059825 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
 		E40321112076872300BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E403211320768D4900BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BFDD32088FCDE00F95C3F /* Changer.swift */; };
+		E4B878FE207FC468008A0529 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B878FD207FC468008A0529 /* DrawView.swift */; };
+		E4B87900207FC471008A0529 /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B878FF207FC471008A0529 /* JoystickView.swift */; };
+		E4E723042085145300B84E76 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E723032085145300B84E76 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,10 @@
 		D9A90EF8206174A7005BE47E /* collectiontester.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = collectiontester.storyboard; sourceTree = "<group>"; };
 		D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9D9BB4F207D257300F1371E /* layoutattributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutattributes.swift; sourceTree = "<group>"; };
+		E42BFDD32088FCDE00F95C3F /* Changer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changer.swift; sourceTree = "<group>"; };
+		E4B878FD207FC468008A0529 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		E4B878FF207FC471008A0529 /* JoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
+		E4E723032085145300B84E76 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,9 @@
 		C7D74DE81FD85CDF00261F2D /* wordsmith */ = {
 			isa = PBXGroup;
 			children = (
+				E4B878FF207FC471008A0529 /* JoystickView.swift */,
+				E42BFDD32088FCDE00F95C3F /* Changer.swift */,
+				E4B878FD207FC468008A0529 /* DrawView.swift */,
 				C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */,
 				C7D74DEB1FD85CDF00261F2D /* TabVeiw.swift */,
 				D96B81181FD9B5460045381E /* CardVeiw.swift */,
@@ -179,6 +190,7 @@
 				C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */,
 				C763EE312062BE72004A136E /* Interpole.swift */,
 				C763EE352062BEAC004A136E /* SplineView.swift */,
+				E4E723032085145300B84E76 /* ButtonView.swift */,
 			);
 			path = wordsmith;
 			sourceTree = "<group>";
@@ -322,12 +334,14 @@
 			files = (
 				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				D9D9BB50207D257300F1371E /* layoutattributes.swift in Sources */,
+				E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				E40321112076872300BC548A /* (null) in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayout.swift in Sources */,
 				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
+				E4B87900207FC471008A0529 /* JoystickView.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D946A79D207E778200171CBD /* Collection.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
@@ -336,8 +350,10 @@
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
+				E4B878FE207FC468008A0529 /* DrawView.swift in Sources */,
 				C763EE362062BEAC004A136E /* SplineView.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
+				E4E723042085145300B84E76 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
