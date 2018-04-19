@@ -20,32 +20,58 @@ protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
 }
 
 
-public class FlowVeiwLayout: UICollectionViewFlowLayout{
+class FlowVeiwLayout: UICollectionViewLayout{
     
     
     weak var delegate: FlowLayoutDelegate!
     
     
     // var
-    var numberOfColumns = 0
-    var cellPadding: CGFloat = 8
-    var contentHeight: CGFloat = 0
-    var screenWidth = UIScreen.main.bounds.size.width
-    var screenHeight = UIScreen.main.bounds.size.height
+    var numberOfColumns = 1
+    var cellPadding: CGFloat = 6
     
-    //array that holds attribute of the cards
-    var cache = [UICollectionViewLayoutAttributes]()
+    fileprivate var contentHeight: CGFloat {
+        guard let collectionView = collectionView
+            else{
+                return 0
+        }
+        return 0
+    }
+    
     
     fileprivate var contentWidth: CGFloat {
         guard let collectionView = collectionView
             else {
                 return 0
         }
-        let insets = collectionView.contentInset
-        return collectionView.bounds.width - (insets.left + insets.right)
+        return collectionView.bounds.width
     }
     
     
+    
+    var screenWidth:CGFloat{
+        guard let collectionView = collectionView
+            else{
+                return UIScreen.main.bounds.width
+        }
+        return collectionView.bounds.width
+        
+    }
+    var screenHeight:CGFloat{
+        guard let collectionView = collectionView
+            else{
+                return UIScreen.main.bounds.height
+        }
+        
+        return collectionView.bounds.height
+    }
+    override var collectionViewContentSize: CGSize {
+        return CGSize(width: screenWidth, height: screenHeight)
+    }
+    
+    
+    //array that holds attribute of the cards
+    var cache = [UICollectionViewLayoutAttributes]()
     
     
     
@@ -53,30 +79,27 @@ public class FlowVeiwLayout: UICollectionViewFlowLayout{
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
+        
         //clear the cache for repopulation
         cache.removeAll()
         
         //items casting and variable instantiations
         let items = collectionView.numberOfItems(inSection: 0)
-        let itemdouble = Double(items)
-        let itemsCGFloat = CGFloat(itemdouble)
-        
+        let itemsdouble = Double(items)
         
         //set y and x offset to zero
         var yOffset:CGFloat = 0
         var xOffset:CGFloat = 0
         
-        
-        let CellHeight = screenHeight / (itemsCGFloat / CGFloat(numberOfColumns))
-        let CellWidth = CellHeight + CellHeight * 0.3
-        
-        
         // actualy proccess by which we auto size card layout
         for item in 0 ..< collectionView.numberOfItems(inSection: 0)
         {
-            let indexPath = IndexPath(item: items, section: 0)
+            let indexPath = IndexPath(item: item, section: 0)
+
+            let CellHeight = CGFloat(100) //delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath) 
+            let CellWidth = CellHeight
             
-            //item(the interator) casting
+            //item(the interator) castingto CGFloat so the math works
             let itemdouble = Double(item)
             let itemCGFloat = CGFloat(itemdouble)
             
@@ -85,12 +108,12 @@ public class FlowVeiwLayout: UICollectionViewFlowLayout{
                 xOffset = 20
             }
                 
-                //calculate the corrdinates here
+            //calculate the coordinates here
             else
             {
                 let temp = collectionView.cellForItem(at: indexPath) as! CardView
                 
-                yOffset += cellPadding
+                
                 
                 if temp.isItEndOfSpeech() == true
                 {
@@ -102,8 +125,12 @@ public class FlowVeiwLayout: UICollectionViewFlowLayout{
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 attributes.frame = insetFrame
+                
+                yOffset += cellPadding
                 cache.append(attributes)
             }
+            //collectionViewContentSize = CGSize(width: yOffset, height: xOffset)
+            
         }
     }
     

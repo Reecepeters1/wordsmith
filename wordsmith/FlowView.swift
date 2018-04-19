@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-//see the bottom to see th eextension for this
+//see the bottom to see the eextension for this
 
 
 class FlowVeiw: UICollectionViewController{
@@ -18,37 +18,35 @@ class FlowVeiw: UICollectionViewController{
     var debateindex:Int = 0
     var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
-    var copyover:[Speech] = []
+    var copyover:[Speech]
     var currentflow:Int = 0
     var syphilis:Flow
     
     //var itemsPerRow:CGFloat
-    var generic = CardView()
+    var generic = UICollectionViewCell()
     var itemsPerColumn:CGFloat
-    
-
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        syphilis = MainMenuData.debates[debateindex].positions[currentflow]
-        itemsPerColumn = CGFloat(syphilis.longestcolumn())
-    }
-    
     
     func setdebateindex(i: Int){
         self.debateindex = i
     }
+    required init?(coder aDecoder: NSCoder) {
+        self.syphilis = MainMenuData.debates[debateindex].positions[currentflow]
+        self.itemsPerColumn = CGFloat(syphilis.longestcolumn())
+        copyover = []
+        super.init(coder: aDecoder)
+    }
     
     
     override func viewDidLoad() {
-        //self.collectionView!.dataSource = self
+        
     }
 }
 
 extension FlowVeiw{
+    
+    
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
-        
         for forloopcounter1 in 0...(syphilis.Speeches.count - 1){
             for forloopcounter2 in 0...(syphilis.Speeches[forloopcounter1].getcount() - 1) {
                 if counter == index{
@@ -59,12 +57,15 @@ extension FlowVeiw{
                 }
             }
         }
-        return generic
+        //this should never run
+        return generic as! CardView
     }
+    
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
@@ -83,18 +84,22 @@ extension FlowVeiw{
         
     }
     
+   
+    
     //this function creates cell and places it at the intend position
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
-        var cell = dequeueReusableCell(index: indexPath.row)
+        
+        var cell = dequeueReusableCell(index: indexPath.item)
+        
+        //check for nil
+        if cell == nil{
+            return generic as! CardView
+        }
         
         if cell.isEndOfSpeech == true{
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
             return cell
-        }
-        cell = self.dequeueReusableCell(index: indexPath.item)
-        if cell == nil{
-            return generic
         }
         return cell
     }
@@ -137,8 +142,8 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
 extension FlowVeiw: FlowLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         heightForCardAtIndexPath indexPath:IndexPath) -> CGFloat {
-        let x = Double(self.view.frame.height)
-        let y = Double(itemsPerColumn)
+        let x = self.view.frame.height
+        let y = itemsPerColumn
         let z = x / y
         return CGFloat(z)
     }

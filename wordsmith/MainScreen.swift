@@ -59,6 +59,7 @@ class MainMenuTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        print("Showing a new DebateDetailView after selecting a row")
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         local.debateIndex = indexPath.row
         splitViewController?.showDetailViewController(local, sender: nil)
@@ -83,8 +84,12 @@ class MainMenuTableViewController: UITableViewController {
             MainMenuData.debates.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
-            //segue to create viw if the array is now empty.
+            if (MainMenuData.debates.isEmpty) {
+                let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
+                splitViewController?.showDetailViewController(local, sender: nil)
+            }
             
+            print("Showing new DebateDetailViewController do to deletion")
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
             local.debateIndex = temp
             splitViewController?.showDetailViewController(local, sender: nil)
@@ -113,6 +118,8 @@ class DebateDetailViewController: UIViewController {
     
     var debateIndex:Int = 0
     
+    var debate = Debate(title: nil, roundNumber: nil, otherTeam: nil, winLoss: nil, judgeName: nil, tournament: nil)
+    
     @IBOutlet weak var popUp: UIView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -128,28 +135,53 @@ class DebateDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("View didLoad started")
         //if the view is empty, automatically transitions to create a debate view.
         
         //hides the popup that appears when one tries to delete a Debate
         popUp.isHidden = true
         
+        
         if (MainMenuData.debates.isEmpty) {
             
-            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate")
-            splitViewController?.showDetailViewController(local, sender: nil)
-            
-        } else if (debateIndex < MainMenuData.debates.count) {
-            let debate = MainMenuData.debates[debateIndex]
-            
             titleLabel.text = debate.title
+            
             roundLabel.text = "\(debate.roundNumber ?? 0)"
+            
             opponentLabel.text = debate.otherTeam
+            
             winLossLabel.text = "\(debate.winLoss ?? true)"
+            
             tournamentLabel.text = debate.tournament
+            
             judgeLabel.text = debate.judgeName
             
+            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
+            splitViewController?.showDetailViewController(local, sender: nil)
+            
+        } else if (debateIndex < MainMenuData.debates.count && debateIndex >= 0) {
+            
+            print("trying to show debate")
+            debate = MainMenuData.debates[ debateIndex ]
+            
+            
+            titleLabel.text = debate.title
+            
+            roundLabel.text = "\(debate.roundNumber ?? 0)"
+            
+            opponentLabel.text = debate.otherTeam
+            
+            winLossLabel.text = "\(debate.winLoss ?? true)"
+
+            tournamentLabel.text = debate.tournament
+            
+            judgeLabel.text = debate.judgeName
+            
+            
+            return
+            
         } else {
+            print("recursive call to ViewDidload at Index zero")
             debateIndex = 0
             viewDidLoad()
         }
@@ -167,7 +199,7 @@ class DebateDetailViewController: UIViewController {
     
     //The launch button transitions to the set of views used to display Debate rounds.
     @IBAction func launch(_ sender: Any) {
-        
+        print("Starting Launch")
         print("starting transfer")
         
         //This creates a copy of the TrasferViewController, then pushes that into the root view of the splitViewController.
@@ -175,13 +207,13 @@ class DebateDetailViewController: UIViewController {
         
         //This index is used to track the debate that ought to be accessed. 
         local.debateIndex = debateIndex
-        splitViewController?.viewControllers[0] = local
-        print("Transfer Complete")
+        performSegue(withIdentifier: "pushToFlow", sender: nil)
+        //print("Transfer Complete")
     }
     
     //Shows the ModifyDebateView which enables modification of the Debate at the current index
     @IBAction func modify(_ sender: Any) {
-        
+        print("Starting Modify")
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "ModifyDebate") as! ModifyDebateViewController
         local.debateIndex = debateIndex
         splitViewController?.showDetailViewController(local, sender: nil)
@@ -280,6 +312,7 @@ class CreateDebateViewController: UIViewController {
         //creates new DebateDetailViewController which displays the last debate in the MainMenuData.debates array.
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         local.debateIndex = MainMenuData.debates.count - 1
+        local.debate = MainMenuData.debates[MainMenuData.debates.count - 1]
         
         //shows the newly created view.
         splitViewController?.showDetailViewController(local, sender: nil)
@@ -363,7 +396,9 @@ class ModifyDebateViewController: UIViewController {
         //This will crash in portrait alignment
         //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
         //then we need to refresh the data assosicated with the tableView. The tableView then rengenerates the table to match MainMenuData.debates
+        
         (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        
         
         //creates a new DebateDetailViewController and then shows that as the new detail view controller
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController

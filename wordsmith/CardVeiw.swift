@@ -10,8 +10,16 @@ import UIKit
 
 class CardView: UICollectionViewCell {
     @IBOutlet var cardimage: UIImageView!
+    let storedCard:Card
+    init(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
+        self.storedCard = Card(draw: draw)
+        super.init(coder: aDecoder)!
+    }
     
-    //let storedCard:Card? = nil
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //TODO Way to store location of a Card initialized elsewhere
     
     
@@ -24,7 +32,7 @@ class CardView: UICollectionViewCell {
     func endspeech() -> Void{
         isEndOfSpeech = true
     }
-    func  notendspeech() -> Void{
+    func notendspeech() -> Void{
         isEndOfSpeech = false
     }
     func displayContent(image: UIImage){

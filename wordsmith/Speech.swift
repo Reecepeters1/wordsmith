@@ -18,6 +18,7 @@ class Speech{
         herpes = array
         
     }
+    
     func getcount() -> Int{
         return herpes.count
     }
