@@ -148,20 +148,22 @@ class DebateDetailViewController: UIViewController {
         popUp.isHidden = true
         
         
-        if (MainMenuData.debates.isEmpty) {
+        if (MainMenuData.hasDefault) {
+            print("Doing Startup")
+            debate = MainMenuData.debates[debateIndex]
             
-            titleLabel.text = debate.title
+            titleLabel.text = MainMenuData.debates[debateIndex].title
             print(titleLabel.text!)
             
-            roundLabel.text = "\(debate.roundNumber ?? 0)"
+            roundLabel.text = "\(MainMenuData.debates[debateIndex].roundNumber ?? 0)"
             
-            opponentLabel.text = debate.otherTeam
+            opponentLabel.text = MainMenuData.debates[debateIndex].otherTeam
             
-            winLossLabel.text = "\(debate.winLoss ?? true)"
+            winLossLabel.text = "\(MainMenuData.debates[debateIndex].winLoss ?? true)"
             
-            tournamentLabel.text = debate.tournament
+            tournamentLabel.text = MainMenuData.debates[debateIndex].tournament
             
-            judgeLabel.text = debate.judgeName
+            judgeLabel.text = MainMenuData.debates[debateIndex].judgeName
             
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
             splitViewController?.showDetailViewController(local, sender: nil)
@@ -172,7 +174,7 @@ class DebateDetailViewController: UIViewController {
             
             debate = MainMenuData.debates[ debateIndex ]
             
-            print("The debate has a judge of \(debate.judgeName)" )
+            print("The debate has a judge of \(MainMenuData.debates[ debateIndex ].judgeName)" )
             
             titleLabel.text = MainMenuData.debates[ debateIndex ].title
             
@@ -298,7 +300,7 @@ class CreateDebateViewController: UIViewController {
     //transitions back to DebateDetailViewController
     @IBAction func cancel(_ sender: Any) {
         //displays a detailview at index zero of MainMenuData.debates, if empty you are not allowed to leave until a debate is created.
-        if (!MainMenuData.debates.isEmpty) {
+        if (!MainMenuData.hasDefault) {
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
             splitViewController?.showDetailViewController(local, sender: nil)
         } else {
@@ -317,6 +319,12 @@ class CreateDebateViewController: UIViewController {
         
         MainMenuData.debates.append(localDebate)
         
+        //checks to see if there is a default debate at index zero. If there is, it is deleted and hasDefault is set to false.
+        if (MainMenuData.hasDefault) {
+            MainMenuData.debates.remove(at: 0)
+            MainMenuData.hasDefault = false
+        }
+        
         //This will crash in portrait alignment
         //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
         //then we need to refresh the data assosicated with the tableView. The tableView then rengenerates the table to match MainMenuData.debates
@@ -333,7 +341,7 @@ class CreateDebateViewController: UIViewController {
         print(local.debateIndex)
         print(local.debate.judgeName)
         print(MainMenuData.debates.last!.judgeName)
-        
+        local.view.setNeedsDisplay()
         //shows the newly created view.
         splitViewController?.showDetailViewController(local, sender: nil)
         
