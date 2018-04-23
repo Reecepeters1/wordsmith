@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5H-L1-HEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218" y="752"/>
+            <point key="canvasLocation" x="-756" y="635"/>
         </scene>
         <!--Transfer View Controller-->
         <scene sceneID="Uw9-Jh-6wP">
@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JW2-OJ-feM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="752"/>
+            <point key="canvasLocation" x="969" y="381"/>
         </scene>
         <!--Draw View-->
         <scene sceneID="OJc-xn-lj7">
@@ -239,7 +239,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9a5-NU-yuj">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="647"/>
+                                <rect key="frame" x="0.0" y="21" width="1024" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEL-7A-tSZ" customClass="SplineView" customModule="wordsmith" customModuleProvider="target">
@@ -247,81 +247,112 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EPk-Bm-P1q">
-                                        <rect key="frame" x="83" y="395" width="200" height="200"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMq-5i-ZBq" customClass="ButtonView" customModule="wordsmith" customModuleProvider="target">
+                                        <rect key="frame" x="87" y="389" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mMq-5i-ZBq" customClass="ButtonView" customModule="wordsmith" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.74840219762433902" green="0.86725572703217035" blue="0.92300523477157359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.74840219760000004" green="0.86725572699999998" blue="0.92300523479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4E-Cs-8EL" customClass="Changer" customModule="wordsmith" customModuleProvider="target">
-                                <rect key="frame" x="941" y="685" width="63" height="63"/>
+                                <rect key="frame" x="926" y="688" width="63" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="pressed" value="NO"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="border">
-                                        <color key="value" red="1" green="0.99897065561221809" blue="0.98161377791689286" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
                                         <color key="value" red="1" green="0.0093617555427757404" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="redPress:" destination="fPP-rx-r0S" eventType="touchUpInside" id="cyi-vd-jWS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG6-LY-Jrg" customClass="Changer" customModule="wordsmith" customModuleProvider="target">
-                                <rect key="frame" x="808" y="685" width="63" height="63"/>
+                                <rect key="frame" x="800" y="688" width="63" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
                                         <color key="value" red="0.0" green="0.097714149764354996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="border">
-                                        <color key="value" red="1" green="0.99897065559999998" blue="0.98161377790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="pressed" value="NO"/>
                                 </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKK-Kr-BOL" customClass="Changer" customModule="wordsmith" customModuleProvider="target">
-                                <rect key="frame" x="675" y="685" width="63" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.026742128768151002" green="0.8345494923857868" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="border">
-                                        <color key="value" red="0.9877097247649913" green="1" blue="0.99534408894532456" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pressed" value="NO"/>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="bluePress:" destination="fPP-rx-r0S" eventType="touchUpInside" id="lse-qI-2m6"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eOV-bb-YVx">
                                 <rect key="frame" x="20" y="701" width="346" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="doSlide:" destination="fPP-rx-r0S" eventType="valueChanged" id="FVX-30-Zyl"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Au3-18-Vwe" customClass="Changer" customModule="wordsmith" customModuleProvider="target">
-                                <rect key="frame" x="537" y="685" width="63" height="63"/>
+                                <rect key="frame" x="548" y="688" width="63" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="border">
-                                        <color key="value" red="0.98351624291304862" green="1" blue="0.94544808721525952" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="blackPress:" destination="fPP-rx-r0S" eventType="touchUpInside" id="EaP-Vm-gxm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW0-Eu-ctN" customClass="Changer" customModule="wordsmith" customModuleProvider="target">
+                                <rect key="frame" x="422" y="688" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="border">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.98208134236067546" green="0.98206290854794875" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="whitePress:" destination="fPP-rx-r0S" eventType="touchUpInside" id="bxj-od-nK5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKK-Kr-BOL" customClass="Changer" customModule="wordsmith" customModuleProvider="target">
+                                <rect key="frame" x="674" y="688" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.026742128768151002" green="0.8345494923857868" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="border">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pressed" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="greenPress:" destination="fPP-rx-r0S" eventType="touchUpInside" id="IlW-GK-4Wf"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.18730171319796951" green="0.18730171319796951" blue="0.18730171319796951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.058650901407005102" blue="0.12161998056994816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="e1H-5r-ASp"/>
                     </view>
                     <connections>
+                        <outlet property="blackButton" destination="Au3-18-Vwe" id="Izq-fz-umT"/>
+                        <outlet property="blueButton" destination="zG6-LY-Jrg" id="5UK-ik-9Y8"/>
                         <outlet property="buttonPanel" destination="mMq-5i-ZBq" id="rJi-dS-juo"/>
                         <outlet property="drawing" destination="hEL-7A-tSZ" id="D7G-S1-SJb"/>
+                        <outlet property="greenButton" destination="lKK-Kr-BOL" id="Dcg-bI-oGN"/>
+                        <outlet property="redButton" destination="e4E-Cs-8EL" id="b1j-MB-wqz"/>
+                        <outlet property="slider" destination="eOV-bb-YVx" id="0qK-ed-1RK"/>
+                        <outlet property="whiteButton" destination="dW0-Eu-ctN" id="GY6-y6-tpp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dD-0Y-x8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -409,7 +440,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhC-5e-36n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512.6953125" y="1566.796875"/>
+            <point key="canvasLocation" x="763" y="2503"/>
         </scene>
         <!--Debates-->
         <scene sceneID="VnT-Jt-0n5">
@@ -453,7 +484,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDX-fq-lR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="-759"/>
+            <point key="canvasLocation" x="1429" y="-821"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pc0-bi-tan">
@@ -600,7 +631,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMy-rf-iaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1028" y="1606"/>
+            <point key="canvasLocation" x="-986" y="1948"/>
         </scene>
         <!--Modify Debate View Controller-->
         <scene sceneID="4z0-Rs-Pz3">
@@ -724,7 +755,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnz-Lj-ssN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-237" y="1606"/>
+            <point key="canvasLocation" x="-285" y="3053"/>
         </scene>
     </scenes>
 </document>

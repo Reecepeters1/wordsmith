@@ -17,11 +17,10 @@ class Changer: UIButton {
     @IBInspectable var border: UIColor = UIColor.black
     
     override func draw(_ rect: CGRect) {
-        let path = UIBezierPath(rect: rect)
-        color.setFill()
-        path.fill()
-        layer.borderWidth = 1
+        layer.backgroundColor = color.cgColor
+        layer.borderWidth = 5
         layer.borderColor = border.cgColor
+        layer.cornerRadius = 10
     }
     
     func setPressed(press: Bool) {
@@ -39,9 +38,9 @@ class Changer: UIButton {
     
     func changePress() {
         if pressed {
-            border = UIColor.gray
+            border = UIColor.lightGray
         } else {
-            border = UIColor.black
+            border = UIColor.darkGray
         }
         setNeedsDisplay()
     }
