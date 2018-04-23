@@ -61,6 +61,7 @@ class MainMenuTableViewController: UITableViewController {
         
         print("Showing a new DebateDetailView after selecting a row")
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        print(indexPath.row)
         local.debateIndex = indexPath.row
         splitViewController?.showDetailViewController(local, sender: nil)
     }
@@ -162,8 +163,10 @@ class DebateDetailViewController: UIViewController {
         } else if (debateIndex < MainMenuData.debates.count && debateIndex >= 0) {
             
             print("trying to show debate")
+            
             debate = MainMenuData.debates[ debateIndex ]
             
+            print("The debate has a judge of \(debate.judgeName)" )
             
             titleLabel.text = debate.title
             
@@ -176,6 +179,8 @@ class DebateDetailViewController: UIViewController {
             tournamentLabel.text = debate.tournament
             
             judgeLabel.text = debate.judgeName
+            
+            print("The judge label text is \(judgeLabel.text!)")
             
             
             return
@@ -311,8 +316,15 @@ class CreateDebateViewController: UIViewController {
         
         //creates new DebateDetailViewController which displays the last debate in the MainMenuData.debates array.
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        
+        
+        
         local.debateIndex = MainMenuData.debates.count - 1
-        local.debate = MainMenuData.debates[MainMenuData.debates.count - 1]
+        local.debate = MainMenuData.debates.last!
+        
+        print(local.debateIndex)
+        print(local.debate.judgeName)
+        print(MainMenuData.debates.last!.judgeName)
         
         //shows the newly created view.
         splitViewController?.showDetailViewController(local, sender: nil)
