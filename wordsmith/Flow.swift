@@ -19,7 +19,6 @@ class Flow{
     {
         return Speeches
     }
-    
     //add a speech
     func addSpeech() -> Void
     {
