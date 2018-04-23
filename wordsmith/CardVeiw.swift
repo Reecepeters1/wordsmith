@@ -32,7 +32,7 @@ class CardView: UICollectionViewCell {
     func endspeech() -> Void{
         isEndOfSpeech = true
     }
-    func  notendspeech() -> Void{
+    func notendspeech() -> Void{
         isEndOfSpeech = false
     }
     func displayContent(image: UIImage){

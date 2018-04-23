@@ -20,24 +20,53 @@ protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
 }
 
 
-class FlowVeiwLayout: UICollectionViewLayout{
+class FlowVeiwLayout: UICollectionViewFlowLayout{
     
-    var delegate: FlowLayoutDelegate!
-    fileprivate var numberOfColumns = 1
-    fileprivate var cellPadding: CGFloat = 6
-    fileprivate var contentHeight: CGFloat = 0
+    
+    weak var delegate: FlowLayoutDelegate!
+    // var
+    var numberOfColumns = 1
+    var cellPadding: CGFloat = 6
+    
+    fileprivate var contentHeight: CGFloat {
+        guard let collectionView = collectionView
+            else{
+                return 0
+        }
+        return 0
+    }
+    
     
     fileprivate var contentWidth: CGFloat {
-        guard let collectionView = collectionView else {
-            return 0
+        guard let collectionView = collectionView
+            else {
+                return 0
         }
-        let insets = collectionView.contentInset
-        return collectionView.bounds.width - (insets.left + insets.right)
+        return collectionView.bounds.width
     }
     
-    override var collectionViewContentSize: CGSize {
-        return CGSize(width: contentWidth, height: contentHeight)
+    
+    
+    var screenWidth:CGFloat{
+        guard let collectionView = collectionView
+            else{
+                return UIScreen.main.bounds.width
+        }
+        return collectionView.bounds.width
+        
     }
+    var screenHeight:CGFloat{
+        guard let collectionView = collectionView
+            else{
+                return UIScreen.main.bounds.height
+        }
+        
+        return collectionView.bounds.height
+    }
+    override var collectionViewContentSize: CGSize {
+        return CGSize(width: screenWidth, height: screenHeight)
+    }
+    
     
     //array that holds attribute of the cards
     var cache = [UICollectionViewLayoutAttributes]()
@@ -49,12 +78,12 @@ class FlowVeiwLayout: UICollectionViewLayout{
             return
         }
         
-        
         //clear the cache for repopulation
         cache.removeAll()
         
         //items casting and variable instantiations
         let items = collectionView.numberOfItems(inSection: 0)
+        let itemsdouble = Double(items)
         
         //set y and x offset to zero
         var yOffset:CGFloat = 0
@@ -65,7 +94,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
         {
             let indexPath = IndexPath(item: item, section: 0)
 
-            let CellHeight = CGFloat(100) //delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath) 
+            let CellHeight = delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath)
             let CellWidth = CellHeight
             
             //item(the interator) castingto CGFloat so the math works
@@ -76,11 +105,12 @@ class FlowVeiwLayout: UICollectionViewLayout{
                 yOffset = 50
                 xOffset = 20
             }
-                
             //calculate the coordinates here
             else
             {
                 let temp = collectionView.cellForItem(at: indexPath) as! CardView
+                
+                
                 if temp.isItEndOfSpeech() == true
                 {
                     xOffset += cellPadding * itemCGFloat + itemCGFloat * CellWidth
@@ -98,6 +128,26 @@ class FlowVeiwLayout: UICollectionViewLayout{
             //collectionViewContentSize = CGSize(width: yOffset, height: xOffset)
             
         }
+    }
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
+        
+        // Loop through the cache and look for items in the rect
+        for attributes in cache
+        {
+            if attributes.frame.intersects(rect)
+            {
+                visibleLayoutAttributes.append(attributes)
+            }
+        }
+        return visibleLayoutAttributes
+    }
+    
+    
+    //returns layout attribute for a specific item
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
+    {
+        return cache[indexPath.item]
     }
     
     
@@ -152,26 +202,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
     
     
     
-    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
-        
-        // Loop through the cache and look for items in the rect
-        for attributes in cache
-        {
-            if attributes.frame.intersects(rect)
-            {
-                visibleLayoutAttributes.append(attributes)
-            }
-        }
-        return visibleLayoutAttributes
-    }
     
-    
-    //returns layout attribute for a specific item
-    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
-    {
-        return cache[indexPath.item]
-    }
 }
 
 
