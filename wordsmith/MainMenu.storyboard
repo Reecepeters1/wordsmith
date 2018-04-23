@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fPP-rx-r0S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nu2-tv-T7I">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -235,7 +235,7 @@
             <objects>
                 <viewController id="fPP-rx-r0S" customClass="DrawView" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMS-Ua-2jh">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9a5-NU-yuj">
@@ -332,7 +332,7 @@
         <scene sceneID="hY0-W9-048">
             <objects>
                 <collectionViewController id="XCt-Ty-siL" customClass="FlowVeiw" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qfm-XF-LBH">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qfm-XF-LBH" customClass="FlowCollectionView" customModule="wordsmith" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -354,16 +354,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8o-EG-hfq">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </button>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="customSize" width="250" height="250"/>
                                 <connections>
                                     <outlet property="cardimage" destination="12a-II-TNM" id="kQo-Vy-wKQ"/>
+                                    <segue destination="fPP-rx-r0S" kind="show" id="3CP-2e-jkz"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="addspeech" id="32I-8b-anP" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
@@ -372,16 +369,12 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSU-iH-clJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="add speech"/>
-                                        </button>
-                                    </subviews>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="customSize" width="250" height="250"/>
+                                <connections>
+                                    <segue destination="fPP-rx-r0S" kind="show" id="kbc-6e-pNs"/>
+                                </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="addcard" id="bhD-tR-Bzn" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
                                 <rect key="frame" x="774" y="0.0" width="250" height="250"/>
@@ -389,16 +382,12 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R02-S7-9MQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="add card"/>
-                                        </button>
-                                    </subviews>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="customSize" width="250" height="250"/>
+                                <connections>
+                                    <segue destination="fPP-rx-r0S" kind="show" id="MKT-cC-Qr6"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -406,6 +395,10 @@
                             <outlet property="delegate" destination="XCt-Ty-siL" id="HZV-h4-ghl"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="FlowCollectionView" destination="Qfm-XF-LBH" id="1cL-n1-WHj"/>
+                        <outlet property="collectionView" destination="Qfm-XF-LBH" id="BFG-Zl-9G4"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhC-5e-36n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -727,4 +720,7 @@
             <point key="canvasLocation" x="-237" y="1606"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3CP-2e-jkz"/>
+    </inferredMetricsTieBreakers>
 </document>
