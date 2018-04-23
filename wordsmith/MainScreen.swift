@@ -13,6 +13,8 @@ import os.log
 public class MainMenuData: NSObject {
     
     public static var debates:[Debate] = []
+    public static var index: Int = 0
+    public static var hasDefault: Bool = false
     
     func amountofcardsinflow(debate:Int, flow:Int){
     //tbd l8ter to streamine some functionality for not not needed freddy 4/22
@@ -122,7 +124,7 @@ class DebateDetailViewController: UIViewController {
     
     var debateIndex:Int = 0
     
-    var debate = Debate(title: nil, roundNumber: nil, otherTeam: nil, winLoss: nil, judgeName: nil, tournament: nil)
+    var debate = Debate(title: "Default", roundNumber: 0, otherTeam: "stuff", winLoss: false, judgeName: "Default", tournament: "Default")
     
     @IBOutlet weak var popUp: UIView!
     
@@ -149,6 +151,7 @@ class DebateDetailViewController: UIViewController {
         if (MainMenuData.debates.isEmpty) {
             
             titleLabel.text = debate.title
+            print(titleLabel.text!)
             
             roundLabel.text = "\(debate.roundNumber ?? 0)"
             
@@ -171,22 +174,23 @@ class DebateDetailViewController: UIViewController {
             
             print("The debate has a judge of \(debate.judgeName)" )
             
-            titleLabel.text = debate.title
+            titleLabel.text = MainMenuData.debates[ debateIndex ].title
             
-            roundLabel.text = "\(debate.roundNumber ?? 0)"
+            roundLabel.text = "\(MainMenuData.debates[ debateIndex ].roundNumber ?? 0)"
             
-            opponentLabel.text = debate.otherTeam
+            opponentLabel.text = MainMenuData.debates[ debateIndex ].otherTeam
             
-            winLossLabel.text = "\(debate.winLoss ?? true)"
+            winLossLabel.text = "\(MainMenuData.debates[ debateIndex ].winLoss ?? true)"
 
-            tournamentLabel.text = debate.tournament
+            tournamentLabel.text = MainMenuData.debates[ debateIndex ].tournament
             
-            judgeLabel.text = debate.judgeName
+            judgeLabel.text = MainMenuData.debates[ debateIndex ].judgeName
             
             print("The judge label text is \(judgeLabel.text!)")
             
+            view.setNeedsDisplay()
             
-            return
+            //return
             
         } else {
             print("recursive call to ViewDidload at Index zero")
@@ -210,6 +214,7 @@ class DebateDetailViewController: UIViewController {
         print("Starting Launch")
         print("starting transfer")
         
+        MainMenuData.index = self.debateIndex
         //This creates a copy of the TrasferViewController, then pushes that into the root view of the splitViewController.
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView") as! TransferViewController
         
