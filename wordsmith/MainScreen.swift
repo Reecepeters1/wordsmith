@@ -124,11 +124,7 @@ class DebateDetailViewController: UIViewController {
     
     var debateIndex:Int = 0
     
-    var debate = Debate(title: "Default", roundNumber: 0, otherTeam: "stuff", winLoss: false, judgeName: "Default", tournament: "Default")
-    
     @IBOutlet weak var popUp: UIView!
-    
-    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var roundLabel: UILabel!
     
@@ -150,11 +146,7 @@ class DebateDetailViewController: UIViewController {
         
         if (MainMenuData.hasDefault) {
             print("Doing Startup")
-            debate = MainMenuData.debates[debateIndex]
-            
-            titleLabel.text = MainMenuData.debates[debateIndex].title
-            print(titleLabel.text!)
-            
+        
             roundLabel.text = "\(MainMenuData.debates[debateIndex].roundNumber ?? 0)"
             
             opponentLabel.text = MainMenuData.debates[debateIndex].otherTeam
@@ -172,11 +164,9 @@ class DebateDetailViewController: UIViewController {
             
             print("trying to show debate")
             
-            debate = MainMenuData.debates[ debateIndex ]
+            //debate = MainMenuData.debates[ debateIndex ]
             
             print("The debate has a judge of \(MainMenuData.debates[ debateIndex ].judgeName)" )
-            
-            titleLabel.text = MainMenuData.debates[ debateIndex ].title
             
             roundLabel.text = "\(MainMenuData.debates[ debateIndex ].roundNumber ?? 0)"
             
@@ -276,7 +266,6 @@ class DebateDetailViewController: UIViewController {
 class CreateDebateViewController: UIViewController {
     
     
-    @IBOutlet weak var titleFIeld: UITextField!
     
     @IBOutlet weak var roundField: UITextField!
     
@@ -315,7 +304,7 @@ class CreateDebateViewController: UIViewController {
         let localnum = Int(roundField.text ?? "0")
         
         //creates new debate. The unwrapping of optionals is handeled by the Debate class
-        let localDebate = Debate(title: titleFIeld.text, roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
+        let localDebate = Debate( roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
         
         MainMenuData.debates.append(localDebate)
         
@@ -336,10 +325,9 @@ class CreateDebateViewController: UIViewController {
         
         
         local.debateIndex = MainMenuData.debates.count - 1
-        local.debate = MainMenuData.debates.last!
         
         print(local.debateIndex)
-        print(local.debate.judgeName)
+        
         print(MainMenuData.debates.last!.judgeName)
         local.view.setNeedsDisplay()
         //shows the newly created view.
@@ -368,13 +356,10 @@ class ModifyDebateViewController: UIViewController {
     //index value of target debate. This class assumes that the debateIndex refrancs an currently occupied index in MainMenuData.debates
     var debateIndex:Int = 0
     
-    @IBOutlet weak var titleLabel: UITextField!
     
     @IBOutlet weak var roundLabel: UITextField!
     
     @IBOutlet weak var opponentLabel: UITextField!
-    
-    @IBOutlet weak var judgeLabel: UITextField!
 
     @IBOutlet weak var tournamentLabel: UITextField!
     
@@ -382,10 +367,9 @@ class ModifyDebateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let localDebate = MainMenuData.debates[debateIndex]
-        titleLabel.text = localDebate.title
         roundLabel.text = "\(localDebate.roundNumber ?? 0)"
         opponentLabel.text = localDebate.otherTeam
-        judgeLabel.text = localDebate.judgeName
+        //judgeLabel.text = localDebate.judgeName
         tournamentLabel.text = localDebate.tournament
         // Do any additional setup after loading the view.
         
@@ -412,7 +396,7 @@ class ModifyDebateViewController: UIViewController {
         let localInt = Int(roundLabel.text ?? "0")
         
         //The unwrapping of optionals is handled by the debate class
-        let localDebate = Debate(title: titleLabel.text, roundNumber: localInt, otherTeam: opponentLabel.text, winLoss: nil, judgeName: judgeLabel.text, tournament: tournamentLabel.text)
+        let localDebate = Debate(roundNumber: localInt, otherTeam: opponentLabel.text, winLoss: nil, judgeName: nil, judgeNumber: 1, tournament: tournamentLabel.text)
         
         //The date created/date to expire are kept the same across modifications
         localDebate.dateCreated = MainMenuData.debates[debateIndex].dateCreated

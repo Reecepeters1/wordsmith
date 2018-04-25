@@ -11,38 +11,50 @@ import os.log
 
 public class Debate: NSObject {
     
+    enum Ballot {
+        
+        enum WinLoss {
+            case win
+            case loss
+        }
+        
+        //The first int is judges for this team, the second int is judges against this team.
+        case decision(WinLoss, Int, Int)
+
+    }
+    
+    var ballot:Ballot = .decision(.win, 0, 0)
     var positions:[Flow] = []
-    var title:String
     var roundNumber:Int? //always check for nil when acessing this value
     var otherTeam:String
     var expirationDate:Date?
     var winLoss:Bool? //always check for nil when acessing this value
     var judgeName:String
+    var judgeNumber:Int = 1
     var dateCreated:Date?
     var tournament: String
     // this value is used init the first flow in a debate should be completely empty tho
     var firstflow = Flow()
     
     //sets all of the fields, exept for the date fields
-    init(title: String, roundNumber: Int, otherTeam: String, winLoss: Bool, judgeName: String, tournament: String) {
+    init(roundNumber: Int, otherTeam: String, winLoss: Bool, judgeName: String, judgeNumber: Int, tournament: String) {
         
-        self.title = title
         self.roundNumber = roundNumber
         self.winLoss = winLoss
         self.otherTeam = otherTeam
         self.judgeName = judgeName
         self.tournament = tournament
         self.positions.append(firstflow)
+        self.judgeNumber = judgeNumber
         //set date created to current date
         //set expiration date to 1 month later
         
         super.init()
     }
     
-    init(title: String?, roundNumber: Int?, otherTeam: String?, winLoss: Bool?, judgeName: String?, tournament: String?) {
+    init(roundNumber: Int?, otherTeam: String?, winLoss: Bool?, judgeName: String?, judgeNumber: Int, tournament: String?) {
         
-        
-        self.title = title ?? " "
+        self.judgeNumber = judgeNumber
         self.roundNumber = roundNumber
         self.winLoss = winLoss
         self.otherTeam = otherTeam ?? " "
@@ -58,23 +70,6 @@ public class Debate: NSObject {
         positions.append(temp)
     }
     
-    
-    
-    private static func randomString(length: Int) -> String {
-        
-        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let len = UInt32(letters.length)
-        
-        var randomString = ""
-        
-        for _ in 0 ..< length {
-            let rand = arc4random_uniform(len)
-            var nextChar = letters.character(at: Int(rand))
-            randomString += NSString(characters: &nextChar, length: 1) as String
-        }
-        
-        return randomString
-    }
     
     
 
