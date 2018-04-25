@@ -91,7 +91,7 @@ class ButtonView: UIView {
     }
     
     func doSwipeDown() {
-        MainMenuData.debates[]
+        print("down")
     }
     
 }
