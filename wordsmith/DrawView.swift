@@ -60,7 +60,7 @@ class DrawView: UIViewController {
     
     override func viewDidLoad() {
         drawing.setPath(fore: UIColor.white, store: UIColor.white, width: 1)
-        
+        wid = 10
         slider.minimumValue = 0
         slider.maximumValue = 2
         slider.isContinuous = false
