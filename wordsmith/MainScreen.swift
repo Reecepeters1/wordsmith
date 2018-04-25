@@ -147,18 +147,20 @@ class DebateDetailViewController: UIViewController {
         if (MainMenuData.hasDefault) {
             print("Doing Startup")
         
-            roundLabel.text = "\(MainMenuData.debates[debateIndex].roundNumber ?? 0)"
+            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
+            splitViewController?.showDetailViewController(local, sender: nil)
+            
+            roundLabel.text = "\(MainMenuData.debates[debateIndex].roundNumber.number ?? 0)"
             
             opponentLabel.text = MainMenuData.debates[debateIndex].otherTeam
             
-            winLossLabel.text = "\(MainMenuData.debates[debateIndex].winLoss ?? true)"
+            winLossLabel.text = MainMenuData.debates[debateIndex].getWinLoss()
             
             tournamentLabel.text = MainMenuData.debates[debateIndex].tournament
             
             judgeLabel.text = MainMenuData.debates[debateIndex].judgeName
             
-            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
-            splitViewController?.showDetailViewController(local, sender: nil)
+            
             
         } else if (debateIndex < MainMenuData.debates.count && debateIndex >= 0) {
             
@@ -168,11 +170,11 @@ class DebateDetailViewController: UIViewController {
             
             print("The debate has a judge of \(MainMenuData.debates[ debateIndex ].judgeName)" )
             
-            roundLabel.text = "\(MainMenuData.debates[ debateIndex ].roundNumber ?? 0)"
+            roundLabel.text = "\(MainMenuData.debates[ debateIndex ].roundNumber)"
             
             opponentLabel.text = MainMenuData.debates[ debateIndex ].otherTeam
             
-            winLossLabel.text = "\(MainMenuData.debates[ debateIndex ].winLoss ?? true)"
+            winLossLabel.text = MainMenuData.debates[debateIndex].getWinLoss()
 
             tournamentLabel.text = MainMenuData.debates[ debateIndex ].tournament
             
@@ -184,10 +186,6 @@ class DebateDetailViewController: UIViewController {
             
             //return
             
-        } else {
-            print("recursive call to ViewDidload at Index zero")
-            debateIndex = 0
-            viewDidLoad()
         }
         
         

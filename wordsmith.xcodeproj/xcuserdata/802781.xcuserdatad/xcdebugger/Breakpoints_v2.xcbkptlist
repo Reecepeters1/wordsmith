@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
             endingLineNumber = "176"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -31,8 +31,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -47,8 +47,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -63,8 +63,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -79,8 +79,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -95,8 +95,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -111,8 +111,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "435"
             endingLineNumber = "435"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ModifyDebateViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -127,8 +127,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "434"
             endingLineNumber = "434"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ModifyDebateViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -143,8 +143,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "433"
             endingLineNumber = "433"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ModifyDebateViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -159,8 +159,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "429"
             endingLineNumber = "429"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ModifyDebateViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -207,8 +207,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "423"
             endingLineNumber = "423"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,8 +223,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "420"
             endingLineNumber = "420"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -239,8 +239,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "419"
             endingLineNumber = "419"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -255,8 +255,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "416"
             endingLineNumber = "416"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -271,8 +271,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "413"
             endingLineNumber = "413"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -319,8 +319,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "255"
             endingLineNumber = "255"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "DebateDetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -335,8 +335,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "306"
             endingLineNumber = "306"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "create(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -351,8 +351,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "410"
             endingLineNumber = "410"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -367,8 +367,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
             endingLineNumber = "172"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -383,8 +383,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
             endingLineNumber = "130"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "DebateDetailViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -461,24 +461,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "222"
             endingLineNumber = "222"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wordsmith/MainScreen.swift"
-            timestampString = "546195605.692723"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "DebateDetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -493,8 +477,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
             endingLineNumber = "166"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -509,8 +493,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "343"
             endingLineNumber = "343"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CreateDebateViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -525,8 +509,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "336"
             endingLineNumber = "336"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "create(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -541,8 +525,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "335"
             endingLineNumber = "335"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "create(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
