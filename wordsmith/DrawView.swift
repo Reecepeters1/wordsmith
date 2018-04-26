@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DrawView: UIViewController {
+class DrawView: UIViewController, IndexDelegate {
     
     var wid = CGFloat()
     
@@ -59,6 +59,7 @@ class DrawView: UIViewController {
     }
     
     override func viewDidLoad() {
+        buttonPanel.delegate = self
         drawing.setPath(fore: UIColor.white, store: UIColor.white, width: 1)
         wid = 10
         slider.minimumValue = 0
@@ -91,4 +92,19 @@ class DrawView: UIViewController {
         drawing.setPath(fore: drawing.getForeColor(), store: drawing.getForeColor(), width: wid)
     }
     
+    func doSwipeUp() {
+        <#code#>
+    }
+    
+    func doSwipeLeft() {
+        <#code#>
+    }
+    
+    func doSwipeRight() {
+        <#code#>
+    }
+    
+    func doSwipeDown() {
+        
+    }
 }

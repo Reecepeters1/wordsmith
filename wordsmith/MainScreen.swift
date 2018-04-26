@@ -304,9 +304,9 @@ class CreateDebateViewController: UIViewController {
         let localnum = Int(roundField.text ?? "0")
         
         //creates new debate. The unwrapping of optionals is handeled by the Debate class
-        let localDebate = Debate( roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
+        //let localDebate = Debate( roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
         
-        MainMenuData.debates.append(localDebate)
+        //MainMenuData.debates.append(localDebate)
         
         //checks to see if there is a default debate at index zero. If there is, it is deleted and hasDefault is set to false.
         if (MainMenuData.hasDefault) {

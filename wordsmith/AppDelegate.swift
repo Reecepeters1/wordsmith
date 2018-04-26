@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (MainMenuData.debates.isEmpty) {
             
-            MainMenuData.debates.append(Debate(title: "default", roundNumber: 0, otherTeam: "Default", winLoss: false, judgeName: "Fake", tournament: "Nowhere"))
+            //MainMenuData.debates.append(Debate(title: "default", roundNumber: 0, otherTeam: "Default", winLoss: false, judgeName: "Fake", tournament: "Nowhere"))
             MainMenuData.hasDefault = true
         }
         

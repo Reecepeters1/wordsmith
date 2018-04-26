@@ -54,8 +54,7 @@ class ButtonView: UIView {
         aPath.stroke()
     }
 
-    required init?(coder aDecoder: NSCoder, withDelegate delegate: IndexDelegate) {
-        self.delegate = delegate
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
