@@ -10,7 +10,12 @@ import UIKit
 
 
 //see the bottom to see the eextension for this
-
+public class publicindex: NSObject{
+    public static var debateindex:Int = 0
+    public static var currentflow = 0
+    public static var cardindex = 0
+    
+}
 
 class FlowVeiw: UICollectionViewController{
     
@@ -26,6 +31,7 @@ class FlowVeiw: UICollectionViewController{
     //var itemsPerRow:CGFloa
     var generic = UICollectionViewCell()
     var itemsPerColumn:CGFloat
+    var layout = FlowVeiwLayout()
     
     
     
@@ -45,23 +51,27 @@ class FlowVeiw: UICollectionViewController{
         FlowCollectionView.delegate = self
         FlowCollectionView.setdebateindex(i: debateindex)
         FlowCollectionView.setcurrentflow(i: currentflow)
+        self.automaticallyAdjustsScrollViewInsets = false
+        publicindex.debateindex = debateindex
+        publicindex.currentflow = currentflow
+        publicindex.cardindex = 0
         super.viewDidLoad()
     }
 }
 
 extension FlowVeiw{
     
-    /*func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-    func collectionView(_ collectionView: UICollectionView,
-                                 numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         var count = 0
         if MainMenuData.debates[debateindex].positions[0].Speeches.count == 0{
             return 1
         }
-        for counter1 in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches.count - 1){
-            for _ in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches[counter1].getcount() - 1)
+        for counter1 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches.count{
+            for _ in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches[counter1].getcount()
             {
                 count += 1
             }
@@ -71,17 +81,32 @@ extension FlowVeiw{
         
     }
     //this function creates cell and places it at the intend position
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        
+        print("this is working")
         var cell = dequeueReusableCell(index: indexPath.item)
-        
         if cell.isEndOfSpeech == true{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
+            cell = FlowCollectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
             return cell
         }
         return cell
-    }*/
+    }
+    
+    func dequeueReusableCell(index: Int) -> CardView{
+        var counter = 0
+        for forloopcounter1 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches.count {
+            for forloopcounter2 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches[forloopcounter1].getcount() {
+                if counter == index{
+                    return MainMenuData.debates[debateindex].positions[currentflow].Speeches[forloopcounter1].getcard(Index: forloopcounter2)
+                }
+                else{
+                    counter += 1
+                }
+            }
+        }
+        //this should never run
+        return generic as! CardView
+    }
 }
 extension FlowVeiw: UICollectionViewDelegateFlowLayout{
     
@@ -122,6 +147,9 @@ extension FlowVeiw: FlowLayoutDelegate {
         let x = self.view.frame.height
         let y = itemsPerColumn
         let z = x / y
+        if z > 200{
+            return CGFloat(200)
+        }
         return CGFloat(z)
     }
 }

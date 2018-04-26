@@ -21,7 +21,7 @@ protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
 
 
 class FlowVeiwLayout: UICollectionViewLayout{
-    
+   
     var delegate: FlowLayoutDelegate!
     fileprivate var numberOfColumns = 1
     fileprivate var cellPadding: CGFloat = 6
@@ -36,7 +36,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
     }
     
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: contentWidth, height: contentHeight)
+        return CGSize(width: contentWidth, height: contentWidth * CGFloat(2))
     }
     
     //array that holds attribute of the cards
@@ -45,27 +45,28 @@ class FlowVeiwLayout: UICollectionViewLayout{
     
     
     override public func prepare(){
-        guard cache.isEmpty == true, let collectionView = collectionView else {
+        guard cache.isEmpty == true, var collectionView = collectionView else {
             return
         }
+        collectionView = collectionView as! FlowCollectionView
         
         
         //clear the cache for repopulation
         cache.removeAll()
         
         //items casting and variable instantiations
-        let items = collectionView.numberOfItems(inSection: 0)
+        
         
         //set y and x offset to zero
         var yOffset:CGFloat = 0
         var xOffset:CGFloat = 0
         
         // actualy proccess by which we auto size card layout
-        for item in 0 ..< collectionView.numberOfItems(inSection: 0)
+        for item in 0 ... 5//collectionView.numberOfItems(inSection: 0)
         {
             let indexPath = IndexPath(item: item, section: 0)
 
-            let CellHeight = CGFloat(100) //delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath) 
+            let CellHeight = delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath)
             let CellWidth = CellHeight
             
             //item(the interator) castingto CGFloat so the math works
@@ -76,12 +77,12 @@ class FlowVeiwLayout: UICollectionViewLayout{
                 yOffset = 50
                 xOffset = 20
             }
-                
+            
             //calculate the coordinates here
             else
             {
                 let temp = collectionView.cellForItem(at: indexPath) as! CardView
-                if temp.isItEndOfSpeech() == true
+                ;if temp.isItEndOfSpeech() == true
                 {
                     xOffset += cellPadding * itemCGFloat + itemCGFloat * CellWidth
                 }
@@ -161,8 +162,11 @@ class FlowVeiwLayout: UICollectionViewLayout{
             if attributes.frame.intersects(rect)
             {
                 visibleLayoutAttributes.append(attributes)
+                print("this works")
             }
+            visibleLayoutAttributes.append(attributes)
         }
+        
         return visibleLayoutAttributes
     }
     

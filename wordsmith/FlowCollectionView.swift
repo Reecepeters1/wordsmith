@@ -8,11 +8,10 @@
 
 import UIKit
 
-class FlowCollectionView: UICollectionView, UICollectionViewDataSource{
+class FlowCollectionView: UICollectionView{
     var generic = UICollectionViewCell()
     var debateindex = 0
     var currentflow = 0
-    
     
     //just some generic setters
     func setdebateindex(i:Int) -> Void{
@@ -21,7 +20,7 @@ class FlowCollectionView: UICollectionView, UICollectionViewDataSource{
     func setcurrentflow(i:Int) -> Void{
         currentflow = i
     }
-    
+    /*
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
     return 1
     }
@@ -31,8 +30,8 @@ class FlowCollectionView: UICollectionView, UICollectionViewDataSource{
         if MainMenuData.debates[debateindex].positions[0].Speeches.count == 0{
             return 1
         }
-        for counter1 in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches.count - 1){
-            for _ in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches[counter1].getcount() - 1)
+        for counter1 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches.count{
+            for _ in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches[counter1].getcount()
             {
                 count += 1
             }
@@ -41,9 +40,11 @@ class FlowCollectionView: UICollectionView, UICollectionViewDataSource{
         return count
         
     }
+     */
     //this function creates cell and places it at the intend position
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
+        print("this is working")
         var cell = dequeueReusableCell(index: indexPath.item)
         if cell.isEndOfSpeech == true{
             cell = super.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
@@ -54,8 +55,8 @@ class FlowCollectionView: UICollectionView, UICollectionViewDataSource{
     
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
-        for forloopcounter1 in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches.count - 1){
-            for forloopcounter2 in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches[forloopcounter1].getcount() - 1) {
+        for forloopcounter1 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches.count {
+            for forloopcounter2 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches[forloopcounter1].getcount() {
                 if counter == index{
                     return MainMenuData.debates[debateindex].positions[currentflow].Speeches[forloopcounter1].getcard(Index: forloopcounter2)
                 }
