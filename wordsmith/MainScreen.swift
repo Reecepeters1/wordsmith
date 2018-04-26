@@ -19,6 +19,8 @@ public class MainMenuData: NSObject {
     func amountofcardsinflow(debate:Int, flow:Int){
     //tbd l8ter to streamine some functionality for not not needed freddy 4/22
     }
+    
+    
 }
 
 import UIKit

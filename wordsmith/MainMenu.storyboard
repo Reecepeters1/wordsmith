@@ -420,13 +420,13 @@
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="XCt-Ty-siL" id="EEs-1V-b0V"/>
-                            <outlet property="delegate" destination="XCt-Ty-siL" id="HZV-h4-ghl"/>
+                            <outlet property="dataSource" destination="XCt-Ty-siL" id="jGb-7c-I1j"/>
+                            <outlet property="delegate" destination="Lmq-Cz-CZS" id="eD6-7K-e59"/>
                         </connections>
                     </collectionView>
                     <connections>
-                        <outlet property="FlowCollectionView" destination="Qfm-XF-LBH" id="1cL-n1-WHj"/>
-                        <outlet property="collectionView" destination="Qfm-XF-LBH" id="BFG-Zl-9G4"/>
+                        <outlet property="FlowCollectionView" destination="Lmq-Cz-CZS" id="Zyc-8i-YHz"/>
+                        <outlet property="collectionView" destination="Lmq-Cz-CZS" id="ZD8-Ji-MTa"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhC-5e-36n" userLabel="First Responder" sceneMemberID="firstResponder"/>
