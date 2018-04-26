@@ -13,6 +13,8 @@ import os.log
 public class MainMenuData: NSObject {
     
     public static var debates:[Debate] = []
+    public static var index: Int = 0
+    public static var hasDefault: Bool = false
     
     func amountofcardsinflow(debate:Int, flow:Int){
     //tbd l8ter to streamine some functionality for not not needed freddy 4/22
@@ -66,6 +68,7 @@ class MainMenuTableViewController: UITableViewController {
         
         print("Showing a new DebateDetailView after selecting a row")
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        print(indexPath.row)
         local.debateIndex = indexPath.row
         splitViewController?.showDetailViewController(local, sender: nil)
     }
@@ -123,11 +126,7 @@ class DebateDetailViewController: UIViewController {
     
     var debateIndex:Int = 0
     
-    var debate = Debate(title: nil, roundNumber: nil, otherTeam: nil, winLoss: nil, judgeName: nil, tournament: nil)
-    
     @IBOutlet weak var popUp: UIView!
-    
-    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var roundLabel: UILabel!
     
@@ -147,19 +146,18 @@ class DebateDetailViewController: UIViewController {
         popUp.isHidden = true
         
         
-        if (MainMenuData.debates.isEmpty) {
+        if (MainMenuData.hasDefault) {
+            print("Doing Startup")
+        
+            roundLabel.text = "\(MainMenuData.debates[debateIndex].roundNumber ?? 0)"
             
-            titleLabel.text = debate.title
+            opponentLabel.text = MainMenuData.debates[debateIndex].otherTeam
             
-            roundLabel.text = "\(debate.roundNumber ?? 0)"
+            winLossLabel.text = "\(MainMenuData.debates[debateIndex].winLoss ?? true)"
             
-            opponentLabel.text = debate.otherTeam
+            tournamentLabel.text = MainMenuData.debates[debateIndex].tournament
             
-            winLossLabel.text = "\(debate.winLoss ?? true)"
-            
-            tournamentLabel.text = debate.tournament
-            
-            judgeLabel.text = debate.judgeName
+            judgeLabel.text = MainMenuData.debates[debateIndex].judgeName
             
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
             splitViewController?.showDetailViewController(local, sender: nil)
@@ -167,23 +165,26 @@ class DebateDetailViewController: UIViewController {
         } else if (debateIndex < MainMenuData.debates.count && debateIndex >= 0) {
             
             print("trying to show debate")
-            debate = MainMenuData.debates[ debateIndex ]
             
+            //debate = MainMenuData.debates[ debateIndex ]
             
-            titleLabel.text = debate.title
+            print("The debate has a judge of \(MainMenuData.debates[ debateIndex ].judgeName)" )
             
-            roundLabel.text = "\(debate.roundNumber ?? 0)"
+            roundLabel.text = "\(MainMenuData.debates[ debateIndex ].roundNumber ?? 0)"
             
-            opponentLabel.text = debate.otherTeam
+            opponentLabel.text = MainMenuData.debates[ debateIndex ].otherTeam
             
-            winLossLabel.text = "\(debate.winLoss ?? true)"
+            winLossLabel.text = "\(MainMenuData.debates[ debateIndex ].winLoss ?? true)"
 
-            tournamentLabel.text = debate.tournament
+            tournamentLabel.text = MainMenuData.debates[ debateIndex ].tournament
             
-            judgeLabel.text = debate.judgeName
+            judgeLabel.text = MainMenuData.debates[ debateIndex ].judgeName
             
+            print("The judge label text is \(judgeLabel.text!)")
             
-            return
+            view.setNeedsDisplay()
+            
+            //return
             
         } else {
             print("recursive call to ViewDidload at Index zero")
@@ -207,6 +208,7 @@ class DebateDetailViewController: UIViewController {
         print("Starting Launch")
         print("starting transfer")
         
+        MainMenuData.index = self.debateIndex
         //This creates a copy of the TrasferViewController, then pushes that into the root view of the splitViewController.
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView") as! TransferViewController
         
@@ -266,7 +268,6 @@ class DebateDetailViewController: UIViewController {
 class CreateDebateViewController: UIViewController {
     
     
-    @IBOutlet weak var titleFIeld: UITextField!
     
     @IBOutlet weak var roundField: UITextField!
     
@@ -290,7 +291,7 @@ class CreateDebateViewController: UIViewController {
     //transitions back to DebateDetailViewController
     @IBAction func cancel(_ sender: Any) {
         //displays a detailview at index zero of MainMenuData.debates, if empty you are not allowed to leave until a debate is created.
-        if (!MainMenuData.debates.isEmpty) {
+        if (!MainMenuData.hasDefault) {
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
             splitViewController?.showDetailViewController(local, sender: nil)
         } else {
@@ -305,9 +306,15 @@ class CreateDebateViewController: UIViewController {
         let localnum = Int(roundField.text ?? "0")
         
         //creates new debate. The unwrapping of optionals is handeled by the Debate class
-        let localDebate = Debate(title: titleFIeld.text, roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
+        let localDebate = Debate( roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
         
         MainMenuData.debates.append(localDebate)
+        
+        //checks to see if there is a default debate at index zero. If there is, it is deleted and hasDefault is set to false.
+        if (MainMenuData.hasDefault) {
+            MainMenuData.debates.remove(at: 0)
+            MainMenuData.hasDefault = false
+        }
         
         //This will crash in portrait alignment
         //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
@@ -316,9 +323,15 @@ class CreateDebateViewController: UIViewController {
         
         //creates new DebateDetailViewController which displays the last debate in the MainMenuData.debates array.
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
-        local.debateIndex = MainMenuData.debates.count - 1
-        local.debate = MainMenuData.debates[MainMenuData.debates.count - 1]
         
+        
+        
+        local.debateIndex = MainMenuData.debates.count - 1
+        
+        print(local.debateIndex)
+        
+        print(MainMenuData.debates.last!.judgeName)
+        local.view.setNeedsDisplay()
         //shows the newly created view.
         splitViewController?.showDetailViewController(local, sender: nil)
         
@@ -345,13 +358,10 @@ class ModifyDebateViewController: UIViewController {
     //index value of target debate. This class assumes that the debateIndex refrancs an currently occupied index in MainMenuData.debates
     var debateIndex:Int = 0
     
-    @IBOutlet weak var titleLabel: UITextField!
     
     @IBOutlet weak var roundLabel: UITextField!
     
     @IBOutlet weak var opponentLabel: UITextField!
-    
-    @IBOutlet weak var judgeLabel: UITextField!
 
     @IBOutlet weak var tournamentLabel: UITextField!
     
@@ -359,10 +369,9 @@ class ModifyDebateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let localDebate = MainMenuData.debates[debateIndex]
-        titleLabel.text = localDebate.title
         roundLabel.text = "\(localDebate.roundNumber ?? 0)"
         opponentLabel.text = localDebate.otherTeam
-        judgeLabel.text = localDebate.judgeName
+        //judgeLabel.text = localDebate.judgeName
         tournamentLabel.text = localDebate.tournament
         // Do any additional setup after loading the view.
         
@@ -389,7 +398,7 @@ class ModifyDebateViewController: UIViewController {
         let localInt = Int(roundLabel.text ?? "0")
         
         //The unwrapping of optionals is handled by the debate class
-        let localDebate = Debate(title: titleLabel.text, roundNumber: localInt, otherTeam: opponentLabel.text, winLoss: nil, judgeName: judgeLabel.text, tournament: tournamentLabel.text)
+        let localDebate = Debate(roundNumber: localInt, otherTeam: opponentLabel.text, winLoss: nil, judgeName: nil, judgeNumber: 1, tournament: tournamentLabel.text)
         
         //The date created/date to expire are kept the same across modifications
         localDebate.dateCreated = MainMenuData.debates[debateIndex].dateCreated

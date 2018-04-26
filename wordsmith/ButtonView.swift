@@ -25,6 +25,8 @@ class ButtonView: UIView {
         
         let aPath = UIBezierPath()
         
+        aPath.lineWidth = 3
+        
         aPath.move(to: CGPoint(x: bounds.minX, y: bounds.minY))
         
         aPath.addLine(to: CGPoint(x: bounds.maxX, y: bounds.maxY))
