@@ -16,6 +16,8 @@ public class Debate: NSObject {
         enum WinLoss {
             case win
             case loss
+            case tie
+            case didNotDisclose
         }
         
         var winLoss: Ballot.WinLoss?
@@ -44,24 +46,33 @@ public class Debate: NSObject {
         }
     }
     
+    struct Judge {
+        var name: String
+        var vote: Debate.Ballot.WinLoss?
+    }
+    
     var ballot:Ballot
     var round:Round
     var positions:[Flow] = []
     var otherTeam:String
     var expirationDate:Date?
-    var judgeName:String
+    var judgeNames:[Judge] = []
     var dateCreated:Date?
     var tournament: String
     // this value is used init the first flow in a debate should be completely empty tho
     var firstflow = Flow()
     
     //sets all of the fields, exept for the date fields
-    init(round: Debate.Round, otherTeam: String, ballot: Debate.Ballot, judgeName: String, tournament: String) {
+    init(round: Debate.Round, otherTeam: String, ballot: Debate.Ballot, judgeName: [String], tournament: String) {
         
         self.ballot = ballot
         self.round = round
         self.otherTeam = otherTeam
-        self.judgeName = judgeName
+        
+        for j in judgeName {
+            self.judgeNames.append(Debate.Judge(name: j, vote: nil))
+        }
+        
         self.tournament = tournament
         self.positions.append(firstflow)
         //set date created to current date
@@ -70,12 +81,22 @@ public class Debate: NSObject {
         super.init()
     }
     
-    init(ballot: Ballot?, round: Round?, otherTeam: String?, judgeName: String?, tournament: String?) {
+    init(ballot: Ballot?, round: Round?, otherTeam: String?, judgeName: [String?], tournament: String?) {
         
         self.ballot = ballot ?? Ballot()
         self.round = round ?? Round()
         self.otherTeam = otherTeam ?? "Default"
-        self.judgeName = judgeName ?? "Default"
+        let temp:[String]
+        
+        if (!judgeName.isEmpty) {
+            temp = judgeName.map{ $0 ?? ""}
+            for j in temp {
+                if j != "" {
+                    self.judgeNames.append(Debate.Judge(name: j, vote: nil))
+                }
+            }
+        }
+        
         self.tournament = tournament ?? "Default"
         
         super.init()

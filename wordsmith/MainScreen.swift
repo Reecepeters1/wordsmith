@@ -160,7 +160,7 @@ class DebateDetailViewController: UIViewController {
             winLossLabel.text = MainMenuData.debates[debateIndex].getWinLoss()
             opponentLabel.text = MainMenuData.debates[debateIndex].otherTeam
             tournamentLabel.text = MainMenuData.debates[debateIndex].tournament
-            judgeLabel.text = MainMenuData.debates[debateIndex].judgeName
+            //TODO - Handle Displaying Judge Names
             judgeNumber.text = "\(MainMenuData.debates[debateIndex].ballot.judgesTotal)"
             //return
             
@@ -171,7 +171,9 @@ class DebateDetailViewController: UIViewController {
             winLossLabel.text = MainMenuData.debates[debateIndex].getWinLoss()
             opponentLabel.text = MainMenuData.debates[debateIndex].otherTeam
             tournamentLabel.text = MainMenuData.debates[debateIndex].tournament
-            judgeLabel.text = MainMenuData.debates[debateIndex].judgeName
+            
+            //TODO - Handle Displaying Judge Names
+            
             judgeNumber.text = "\(MainMenuData.debates[debateIndex].ballot.judgesTotal)"
         }
         
@@ -249,13 +251,15 @@ class DebateDetailViewController: UIViewController {
 
 class CreateDebateViewController: UIViewController {
     
+    @IBOutlet weak var judgeTable: UITableView!
     
+    @IBOutlet weak var judgeCell: UITableViewCell!
+    
+    @IBOutlet weak var judgeNumber: UIPickerView!
     
     @IBOutlet weak var roundField: UITextField!
     
     @IBOutlet weak var opponentField: UITextField!
-    
-    @IBOutlet weak var judgeField: UITextField!
     
     @IBOutlet weak var tournamentField: UITextField!
     
@@ -326,6 +330,10 @@ class CreateDebateViewController: UIViewController {
     
 }
 
+class JudgeCell {
+    @IBOutlet weak var judgeText: UITextField!
+}
+
 /*
  THe ModifyDebateViewController handles the modification of existing debates. It takes the strings from label and uses them to create a new debate, which remplaces the old debate at index value.
  */
@@ -374,7 +382,7 @@ class ModifyDebateViewController: UIViewController {
         let localInt = Int(roundLabel.text ?? "0")
         
         //The unwrapping of optionals is handled by the debate class
-        let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: nil, tournament: nil)
+        //let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: nil)
         
         //The date created/date to expire are kept the same across modifications
         localDebate.dateCreated = MainMenuData.debates[debateIndex].dateCreated
