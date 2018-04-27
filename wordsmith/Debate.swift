@@ -11,58 +11,106 @@ import os.log
 
 public class Debate: NSObject {
     
-    enum Ballot {
+    struct Ballot {
         
         enum WinLoss {
             case win
             case loss
         }
         
-        //The first int is judges for this team, the second int is judges against this team.
-        case decision(WinLoss, Int, Int)
+        var winLoss: Ballot.WinLoss?
+        var judgesFor:Int
+        var judgesAgainst:Int
+        var judgesTotal:Int
+        
+        init() {
+            winLoss = nil
+            judgesFor = 0
+            judgesAgainst = 0
+            judgesTotal = 0
+        }
 
     }
     
-    var ballot:Ballot = .decision(.win, 0, 0)
+    struct Round {
+        var isElim: Bool
+        var elim: String?
+        var number: Int?
+        
+        init() {
+            isElim = false
+            elim = nil
+            number = nil
+        }
+    }
+    
+    var ballot:Ballot
+    var round:Round
     var positions:[Flow] = []
-    var roundNumber:Int? //always check for nil when acessing this value
     var otherTeam:String
     var expirationDate:Date?
-    var winLoss:Bool? //always check for nil when acessing this value
     var judgeName:String
-    var judgeNumber:Int = 1
     var dateCreated:Date?
     var tournament: String
     // this value is used init the first flow in a debate should be completely empty tho
     var firstflow = Flow()
     
     //sets all of the fields, exept for the date fields
-    init(roundNumber: Int, otherTeam: String, winLoss: Bool, judgeName: String, judgeNumber: Int, tournament: String) {
+    init(round: Debate.Round, otherTeam: String, ballot: Debate.Ballot, judgeName: String, tournament: String) {
         
-        self.roundNumber = roundNumber
-        self.winLoss = winLoss
+        self.ballot = ballot
+        self.round = round
         self.otherTeam = otherTeam
         self.judgeName = judgeName
         self.tournament = tournament
         self.positions.append(firstflow)
-        self.judgeNumber = judgeNumber
         //set date created to current date
         //set expiration date to 1 month later
         
         super.init()
     }
     
-    init(roundNumber: Int?, otherTeam: String?, winLoss: Bool?, judgeName: String?, judgeNumber: Int, tournament: String?) {
+    init(ballot: Ballot?, round: Round?, otherTeam: String?, judgeName: String?, tournament: String?) {
         
-        self.judgeNumber = judgeNumber
-        self.roundNumber = roundNumber
-        self.winLoss = winLoss
-        self.otherTeam = otherTeam ?? " "
-        self.judgeName = judgeName ?? " "
-        self.tournament = tournament ?? " "
-        self.positions.append(firstflow)
+        self.ballot = ballot ?? Ballot()
+        self.round = round ?? Round()
+        self.otherTeam = otherTeam ?? "Default"
+        self.judgeName = judgeName ?? "Default"
+        self.tournament = tournament ?? "Default"
+        
         super.init()
         
+    }
+    
+    func getWinLoss() -> String {
+        
+        let temp = ballot
+        var winString:String
+        
+        if (temp.winLoss == nil) {
+            return "No Winner Posted"
+        } else if (temp.winLoss == .loss){
+            winString = "Loss"
+        } else {
+            winString = "Win"
+        }
+        
+        if (temp.judgesTotal == 1) {
+            return winString
+        } else {
+            winString = winString + "\(temp.judgesFor) Judges for, " + "\(temp.judgesAgainst) Judges against"
+        }
+        
+        return winString
+       
+    }
+    
+    func getRound() -> String {
+        if (round.isElim) {
+            return round.elim ?? "Unknown Round Type"
+        } else {
+            return "\(round.number ?? 0)"
+        }
     }
     
     func addflow(){

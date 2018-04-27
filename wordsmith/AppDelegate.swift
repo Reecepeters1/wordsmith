@@ -13,11 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if (MainMenuData.debates.isEmpty) {
-            
-            MainMenuData.debates.append(Debate(title: "default", roundNumber: 0, otherTeam: "Default", winLoss: false, judgeName: "Fake", tournament: "Nowhere"))
-            MainMenuData.hasDefault = true
-        }
+        
         
         // Override point for customization after application launch.
         /*let myViewController = UIViewController()

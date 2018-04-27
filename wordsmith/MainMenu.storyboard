@@ -60,6 +60,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swl-4v-jB9">
+                                <rect key="frame" x="566.5" y="179" width="116" height="76"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="LAUNCH"/>
+                                <connections>
+                                    <action selector="launch:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="svi-fZ-8hw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGe-ks-Any">
+                                <rect key="frame" x="566.5" y="279" width="116" height="76"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="DELETE"/>
+                                <connections>
+                                    <action selector="deleteOpenPopUp:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="Npc-Jr-Fyg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utd-Pu-HKg">
+                                <rect key="frame" x="566.5" y="85" width="116" height="76"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="MODIFY"/>
+                                <connections>
+                                    <action selector="modify:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="mJS-wE-0Fn"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPU-Ih-kUZ">
                                 <rect key="frame" x="262" y="525" width="180" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -84,6 +108,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shm-4T-mVg">
+                                <rect key="frame" x="226.5" y="606" width="26" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAb-7x-vfL">
                                 <rect key="frame" x="134.5" y="522" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -91,7 +122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1x-9Y-p8s">
-                                <rect key="frame" x="26" y="693" width="640" height="720"/>
+                                <rect key="frame" x="43" y="28" width="640" height="720"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Warning: Deletion is Permanent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAA-ah-MJS">
@@ -120,37 +151,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taz-KV-EPu">
-                                <rect key="frame" x="227" y="606" width="26" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swl-4v-jB9">
-                                <rect key="frame" x="567" y="179" width="116" height="76"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="LAUNCH"/>
-                                <connections>
-                                    <action selector="launch:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="svi-fZ-8hw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGe-ks-Any">
-                                <rect key="frame" x="567" y="279" width="116" height="76"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="DELETE"/>
-                                <connections>
-                                    <action selector="deleteOpenPopUp:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="Npc-Jr-Fyg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utd-Pu-HKg">
-                                <rect key="frame" x="567" y="85" width="116" height="76"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="MODIFY"/>
-                                <connections>
-                                    <action selector="modify:" destination="9lZ-Vt-j78" eventType="touchUpInside" id="mJS-wE-0Fn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -189,6 +189,7 @@
                     </view>
                     <connections>
                         <outlet property="judgeLabel" destination="PHE-Di-2Ph" id="BJW-Gz-oFc"/>
+                        <outlet property="judgeNumber" destination="Shm-4T-mVg" id="IYj-o7-jbl"/>
                         <outlet property="opponentLabel" destination="TPU-Ih-kUZ" id="eNN-6Q-ob7"/>
                         <outlet property="popUp" destination="r1x-9Y-p8s" id="tgX-sn-19g"/>
                         <outlet property="roundLabel" destination="Zdi-Fk-PNR" id="quU-cm-7xy"/>
