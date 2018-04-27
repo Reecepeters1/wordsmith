@@ -42,7 +42,7 @@ class FlowCollectionView: UICollectionView{
     }
      */
     //this function creates cell and places it at the intend position
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
         print("this is working")
         var cell = dequeueReusableCell(index: indexPath.item)

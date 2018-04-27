@@ -48,7 +48,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
         guard cache.isEmpty == true, var collectionView = collectionView else {
             return
         }
-        collectionView = collectionView as! FlowCollectionView
+        var collectionViewFlow = (collectionView as! FlowCollectionView)
         
         
         //clear the cache for repopulation
@@ -81,8 +81,9 @@ class FlowVeiwLayout: UICollectionViewLayout{
             //calculate the coordinates here
             else
             {
-                let temp = collectionView.cellForItem(at: indexPath) as! CardView
-                ;if temp.isItEndOfSpeech() == true
+
+                let temp = collectionViewFlow.collectionView(collectionView, cellForItemAt: indexPath)
+                if temp.isItEndOfSpeech() == true
                 {
                     xOffset += cellPadding * itemCGFloat + itemCGFloat * CellWidth
                 }
