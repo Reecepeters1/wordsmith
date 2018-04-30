@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fPP-rx-r0S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nu2-tv-T7I">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -422,12 +422,11 @@
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="XCt-Ty-siL" id="jGb-7c-I1j"/>
-                            <outlet property="delegate" destination="Lmq-Cz-CZS" id="eD6-7K-e59"/>
+                            <outlet property="delegate" destination="XCt-Ty-siL" id="bVJ-P5-XzW"/>
                         </connections>
                     </collectionView>
                     <connections>
-                        <outlet property="FlowCollectionView" destination="Lmq-Cz-CZS" id="Zyc-8i-YHz"/>
-                        <outlet property="collectionView" destination="Lmq-Cz-CZS" id="ZD8-Ji-MTa"/>
+                        <outlet property="FlowCollectionView" destination="Qfm-XF-LBH" id="iAu-xZ-rln"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhC-5e-36n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -734,6 +733,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3CP-2e-jkz"/>
+        <segue reference="MKT-cC-Qr6"/>
     </inferredMetricsTieBreakers>
 </document>

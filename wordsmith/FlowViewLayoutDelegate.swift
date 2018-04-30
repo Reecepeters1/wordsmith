@@ -21,7 +21,7 @@ protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
 
 
 class FlowVeiwLayout: UICollectionViewLayout{
-   
+    
     var delegate: FlowLayoutDelegate!
     fileprivate var numberOfColumns = 1
     fileprivate var cellPadding: CGFloat = 6
@@ -36,7 +36,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
     }
     
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: contentWidth, height: contentWidth * CGFloat(2))
+        return CGSize(width: contentWidth, height: contentWidth)
     }
     
     //array that holds attribute of the cards
@@ -44,63 +44,61 @@ class FlowVeiwLayout: UICollectionViewLayout{
     
     
     
+    
     override public func prepare(){
-        guard cache.isEmpty == true, var collectionView = collectionView else {
+        guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
-        var collectionViewFlow = (collectionView as! FlowCollectionView)
-        
         
         //clear the cache for repopulation
         cache.removeAll()
         
         //items casting and variable instantiations
-        
+        //let items = collectionView.numberOfItems(inSection: 0)
         
         //set y and x offset to zero
-        var yOffset:CGFloat = 0
-        var xOffset:CGFloat = 0
-        
+        var yOffset:CGFloat = 50
+        var xOffset:CGFloat = 20
+        //to be used later
+        //let long = MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].longestcolumn()
         // actualy proccess by which we auto size card layout
-        for item in 0 ... 5//collectionView.numberOfItems(inSection: 0)
+        for var item in 0..<collectionView.numberOfItems(inSection: 0)
         {
             let indexPath = IndexPath(item: item, section: 0)
-
+            publicindex.setindex(index: indexPath)
             let CellHeight = delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath)
             let CellWidth = CellHeight
             
-            //item(the interator) castingto CGFloat so the math works
-            let itemdouble = Double(item)
-            let itemCGFloat = CGFloat(itemdouble)
+            //attributes creation and appends it onto cache
+            let frame = CGRect(x: xOffset, y: yOffset, width: CellWidth, height: CellHeight)
+            let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+            attributes.frame = frame
+            cache.append(attributes)
             
-            if item == 0{
-                yOffset = 50
-                xOffset = 20
-            }
             
-            //calculate the coordinates here
-            else
+            //check to see if the car has respones and changes based on that
+            /*WIPif MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.speech].getcard(Index: publicindex.cardindex).storedCard.responses.count != 0
+             {
+             for _ in 0...MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.speech].getcard(Index: publicindex.cardindex).storedCard.responses.count{
+             yOffset += (CellWidth + CGFloat(30))}
+             }
+             else{
+             yOffset += (CellWidth + CGFloat(30))
+             }*/
+            yOffset += (CellWidth + CGFloat(30))
+            //check if it's the end of the speech and move it adjust x offset accordingly
+            let temp = MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow]
+            if temp.longestcolumn() == 1 || temp.getcard(Speech: publicindex.speech, Index: item).isEndOfSpeech == true
             {
-
-                let temp = collectionViewFlow.collectionView(collectionView, cellForItemAt: indexPath)
-                if temp.isItEndOfSpeech() == true
-                {
-                    xOffset += cellPadding * itemCGFloat + itemCGFloat * CellWidth
-                }
-            
-                //creates and indents the frame to be place inside cache
-                let frame = CGRect(x: xOffset, y: yOffset, width: CellWidth, height: CellHeight)
-                let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
-                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-                attributes.frame = insetFrame
-                
-                yOffset += cellPadding
-                cache.append(attributes)
+                xOffset += (CellWidth + CGFloat(20))
+                item = 0
             }
-            //collectionViewContentSize = CGSize(width: yOffset, height: xOffset)
-            
         }
+        //collectionViewContentSize = CGSize(width: yOffset, height: xOffset)
+        publicindex.speech = 0
+        
     }
+    
     
     
     
@@ -158,17 +156,15 @@ class FlowVeiwLayout: UICollectionViewLayout{
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
         // Loop through the cache and look for items in the rect
-        for attributes in cache
-        {
-            if attributes.frame.intersects(rect)
-            {
-                visibleLayoutAttributes.append(attributes)
-                print("this works")
-            }
-            visibleLayoutAttributes.append(attributes)
-        }
-        
-        return visibleLayoutAttributes
+        /*for attributes in cache
+         {
+         if attributes.frame.intersects(rect)
+         {
+         visibleLayoutAttributes.append(attributes)
+         }
+         }*/
+        //keep the old code it might be useful
+        return cache //visibleLayoutAttributes
     }
     
     
@@ -178,5 +174,6 @@ class FlowVeiwLayout: UICollectionViewLayout{
         return cache[indexPath.item]
     }
 }
+
 
 

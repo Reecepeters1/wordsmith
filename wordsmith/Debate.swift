@@ -77,7 +77,7 @@ public class Debate: NSObject {
         self.otherTeam = otherTeam ?? "Default"
         self.judgeName = judgeName ?? "Default"
         self.tournament = tournament ?? "Default"
-        
+        self.positions.append(firstflow)
         super.init()
         
     }

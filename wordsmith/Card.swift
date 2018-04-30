@@ -24,6 +24,10 @@ class Card {
         image = createPDFimage()
     }
     
+    init(){
+        drawing = []
+    }
+    
     func getanswers(){
         if isAResponse{
             //get cards
