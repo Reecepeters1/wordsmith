@@ -10,6 +10,7 @@ import UIKit
 
 
 //see the bottom to see the eextension for this
+
 public class publicindex: NSObject{
     public static var debateindex:Int = 0
     public static var currentflow = 0
@@ -25,13 +26,12 @@ class FlowVeiw: UICollectionViewController{
     var debateindex:Int = 0
     var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
     fileprivate let reuseIdentifier = "Card"
-    var copyover:[Speech]
     var currentflow:Int = 0
+    //this is here so i can run longest column method in the init
     var syphilis:Flow
-    //var itemsPerRow:CGFloa
     var generic = UICollectionViewCell()
     var itemsPerColumn:CGFloat
-    var layout = FlowVeiwLayout()
+    
     
     
     
@@ -57,13 +57,14 @@ class FlowVeiw: UICollectionViewController{
         publicindex.cardindex = 0
         super.viewDidLoad()
     }
+    
 }
 
 extension FlowVeiw{
-    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     override func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         //var count = 0

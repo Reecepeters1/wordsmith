@@ -26,6 +26,10 @@ class Card {
         previousCard = maybe
     }
     
+    init(){
+        drawing = []
+    }
+    
     func getanswers(){
         if isAResponse{
             //get cards

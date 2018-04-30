@@ -13,12 +13,21 @@ class CardView: UICollectionViewCell {
     var storedCard:Card
     init(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card(draw: draw)
-        super.init(coder: aDecoder)!
+        super.init(coder: aDecoder)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.storedCard = Card()
+        super.init(coder: aDecoder)
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     //TODO Way to store location of a Card initialized elsewhere
     
@@ -40,7 +49,7 @@ class CardView: UICollectionViewCell {
     }
     
     func showcard(card: Card){
-    //main methods to be used for showing card in the cardView
+        //main methods to be used for showing card in the cardView
     }
     
     func setColor(color: UIColor) {
@@ -59,3 +68,4 @@ class CardView: UICollectionViewCell {
         storedCard = car
     }
 }
+
