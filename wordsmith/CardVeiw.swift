@@ -10,7 +10,7 @@ import UIKit
 
 class CardView: UICollectionViewCell {
     @IBOutlet var cardimage: UIImageView!
-    let storedCard:Card
+    var storedCard:Card
     init(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card(draw: draw)
         super.init(coder: aDecoder)!
@@ -49,5 +49,13 @@ class CardView: UICollectionViewCell {
     
     func setBrushWidth(width: Int) {
         //Sets brush width
+    }
+    
+    func getCard() -> Card {
+        return storedCard
+    }
+    
+    func setCard(car: Card) {
+        storedCard = car
     }
 }

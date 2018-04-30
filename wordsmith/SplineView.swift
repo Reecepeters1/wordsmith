@@ -141,4 +141,8 @@ class SplineView: UIView {
     func setCard(tempCard: Card) {
         storeLayer = tempCard.getVeiw()
     }
+    
+    func getLayered() -> [CAShapeLayer] {
+        return storeLayer
+    }
 }

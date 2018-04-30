@@ -11,17 +11,19 @@ import QuartzCore
 
 class Card {
     
-    var responses:[Int] = []
+    var responses: [Card] = []
     var drawing: [CAShapeLayer]
     var speech:Int = -1
     var positionInSpeech:Int = -1
     var isAResponse = false
     var isFlagged = false
+    var previousCard: Card?
     var image: UIImage = UIImage()
     
-    init(draw: [CAShapeLayer]) {
+    init(draw: [CAShapeLayer], maybe: Card?) {
         drawing = draw
         image = createPDFimage()
+        previousCard = maybe
     }
     
     func getanswers(){
@@ -48,4 +50,7 @@ class Card {
         return
     }
     
+    func addAnswer(ans: Card) {
+        responses.append(ans)
+    }
 }
