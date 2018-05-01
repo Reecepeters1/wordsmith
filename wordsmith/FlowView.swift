@@ -14,12 +14,12 @@ public class publicindex: NSObject{
     public static var debateindex:Int = 0
     public static var currentflow = 0
     public static var cardindex = 0
-    public static var speech = 0
+    public static var currentspeech = 0
     public static func setindex(index:IndexPath) -> Void{
         var count = 0
         if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count == 0
         {
-            publicindex.speech = 0
+            publicindex.cuurentspeech = 0
             publicindex.cardindex = 0
             return
         }
@@ -27,7 +27,7 @@ public class publicindex: NSObject{
             
             for z in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[x].getcount(){
                 if count == index.item{
-                    publicindex.speech = x
+                    publicindex.currentspeech = x
                     publicindex.cardindex = z
                 }
                 else{
