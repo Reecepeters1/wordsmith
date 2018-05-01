@@ -10,12 +10,32 @@ import UIKit
 
 
 //see the bottom to see the eextension for this
-
 public class publicindex: NSObject{
     public static var debateindex:Int = 0
     public static var currentflow = 0
     public static var cardindex = 0
-    public static var currentspeech = 0
+    public static var speech = 0
+    public static func setindex(index:IndexPath) -> Void{
+        var count = 0
+        if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count == 0
+        {
+            publicindex.speech = 0
+            publicindex.cardindex = 0
+            return
+        }
+        for x in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count{
+            
+            for z in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[x].getcount(){
+                if count == index.item{
+                    publicindex.speech = x
+                    publicindex.cardindex = z
+                }
+                else{
+                    count+=1
+                }
+            }
+        }
+    }
 }
 
 class FlowVeiw: UICollectionViewController{
@@ -55,6 +75,17 @@ class FlowVeiw: UICollectionViewController{
         publicindex.debateindex = debateindex
         publicindex.currentflow = currentflow
         publicindex.cardindex = 0
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad() {
+        FlowCollectionView.delegate = self
+        FlowCollectionView.setdebateindex(i: debateindex)
+        FlowCollectionView.setcurrentflow(i: currentflow)
+        if let layout = collectionView?.collectionViewLayout{
+            let Flowlayout = layout as! FlowVeiwLayout
+            Flowlayout.delegate = self
+        }
         super.viewDidLoad()
     }
     

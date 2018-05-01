@@ -12,12 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        if (MainMenuData.debates.isEmpty) {
-            
-            //MainMenuData.debates.append(Debate(title: "default", roundNumber: 0, otherTeam: "Default", winLoss: false, judgeName: "Fake", tournament: "Nowhere"))
-            MainMenuData.hasDefault = true
-        }
+        let tempround = Debate.Round()
+        let tempballot = Debate.Ballot()
+        let temp = Debate(round: tempround, otherTeam: "", ballot: tempballot, judgeName: [""], tournament: "")
+        MainMenuData.debates.append(temp)
+        MainMenuData.debates.append(temp)
         
         // Override point for customization after application launch.
         /*let myViewController = UIViewController()
