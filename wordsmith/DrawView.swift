@@ -16,19 +16,12 @@ class DrawView: UIViewController, IndexDelegate {
     var currentCard = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].getCard()
     
     @IBOutlet weak var drawing: SplineView!
-    
     @IBOutlet weak var buttonPanel: ButtonView!
-    
     @IBOutlet weak var whiteButton: Changer!
-    
     @IBOutlet weak var blackButton: Changer!
-    
     @IBOutlet weak var greenButton: Changer!
-    
     @IBOutlet weak var blueButton: Changer!
-    
     @IBOutlet weak var redButton: Changer!
-    
     @IBOutlet weak var slider: UISlider!
     
     @IBAction func whitePress(_ sender: Any) {

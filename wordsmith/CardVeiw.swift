@@ -23,12 +23,6 @@ class CardView: UICollectionViewCell {
     
     
     
-    
-    
-    
-    
-    
-    
     //TODO Way to store location of a Card initialized elsewhere
     
     
