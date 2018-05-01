@@ -98,7 +98,7 @@ public class Debate: NSObject {
         }
         
         self.tournament = tournament ?? "Default"
-        
+        self.positions.append(firstflow)
         super.init()
         
     }

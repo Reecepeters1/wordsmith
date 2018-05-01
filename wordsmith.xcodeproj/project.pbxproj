@@ -47,7 +47,6 @@
 		E403211320768D4900BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BFDD32088FCDE00F95C3F /* Changer.swift */; };
 		E4B878FE207FC468008A0529 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B878FD207FC468008A0529 /* DrawView.swift */; };
-		E4B87900207FC471008A0529 /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B878FF207FC471008A0529 /* JoystickView.swift */; };
 		E4E723042085145300B84E76 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E723032085145300B84E76 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +95,6 @@
 		D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E42BFDD32088FCDE00F95C3F /* Changer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changer.swift; sourceTree = "<group>"; };
 		E4B878FD207FC468008A0529 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
-		E4B878FF207FC471008A0529 /* JoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
 		E4E723032085145300B84E76 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +163,6 @@
 		C7D74DE81FD85CDF00261F2D /* wordsmith */ = {
 			isa = PBXGroup;
 			children = (
-				E4B878FF207FC471008A0529 /* JoystickView.swift */,
 				E42BFDD32088FCDE00F95C3F /* Changer.swift */,
 				E4B878FD207FC468008A0529 /* DrawView.swift */,
 				C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */,
@@ -338,7 +335,6 @@
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift in Sources */,
 				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
-				E4B87900207FC471008A0529 /* JoystickView.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
 				E403211320768D4900BC548A /* (null) in Sources */,

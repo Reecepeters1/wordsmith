@@ -9,24 +9,19 @@
 import Foundation
 import UIKit
 
-class DrawView: UIViewController {
+class DrawView: UIViewController, IndexDelegate {
     
     var wid = CGFloat()
     
+    var currentCard = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].getCard()
+    
     @IBOutlet weak var drawing: SplineView!
-    
     @IBOutlet weak var buttonPanel: ButtonView!
-    
     @IBOutlet weak var whiteButton: Changer!
-    
     @IBOutlet weak var blackButton: Changer!
-    
     @IBOutlet weak var greenButton: Changer!
-    
     @IBOutlet weak var blueButton: Changer!
-    
     @IBOutlet weak var redButton: Changer!
-    
     @IBOutlet weak var slider: UISlider!
     
     @IBAction func whitePress(_ sender: Any) {
@@ -43,7 +38,7 @@ class DrawView: UIViewController {
         changePressed(pressor: greenButton)
         drawing.setPath(fore: greenButton.getColor(), store: greenButton.getColor(), width: wid)
     }
-
+    
     @IBAction func bluePress(_ sender: Any) {
         changePressed(pressor: blueButton)
         drawing.setPath(fore: blueButton.getColor(), store: blueButton.getColor(), width: wid)
@@ -59,6 +54,7 @@ class DrawView: UIViewController {
     }
     
     override func viewDidLoad() {
+        buttonPanel.delegate = self
         drawing.setPath(fore: UIColor.white, store: UIColor.white, width: 1)
         wid = 10
         slider.minimumValue = 0
@@ -91,4 +87,34 @@ class DrawView: UIViewController {
         drawing.setPath(fore: drawing.getForeColor(), store: drawing.getForeColor(), width: wid)
     }
     
+    func doSwipeUp() {
+        if (publicindex.cardindex == 0 )
+        {
+            return
+        }
+        else
+        {
+            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
+            
+            drawing.setCard(tempCard: MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex - 1].getCard())
+            
+            publicindex.cardindex -= 1
+        }
+    }
+    
+    func doSwipeLeft() {
+        
+    }
+    
+    func doSwipeRight() {
+        
+    }
+    func doSwipeDown() {
+        MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
+        
+        drawing.clearDraw()
+        MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder()))
+        
+        publicindex.cardindex += 1
+    }
 }

@@ -15,8 +15,8 @@ class Flow{
     
     init() {
     }
-    func returnflow() -> [Speech]
-    {
+    
+    func returnflow() -> [Speech]{
         return Speeches
     }
     //add a speech
@@ -36,6 +36,10 @@ class Flow{
     //remove the most recent speech
     func removeSpeech()
     {
+        if Speeches.count == 0{
+            return
+                print("function has not run flow is empty")
+        }
         //TODO make error handling when going out of bounds
         Speeches.remove(at: Speeches.count - 1)
     }
@@ -54,7 +58,7 @@ class Flow{
             return 1
         }
         //for loop
-        for i in 0...(Speeches.count - 1){
+        for i in 0..<Speeches.count{
             if Speeches[i].getcount() > biggestsize{
                 biggestsize = Speeches[i].getcount()
             }

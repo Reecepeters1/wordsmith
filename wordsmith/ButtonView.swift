@@ -9,9 +9,18 @@
 import Foundation
 import UIKit
 
+protocol IndexDelegate: NSObjectProtocol {
+    func doSwipeUp()
+    func doSwipeDown()
+    func doSwipeLeft()
+    func doSwipeRight()
+}
+
 class ButtonView: UIView {
     
     var hit: CGPoint = CGPoint()
+    
+    weak var delegate: IndexDelegate?
     
     override func draw(_ rect: CGRect) {
         
@@ -44,7 +53,7 @@ class ButtonView: UIView {
         
         aPath.stroke()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -64,36 +73,36 @@ class ButtonView: UIView {
         let curve2 = -(hit.x) + bounds.height
         
         if (hit.y < curve1 && hit.y < curve2) {
-            doSwipeUp()
+            swipeUp()
         }
         
         if (hit.y >= curve1 && hit.y < curve2) {
-            doSwipeLeft()
+            swipeLeft()
         }
         
         if (hit.y < curve1 && hit.y >= curve2) {
-            doSwipeRight()
+            swipeRight()
         }
         
         if (hit.y >= curve1 && hit.y >= curve2) {
-            doSwipeDown()
+            swipeDown()
         }
     }
     
-    func doSwipeUp() {
-        print("up")
+    func swipeUp() {
+        delegate?.doSwipeUp()
     }
     
-    func doSwipeRight() {
-        print("right")
+    func swipeRight() {
+        delegate?.doSwipeRight()
     }
     
-    func doSwipeLeft() {
-        print("left")
+    func swipeLeft() {
+        delegate?.doSwipeLeft()
     }
     
-    func doSwipeDown() {
-        print("down")
+    func swipeDown() {
+        delegate?.doSwipeDown()
     }
     
 }

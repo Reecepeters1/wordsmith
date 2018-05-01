@@ -293,7 +293,7 @@ class CreateDebateViewController: UIViewController {
         //creates new debate. The unwrapping of optionals is handeled by the Debate class
         let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: nil)
         
-        MainMenuData.debates.append(localDebate)
+        //MainMenuData.debates.append(localDebate)
         
         //This will crash in portrait alignment
         //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
