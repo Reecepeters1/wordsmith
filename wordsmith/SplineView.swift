@@ -135,7 +135,7 @@ class SplineView: UIView {
     }
     
     func getCard() -> Card {
-        return Card(draw: storeLayer)
+        return Card(draw: storeLayer, maybe: nil)
     }
     
     func setCard(tempCard: Card) {
@@ -144,5 +144,13 @@ class SplineView: UIView {
     
     func getLayered() -> [CAShapeLayer] {
         return storeLayer
+    }
+    
+    func pb_takeSnapshot() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
     }
 }

@@ -45,7 +45,7 @@ class DrawView: UIViewController, IndexDelegate {
         changePressed(pressor: greenButton)
         drawing.setPath(fore: greenButton.getColor(), store: greenButton.getColor(), width: wid)
     }
-
+    
     @IBAction func bluePress(_ sender: Any) {
         changePressed(pressor: blueButton)
         drawing.setPath(fore: blueButton.getColor(), store: blueButton.getColor(), width: wid)
@@ -101,7 +101,7 @@ class DrawView: UIViewController, IndexDelegate {
         }
         else
         {
-           MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
+            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
             
             drawing.setCard(tempCard: MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex - 1].getCard())
             
@@ -119,7 +119,7 @@ class DrawView: UIViewController, IndexDelegate {
     func doSwipeDown() {
         MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
         
-       drawing.clearDraw()
+        drawing.clearDraw()
         MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder()))
         
         publicindex.cardindex += 1
