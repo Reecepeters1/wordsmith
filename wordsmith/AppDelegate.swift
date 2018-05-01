@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let tempround = Debate.Round()
         let tempballot = Debate.Ballot()
-        let temp = Debate(round: tempround, otherTeam: "", ballot: tempballot, judgeName: "", tournament: "")
+        let temp = Debate(round: tempround, otherTeam: "", ballot: tempballot, judgeName: [""], tournament: "")
         MainMenuData.debates.append(temp)
         MainMenuData.debates.append(temp)
         
