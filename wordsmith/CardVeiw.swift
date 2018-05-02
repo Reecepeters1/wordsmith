@@ -13,7 +13,7 @@ class CardView: UICollectionViewCell {
     var storedCard:Card
     init(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card(draw: draw, maybe: nil)
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
     
     required init?(coder aDecoder: NSCoder) {
