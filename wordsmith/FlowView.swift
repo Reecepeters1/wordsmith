@@ -19,13 +19,14 @@ public class publicindex: NSObject{
         var count = 0
         if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count == 0
         {
-            publicindex.cuurentspeech = 0
+            publicindex.currentspeech = 0
             publicindex.cardindex = 0
             return
         }
         for x in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count{
             
-            for z in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[x].getcount(){
+            for z in
+                0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[x].getcount(){
                 if count == index.item{
                     publicindex.currentspeech = x
                     publicindex.cardindex = z
@@ -97,7 +98,7 @@ extension FlowVeiw{
     }
     
     override func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+                                 numberOfItemsInSection section: Int) -> Int {
         var count = 0
         if MainMenuData.debates[debateindex].positions[0].Speeches.count == 0{
             return 1

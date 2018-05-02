@@ -310,7 +310,7 @@ class CreateDebateViewController: UIViewController {
         
         print(local.debateIndex)
         
-        print(MainMenuData.debates.last!.judgeName)
+        //print(MainMenuData.debates.last!.judgeName)
         local.view.setNeedsDisplay()
         //shows the newly created view.
         splitViewController?.showDetailViewController(local, sender: nil)
@@ -385,11 +385,11 @@ class ModifyDebateViewController: UIViewController {
         //let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: nil)
         
         //The date created/date to expire are kept the same across modifications
-        localDebate.dateCreated = MainMenuData.debates[debateIndex].dateCreated
-        localDebate.expirationDate = MainMenuData.debates[debateIndex].expirationDate
+        //localDebate.dateCreated = MainMenuData.debates[debateIndex].dateCreated
+        //localDebate.expirationDate = MainMenuData.debates[debateIndex].expirationDate
 
         
-        MainMenuData.debates[debateIndex] = localDebate
+        //MainMenuData.debates[debateIndex] = localDebate
         
         //This will crash in portrait alignment
         //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,

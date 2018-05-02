@@ -22,7 +22,6 @@ class Card {
     
     init(draw: [CAShapeLayer], maybe: Card?) {
         drawing = draw
-        image = createPDFimage()
         previousCard = maybe
     }
     
@@ -39,12 +38,7 @@ class Card {
     func getVeiw() -> [CAShapeLayer] {
         return drawing
     }
-    
-    func createPDFimage() -> UIImage {
-        //will be used for creating pdf of all aggregated images
-        return #imageLiteral(resourceName: "startImage")
-    }
-    
+        
     func getFlagged() -> Bool {
         return isFlagged
     }
@@ -56,5 +50,9 @@ class Card {
     
     func addAnswer(ans: Card) {
         responses.append(ans)
+    }
+    
+    func setImage(set: UIImage) {
+        image = set
     }
 }

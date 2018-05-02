@@ -1,9 +1,8 @@
 //
 //  UIBezierPathExtension.swift
-//  SmoothScribble
 //
-//  Created by Simon Gladman on 04/11/2015.
-//  Copyright © 2015 Simon Gladman. All rights reserved.
+//  Created by REECE PETERS on 04/30/2018.
+//  Copyright © 2018 REECE PETERS YEP DEFINITELY ME. All rights reserved.
 //
 import UIKit
 
