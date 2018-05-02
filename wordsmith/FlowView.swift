@@ -15,11 +15,12 @@ public class publicindex: NSObject{
     public static var currentflow = 0
     public static var cardindex = 0
     public static var currentspeech = 0
+    
     public static func setindex(index:IndexPath) -> Void{
         var count = 0
         if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count == 0
         {
-            publicindex.cuurentspeech = 0
+            publicindex.currentspeech = 0
             publicindex.cardindex = 0
             return
         }
@@ -109,6 +110,10 @@ extension FlowVeiw{
         if MainMenuData.debates[debateindex].positions[currentflow].Speeches.isEmpty{
             return cell
         }
+        
+        publicindex.setindex(index: indexPath)
+        cell = MainMenuData.debates[debateindex].positions[currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex)
+        
         if cell.isEndOfSpeech == true{
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
             return cell
