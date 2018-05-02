@@ -15,6 +15,7 @@ public class publicindex: NSObject{
     public static var currentflow = 0
     public static var cardindex = 0
     public static var currentspeech = 0
+    
     public static func setindex(index:IndexPath) -> Void{
         var count = 0
         if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count == 0
