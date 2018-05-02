@@ -11,9 +11,9 @@ import UIKit
 class CardView: UICollectionViewCell {
     @IBOutlet var cardimage: UIImageView!
     var storedCard:Card
-    init(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
+    init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card(draw: draw, maybe: nil)
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
     
     required init?(coder aDecoder: NSCoder) {

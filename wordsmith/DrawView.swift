@@ -95,18 +95,22 @@ class DrawView: UIViewController, IndexDelegate {
         else
         {
             MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
-            
             drawing.setCard(tempCard: MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex - 1].getCard())
-            
             publicindex.cardindex -= 1
         }
     }
     
     func doSwipeLeft() {
-        
+        if publicindex.currentspeech == 0
+        {
+            return
+        }
+        publicindex.currentspeech -= 1
     }
     
     func doSwipeRight() {
+        MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].addSpeech()
+        
         
     }
     func doSwipeDown() {
