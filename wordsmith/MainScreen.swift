@@ -16,7 +16,7 @@ public class MainMenuData: NSObject {
     public static var index: Int = 0
     
     func amountofcardsinflow(debate:Int, flow:Int){
-    //tbd l8ter to streamine some functionality for not not needed freddy 4/22
+        //tbd l8ter to streamine some functionality for not not needed freddy 4/22
     }
     
     
@@ -40,9 +40,9 @@ class MainMenuTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     /*override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }*/
+     // #warning Incomplete implementation, return the number of sections
+     return 0
+     }*/
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -51,18 +51,18 @@ class MainMenuTableViewController: UITableViewController {
     }
     
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "debateCell", for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "debateCell", for: indexPath)
         
-     var localString = MainMenuData.debates[indexPath.row].otherTeam
-     localString.append(" ")
-     localString.append(MainMenuData.debates[indexPath.row].tournament)
-     
-    cell.textLabel?.text? = localString
+        var localString = MainMenuData.debates[indexPath.row].otherTeam
+        localString.append(" ")
+        localString.append(MainMenuData.debates[indexPath.row].tournament)
+        
+        cell.textLabel?.text? = localString
+        
+        return cell
+    }
     
-     return cell
-     }
- 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("Showing a new DebateDetailView after selecting a row")
@@ -149,7 +149,7 @@ class DebateDetailViewController: UIViewController {
         
         if (MainMenuData.debates.isEmpty) {
             print("Switiching to Create Debte View")
-        
+            
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
             splitViewController?.showDetailViewController(local, sender: nil)
             
@@ -253,8 +253,6 @@ class CreateDebateViewController: UIViewController {
     
     @IBOutlet weak var judgeTable: UITableView!
     
-    @IBOutlet weak var judgeCell: UITableViewCell!
-    
     @IBOutlet weak var judgeNumber: UIPickerView!
     
     @IBOutlet weak var roundField: UITextField!
@@ -265,7 +263,8 @@ class CreateDebateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        judgeNumber.delegate = self
+        judgeNumber.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -292,7 +291,7 @@ class CreateDebateViewController: UIViewController {
         let localnum = Int(roundField.text ?? "0")
         
         //creates new debate. The unwrapping of optionals is handeled by the Debate class
-        //let localDebate = Debate( roundNumber: localnum, otherTeam: opponentField.text, winLoss: nil, judgeName: judgeField.text, tournament: tournamentField.text)
+        let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: nil)
         
         //MainMenuData.debates.append(localDebate)
         
@@ -329,10 +328,62 @@ class CreateDebateViewController: UIViewController {
      */
     
 }
-
-class JudgeCell {
-    @IBOutlet weak var judgeText: UITextField!
+extension CreateDebateViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //will return the number in the picker view.
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JudgeCell") as! JudgeCellTableViewCell
+        //cell.judgeText.placeholder = "Enter the Judge's Name Here"
+        
+        return cell
+    }
 }
+extension CreateDebateViewController: UITableViewDelegate {
+    // extension implementation
+}
+extension CreateDebateViewController: UIPickerViewDataSource {
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 13
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 1
+    }
+    
+}
+
+extension CreateDebateViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(component)"
+    }
+}
+
+
+class JudgeCellTableViewCell: UITableViewCell {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    @IBOutlet weak var judgeText: UITextField!
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+}
+
+
+
 
 /*
  THe ModifyDebateViewController handles the modification of existing debates. It takes the strings from label and uses them to create a new debate, which remplaces the old debate at index value.
@@ -346,7 +397,7 @@ class ModifyDebateViewController: UIViewController {
     @IBOutlet weak var roundLabel: UITextField!
     
     @IBOutlet weak var opponentLabel: UITextField!
-
+    
     @IBOutlet weak var tournamentLabel: UITextField!
     
     //When the view is loaded, the old texts for the various properties are loaded. This ensures that only values that the user wants to modify get modfied.
