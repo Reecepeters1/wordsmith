@@ -263,8 +263,11 @@ class CreateDebateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        judgeNumber.delegate = self
-        judgeNumber.dataSource = self
+        //judgeNumber.delegate = self
+        //judgeNumber.dataSource = self
+        judgeTable.delegate = self
+        judgeTable.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -332,38 +335,40 @@ extension CreateDebateViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //will return the number in the picker view.
-        return 4
+        //let temp = judgeNumber.numberOfRows(inComponent: 0)
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JudgeCell") as! JudgeCellTableViewCell
-        //cell.judgeText.placeholder = "Enter the Judge's Name Here"
-        
+        cell.judgeText.placeholder = "Enter the Judge's Name Here"
+        print("Making a Cell")
         return cell
     }
 }
 extension CreateDebateViewController: UITableViewDelegate {
     // extension implementation
 }
-extension CreateDebateViewController: UIPickerViewDataSource {
+/*extension CreateDebateViewController: UIPickerViewDataSource {
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 13
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 5
+        return 4
     }
     
 }
 
 extension CreateDebateViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(component)" + "\(row)"
+        print("\(row)")
+        return "\(row)"
     }
 }
-
+*/
 
 class JudgeCellTableViewCell: UITableViewCell {
     
@@ -371,6 +376,7 @@ class JudgeCellTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
     
     @IBOutlet weak var judgeText: UITextField!
     

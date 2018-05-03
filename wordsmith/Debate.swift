@@ -11,6 +11,11 @@ import os.log
 
 public class Debate: NSObject {
     
+    enum Side {
+        case aff
+        case neg
+    }
+    
     struct Ballot {
         
         enum WinLoss {
@@ -51,6 +56,7 @@ public class Debate: NSObject {
         var vote: Debate.Ballot.WinLoss?
     }
     
+    var side: Side
     var ballot:Ballot
     var round:Round
     var positions:[Flow] = []
@@ -63,12 +69,12 @@ public class Debate: NSObject {
     var firstflow = Flow()
     
     //sets all of the fields, exept for the date fields
-    init(round: Debate.Round, otherTeam: String, ballot: Debate.Ballot, judgeName: [String], tournament: String) {
+    init(round: Debate.Round, otherTeam: String, ballot: Debate.Ballot, judgeName: [String], tournament: String, side: Debate.Side) {
         
         self.ballot = ballot
         self.round = round
         self.otherTeam = otherTeam
-        
+        self.side = side
         for j in judgeName {
             self.judgeNames.append(Debate.Judge(name: j, vote: nil))
         }
@@ -81,7 +87,7 @@ public class Debate: NSObject {
         super.init()
     }
     
-    init(ballot: Ballot?, round: Round?, otherTeam: String?, judgeName: [String?], tournament: String?) {
+    init(ballot: Ballot?, round: Round?, otherTeam: String?, judgeName: [String?], tournament: String?, side: Debate.Side?) {
         
         self.ballot = ballot ?? Ballot()
         self.round = round ?? Round()
@@ -99,6 +105,7 @@ public class Debate: NSObject {
         
         self.tournament = tournament ?? "Default"
         self.positions.append(firstflow)
+        self.side = side ?? .aff
         super.init()
         
     }
@@ -132,6 +139,16 @@ public class Debate: NSObject {
         } else {
             return "\(round.number ?? 0)"
         }
+    }
+    
+    func getSide() -> String {
+        if (side == .aff) {
+            return "Affirmative"
+        } else {
+            return "Negative"
+        }
+        
+        
     }
     
     func addflow(){
