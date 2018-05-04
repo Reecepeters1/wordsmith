@@ -11,9 +11,20 @@ import UIKit
 
 class DrawView: UIViewController, IndexDelegate {
     
-    var wid = CGFloat()
+    var generic = CardView(coder: NSCoder())
+    var currentCard:CardView
+    var wid:CGFloat = 10
+    required init?(coder aDecoder: NSCoder) {
+        if MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.count == 0{
+            currentCard = generic!
+            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.append(generic!)
+        }
+        else{
+            currentCard = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex]
+        }
+        super.init(coder: aDecoder)
+    }
     
-    var currentCard = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].getCard()
     
     @IBOutlet weak var drawing: SplineView!
     @IBOutlet weak var buttonPanel: ButtonView!
@@ -109,13 +120,17 @@ class DrawView: UIViewController, IndexDelegate {
     }
     
     func doSwipeRight() {
-        MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].addSpeech()
         
-        
+        if publicindex.currentspeech < MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches.count - 1{
+            publicindex.currentspeech += 1
+        }
+        else{
+            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].addSpeech()
+        }
     }
+    
     func doSwipeDown() {
         MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
-        
         drawing.clearDraw()
         MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder())!)
         

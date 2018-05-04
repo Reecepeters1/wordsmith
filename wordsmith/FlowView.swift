@@ -91,7 +91,7 @@ extension FlowVeiw{
                                  numberOfItemsInSection section: Int) -> Int {
         var count = 1
         
-        if MainMenuData.debates[debateindex].positions[0].Speeches.count == 0{
+        if MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.count == 0{
             return 1
         }
         for counter1 in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches.count - 1){
