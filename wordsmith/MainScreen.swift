@@ -123,13 +123,22 @@ class MainMenuTableViewController: UITableViewController {
 
 class DebateDetailViewController: UIViewController {
     
-    var debateIndex:Int = 0
+    @IBOutlet weak var tournament: UILabel!
     
+    var debateIndex:Int = 0
+    var localDebate:Debate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        debateIndex = MainMenuData.index
+        localDebate = MainMenuData.debates[debateIndex]
         // Do any additional setup after loading the view.
+        renderText()
+    }
+    
+    func renderText() {
+        tournament.text = localDebate!.tournament
     }
     
     override func didReceiveMemoryWarning() {
@@ -160,6 +169,20 @@ class DebateDetailViewController: UIViewController {
      */
     
 }
+extension DebateDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return localDebate?.judgeNames.count ?? 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "displayCell")!
+        return cell
+    }
+}
+extension DebateDetailViewController: UITableViewDelegate {
+    // extension implementation
+}
 
 class CreateDebateViewController: UIViewController {
     
@@ -167,12 +190,15 @@ class CreateDebateViewController: UIViewController {
     var judgeCount = 1
     
     @IBOutlet weak var judgesTable: UITableView!
+    @IBOutlet weak var tournament: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if (forceStay == false && !MainMenuData.debates.isEmpty) {
-            
+            performSegue(withIdentifier: "toDebateDetail", sender: self)
         }
+        judgesTable.dataSource = self
+        judgesTable.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -191,6 +217,10 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func create(_ sender: UIButton) {
+        
+        let debate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: tournament.text, side: nil)
+        MainMenuData.debates.append(debate)
+        MainMenuData.index = MainMenuData.debates.count - 1
         performSegue(withIdentifier: "toDebateDetail", sender: self)
     }
 }
@@ -201,8 +231,13 @@ extension CreateDebateViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JudgeCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JudgeCell") as! JudgeCellTableViewCell
+        cell.judgeField.placeholder = "Judge Name Here"
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
 }
 extension CreateDebateViewController: UITableViewDelegate {
@@ -230,6 +265,8 @@ extension CreateDebateViewController: UIPickerViewDelegate {
 
 
 class JudgeCellTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var judgeField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -80,7 +80,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92511334196891193" green="0.92511334196891193" blue="0.92511334196891193" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="olP-DC-mgi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="displayCell" id="olP-DC-mgi">
                                         <rect key="frame" x="0.0" y="28" width="509" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="olP-DC-mgi" id="TgE-56-VwG">
@@ -105,6 +105,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9lZ-Vt-j78" id="GAo-Gb-Lxc"/>
+                                    <outlet property="delegate" destination="9lZ-Vt-j78" id="qKz-sK-yNl"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Y1-7I-HG7">
                                 <rect key="frame" x="194" y="267" width="277" height="21"/>
@@ -183,6 +187,7 @@
                         <viewLayoutGuide key="safeArea" id="Kib-EX-qAe"/>
                     </view>
                     <connections>
+                        <outlet property="tournament" destination="6Y1-7I-HG7" id="4qm-GH-Xog"/>
                         <segue destination="IYh-sV-W1v" kind="presentation" identifier="pushToFlow" id="on4-ym-C2x"/>
                         <segue destination="lWX-mV-x2v" kind="showDetail" identifier="toModifyDebate" id="aka-cN-dC2"/>
                     </connections>
@@ -527,7 +532,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92511334199999995" green="0.92511334199999995" blue="0.92511334199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="66" id="isI-XJ-RPx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JudgeCell" rowHeight="66" id="isI-XJ-RPx" customClass="JudgeCellTableViewCell" customModule="wordsmith" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="509" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="isI-XJ-RPx" id="HnG-gi-CBh">
@@ -543,6 +548,9 @@
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="judgeField" destination="rR7-nU-UvQ" id="m2s-nM-9ZI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -598,7 +606,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3JT-yg-6LI">
-                                <rect key="frame" x="306" y="372" width="326" height="72"/>
+                                <rect key="frame" x="306" y="372" width="327" height="72"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Round" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCF-Mc-mA7">
@@ -637,6 +645,7 @@
                     </view>
                     <connections>
                         <outlet property="judgesTable" destination="V6F-ye-jRx" id="2gn-V4-0V7"/>
+                        <outlet property="tournament" destination="nsm-uQ-4qr" id="CJl-Ju-BEr"/>
                         <segue destination="9lZ-Vt-j78" kind="showDetail" identifier="toDebateDetail" id="wXv-O8-lIX"/>
                     </connections>
                 </viewController>
@@ -707,6 +716,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lWX-mV-x2v" id="6I1-sb-lb9"/>
+                                    <outlet property="delegate" destination="lWX-mV-x2v" id="rNc-bd-IqU"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ballot Display Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sac-tf-CQV">
                                 <rect key="frame" x="290" y="627" width="277" height="21"/>
