@@ -176,18 +176,44 @@ extension DebateDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "displayCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "displayCell") as! DisplayTableCell
         return cell
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 }
+
 extension DebateDetailViewController: UITableViewDelegate {
     // extension implementation
+}
+
+class DisplayTableCell: UITableViewCell {
+    
+    @IBOutlet weak var vote: UIView!
+    
+    @IBOutlet weak var judgeName: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
 }
 
 class CreateDebateViewController: UIViewController {
     
     var forceStay = false
-    var judgeCount = 1
+    var judgeTextAr = ["Default"]
+    var index = 0
     
     @IBOutlet weak var judgesTable: UITableView!
     @IBOutlet weak var tournament: UITextField!
@@ -208,7 +234,7 @@ class CreateDebateViewController: UIViewController {
    
     //Adds cell to table with judge field
     @IBAction func addJudge(_ sender: UIButton) {
-        judgeCount += 1
+        judgeTextAr.append("Default")
         judgesTable.reloadData()
     }
     
@@ -217,7 +243,6 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func create(_ sender: UIButton) {
-        
         let debate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: tournament.text, side: nil)
         MainMenuData.debates.append(debate)
         MainMenuData.index = MainMenuData.debates.count - 1
@@ -227,17 +252,30 @@ class CreateDebateViewController: UIViewController {
 extension CreateDebateViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return judgeCount
+        return judgeTextAr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JudgeCell") as! JudgeCellTableViewCell
-        cell.judgeField.placeholder = "Judge Name Here"
+        if (judgeTextAr[indexPath.row] == "Default") {
+            cell.judgeField.placeholder = "Judge Name Here"
+        } else {
+            cell.judgeField.text = judgeTextAr[indexPath.row]
+        }
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        index = indexPath.row
+    }
+    
+    func textFieldShouldEndEditing(field: UITextField) {
+        judgeTextAr[index] = field.text ?? "Default"
+        print(judgeTextAr)
     }
 }
 extension CreateDebateViewController: UITableViewDelegate {
@@ -272,6 +310,7 @@ class JudgeCellTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {

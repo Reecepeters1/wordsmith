@@ -57,6 +57,7 @@ public class Debate: NSObject {
             case forUs
             case against
             case didNotDisclose
+            case inProgress
         }
         
         var name: String
