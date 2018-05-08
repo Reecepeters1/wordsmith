@@ -73,17 +73,6 @@ class FlowVeiw: UICollectionViewController{
         FlowCollectionView.delegate = self
         FlowCollectionView.setdebateindex(i: debateindex)
         FlowCollectionView.setcurrentflow(i: currentflow)
-        self.automaticallyAdjustsScrollViewInsets = false
-        publicindex.debateindex = debateindex
-        publicindex.currentflow = currentflow
-        publicindex.cardindex = 0
-        super.init(coder: aDecoder)
-    }
-    
-    override func viewDidLoad() {
-        FlowCollectionView.delegate = self
-        FlowCollectionView.setdebateindex(i: debateindex)
-        FlowCollectionView.setcurrentflow(i: currentflow)
         if let layout = collectionView?.collectionViewLayout{
             let Flowlayout = layout as! FlowVeiwLayout
             Flowlayout.delegate = self

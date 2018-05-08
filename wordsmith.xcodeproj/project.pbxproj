@@ -326,10 +326,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				9776BAB9208D92B9001A1E31 /* FlowCollectionView.swift in Sources */,
 				E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
+				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				E40321112076872300BC548A /* (null) in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift in Sources */,

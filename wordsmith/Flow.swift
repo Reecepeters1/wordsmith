@@ -11,9 +11,10 @@ import UIKit
 
 class Flow{
     
-    var Speeches: [Speech] = []
+    var Speeches: [Speech]
     
     init() {
+        Speeches = []
     }
     
     func returnflow() -> [Speech]{
@@ -68,6 +69,9 @@ class Flow{
         return biggestsize + 1
     }
     
+    func getSpeeches() -> [Speech] {
+        return Speeches
+    }
 }
 
 

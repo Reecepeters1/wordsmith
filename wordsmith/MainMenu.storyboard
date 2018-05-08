@@ -251,7 +251,7 @@
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" id="fPP-rx-r0S" customClass="DrawView" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMS-Ua-2jh">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9a5-NU-yuj">
@@ -369,18 +369,19 @@
                         <outlet property="redButton" destination="e4E-Cs-8EL" id="b1j-MB-wqz"/>
                         <outlet property="slider" destination="eOV-bb-YVx" id="0qK-ed-1RK"/>
                         <outlet property="whiteButton" destination="dW0-Eu-ctN" id="GY6-y6-tpp"/>
+                        <segue destination="XCt-Ty-siL" kind="show" identifier="WRONG_LEVER" id="K9A-yE-sln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dD-0Y-x8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610.7421875" y="1527.34375"/>
+            <point key="canvasLocation" x="1575" y="1543"/>
         </scene>
         <!--Flow Veiw-->
         <scene sceneID="hY0-W9-048">
             <objects>
                 <collectionViewController id="XCt-Ty-siL" customClass="FlowVeiw" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qfm-XF-LBH" customClass="FlowCollectionView" customModule="wordsmith" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lmq-Cz-CZS" customClass="FlowVeiwLayout" customModule="wordsmith" customModuleProvider="target">
@@ -776,6 +777,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MKT-cC-Qr6"/>
+        <segue reference="K9A-yE-sln"/>
+        <segue reference="kbc-6e-pNs"/>
     </inferredMetricsTieBreakers>
 </document>
