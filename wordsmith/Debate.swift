@@ -10,7 +10,12 @@ import Foundation
 import os.log
 
 public class Debate: NSObject {
-    
+    //This enum tracks what side this team is on
+    enum Side {
+        case aff
+        case neg
+    }
+    //This struct is used to model the ballot at the end of the round.
     struct Ballot {
         
         enum WinLoss {
@@ -34,11 +39,12 @@ public class Debate: NSObject {
 
     }
     
+    //This struct records the tournaments round inforamtion, specifical number or elim type.
     struct Round {
         var isElim: Bool
         var elim: String?
         var number: Int?
-        
+
         init() {
             isElim = false
             elim = nil
@@ -47,10 +53,18 @@ public class Debate: NSObject {
     }
     
     struct Judge {
+        enum Vote {
+            case forUs
+            case against
+            case didNotDisclose
+            case inProgress
+        }
+        
         var name: String
-        var vote: Debate.Ballot.WinLoss?
+        var vote: Vote?
     }
     
+    var side: Side
     var ballot:Ballot
     var round:Round
     var positions:[Flow] = []
@@ -63,12 +77,12 @@ public class Debate: NSObject {
     var firstflow = Flow()
     
     //sets all of the fields, exept for the date fields
-    init(round: Debate.Round, otherTeam: String, ballot: Debate.Ballot, judgeName: [String], tournament: String) {
+    init(round: Debate.Round, otherTeam: String, ballot: Debate.Ballot, judgeName: [String], tournament: String, side: Debate.Side) {
         
         self.ballot = ballot
         self.round = round
         self.otherTeam = otherTeam
-        
+        self.side = side
         for j in judgeName {
             self.judgeNames.append(Debate.Judge(name: j, vote: nil))
         }
@@ -81,7 +95,7 @@ public class Debate: NSObject {
         super.init()
     }
     
-    init(ballot: Ballot?, round: Round?, otherTeam: String?, judgeName: [String?], tournament: String?) {
+    init(ballot: Ballot?, round: Round?, otherTeam: String?, judgeName: [String?], tournament: String?, side: Debate.Side?) {
         
         self.ballot = ballot ?? Ballot()
         self.round = round ?? Round()
@@ -90,15 +104,18 @@ public class Debate: NSObject {
         
         if (!judgeName.isEmpty) {
             temp = judgeName.map{ $0 ?? ""}
-            for j in temp {
-                if j != "" {
-                    self.judgeNames.append(Debate.Judge(name: j, vote: nil))
+            for judge in temp {
+                if judge != "" {
+                    self.judgeNames.append(Debate.Judge(name: judge, vote: nil))
                 }
             }
+        } else {
+            self.judgeNames.append(Debate.Judge(name: "Default", vote: nil))
         }
         
         self.tournament = tournament ?? "Default"
         self.positions.append(firstflow)
+        self.side = side ?? .aff
         super.init()
         
     }
@@ -131,6 +148,16 @@ public class Debate: NSObject {
             return round.elim ?? "Unknown Round Type"
         } else {
             return "\(round.number ?? 0)"
+        }
+    }
+    
+    func getSide() -> String {
+        if (side == .aff) {
+            return "Affirmative"
+        } else if (side == .neg){
+            return "Negative"
+        } else {
+            return "Did not Disclose"
         }
     }
     

@@ -121,63 +121,22 @@ class MainMenuTableViewController: UITableViewController {
 
 class DebateDetailViewController: UIViewController {
     
+    @IBOutlet weak var tournament: UILabel!
+    
     var debateIndex:Int = 0
-    
-    @IBOutlet weak var popUp: UIView!
-    
-    @IBOutlet weak var roundLabel: UILabel!
-    
-    @IBOutlet weak var opponentLabel: UILabel!
-    
-    @IBOutlet weak var winLossLabel: UILabel!
-    
-    @IBOutlet weak var tournamentLabel: UILabel!
-    
-    @IBOutlet weak var judgeLabel: UILabel!
-    @IBOutlet weak var judgeNumber: UILabel!
+    var localDebate:Debate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View didLoad started")
-        //if the view is empty, automatically transitions to create a debate view.
         
-        //hides the popup that appears when one tries to delete a Debate
-        popUp.isHidden = true
-        
-        
-        if (MainMenuData.debates.isEmpty) {
-            print("Switiching to Create Debte View")
-            
-            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
-            splitViewController?.showDetailViewController(local, sender: nil)
-            
-        } else if (debateIndex < MainMenuData.debates.count && debateIndex >= 0) {
-            
-            print("trying to show debate")
-            roundLabel.text = MainMenuData.debates[debateIndex].getRound()
-            winLossLabel.text = MainMenuData.debates[debateIndex].getWinLoss()
-            opponentLabel.text = MainMenuData.debates[debateIndex].otherTeam
-            tournamentLabel.text = MainMenuData.debates[debateIndex].tournament
-            //TODO - Handle Displaying Judge Names
-            judgeNumber.text = "\(MainMenuData.debates[debateIndex].ballot.judgesTotal)"
-            //return
-            
-        } else {
-            debateIndex = 0
-            print("Showing Debate at Zero")
-            roundLabel.text = MainMenuData.debates[debateIndex].getRound()
-            winLossLabel.text = MainMenuData.debates[debateIndex].getWinLoss()
-            opponentLabel.text = MainMenuData.debates[debateIndex].otherTeam
-            tournamentLabel.text = MainMenuData.debates[debateIndex].tournament
-            
-            //TODO - Handle Displaying Judge Names
-            
-            judgeNumber.text = "\(MainMenuData.debates[debateIndex].ballot.judgesTotal)"
-        }
-        
-        
-        
+        debateIndex = MainMenuData.index
+        localDebate = MainMenuData.debates[debateIndex]
         // Do any additional setup after loading the view.
+        renderText()
+    }
+    
+    func renderText() {
+        tournament.text = localDebate!.tournament
     }
     
     override func didReceiveMemoryWarning() {
@@ -185,52 +144,14 @@ class DebateDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    //The launch button transitions to the set of views used to display Debate rounds.
-    @IBAction func launch(_ sender: Any) {
-        print("Starting Launch")
-        
-        MainMenuData.index = self.debateIndex
-        //This creates a copy of the TrasferViewController, then pushes that into the root view of the splitViewController.
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "masterView") as! TransferViewController
-        
-        //This index is used to track the debate that ought to be accessed. 
-        local.debateIndex = debateIndex
-        performSegue(withIdentifier: "pushToFlow", sender: nil)
-        //print("Transfer Complete")
+    @IBAction func launch(_ sender: UIButton) {
+        MainMenuData.index = debateIndex
+        performSegue(withIdentifier: "pushToFlow", sender: self)
     }
     
-    //Shows the ModifyDebateView which enables modification of the Debate at the current index
-    @IBAction func modify(_ sender: Any) {
-        print("Starting Modify")
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "ModifyDebate") as! ModifyDebateViewController
-        local.debateIndex = debateIndex
-        splitViewController?.showDetailViewController(local, sender: nil)
-        
-    }
-    
-    //When a user hits the delete button, this shows the popUp view
-    @IBAction func deleteOpenPopUp(_ sender: Any) {
-        popUp.isHidden = false
-    }
-    
-    //Hides the popUp view if the user cancels
-    @IBAction func cancelDeletion(_ sender: Any) {
-        popUp.isHidden = true
-    }
-    
-    //This function assumes that the current Debate Index is a valid index.
-    //It deletes the debate at the current Index
-    @IBAction func deleteCurrentDebate(_ sender: Any) {
-        
-        MainMenuData.debates.remove(at: debateIndex)
-        
-        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
-        
-        debateIndex -= 1
-        
-        viewDidLoad()
-        
+    @IBAction func modify(_ sender: UIButton) {
+        MainMenuData.index = debateIndex
+        performSegue(withIdentifier: "toModifyDebate", sender: self)
     }
     
     
@@ -244,100 +165,115 @@ class DebateDetailViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+extension DebateDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return localDebate?.judgeNames.count ?? 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "displayCell") as! DisplayTableCell
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+}
+
+extension DebateDetailViewController: UITableViewDelegate {
+    // extension implementation
+}
+
+class DisplayTableCell: UITableViewCell {
+    
+    @IBOutlet weak var vote: UIView!
+    
+    @IBOutlet weak var judgeName: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
     
 }
 
 class CreateDebateViewController: UIViewController {
     
-    @IBOutlet weak var judgeTable: UITableView!
+    var forceStay = false
+    var judgeTextAr = ["Default"]
+    var index = 0
     
-    @IBOutlet weak var judgeNumber: UIPickerView!
-    
-    @IBOutlet weak var roundField: UITextField!
-    
-    @IBOutlet weak var opponentField: UITextField!
-    
-    @IBOutlet weak var tournamentField: UITextField!
+    @IBOutlet weak var judgesTable: UITableView!
+    @IBOutlet weak var tournament: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        judgeNumber.delegate = self
-        judgeNumber.dataSource = self
-        // Do any additional setup after loading the view.
+        if (forceStay == false && !MainMenuData.debates.isEmpty) {
+            performSegue(withIdentifier: "toDebateDetail", sender: self)
+        }
+        judgesTable.dataSource = self
+        judgesTable.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //transitions back to DebateDetailViewController
-    @IBAction func cancel(_ sender: Any) {
-        //displays a detailview at index zero of MainMenuData.debates, if empty you are not allowed to leave until a debate is created.
-        if (!MainMenuData.debates.isEmpty) {
-            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
-            splitViewController?.showDetailViewController(local, sender: nil)
-        } else {
-            print("Attempting to leave CreateDebate view before any Debates have been created in MainMenuData.debates")
-        }
+   
+    //Adds cell to table with judge field
+    @IBAction func addJudge(_ sender: UIButton) {
+        judgeTextAr.append("Default")
+        judgesTable.reloadData()
     }
     
-    
-    //creates a new debate using the text fields. Then appends it to the end of the MainMenuData.debates array.
-    @IBAction func create(_ sender: Any) {
-        
-        let localnum = Int(roundField.text ?? "0")
-        
-        //creates new debate. The unwrapping of optionals is handeled by the Debate class
-        let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: nil)
-        
-        //MainMenuData.debates.append(localDebate)
-        
-        //This will crash in portrait alignment
-        //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
-        //then we need to refresh the data assosicated with the tableView. The tableView then rengenerates the table to match MainMenuData.debates
-        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
-        
-        //creates new DebateDetailViewController which displays the last debate in the MainMenuData.debates array.
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
-        
-        
-        
-        local.debateIndex = MainMenuData.debates.count - 1
-        
-        print(local.debateIndex)
-        
-        //print(MainMenuData.debates.last!.judgeName)
-        local.view.setNeedsDisplay()
-        //shows the newly created view.
-        splitViewController?.showDetailViewController(local, sender: nil)
-        
+    @IBAction func cancel(_ sender: UIButton) {
+        performSegue(withIdentifier: "toDebateDetail", sender: self)
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    @IBAction func create(_ sender: UIButton) {
+        let debate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: tournament.text, side: nil)
+        MainMenuData.debates.append(debate)
+        MainMenuData.index = MainMenuData.debates.count - 1
+        performSegue(withIdentifier: "toDebateDetail", sender: self)
+    }
 }
 extension CreateDebateViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //will return the number in the picker view.
-        return 4
+        return judgeTextAr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JudgeCell") as! JudgeCellTableViewCell
-        //cell.judgeText.placeholder = "Enter the Judge's Name Here"
-        
+        if (judgeTextAr[indexPath.row] == "Default") {
+            cell.judgeField.placeholder = "Judge Name Here"
+        } else {
+            cell.judgeField.text = judgeTextAr[indexPath.row]
+        }
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        index = indexPath.row
+    }
+    
+    func textFieldShouldEndEditing(field: UITextField) {
+        judgeTextAr[index] = field.text ?? "Default"
+        print(judgeTextAr)
     }
 }
 extension CreateDebateViewController: UITableViewDelegate {
@@ -347,30 +283,33 @@ extension CreateDebateViewController: UIPickerViewDataSource {
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 13
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return 0
     }
     
 }
 
 extension CreateDebateViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(component)"
+        print("\(row)")
+        return "\(row)"
     }
 }
 
 
 class JudgeCellTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var judgeField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    @IBOutlet weak var judgeText: UITextField!
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -392,21 +331,9 @@ class ModifyDebateViewController: UIViewController {
     var debateIndex:Int = 0
     
     
-    @IBOutlet weak var roundLabel: UITextField!
-    
-    @IBOutlet weak var opponentLabel: UITextField!
-    
-    @IBOutlet weak var tournamentLabel: UITextField!
-    
     //When the view is loaded, the old texts for the various properties are loaded. This ensures that only values that the user wants to modify get modfied.
     override func viewDidLoad() {
         super.viewDidLoad()
-        let localDebate = MainMenuData.debates[debateIndex]
-        //roundLabel.text = "\(localDebate.roundNumber ?? 0)"
-        opponentLabel.text = localDebate.otherTeam
-        //judgeLabel.text = localDebate.judgeName
-        tournamentLabel.text = localDebate.tournament
-        // Do any additional setup after loading the view.
         
     }
     
@@ -415,17 +342,10 @@ class ModifyDebateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //returns to DebateView with no modifications performed
-    @IBAction func cancel(_ sender: Any) {
-        
-        //creates a new DebateDetailViewController and then shows that as the new detail view controller
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
-        local.debateIndex = debateIndex
-        splitViewController?.showDetailViewController(local, sender: nil)
-        
+    func segueToDebateDetail() {
+        performSegue(withIdentifier: "toDebateDetail", sender: self)
     }
     
-    //modifies the debate at debateIndex in order to match the values supplied in the textfields.
     @IBAction func modify(_ sender: Any) {
         
         let localInt = Int(roundLabel.text ?? "0")
@@ -455,16 +375,11 @@ class ModifyDebateViewController: UIViewController {
         
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func cancel(_ sender: UIButton) {
+        segueToDebateDetail()
+    }
+    //returns to DebateView with no modifications performed
+  
     
 }
 

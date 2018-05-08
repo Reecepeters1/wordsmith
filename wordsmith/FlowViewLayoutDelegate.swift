@@ -35,7 +35,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
     }
     
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: contentWidth, height: contentWidth)
+        return CGSize(width: contentWidth * 3, height: contentWidth * 2)
     }
     
     //array that holds attribute of the cards
@@ -52,10 +52,8 @@ class FlowVeiwLayout: UICollectionViewLayout{
         //clear the cache for repopulation
         cache.removeAll()
         
-        //items casting and variable instantiations
-        //let items = collectionView.numberOfItems(inSection: 0)
         
-        //set y and x offset to zero
+        //set y and x offset to basal values
         var yOffset:CGFloat = 50
         var xOffset:CGFloat = 20
         //to be used later
@@ -76,10 +74,16 @@ class FlowVeiwLayout: UICollectionViewLayout{
             
             
             //check to see if the card has respones and changes based on that
-            if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count != 0
+            if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.count != 0
             {
-                for _ in 0...MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count{
-                    yOffset += (CellWidth + CGFloat(30))}
+                if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count != 0
+                {
+                    for _ in 0...MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count{
+                        yOffset += (CellWidth + CGFloat(30))}
+                }
+                else{
+                    yOffset += (CellWidth + CGFloat(30))
+                }
             }
             else{
                 yOffset += (CellWidth + CGFloat(30))

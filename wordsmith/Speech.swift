@@ -16,7 +16,9 @@ class Speech{
             herpes = []
         }
         herpes = array
-        
+    }
+    init(){
+        herpes = []
     }
     
     func getcount() -> Int{

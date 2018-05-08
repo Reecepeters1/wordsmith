@@ -20,7 +20,7 @@ public class publicindex: NSObject{
         var count = 0
         if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count == 0
         {
-            publicindex.currentspeech = 0
+            currentspeech = 0
             publicindex.cardindex = 0
             return
         }
