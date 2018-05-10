@@ -11,6 +11,7 @@ import QuartzCore
 
 class Card {
     
+    var holder: CardView
     var responses: [Card] = []
     var drawing: [CAShapeLayer]
     var speech:Int = -1
@@ -55,4 +56,9 @@ class Card {
     func setImage(set: UIImage) {
         image = set
     }
+    
+    func setHolder(set: CardView) {
+        holder = set
+    }
+    
 }

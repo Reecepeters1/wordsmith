@@ -18,6 +18,7 @@ class CardView: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         self.storedCard = Card()
+        storedCard.holder = self
         super.init(coder: aDecoder)
     }
     

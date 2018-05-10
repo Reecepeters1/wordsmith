@@ -131,8 +131,8 @@ class DrawView: UIViewController, IndexDelegate {
             MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.setImage(set: drawing.pb_takeSnapshot())
             
             let newSpeech = publicindex.currentspeech - 1
-            let newCard = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[newSpeech].herpes.index(of: MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard)
-            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[newSpeech].herpes[newCard].storedCard)
+            let newCard = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[newSpeech].herpes.index(of: (MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard?.holder)!)
+            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[newSpeech].herpes[newCard!].storedCard)
             
         }
     }
