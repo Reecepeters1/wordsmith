@@ -348,7 +348,7 @@ class ModifyDebateViewController: UIViewController {
     
     @IBAction func modify(_ sender: Any) {
         
-        let localInt = Int(roundLabel.text ?? "0")
+        //let localInt = Int(roundLabel.text ?? "0")
         
         //The unwrapping of optionals is handled by the debate class
         //let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: nil)
