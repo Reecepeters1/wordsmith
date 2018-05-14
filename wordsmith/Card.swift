@@ -17,12 +17,11 @@ class Card {
     var positionInSpeech:Int = -1
     var isAResponse = false
     var isFlagged = false
-    var previousCard: Card?
+    var previousCard: Card? = nil
     var image: UIImage = UIImage()
     
     init(draw: [CAShapeLayer], maybe: Card?) {
         drawing = draw
-        image = createPDFimage()
         previousCard = maybe
     }
     
@@ -55,5 +54,26 @@ class Card {
     
     func addAnswer(ans: CardView) {
         responses.append(ans)
+    }
+    
+    func setImage(set: UIImage) {
+        image = set
+    }
+    
+    func setHolder(set: CardView) {
+        holder = set
+    }
+    
+    func hasResponses() -> Bool {
+        if responses.count == 0
+        {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func setHasResponses(hey: Bool) {
+        isAResponse = hey
     }
 }

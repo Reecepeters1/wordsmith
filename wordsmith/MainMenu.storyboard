@@ -230,7 +230,7 @@
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" id="fPP-rx-r0S" customClass="DrawView" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMS-Ua-2jh">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9a5-NU-yuj">
@@ -348,11 +348,12 @@
                         <outlet property="redButton" destination="e4E-Cs-8EL" id="b1j-MB-wqz"/>
                         <outlet property="slider" destination="eOV-bb-YVx" id="0qK-ed-1RK"/>
                         <outlet property="whiteButton" destination="dW0-Eu-ctN" id="GY6-y6-tpp"/>
+                        <segue destination="XCt-Ty-siL" kind="show" identifier="WRONG_LEVER" id="K9A-yE-sln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dD-0Y-x8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610.7421875" y="1527.34375"/>
+            <point key="canvasLocation" x="1575" y="1543"/>
         </scene>
         <!--Flow Veiw-->
         <scene sceneID="hY0-W9-048">
@@ -369,7 +370,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Card" id="WHu-Qd-pi1" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card" id="WHu-Qd-pi1" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -389,7 +390,7 @@
                                     <segue destination="fPP-rx-r0S" kind="show" id="2T3-yK-z0W"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="addspeech" id="32I-8b-anP" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addspeech" id="32I-8b-anP" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
                                 <rect key="frame" x="387" y="0.0" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -402,7 +403,7 @@
                                     <segue destination="fPP-rx-r0S" kind="show" id="lrq-OA-tHx"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="addcard" id="bhD-tR-Bzn" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addcard" id="bhD-tR-Bzn" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
                                 <rect key="frame" x="774" y="0.0" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -610,7 +611,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3JT-yg-6LI">
-                                <rect key="frame" x="306" y="372" width="327" height="72"/>
+                                <rect key="frame" x="307" y="372" width="326" height="72"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Round" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCF-Mc-mA7">

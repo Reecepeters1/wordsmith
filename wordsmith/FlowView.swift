@@ -152,7 +152,7 @@ extension FlowVeiw{
         
     }
     //this function creates cell and places it at the intend position
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         var cell:CardView
         addcard = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
@@ -228,8 +228,8 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         //TODO adjust for end spech value speech
-        //let availableHeight = self.view.frame.height
-        //let heightPerItem = availableHeight / itemsPerColumn
+        let availableHeight = self.view.frame.height
+        let heightPerItem = availableHeight / itemsPerColumn
         return sectionInsets
     }
     
@@ -247,13 +247,11 @@ extension FlowVeiw: FlowLayoutDelegate {
         let x = self.view.frame.height
         let y = itemsPerColumn
         let z = x / y
-        if x > 200 {
+        if z > 200 {
             return CGFloat(200)
-        }
-        if x < 100{
-            return CGFloat(100)
-            
         }
         return CGFloat(z)
     }
 }
+
+

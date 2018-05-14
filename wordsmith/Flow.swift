@@ -15,7 +15,7 @@ class Flow{
     var temp = Speech()
     
     init() {
-        Speeches.append(temp)
+        Speeches = []
     }
     
     func returnflow() -> [Speech]{
@@ -70,6 +70,9 @@ class Flow{
         return biggestsize + 1
     }
     
+    func getSpeeches() -> [Speech] {
+        return Speeches
+    }
 }
 
 
