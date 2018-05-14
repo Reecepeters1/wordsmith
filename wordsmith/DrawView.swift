@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 class DrawView: UIViewController, IndexDelegate {
-    
-    var generic = CardView(coder: NSCoder())
+    var generic = UICollectionViewCell()
     var currentCard:CardView
+
     var wid:CGFloat = 10
     required init?(coder aDecoder: NSCoder) {
         if MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.count == 0{
-            currentCard = generic!
-            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.append(generic!)
+            currentCard = CardView(coder: aDecoder)!
+            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.append(currentCard)
         }
         else{
             currentCard = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex]

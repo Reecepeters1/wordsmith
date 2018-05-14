@@ -11,7 +11,7 @@ import QuartzCore
 
 class Card {
     
-    var responses: [Card] = []
+    var responses: [CardView] = []
     var drawing: [CAShapeLayer]
     var speech:Int = -1
     var positionInSpeech:Int = -1
@@ -41,7 +41,6 @@ class Card {
     }
     
     func createPDFimage() -> UIImage {
-        //will be used for creating pdf of all aggregated images
         return #imageLiteral(resourceName: "startImage")
     }
     
@@ -54,7 +53,7 @@ class Card {
         return
     }
     
-    func addAnswer(ans: Card) {
+    func addAnswer(ans: CardView) {
         responses.append(ans)
     }
 }
