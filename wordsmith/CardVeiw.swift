@@ -9,26 +9,27 @@
 import UIKit
 
 class CardView: UICollectionViewCell {
+    
+    
     @IBOutlet var cardimage: UIImageView!
     var storedCard:Card
+    var isEndOfSpeech = false
+    var coder:NSCoder
+    var calcRyoffset:CGFloat = 0
     init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card(draw: draw, maybe: nil)
+        coder = aDecoder
         super.init(coder: aDecoder)!
     }
     
     required init?(coder aDecoder: NSCoder) {
         self.storedCard = Card()
+        coder = aDecoder
         super.init(coder: aDecoder)
+        storedCard.holder = self
     }
     
-    
-    
     //TODO Way to store location of a Card initialized elsewhere
-    
-    
-    
-    var isEndOfSpeech = false
-    
     func isItEndOfSpeech() -> Bool{
         return isEndOfSpeech
     }

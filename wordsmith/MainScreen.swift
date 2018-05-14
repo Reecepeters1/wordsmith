@@ -19,7 +19,6 @@ public class MainMenuData: NSObject {
         //tbd l8ter to streamine some functionality for not not needed freddy 4/22
     }
     
-    
 }
 
 import UIKit
@@ -382,7 +381,32 @@ class ModifyDebateViewController: UIViewController {
     }
     
     @IBAction func modify(_ sender: Any) {
-        segueToDebateDetail()
+        
+        //let localInt = Int(roundLabel.text ?? "0")
+        
+        //The unwrapping of optionals is handled by the debate class
+        //let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: nil)
+        
+        //The date created/date to expire are kept the same across modifications
+        //localDebate.dateCreated = MainMenuData.debates[debateIndex].dateCreated
+        //localDebate.expirationDate = MainMenuData.debates[debateIndex].expirationDate
+
+        
+        //MainMenuData.debates[debateIndex] = localDebate
+        
+        //This will crash in portrait alignment
+        //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
+        //then we need to refresh the data assosicated with the tableView. The tableView then rengenerates the table to match MainMenuData.debates
+        
+        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        
+        
+        //creates a new DebateDetailViewController and then shows that as the new detail view controller
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        local.debateIndex = debateIndex
+        splitViewController?.showDetailViewController(local, sender: nil)
+        
+        
     }
     
     @IBAction func cancel(_ sender: UIButton) {

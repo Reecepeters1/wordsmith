@@ -8,9 +8,10 @@
 
 import Foundation
 class Speech{
+
     
     var herpes: [CardView]
-
+    
     init(array: [CardView]){
         if array.isEmpty == true{
             herpes = []
