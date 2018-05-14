@@ -359,8 +359,8 @@
         <scene sceneID="hY0-W9-048">
             <objects>
                 <collectionViewController id="XCt-Ty-siL" customClass="FlowVeiw" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qfm-XF-LBH">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qfm-XF-LBH" customClass="FlowCollectionView" customModule="wordsmith" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lmq-Cz-CZS" customClass="FlowVeiwLayout" customModule="wordsmith" customModuleProvider="target">

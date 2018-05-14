@@ -11,6 +11,8 @@ import QuartzCore
 
 class Card {
     
+    var holder: CardView = CardView(draw: [CAShapeLayer](), coder: NSCoder())!
+    var responses: [Card] = []
     var responses: [CardView] = []
     var drawing: [CAShapeLayer]
     var speech:Int = -1
