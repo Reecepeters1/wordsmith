@@ -11,18 +11,19 @@ import QuartzCore
 
 class Card {
     
+    var holder: CardView = CardView(draw: [CAShapeLayer](), coder: NSCoder())!
     var responses: [Card] = []
+    var responses: [CardView] = []
     var drawing: [CAShapeLayer]
     var speech:Int = -1
     var positionInSpeech:Int = -1
     var isAResponse = false
     var isFlagged = false
-    var previousCard: Card?
+    var previousCard: Card? = nil
     var image: UIImage = UIImage()
     
     init(draw: [CAShapeLayer], maybe: Card?) {
         drawing = draw
-        image = createPDFimage()
         previousCard = maybe
     }
     
@@ -41,7 +42,6 @@ class Card {
     }
     
     func createPDFimage() -> UIImage {
-        //will be used for creating pdf of all aggregated images
         return #imageLiteral(resourceName: "startImage")
     }
     
@@ -54,7 +54,28 @@ class Card {
         return
     }
     
-    func addAnswer(ans: Card) {
+    func addAnswer(ans: CardView) {
         responses.append(ans)
+    }
+    
+    func setImage(set: UIImage) {
+        image = set
+    }
+    
+    func setHolder(set: CardView) {
+        holder = set
+    }
+    
+    func hasResponses() -> Bool {
+        if responses.count == 0
+        {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func setHasResponses(hey: Bool) {
+        isAResponse = hey
     }
 }
