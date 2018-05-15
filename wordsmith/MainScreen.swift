@@ -19,6 +19,7 @@ public class MainMenuData: NSObject {
         //tbd l8ter to streamine some functionality for not not needed freddy 4/22
     }
     
+    
 }
 
 import UIKit
