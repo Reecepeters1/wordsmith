@@ -152,7 +152,7 @@ class DrawView: UIViewController, IndexDelegate {
         
         if floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.hasResponses()
         {
-            let newCard = floe.Speeches[newSpeech].herpes.index(of: (floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses[0].holder))
+            let newCard = floe.Speeches[newSpeech].herpes.index(of: (floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses[0]))
             drawing.setCard(tempCard: floe.Speeches[newSpeech].herpes[newCard!].getCard())
             
             publicindex.currentspeech = newSpeech
@@ -172,7 +172,7 @@ class DrawView: UIViewController, IndexDelegate {
             drawing.clearDraw()
             floe.Speeches[newSpeech].herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder())!)
             
-            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses[0] = floe.Speeches[newSpeech].herpes[newCard].storedCard
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses[0] = floe.Speeches[newSpeech].herpes[newCard]
             
             floe.Speeches[newSpeech].herpes[newCard].storedCard.isAResponse = true
             
@@ -194,8 +194,8 @@ class DrawView: UIViewController, IndexDelegate {
         if floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.isAResponse && ((newCard == floe.Speeches[publicindex.currentspeech].herpes.count) || !(floe.Speeches[publicindex.currentspeech].herpes[newCard].storedCard.isAResponse) )
         {
             drawing.clearDraw()
-            floe.Speeches[publicindex.currentspeech].herpes.insert(CardView(draw: drawing.getLayered(), coder: NSCoder() )!, at: floe.Speeches[publicindex.currentspeech].herpes.index(of: (floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.holder))! + 1)
-            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard?.responses.append(floe.Speeches[publicindex.currentspeech].herpes[newCard].storedCard)
+            floe.Speeches[publicindex.currentspeech].herpes.insert(CardView(draw: drawing.getLayered(), coder: NSCoder() )!, at: floe.Speeches[publicindex.currentspeech].herpes.index(of: (floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex]))! + 1)
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard?.responses.append(floe.Speeches[publicindex.currentspeech].herpes[newCard])
             
             floe.Speeches[publicindex.currentspeech].herpes[newCard].storedCard.previousCard = floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard
             
@@ -213,5 +213,12 @@ class DrawView: UIViewController, IndexDelegate {
         drawing.setCard(tempCard: floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex + 1].getCard())
         
         publicindex.cardindex += 1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        for i in floe.Speeches {
+            i.herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder())!)
+            i.herpes[i.herpes.count - 1].isEndOfSpeech = true
+        }
     }
 }

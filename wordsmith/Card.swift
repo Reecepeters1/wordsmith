@@ -12,7 +12,7 @@ import QuartzCore
 class Card {
     
     var holder: CardView = CardView(draw: [CAShapeLayer](), coder: NSCoder())!
-    var responses: [Card] = []
+    var responses: [CardView] = []
     var drawing: [CAShapeLayer]
     var speech:Int = -1
     var positionInSpeech:Int = -1
@@ -49,7 +49,7 @@ class Card {
         return
     }
     
-    func addAnswer(ans: Card) {
+    func addAnswer(ans: CardView) {
         responses.append(ans)
     }
     
