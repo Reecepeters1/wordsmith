@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="debateView" id="9lZ-Vt-j78" customClass="DebateDetailViewController" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qdk-4O-Un0">
-                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fh-qi-tlF">
@@ -223,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JW2-OJ-feM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="381"/>
+            <point key="canvasLocation" x="1437" y="634"/>
         </scene>
         <!--Draw View-->
         <scene sceneID="OJc-xn-lj7">
@@ -352,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dD-0Y-x8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610.7421875" y="1527.34375"/>
+            <point key="canvasLocation" x="1437" y="1623"/>
         </scene>
         <!--Flow Veiw-->
         <scene sceneID="hY0-W9-048">
@@ -427,7 +427,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhC-5e-36n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763" y="2503"/>
+            <point key="canvasLocation" x="1437" y="2707"/>
         </scene>
         <!--Debates-->
         <scene sceneID="VnT-Jt-0n5">
@@ -471,7 +471,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDX-fq-lR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="-821"/>
+            <point key="canvasLocation" x="1437" y="-759"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pc0-bi-tan">
@@ -500,7 +500,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cb-dZ-2LL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1410" y="-427"/>
+            <point key="canvasLocation" x="-2257" y="-759"/>
         </scene>
         <!--Create Debate View Controller-->
         <scene sceneID="2lT-6D-dQE">
@@ -561,6 +561,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Delete"/>
                                                     <connections>
+                                                        <action selector="deleteJudge:" destination="isI-XJ-RPx" eventType="touchUpInside" id="D3h-W5-AMV"/>
                                                         <action selector="deleteJudge:" destination="JGo-2t-s6y" eventType="touchUpInside" id="cW5-bP-zvP"/>
                                                     </connections>
                                                 </button>
@@ -670,14 +671,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMy-rf-iaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JGo-2t-s6y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1618.359375" y="1419.53125"/>
+            <point key="canvasLocation" x="-2257" y="634"/>
         </scene>
         <!--Modify Debate View Controller-->
         <scene sceneID="4z0-Rs-Pz3">
             <objects>
                 <viewController storyboardIdentifier="ModifyDebate" id="lWX-mV-x2v" customClass="ModifyDebateViewController" customModule="wordsmith" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M4t-5L-Cot">
-                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8k-Aq-eSb">
@@ -796,8 +797,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gui-ov-8FT">
-                                <rect key="frame" x="330" y="406" width="323" height="72"/>
-                                <rect key="frame" x="330" y="406" width="646" height="72"/>
+                                <rect key="frame" x="330" y="406" width="643" height="72"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Round" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MXX-dC-BeU">
@@ -840,11 +840,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnz-Lj-ssN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-756" y="1682"/>
+            <point key="canvasLocation" x="-757" y="1622"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MKT-cC-Qr6"/>
-        <segue reference="wXv-O8-lIX"/>
+        <segue reference="wxn-rb-ovg"/>
     </inferredMetricsTieBreakers>
 </document>
