@@ -39,7 +39,11 @@ class Card {
     func getVeiw() -> [CAShapeLayer] {
         return drawing
     }
-        
+    
+    func createPDFimage() -> UIImage {
+        return #imageLiteral(resourceName: "startImage")
+    }
+    
     func getFlagged() -> Bool {
         return isFlagged
     }
@@ -58,7 +62,7 @@ class Card {
     }
     
     func setHolder(set: CardView) {
-        holder = set
+        let holder = set
     }
     
     func hasResponses() -> Bool {

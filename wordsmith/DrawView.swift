@@ -141,6 +141,7 @@ class DrawView: UIViewController, IndexDelegate {
             publicindex.cardindex = newCard!
             
         }
+        publicindex.currentspeech -= 1
     }
     
     func doSwipeRight() {

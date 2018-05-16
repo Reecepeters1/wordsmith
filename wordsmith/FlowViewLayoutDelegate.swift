@@ -5,7 +5,6 @@
 //  Created by SHIH, FREDERIC on 12/18/17.
 //  Copyright © 2017 District196. All rights reserved.
 
-
 import UIKit
 
 protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
@@ -127,6 +126,3 @@ class FlowVeiwLayout: UICollectionViewLayout{
         return cache[indexPath.item]
     }
 }
-
-
-

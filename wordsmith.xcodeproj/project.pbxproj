@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9776BAB9208D92B9001A1E31 /* FlowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */; };
+		C717099C20AB3FBE003FF82C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
+		C717099D20AB3FEE003FF82C /* FlowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */; };
 		C763EE322062BE72004A136E /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE312062BE72004A136E /* Interpole.swift */; };
 		C763EE362062BEAC004A136E /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE352062BEAC004A136E /* SplineView.swift */; };
-		C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
 		C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
 		C787B9FE2045CE7A00A3B498 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C787B9FD2045CE7A00A3B498 /* MainMenu.storyboard */; };
 		C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
@@ -326,17 +326,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9776BAB9208D92B9001A1E31 /* FlowCollectionView.swift in Sources */,
 				E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
-				C77A1FCA2018F9AF00060322 /* MainScreen.swift in Sources */,
 				E40321112076872300BC548A /* (null) in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
+				C717099C20AB3FBE003FF82C /* MainScreen.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift in Sources */,
 				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
+				C717099D20AB3FEE003FF82C /* FlowCollectionView.swift in Sources */,
 				E403211320768D4900BC548A /* (null) in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,

@@ -18,6 +18,8 @@ public class MainMenuData: NSObject {
     func amountofcardsinflow(debate:Int, flow:Int){
         //tbd l8ter to streamine some functionality for not not needed freddy 4/22
     }
+    
+    
 }
 
 import UIKit
@@ -52,9 +54,9 @@ class MainMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "debateCell", for: indexPath)
         
-        var localString = MainMenuData.debates[indexPath.row].otherTeam
+        var localString = MainMenuData.debates[indexPath.row].tournament
         localString.append(" ")
-        localString.append(MainMenuData.debates[indexPath.row].tournament)
+        localString.append(MainMenuData.debates[indexPath.row].getRound())
         
         cell.textLabel?.text? = localString
         
@@ -207,13 +209,31 @@ class DisplayTableCell: UITableViewCell {
     
 }
 
+protocol WHYISSIWFTSOAFWUL: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) -> Bool
+}
+
 class CreateDebateViewController: UIViewController {
     
     var forceStay = false
     var judgeTextAr = ["Default"]
     var index = 0
     
+    func remove() -> Any {
+        func removeCell (myIndex: Int) -> () {
+            print("I was invoked")
+            
+            self.saveTextToAr()
+            
+            self.judgeTextAr.remove(at: myIndex)
+            
+            self.judgesTable.reloadData()
+        }
+        return removeCell
+    }
+    
     @IBOutlet weak var judgesTable: UITableView!
+    
     @IBOutlet weak var tournament: UITextField!
     
     override func viewDidLoad() {
@@ -229,11 +249,27 @@ class CreateDebateViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
+    
     //Adds cell to table with judge field
     @IBAction func addJudge(_ sender: UIButton) {
+        saveTextToAr()
+        
         judgeTextAr.append("Default")
+        
         judgesTable.reloadData()
+    }
+    
+    func saveTextToAr(){
+        
+        if (!judgeTextAr.isEmpty){
+            for temp in 0...judgeTextAr.count - 1 {
+                var myIndexPath = IndexPath(row: temp, section: 0)
+                var cell = judgesTable.cellForRow(at: myIndexPath)
+                judgeTextAr[temp] = (cell as! JudgeCellTableViewCell).judgeField.text ?? "Default"
+            }
+        } else {
+            return
+        }
     }
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -241,11 +277,17 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func create(_ sender: UIButton) {
-        let debate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: tournament.text, side: nil)
+        let debate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: judgeTextAr, tournament: tournament.text, side: nil)
         MainMenuData.debates.append(debate)
         MainMenuData.index = MainMenuData.debates.count - 1
+        
+        //(splitViewController?.childViewControllers[0].childViewControllers as! MainMenuTableViewController).tableView.reloadData()
+        let x = splitViewController!.viewControllers[0]
+        let y = x.childViewControllers[0] as! MainMenuTableViewController
+        y.tableView.reloadData()
         performSegue(withIdentifier: "toDebateDetail", sender: self)
     }
+    
 }
 extension CreateDebateViewController: UITableViewDataSource {
     
@@ -254,10 +296,23 @@ extension CreateDebateViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "JudgeCell") as! JudgeCellTableViewCell
+        
+        cell.judgeField.delegate = self
+        cell.judgeField.index = indexPath.row
+        cell.currentIndex = indexPath.row
+        cell.deleteJudgeClosure = remove() as! ((Int) -> Void)
+        //(cell.contentView as! JudgeContentView).myDeleteFunc = (remove() as! ((_ myIndex: Int) -> ()))
+        cell.contentView.isUserInteractionEnabled = true
+        //(cell.contentView as! JudgeContentView).myIndex = indexPath.row
+        cell.selectionStyle = .none
+        
         if (judgeTextAr[indexPath.row] == "Default") {
             cell.judgeField.placeholder = "Judge Name Here"
+            cell.judgeField.text = ""
         } else {
+            
             cell.judgeField.text = judgeTextAr[indexPath.row]
         }
         return cell
@@ -267,42 +322,44 @@ extension CreateDebateViewController: UITableViewDataSource {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
+        print(index)
     }
     
-    func textFieldShouldEndEditing(field: UITextField) {
-        judgeTextAr[index] = field.text ?? "Default"
-        print(judgeTextAr)
-    }
 }
 extension CreateDebateViewController: UITableViewDelegate {
     // extension implementation
 }
-extension CreateDebateViewController: UIPickerViewDataSource {
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 0
+extension CreateDebateViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
+        if (index < judgeTextAr.count - 1 && (textField as! myDelegatedTextField).index < judgeTextAr.count - 1) {
+            judgeTextAr[(textField as! myDelegatedTextField).index] = textField.text ?? "Default"
+            print(judgeTextAr)
+            return true
+        }
+            return false
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
-    }
+    
     
 }
 
-extension CreateDebateViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print("\(row)")
-        return "\(row)"
-    }
-}
 
 
 class JudgeCellTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var judgeField: UITextField!
+    
+    var sittingString: String? = ""
+    var currentIndex: Int = 0
+    var delegate: Any? = nil
+    @IBOutlet weak var judgeField: myDelegatedTextField!
+    var deleteJudgeClosure: ((Int) -> Void)?
+    @IBAction func deleteJudge(_ sender: Any) {
+        
+        print("Trying to invoke Function")
+        deleteJudgeClosure!(currentIndex)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -317,6 +374,13 @@ class JudgeCellTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+ 
+
+
+class myDelegatedTextField: UITextField {
+    var index = 0
 }
 
 
@@ -379,7 +443,7 @@ class ModifyDebateViewController: UIViewController {
         segueToDebateDetail()
     }
     //returns to DebateView with no modifications performed
-  
+    
     
 }
 
