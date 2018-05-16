@@ -5,7 +5,6 @@
 //  Created by SHIH, FREDERIC on 12/7/17.
 //  Copyright © 2017 District196. All rights reserved.
 //
-
 import UIKit
 
 class CardView: UICollectionViewCell {
@@ -16,18 +15,20 @@ class CardView: UICollectionViewCell {
     var isEndOfSpeech = false
     var coder:NSCoder
     var calcRyoffset:CGFloat = 0
-    init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
-        self.storedCard = Card(draw: draw, maybe: nil)
-        coder = aDecoder
-        super.init(coder: aDecoder)!
-    }
     
     required init?(coder aDecoder: NSCoder) {
         self.storedCard = Card()
         coder = aDecoder
-        super.init(coder: aDecoder)
-        storedCard.holder = self
+        super.init(coder: aDecoder)!
     }
+    
+    init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
+        self.storedCard = Card()
+        coder = aDecoder
+        super.init(coder: aDecoder)!
+    }
+    
+    
     
     //TODO Way to store location of a Card initialized elsewhere
     func isItEndOfSpeech() -> Bool{
@@ -63,4 +64,3 @@ class CardView: UICollectionViewCell {
         storedCard = car
     }
 }
-
