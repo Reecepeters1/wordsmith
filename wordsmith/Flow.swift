@@ -5,7 +5,6 @@
 //  Created by KRUEGER, JOHN on 12/7/17.
 //  Copyright © 2017 District196. All rights reserved.
 //
-
 import Foundation
 import UIKit
 
@@ -15,7 +14,7 @@ class Flow{
     var temp = Speech()
     
     init() {
-        Speeches = []
+        Speeches.append(temp)
     }
     
     func returnflow() -> [Speech]{
@@ -70,9 +69,4 @@ class Flow{
         return biggestsize + 1
     }
     
-    func getSpeeches() -> [Speech] {
-        return Speeches
-    }
 }
-
-

@@ -15,7 +15,7 @@ public class publicindex: NSObject{
     public static var currentflow = 0
     public static var cardindex = 0
     public static var currentspeech = 0
-   
+    
     
     public static func setindex(index:IndexPath) -> Void{
         var count = 0
@@ -107,12 +107,12 @@ class FlowVeiw: UICollectionViewController{
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[2].herpes.append(toodles6)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[2].herpes[1].isEndOfSpeech = true
         /*
-        toodles4.storedCard.responses.append(toodles5)
-        toodles5.storedCard.isAResponse = true
-        toodles4.storedCard.responses.append(toodles6)
-        toodles6.storedCard.isAResponse = true
+         toodles4.storedCard.responses.append(toodles5)
+         toodles5.storedCard.isAResponse = true
+         toodles4.storedCard.responses.append(toodles6)
+         toodles6.storedCard.isAResponse = true
          */
- 
+        
         super.init(coder: aDecoder)
         
     }
@@ -152,7 +152,7 @@ extension FlowVeiw{
         
     }
     //this function creates cell and places it at the intend position
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
         var cell:CardView
         addcard = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
@@ -191,21 +191,21 @@ extension FlowVeiw{
         var temp =  collectionView!.indexPathsForSelectedItems![0]
         publicindex.setindex(index: temp)
         /*
-        if MainMenuData.debates[debateindex].positions[publicindex.debateindex].Speeches[0].herpes.count == 1{
-            temp.item = 0
-        }
-        else{
-            temp.item = MainMenuData.debates[debateindex].positions[publicindex.debateindex].Speeches[0].herpes.count - 1
-            
-        }
-        for flw in MainMenuData.debates[debateindex].positions{
-            for spch in flw.Speeches{
-                if spch.herpes[spch.herpes.count - 1] == addcard{
-                    spch.herpes.remove(at: spch.herpes.count - 1)
-                }
-            }
-        }
- */
+         if MainMenuData.debates[debateindex].positions[publicindex.debateindex].Speeches[0].herpes.count == 1{
+         temp.item = 0
+         }
+         else{
+         temp.item = MainMenuData.debates[debateindex].positions[publicindex.debateindex].Speeches[0].herpes.count - 1
+         
+         }
+         for flw in MainMenuData.debates[debateindex].positions{
+         for spch in flw.Speeches{
+         if spch.herpes[spch.herpes.count - 1] == addcard{
+         spch.herpes.remove(at: spch.herpes.count - 1)
+         }
+         }
+         }
+         */
     }
 }
 extension FlowVeiw: UICollectionViewDelegateFlowLayout{
@@ -228,8 +228,8 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         //TODO adjust for end spech value speech
-        let availableHeight = self.view.frame.height
-        let heightPerItem = availableHeight / itemsPerColumn
+        //let availableHeight = self.view.frame.height
+        //let heightPerItem = availableHeight / itemsPerColumn
         return sectionInsets
     }
     
@@ -247,11 +247,13 @@ extension FlowVeiw: FlowLayoutDelegate {
         let x = self.view.frame.height
         let y = itemsPerColumn
         let z = x / y
-        if z > 200 {
+        if x > 200 {
             return CGFloat(200)
+        }
+        if x < 100{
+            return CGFloat(100)
+            
         }
         return CGFloat(z)
     }
 }
-
-

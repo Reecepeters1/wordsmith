@@ -5,7 +5,6 @@
 //  Created by SHIH, FREDERIC on 12/18/17.
 //  Copyright © 2017 District196. All rights reserved.
 
-
 import UIKit
 
 protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
@@ -91,18 +90,18 @@ class FlowVeiwLayout: UICollectionViewLayout{
                 if whytho.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses.count != 0{
                     yOffset +=  (CellWidth + CGFloat(30) + y4responses(celloffset: (CellWidth + 30), array: whytho.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses))
                 }
-                /*
-                else{
-                    if whytho.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.isAResponse{
-                        print("response activated on \(item)")
-                        yOffset += (CellWidth + CGFloat(30))
-                    }
-                    yOffset += (CellWidth + CGFloat(30))
-                }*/
+                    /*
+                     else{
+                     if whytho.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.isAResponse{
+                     print("response activated on \(item)")
+                     yOffset += (CellWidth + CGFloat(30))
+                     }
+                     yOffset += (CellWidth + CGFloat(30))
+                     }*/
                 else{
                     yOffset += (CellWidth + CGFloat(30))
                 }
-               
+                
             }
             else{
                 yOffset += (CellWidth + CGFloat(30))
@@ -146,6 +145,3 @@ class FlowVeiwLayout: UICollectionViewLayout{
         return cache[indexPath.item]
     }
 }
-
-
-
