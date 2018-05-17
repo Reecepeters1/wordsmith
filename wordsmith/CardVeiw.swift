@@ -11,15 +11,18 @@ class CardView: UICollectionViewCell {
     @IBOutlet var cardimage: UIImageView!
     var storedCard:Card
     var isEndOfSpeech = false
-    init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
-        self.storedCard = Card(draw: draw, maybe: nil)
-        let coder = aDecoder
+    var coder:NSCoder
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.storedCard = Card()
+        self.coder = aDecoder
         super.init(coder: aDecoder)!
     }
     
     init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card()
-        super.init(coder: aDecoder)
+        self.coder = aDecoder
+        super.init(coder: aDecoder)!
     }
     
     
