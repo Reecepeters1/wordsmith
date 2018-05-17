@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tempballot = Debate.Ballot()
         let temp = Debate(round: tempround, otherTeam: "", ballot: tempballot, judgeName: [""], tournament: "", side: .aff)
         MainMenuData.debates.append(temp)
-        MainMenuData.debates.append(temp)
-        */
+        MainMenuData.debates.append(temp)*/
+        
         // Override point for customization after application launch.
         /*let myViewController = UIViewController()
         myViewController.view = UIView(frame: CGRect(x: 1, y: 1, width: 1, height: 1))

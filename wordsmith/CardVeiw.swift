@@ -5,28 +5,24 @@
 //  Created by SHIH, FREDERIC on 12/7/17.
 //  Copyright © 2017 District196. All rights reserved.
 //
-
 import UIKit
 
 class CardView: UICollectionViewCell {
-    
-    
     @IBOutlet var cardimage: UIImageView!
     var storedCard:Card
     var isEndOfSpeech = false
-    var coder:NSCoder
-    var calcRyoffset:CGFloat = 0
     init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card(draw: draw, maybe: nil)
-        coder = aDecoder
+        let coder = aDecoder
         super.init(coder: aDecoder)!
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card()
-        coder = aDecoder
         super.init(coder: aDecoder)
     }
+    
+    
     
     //TODO Way to store location of a Card initialized elsewhere
     func isItEndOfSpeech() -> Bool{
@@ -62,4 +58,3 @@ class CardView: UICollectionViewCell {
         storedCard = car
     }
 }
-
