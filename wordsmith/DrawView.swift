@@ -12,7 +12,7 @@ import UIKit
 class DrawView: UIViewController, IndexDelegate {
     
     var floe = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow]
-    var generic = CardView(coder: NSCoder())
+    var generic = CardView(draw: [CAShapeLayer](), coder: NSCoder())
     var currentCard:CardView
     var wid:CGFloat = 10
     required init?(coder aDecoder: NSCoder) {
