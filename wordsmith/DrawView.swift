@@ -13,8 +13,8 @@ class DrawView: UIViewController, IndexDelegate {
     
     var floe = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow]
     var generic = CardView(draw: [CAShapeLayer](), coder: NSCoder())
-    var currentCard:CardView
-    var wid:CGFloat = 10
+    var currentCard: CardView
+    var wid: CGFloat = 10
     required init?(coder aDecoder: NSCoder) {
         if floe.Speeches[publicindex.currentspeech].herpes.count == 0{
             currentCard = generic!
