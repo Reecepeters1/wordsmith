@@ -274,9 +274,9 @@ extension CreateDebateViewController: UITableViewDataSource {
         
         cell.judgeField.delegate = self
         cell.judgeField.index = indexPath.row
-        (cell.contentView as! JudgeContentView).myDeleteFunc = (remove() as! ((_ myIndex: Int) -> ()))
+        //(cell.contentView as! JudgeContentView).myDeleteFunc = (remove() as! ((_ myIndex: Int) -> ()))
         cell.contentView.isUserInteractionEnabled = true
-        (cell.contentView as! JudgeContentView).myIndex = indexPath.row
+        //(cell.contentView as! JudgeContentView).myIndex = indexPath.row
         cell.selectionStyle = .none
         
         if (judgeTextAr[indexPath.row] == "Default") {
