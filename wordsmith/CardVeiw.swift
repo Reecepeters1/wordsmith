@@ -1,27 +1,23 @@
-//
-//  CollectionViewCell.swift
-//  wordsmith
-//
-//  Created by SHIH, FREDERIC on 12/7/17.
-//  Copyright © 2017 District196. All rights reserved.
-//
 import UIKit
 
 class CardView: UICollectionViewCell {
+    
+    
     @IBOutlet var cardimage: UIImageView!
     var storedCard:Card
     var isEndOfSpeech = false
     var coder:NSCoder
+    var calcRyoffset:CGFloat = 0
     
     required init?(coder aDecoder: NSCoder) {
         self.storedCard = Card()
-        self.coder = aDecoder
+        coder = aDecoder
         super.init(coder: aDecoder)!
     }
     
     init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card()
-        self.coder = aDecoder
+        coder = aDecoder
         super.init(coder: aDecoder)!
     }
     
