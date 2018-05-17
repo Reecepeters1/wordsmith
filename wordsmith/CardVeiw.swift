@@ -26,7 +26,6 @@ class CardView: UICollectionViewCell {
         self.storedCard = Card()
         coder = aDecoder
         super.init(coder: aDecoder)
-        storedCard.holder = self
     }
     
     //TODO Way to store location of a Card initialized elsewhere

@@ -386,7 +386,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="customSize" width="250" height="250"/>
                                 <connections>
-                                    <outlet property="cardimage" destination="12a-II-TNM" id="kQo-Vy-wKQ"/>
+                                    <outlet property="cardimage" destination="12a-II-TNM" id="AsH-dd-drP"/>
                                     <segue destination="fPP-rx-r0S" kind="show" id="2T3-yK-z0W"/>
                                 </connections>
                             </collectionViewCell>
@@ -829,6 +829,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="K9A-yE-sln"/>
         <segue reference="2T3-yK-z0W"/>
         <segue reference="wxn-rb-ovg"/>
     </inferredMetricsTieBreakers>
