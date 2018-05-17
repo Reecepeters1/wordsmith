@@ -19,6 +19,7 @@ public class MainMenuData: NSObject {
         //tbd l8ter to streamine some functionality for not not needed freddy 4/22
     }
     
+    
 }
 
 import UIKit
@@ -53,9 +54,9 @@ class MainMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "debateCell", for: indexPath)
         
-        var localString = MainMenuData.debates[indexPath.row].otherTeam
+        var localString = MainMenuData.debates[indexPath.row].tournament
         localString.append(" ")
-        localString.append(MainMenuData.debates[indexPath.row].tournament)
+        localString.append(MainMenuData.debates[indexPath.row].getRound())
         
         cell.textLabel?.text? = localString
         
@@ -221,7 +222,12 @@ class CreateDebateViewController: UIViewController {
     func remove() -> Any {
         func removeCell (myIndex: Int) -> () {
             print("I was invoked")
+            
+            self.saveTextToAr()
+            
             self.judgeTextAr.remove(at: myIndex)
+            
+            self.judgesTable.reloadData()
         }
         return removeCell
     }
@@ -246,8 +252,24 @@ class CreateDebateViewController: UIViewController {
     
     //Adds cell to table with judge field
     @IBAction func addJudge(_ sender: UIButton) {
+        saveTextToAr()
+        
         judgeTextAr.append("Default")
+        
         judgesTable.reloadData()
+    }
+    
+    func saveTextToAr(){
+        
+        if (!judgeTextAr.isEmpty){
+            for temp in 0...judgeTextAr.count - 1 {
+                var myIndexPath = IndexPath(row: temp, section: 0)
+                var cell = judgesTable.cellForRow(at: myIndexPath)
+                judgeTextAr[temp] = (cell as! JudgeCellTableViewCell).judgeField.text ?? "Default"
+            }
+        } else {
+            return
+        }
     }
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -255,9 +277,14 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func create(_ sender: UIButton) {
-        let debate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: tournament.text, side: nil)
+        let debate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: judgeTextAr, tournament: tournament.text, side: nil)
         MainMenuData.debates.append(debate)
         MainMenuData.index = MainMenuData.debates.count - 1
+        
+        //(splitViewController?.childViewControllers[0].childViewControllers as! MainMenuTableViewController).tableView.reloadData()
+        let x = splitViewController!.viewControllers[0]
+        let y = x.childViewControllers[0] as! MainMenuTableViewController
+        y.tableView.reloadData()
         performSegue(withIdentifier: "toDebateDetail", sender: self)
     }
     
@@ -304,9 +331,12 @@ extension CreateDebateViewController: UITableViewDelegate {
 }
 extension CreateDebateViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
-        judgeTextAr[(textField as! myDelegatedTextField).index] = textField.text ?? "Default"
-        print(judgeTextAr)
-        return true
+        if (index < judgeTextAr.count - 1 && (textField as! myDelegatedTextField).index < judgeTextAr.count - 1) {
+            judgeTextAr[(textField as! myDelegatedTextField).index] = textField.text ?? "Default"
+            print(judgeTextAr)
+            return true
+        }
+            return false
     }
     
     
@@ -322,6 +352,12 @@ class JudgeCellTableViewCell: UITableViewCell {
     var currentIndex: Int = 0
     var delegate: Any? = nil
     @IBOutlet weak var judgeField: myDelegatedTextField!
+    var deleteJudgeClosure: ((Int) -> Void)?
+    @IBAction func deleteJudge(_ sender: Any) {
+        
+        print("Trying to invoke Function")
+        deleteJudgeClosure!(currentIndex)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -338,16 +374,8 @@ class JudgeCellTableViewCell: UITableViewCell {
     
 }
 
-class JudgeContentView: UIView {
-    
-    var myDeleteFunc: ((_ myIndex: Int) -> ())?
-    var myIndex = 0
-    
-    @IBAction func deleteJudge(_ sender: Any) {
-        myDeleteFunc!( myIndex)
-    }
-    
-}
+ 
+
 
 class myDelegatedTextField: UITextField {
     var index = 0

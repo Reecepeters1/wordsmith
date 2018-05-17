@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.972818"
+            timestampString = "548182378.2221071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.972926"
+            timestampString = "548182378.2228121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973012"
+            timestampString = "548182378.2233289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973086"
+            timestampString = "548182378.223812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973169"
+            timestampString = "548182378.224228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973263"
+            timestampString = "548182378.224679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -106,11 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973332"
+            timestampString = "548182378.225068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,11 +122,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.9734"
+            timestampString = "548182378.22559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -134,11 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973469"
+            timestampString = "548182378.22611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -148,11 +154,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973538"
+            timestampString = "548182378.226845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -194,11 +202,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973606"
+            timestampString = "548182378.2273149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -208,11 +218,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973673"
+            timestampString = "548182378.227916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -222,11 +234,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.97374"
+            timestampString = "548182378.228403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -236,11 +250,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973806"
+            timestampString = "548182378.2288769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,11 +266,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.973873"
+            timestampString = "548182378.22934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -296,11 +314,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.97394"
+            timestampString = "548182378.229766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -310,11 +330,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974022"
+            timestampString = "548182378.230258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -324,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974148"
+            timestampString = "548182378.2307121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -402,11 +424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974227"
+            timestampString = "548182378.2311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "CreateDebateViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -418,11 +440,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974301"
+            timestampString = "548182378.231517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -432,11 +456,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974371"
+            timestampString = "548182378.23207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.436854"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.441479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -446,11 +504,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974439"
+            timestampString = "548182378.2325161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.45398"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.457459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -460,11 +552,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974508"
+            timestampString = "548182378.233014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -474,11 +568,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974575"
+            timestampString = "548182378.2334599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -488,11 +584,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974642"
+            timestampString = "548182378.233927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -502,11 +600,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974708"
+            timestampString = "548182378.2343529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -516,11 +616,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974774"
+            timestampString = "548182378.2347831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -530,11 +632,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.97484"
+            timestampString = "548182378.23532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -544,11 +648,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974906"
+            timestampString = "548182378.235751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -558,11 +664,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.974973"
+            timestampString = "548182378.236205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
             landmarkName = "myDelegatedTextField"
             landmarkType = "3">
          </BreakpointContent>
@@ -574,11 +680,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975042"
+            timestampString = "548182378.2367409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
             landmarkName = "myDelegatedTextField"
             landmarkType = "3">
             <Locations>
@@ -652,11 +758,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975111"
+            timestampString = "548182378.237406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -666,11 +774,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975177"
+            timestampString = "548182378.237954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -680,11 +790,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975243"
+            timestampString = "548182378.238407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -694,11 +806,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975309"
+            timestampString = "548182378.238853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -708,11 +822,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975376"
+            timestampString = "548182378.239397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -722,11 +838,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.9754421"
+            timestampString = "548182378.239862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -736,11 +854,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975511"
+            timestampString = "548182378.240369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -782,13 +902,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975579"
+            timestampString = "548182378.240816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
-            landmarkName = "ModifyDebateViewController"
-            landmarkType = "3">
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -830,27 +950,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975647"
+            timestampString = "548182378.241205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
-            landmarkName = "ModifyDebateViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975715"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "376"
-            endingLineNumber = "376"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "7">
          </BreakpointContent>
@@ -862,11 +966,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975783"
+            timestampString = "548182378.241594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
+            landmarkName = "didReceiveMemoryWarning()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.242021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
+            landmarkName = "ModifyDebateViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.242395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -878,12 +1014,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.97585"
+            timestampString = "548182378.242797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -894,11 +1030,205 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975917"
+            timestampString = "548182378.243277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.243715"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.467525"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.47105"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.244132"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.482066"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.49015"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.244567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.501345"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.505114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.245001"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "modify(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.512895"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.ModifyDebateViewController.modify(Any) -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182378.5165761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -908,81 +1238,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.975982"
+            timestampString = "548182378.245424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976048"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976113"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976179"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976244"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.9763089"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -994,11 +1254,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976378"
+            timestampString = "548182378.245805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1010,11 +1270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976446"
+            timestampString = "548182378.246219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
             landmarkName = "CreateDebateViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -1026,11 +1286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976513"
+            timestampString = "548182378.246609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1042,11 +1302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.97658"
+            timestampString = "548182378.246972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1058,11 +1318,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976647"
+            timestampString = "548182378.2473511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1074,11 +1334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976714"
+            timestampString = "548182378.2477109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1090,11 +1350,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976781"
+            timestampString = "548182378.24808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1106,11 +1366,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976849"
+            timestampString = "548182378.24844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1122,11 +1382,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976916"
+            timestampString = "548182378.2488019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1138,11 +1398,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.976983"
+            timestampString = "548182378.2491699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1154,11 +1414,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.9770499"
+            timestampString = "548182378.249701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1170,7 +1430,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.977119"
+            timestampString = "548182378.250127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -1186,11 +1446,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.977187"
+            timestampString = "548182378.2505569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
+            startingLineNumber = "369"
+            endingLineNumber = "369"
             landmarkName = "JudgeCellTableViewCell"
             landmarkType = "3">
          </BreakpointContent>
@@ -1202,11 +1462,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.977254"
+            timestampString = "548182378.250935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
+            landmarkName = "JudgeCellTableViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.251305"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
             landmarkName = "setSelected(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1218,27 +1494,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.977322"
+            timestampString = "548182378.251676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
-            landmarkName = "setSelected(_:animated:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.9773901"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1250,11 +1510,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.977457"
+            timestampString = "548182378.252039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1266,7 +1526,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.977525"
+            timestampString = "548182378.2523969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "223"
@@ -1282,11 +1542,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.977591"
+            timestampString = "548182378.252762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "remove()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1298,12 +1558,156 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wordsmith/MainScreen.swift"
-            timestampString = "548010093.977658"
+            timestampString = "548182378.253124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.253485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
+            landmarkName = "deleteJudge(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.25388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
+            landmarkName = "deleteJudge(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.254246"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "saveTextToAr()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "wordsmith.CreateDebateViewController.saveTextToAr() -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182248.463001"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "863">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.String in wordsmith.CreateDebateViewController.saveTextToAr() -&gt; ()"
+                  moduleName = "wordsmith"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/802781/Documents/MADprojects/wordsmith2/wordsmith/MainScreen.swift"
+                  timestampString = "548182248.466465"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.254665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "saveTextToAr()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.255096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
+            landmarkName = "create(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.255546"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "create(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wordsmith/MainScreen.swift"
+            timestampString = "548182378.2559021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
+            landmarkName = "create(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

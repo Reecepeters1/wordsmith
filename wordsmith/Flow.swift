@@ -12,7 +12,6 @@ class Flow{
     
     var Speeches: [Speech] = []
     var temp = Speech()
-    
     init() {
         Speeches.append(temp)
     }
