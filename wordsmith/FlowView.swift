@@ -19,19 +19,18 @@ public class publicindex: NSObject{
     
     public static func setindex(index:IndexPath) -> Void{
         var count = 0
-        if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[0].herpes.count == 0{
+        if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count == 0
+        {
             currentspeech = 0
             publicindex.cardindex = 0
             return
         }
-        for spch in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count{
+        for x in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count{
             
-            for crd in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[spch].getcount(){
+            for z in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[x].getcount(){
                 if count == index.item{
-                    publicindex.currentspeech = spch
-                    publicindex.cardindex = crd
-                    
-                    return
+                    publicindex.currentspeech = x
+                    publicindex.cardindex = z
                 }
                 else{
                     count+=1
@@ -44,6 +43,7 @@ public class publicindex: NSObject{
 class FlowVeiw: UICollectionViewController{
     
     
+    @IBOutlet var FlowCollectionView: FlowCollectionView!
     
     var debateindex:Int = 0
     var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
@@ -53,21 +53,6 @@ class FlowVeiw: UICollectionViewController{
     var syphilis:Flow
     var generic = UICollectionViewCell()
     var itemsPerColumn:CGFloat
-    
-    //tester values
-    var temp1 = Speech()
-    var temp2 = Speech()
-    var temp3 = Speech()
-    
-    var addcard:CardView
-    var toodles1:CardView
-    var toodles2:CardView
-    var toodles3:CardView
-    var toodles4:CardView
-    var toodles5:CardView
-    var toodles6:CardView
-    var toodles7:CardView
-    var toodles8:CardView
     
     
     
@@ -114,65 +99,62 @@ class FlowVeiw: UICollectionViewController{
          */
         
         super.init(coder: aDecoder)
-        
     }
     
     override func viewDidLoad() {
-        
+        FlowCollectionView.delegate = self
+        FlowCollectionView.setdebateindex(i: debateindex)
+        FlowCollectionView.setcurrentflow(i: currentflow)
         if let layout = collectionView?.collectionViewLayout{
             let Flowlayout = layout as! FlowVeiwLayout
             Flowlayout.delegate = self
         }
-        
         super.viewDidLoad()
     }
     
 }
 
 extension FlowVeiw{
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        var count = 0
+        var count = 1
         
-        if MainMenuData.debates[debateindex].positions[publicindex.currentflow].Speeches.count == 0{
+        if MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.count == 0{
             return 1
         }
-        for counter1 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches.count {
-            for _ in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches[counter1].herpes.count
+        for counter1 in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches.count - 1){
+            for _ in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches[counter1].getcount() - 1)
             {
                 count += 1
             }
         }
-        print("count is \(count)")
         return count
         
     }
     //this function creates cell and places it at the intend position
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
     {
-        var cell:CardView
-        addcard = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
-        if MainMenuData.debates[debateindex].positions[currentflow].Speeches[publicindex.currentspeech].herpes.count == 0{
-            return addcard
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
+        if MainMenuData.debates[debateindex].positions[currentflow].Speeches.isEmpty{
+            return cell
         }
+        
         publicindex.setindex(index: indexPath)
-        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath) as! CardView
+        cell = MainMenuData.debates[debateindex].positions[currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex)
         
         if cell.isEndOfSpeech == true{
-            return addcard
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
+            return cell
         }
         return cell
     }
     
     func dequeueReusableCell(index: Int) -> CardView{
         var counter = 0
-        if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.count == 0{
-            return generic as! CardView
-        }
         for forloopcounter1 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches.count{
             for forloopcounter2 in 0..<MainMenuData.debates[debateindex].positions[currentflow].Speeches[forloopcounter1].getcount() {
                 if counter == index{
@@ -187,8 +169,9 @@ extension FlowVeiw{
         return generic as! CardView
     }
     //sets the public index at the index path
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var temp =  collectionView!.indexPathsForSelectedItems![0]
+        let temp =  collectionView!.indexPathsForSelectedItems![0]
         publicindex.setindex(index: temp)
         /*
          if MainMenuData.debates[debateindex].positions[publicindex.debateindex].Speeches[0].herpes.count == 1{
@@ -257,3 +240,5 @@ extension FlowVeiw: FlowLayoutDelegate {
         return CGFloat(z)
     }
 }
+
+
