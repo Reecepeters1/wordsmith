@@ -53,7 +53,7 @@ class FlowVeiw: UICollectionViewController{
     var syphilis:Flow
     var generic = UICollectionViewCell()
     var itemsPerColumn:CGFloat
-    
+
     
     
     
@@ -67,15 +67,18 @@ class FlowVeiw: UICollectionViewController{
         publicindex.debateindex = debateindex
         publicindex.currentflow = currentflow
         publicindex.cardindex = 0
-        addcard = CardView(coder: aDecoder)!
-        toodles1 = CardView(coder: aDecoder)!
-        toodles2 = CardView(coder: aDecoder)!
-        toodles3 = CardView(coder: aDecoder)!
-        toodles4 = CardView(coder: aDecoder)!
-        toodles5 = CardView(coder: aDecoder)!
-        toodles6 = CardView(coder: aDecoder)!
-        toodles7 = CardView(coder: aDecoder)!
-        toodles8 = CardView(coder: aDecoder)!
+        var temp1 = Speech()
+        var temp2 = Speech()
+        var temp3 = Speech()
+        var addcard = CardView(coder: aDecoder)!
+        var toodles1 = CardView(coder: aDecoder)!
+        var toodles2 = CardView(coder: aDecoder)!
+        var toodles3 = CardView(coder: aDecoder)!
+        var toodles4 = CardView(coder: aDecoder)!
+        var toodles5 = CardView(coder: aDecoder)!
+        var toodles6 = CardView(coder: aDecoder)!
+        var toodles7 = CardView(coder: aDecoder)!
+        var toodles8 = CardView(coder: aDecoder)!
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp1)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp2)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp3)
