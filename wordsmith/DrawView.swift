@@ -11,16 +11,17 @@ import UIKit
 
 class DrawView: UIViewController, IndexDelegate {
     
-    var generic = CardView(coder: NSCoder())
-    var currentCard:CardView
-    var wid:CGFloat = 10
+    var floe = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow]
+    var generic = CardView(draw: [CAShapeLayer](), coder: NSCoder())
+    var currentCard: CardView
+    var wid: CGFloat = 10
     required init?(coder aDecoder: NSCoder) {
-        if MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.count == 0{
+        if floe.Speeches[publicindex.currentspeech].herpes.count == 0{
             currentCard = generic!
-            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.append(generic!)
+            floe.Speeches[publicindex.currentspeech].herpes.append(generic!)
         }
         else{
-            currentCard = MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex]
+            currentCard = floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex]
         }
         super.init(coder: aDecoder)
     }
@@ -105,35 +106,120 @@ class DrawView: UIViewController, IndexDelegate {
         }
         else
         {
-            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
-            drawing.setCard(tempCard: MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex - 1].getCard())
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
+            
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.setImage(set: drawing.pb_takeSnapshot())
+            
+            drawing.setCard(tempCard: floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex - 1].getCard())
             publicindex.cardindex -= 1
         }
     }
     
     func doSwipeLeft() {
-        if publicindex.currentspeech == 0
+        let response: Bool = floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard == nil
+        
+        if (response) {
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
+            
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.setImage(set: drawing.pb_takeSnapshot())
+            
+            performSegue(withIdentifier: "WRONG_LEVER", sender: self)
+        }
+        else
         {
-            return
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
+            
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.setImage(set: drawing.pb_takeSnapshot())
+            
+            let newSpeech = publicindex.currentspeech - 1
+            
+            let newCard = floe.Speeches[newSpeech].herpes.index(of: (floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard?.holder)!)
+            
+            drawing.setCard(tempCard: floe.Speeches[newSpeech].herpes[newCard!].getCard())
+            
+            publicindex.currentspeech = newSpeech
+            publicindex.cardindex = newCard!
+            
         }
         publicindex.currentspeech -= 1
     }
     
     func doSwipeRight() {
+        floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
         
-        if publicindex.currentspeech < MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches.count - 1{
-            publicindex.currentspeech += 1
-        }
-        else{
-            MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].addSpeech()
+        floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.setImage(set: drawing.pb_takeSnapshot())
+        
+        let newSpeech = publicindex.currentspeech + 1
+        
+        if floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.hasResponses()
+        {
+            let newCard = floe.Speeches[newSpeech].herpes.index(of: (floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses[0]))
+            drawing.setCard(tempCard: floe.Speeches[newSpeech].herpes[newCard!].getCard())
+            
+            publicindex.currentspeech = newSpeech
+            publicindex.cardindex = newCard!
+            return
+        } else {
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.setHasResponses(hey: true)
+            
+            var newCard: Int
+            
+            if floe.Speeches.count == newSpeech {
+                newCard = 0
+            } else {
+                newCard = floe.Speeches[newSpeech].herpes.count
+            }
+            
+            drawing.clearDraw()
+            floe.Speeches[newSpeech].herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder())!)
+            
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses[0] = floe.Speeches[newSpeech].herpes[newCard]
+            
+            floe.Speeches[newSpeech].herpes[newCard].storedCard.isAResponse = true
+            
+            drawing.setCard(tempCard: floe.Speeches[newSpeech].herpes[newCard].storedCard)
+            
+            publicindex.cardindex = newCard
+            publicindex.currentspeech = newSpeech
+            return
         }
     }
     
     func doSwipeDown() {
-        MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
+        floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].setCard(car: drawing.getCard())
+        
+        floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.setImage(set: drawing.pb_takeSnapshot())
+        
+        let newCard = publicindex.cardindex + 1
+        
+        if floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.isAResponse && ((newCard == floe.Speeches[publicindex.currentspeech].herpes.count) || !(floe.Speeches[publicindex.currentspeech].herpes[newCard].storedCard.isAResponse) )
+        {
+            drawing.clearDraw()
+            floe.Speeches[publicindex.currentspeech].herpes.insert(CardView(draw: drawing.getLayered(), coder: NSCoder() )!, at: floe.Speeches[publicindex.currentspeech].herpes.index(of: (floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex]))! + 1)
+            floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard?.responses.append(floe.Speeches[publicindex.currentspeech].herpes[newCard])
+            
+            floe.Speeches[publicindex.currentspeech].herpes[newCard].storedCard.previousCard = floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.previousCard
+            
+            floe.Speeches[publicindex.currentspeech].herpes[newCard].storedCard.isAResponse = true
+            
+            drawing.setCard(tempCard: floe.Speeches[publicindex.currentspeech].herpes[newCard].storedCard)
+            
+            publicindex.cardindex = newCard
+            return
+        }
+        
         drawing.clearDraw()
-        MainMenuData.debates[MainMenuData.index].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder())!)
+        floe.Speeches[publicindex.currentspeech].herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder())!)
+        
+        drawing.setCard(tempCard: floe.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex + 1].getCard())
         
         publicindex.cardindex += 1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        for i in floe.Speeches {
+            i.herpes.append(CardView(draw: drawing.getLayered(), coder: NSCoder())!)
+            i.herpes[i.herpes.count - 1].isEndOfSpeech = true
+        }
     }
 }
