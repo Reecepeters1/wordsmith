@@ -129,8 +129,8 @@ extension FlowVeiw{
         if MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.count == 0{
             return 1
         }
-        for counter1 in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches.count - 1){
-            for _ in 0...(MainMenuData.debates[debateindex].positions[currentflow].Speeches[counter1].getcount() - 1)
+        for spch in MainMenuData.debates[debateindex].positions[currentflow].Speeches{
+            for crd in spch.herpes
             {
                 count += 1
             }

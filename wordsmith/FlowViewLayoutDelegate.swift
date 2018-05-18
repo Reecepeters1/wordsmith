@@ -107,14 +107,14 @@ class FlowVeiwLayout: UICollectionViewLayout{
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
-       for attributes in cache
-         {
-         if attributes.frame.intersects(rect)
-         {
-         visibleLayoutAttributes.append(attributes)
-         }
-         }
-        return cache //visibleLayoutAttributes
+        for attributes in cache
+        {
+            if attributes.frame.intersects(rect)
+            {
+                visibleLayoutAttributes.append(attributes)
+            }
+        }
+        return visibleLayoutAttributes
     }
     
     
