@@ -22,6 +22,8 @@
 		C7E632A420768872003A7ADB /* transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E632A320768872003A7ADB /* transfer.swift */; };
 		D9006A5120ADE81D00135560 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9006A5020ADE81C00135560 /* MainMenu.storyboard */; };
 		D90BB18A204873E1009C7464 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
+		D90E901120B3328600B41D84 /* FlowDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E901020B3328600B41D84 /* FlowDisplay.swift */; };
+		D90E901320B3329700B41D84 /* CardDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E901220B3329700B41D84 /* CardDisplay.swift */; };
 		D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
 		D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardVeiw.swift */; };
 		D98C26321FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift */; };
@@ -88,6 +90,8 @@
 		C7E632A320768872003A7ADB /* transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transfer.swift; sourceTree = "<group>"; };
 		D9006A5020ADE81C00135560 /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainMenu.storyboard; path = ../../../Desktop/MainMenu.storyboard; sourceTree = "<group>"; };
 		D90BB189204873E1009C7464 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
+		D90E901020B3328600B41D84 /* FlowDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowDisplay.swift; sourceTree = "<group>"; };
+		D90E901220B3329700B41D84 /* CardDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplay.swift; sourceTree = "<group>"; };
 		D96A1F711FDEF8F600965ACD /* FlowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		D96B81181FD9B5460045381E /* CardVeiw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVeiw.swift; sourceTree = "<group>"; };
 		D98C26311FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewLayoutDelegate.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -171,6 +175,8 @@
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
 				9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */,
 				D98C26311FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift */,
+				D90E901020B3328600B41D84 /* FlowDisplay.swift */,
+				D90E901220B3329700B41D84 /* CardDisplay.swift */,
 				C7D74DF01FD85CDF00261F2D /* Assets.xcassets */,
 				D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */,
 				C7D74DF51FD85CDF00261F2D /* Info.plist */,
@@ -326,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90E901320B3329700B41D84 /* CardDisplay.swift in Sources */,
 				E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				E40321112076872300BC548A /* (null) in Sources */,
@@ -344,6 +351,7 @@
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
 				E4B878FE207FC468008A0529 /* DrawView.swift in Sources */,
 				C763EE362062BEAC004A136E /* SplineView.swift in Sources */,
+				D90E901120B3328600B41D84 /* FlowDisplay.swift in Sources */,
 				C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */,
 				E4E723042085145300B84E76 /* ButtonView.swift in Sources */,
 			);

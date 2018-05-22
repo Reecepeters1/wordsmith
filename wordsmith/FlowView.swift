@@ -25,12 +25,11 @@ public class publicindex: NSObject{
             publicindex.cardindex = 0
             return
         }
-        for x in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count{
-            
-            for z in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[x].getcount(){
+        for spch in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count{
+            for crd in 0..<MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[spch].getcount(){
                 if count == index.item{
-                    publicindex.currentspeech = x
-                    publicindex.cardindex = z
+                    publicindex.currentspeech = spch
+                    publicindex.cardindex = crd
                 }
                 else{
                     count+=1
@@ -82,17 +81,16 @@ class FlowVeiw: UICollectionViewController{
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp1)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp2)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp3)
+        
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[0].herpes.append(toodles1)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[0].herpes.append(toodles2)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[0].herpes.append(toodles3)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[0].herpes[2].isEndOfSpeech = true
-        
-        
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[1].herpes.append(toodles4)
-        MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[1].herpes.append(toodles8)
+        MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[1].herpes.append(toodles5)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[1].herpes[1].isEndOfSpeech = true
-        MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[2].herpes.append(toodles5)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[2].herpes.append(toodles6)
+        MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[2].herpes.append(toodles7)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches[2].herpes[1].isEndOfSpeech = true
         /*
          toodles4.storedCard.responses.append(toodles5)

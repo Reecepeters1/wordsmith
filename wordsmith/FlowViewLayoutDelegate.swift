@@ -71,17 +71,18 @@ class FlowVeiwLayout: UICollectionViewLayout{
             attributes.frame = frame
             cache.append(attributes)
             
-            
+            let flw = MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow]
             //check to see if the card has respones and changes based on that
-            if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.count != 0
+            if flw.Speeches[publicindex.currentspeech].herpes.count != 0
             {
-                if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count != 0
+                if flw.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses.count == 0
                 {
-                    for _ in 0...MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count{
-                        yOffset += (CellWidth + CGFloat(30))}
+                    yOffset += (CellWidth + CGFloat(30))
+                    
                 }
                 else{
-                    yOffset += (CellWidth + CGFloat(30))
+                    for _ in flw.Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses{
+                        yOffset += (CellWidth + CGFloat(30))}
                 }
             }
             else{
@@ -89,7 +90,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
             }
             //check if it's the end of the speech and move it adjust x offset accordingly
             let temp = MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow]
-            if temp.longestcolumn() == 1 || temp.getcard(Speech: publicindex.currentspeech, Index: item).isEndOfSpeech == true
+            if temp.longestcolumn() == 1 || temp.getcard(Speech: publicindex.currentspeech, Index: publicindex.cardindex).isEndOfSpeech == true
             {
                 xOffset += (CellWidth + CGFloat(20))
                 item = 0
