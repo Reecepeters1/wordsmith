@@ -125,7 +125,6 @@ class FlowVeiwLayout: UICollectionViewLayout{
                 visibleLayoutAttributes.append(attributes)
             }
         }
-        //keep the old code it might be useful
         return visibleLayoutAttributes
     }
     
