@@ -61,7 +61,7 @@ public class Debate: NSObject {
         }
         
         var name: String
-        var vote: Vote?
+        var vote: Vote
     }
     
     var side: Side
@@ -84,7 +84,7 @@ public class Debate: NSObject {
         self.otherTeam = otherTeam
         self.side = side
         for j in judgeName {
-            self.judgeNames.append(Debate.Judge(name: j, vote: nil))
+            self.judgeNames.append(Debate.Judge(name: j, vote: .didNotDisclose))
         }
         
         self.tournament = tournament
@@ -106,11 +106,11 @@ public class Debate: NSObject {
             temp = judgeName.map{ $0 ?? ""}
             for judge in temp {
                 if judge != "" {
-                    self.judgeNames.append(Debate.Judge(name: judge, vote: nil))
+                    self.judgeNames.append(Debate.Judge(name: judge, vote: .inProgress))
                 }
             }
         } else {
-            self.judgeNames.append(Debate.Judge(name: "Default", vote: nil))
+            self.judgeNames.append(Debate.Judge(name: "Default", vote: .inProgress))
         }
         
         self.tournament = tournament ?? "Default"
@@ -164,6 +164,19 @@ public class Debate: NSObject {
     func addflow(){
         let temp = Flow()
         positions.append(temp)
+    }
+    
+    func voteToString(judge: Judge) ->String{
+        switch judge.vote {
+        case .forUs:
+            return "Picked Up"
+        case .against:
+            return "Dropped"
+        case .inProgress:
+            return "In Progress"
+        default:
+            return "Did Not Disclose"
+        }
     }
     
     

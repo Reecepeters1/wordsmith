@@ -15,7 +15,7 @@ public class MainMenuData: NSObject {
     public static var debates:[Debate] = []
     public static var index: Int = 0
     
-    func amountofcardsinflow(debate:Int, flow:Int){
+    func amountofcardsinflow(debate:Int, flow:Int) {
         //tbd l8ter to streamine some functionality for not not needed freddy 4/22
     }
     
@@ -68,7 +68,11 @@ class MainMenuTableViewController: UITableViewController {
         print("Showing a new DebateDetailView after selecting a row")
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         print(indexPath.row)
+        MainMenuData.index = indexPath.row
         local.debateIndex = indexPath.row
+        local.localDebate = MainMenuData.debates[local.debateIndex]
+        local.renderText()
+        
         splitViewController?.showDetailViewController(local, sender: nil)
     }
     
@@ -98,7 +102,10 @@ class MainMenuTableViewController: UITableViewController {
             
             print("Showing new DebateDetailViewController do to deletion")
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+             MainMenuData.index = temp
             local.debateIndex = temp
+            local.localDebate = MainMenuData.debates[local.debateIndex]
+            local.renderText()
             splitViewController?.showDetailViewController(local, sender: nil)
             
         }
@@ -106,6 +113,7 @@ class MainMenuTableViewController: UITableViewController {
     
     @IBAction func createDebate(_ sender: UIBarButtonItem) {
         let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
+        local.forceStay = true
         splitViewController?.showDetailViewController(local, sender: nil)
     }
     
@@ -124,6 +132,10 @@ class MainMenuTableViewController: UITableViewController {
 class DebateDetailViewController: UIViewController {
     
     @IBOutlet weak var tournament: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var sideLabel: UILabel!
+    @IBOutlet weak var ballotLabel: UILabel!
+    @IBOutlet weak var opponentLabel: UILabel!
     
     var debateIndex:Int = 0
     var localDebate:Debate?
@@ -132,13 +144,21 @@ class DebateDetailViewController: UIViewController {
         super.viewDidLoad()
         
         debateIndex = MainMenuData.index
+
         localDebate = MainMenuData.debates[debateIndex]
+
         // Do any additional setup after loading the view.
         renderText()
     }
     
     func renderText() {
-        tournament.text = localDebate!.tournament
+        
+        self.tournament.text = localDebate!.tournament
+        roundLabel.text = localDebate!.getRound()
+        sideLabel.text = localDebate!.getSide()
+        opponentLabel.text = localDebate!.otherTeam
+        ballotLabel.text = localDebate!.getWinLoss()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -172,11 +192,13 @@ class DebateDetailViewController: UIViewController {
 extension DebateDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return localDebate?.judgeNames.count ?? 1
+        return localDebate?.judgeNames.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "displayCell") as! DisplayTableCell
+        cell.judgeName.text = localDebate?.judgeNames[indexPath.row].name
+        cell.vote.text = localDebate?.voteToString(judge: (localDebate?.judgeNames[indexPath.row])!)
         return cell
     }
     
@@ -191,8 +213,7 @@ extension DebateDetailViewController: UITableViewDelegate {
 
 class DisplayTableCell: UITableViewCell {
     
-    @IBOutlet weak var vote: UIView!
-    
+    @IBOutlet weak var vote: UILabel!
     @IBOutlet weak var judgeName: UILabel!
     
     override func awakeFromNib() {
@@ -218,6 +239,10 @@ class CreateDebateViewController: UIViewController {
     var forceStay = false
     var judgeTextAr = ["Default"]
     var index = 0
+    @IBOutlet weak var elimSwitch: UISwitch!
+    @IBOutlet weak var roundTextField: UITextField!
+    @IBOutlet weak var sideSwitch: UISwitch!
+    @IBOutlet weak var opponentField: UITextField!
     
     func remove() -> Any {
         func removeCell (myIndex: Int) -> () {
@@ -281,7 +306,25 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func create(_ sender: UIButton) {
-        let debate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: judgeTextAr, tournament: tournament.text, side: nil)
+        
+        saveTextToAr()
+        var myRound = Debate.Round()
+        myRound.isElim = elimSwitch.isOn
+        
+        if (myRound.isElim) {
+            myRound.elim = roundTextField.text
+        } else {
+            myRound.number = Int(roundTextField.text ?? "0")
+        }
+        
+        var mySide:Debate.Side
+        if (sideSwitch.isOn) {
+            mySide = Debate.Side.aff
+        } else {
+            mySide = Debate.Side.neg
+        }
+        
+        let debate = Debate(ballot: nil, round: myRound, otherTeam: opponentField.text, judgeName: judgeTextAr, tournament: tournament.text, side: mySide)
         MainMenuData.debates.append(debate)
         MainMenuData.index = MainMenuData.debates.count - 1
         
