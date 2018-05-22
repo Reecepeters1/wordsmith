@@ -41,7 +41,18 @@ class FlowVeiwLayout: UICollectionViewLayout{
     var cache = [UICollectionViewLayoutAttributes]()
     
     
-    
+    func y4responses(celloffset: CGFloat, array:[CardView]) -> CGFloat{
+        var y:CGFloat = 0
+        for i in array{
+            if i.storedCard.responses.count != 0{
+                y += y4responses(celloffset: celloffset, array: i.storedCard.responses)
+            }
+            else{
+                y += celloffset
+            }
+        }
+        return y
+    }
     
     override public func prepare(){
         guard cache.isEmpty == true, let collectionView = collectionView else {
@@ -71,25 +82,18 @@ class FlowVeiwLayout: UICollectionViewLayout{
             attributes.frame = frame
             cache.append(attributes)
             
-            
+            var flw = MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow]
             //check to see if the card has respones and changes based on that
-            if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].herpes.count != 0
+            if flw.Speeches[publicindex.currentspeech].herpes.count != 0
             {
-                if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count != 0
+                if flw.Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count == 0
                 {
-                    for _ in 0...MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count{
-                        yOffset += (CellWidth + CGFloat(30))}
-                }
-                    /*
-                     else{
-                     if whytho.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.isAResponse{
-                     print("response activated on \(item)")
-                     yOffset += (CellWidth + CGFloat(30))
-                     }
-                     yOffset += (CellWidth + CGFloat(30))
-                     }*/
-                else{
                     yOffset += (CellWidth + CGFloat(30))
+                    
+                }
+                else{
+                    var responses = flw.Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses
+                    yOffset = y4responses(celloffset: (CellWidth + CGFloat(30)), array: responses)
                 }
                 
             }
@@ -97,16 +101,13 @@ class FlowVeiwLayout: UICollectionViewLayout{
                 yOffset += (CellWidth + CGFloat(30))
             }
             //check if it's the end of the speech and move it adjust x offset accordingly
-            let temp = MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow]
-            if temp.longestcolumn() == 1 || temp.getcard(Speech: publicindex.currentspeech, Index: item).isEndOfSpeech == true
+            if flw.longestcolumn() == 1 || flw.getcard(Speech: publicindex.currentspeech, Index: publicindex.cardindex).isEndOfSpeech == true
             {
                 xOffset += (CellWidth + CGFloat(20))
-                item = 0
             }
         }
         //collectionViewContentSize = CGSize(width: yOffset, height: xOffset)
         publicindex.currentspeech = 0
-        
     }
     
     
@@ -117,15 +118,15 @@ class FlowVeiwLayout: UICollectionViewLayout{
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
         // Loop through the cache and look for items in the rect
-        /*for attributes in cache
-         {
-         if attributes.frame.intersects(rect)
-         {
-         visibleLayoutAttributes.append(attributes)
-         }
-         }*/
+        for attributes in cache
+        {
+            if attributes.frame.intersects(rect)
+            {
+                visibleLayoutAttributes.append(attributes)
+            }
+        }
         //keep the old code it might be useful
-        return cache //visibleLayoutAttributes
+        return visibleLayoutAttributes
     }
     
     
