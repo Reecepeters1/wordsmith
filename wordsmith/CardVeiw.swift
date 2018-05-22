@@ -1,13 +1,8 @@
-//
-//  CollectionViewCell.swift
-//  wordsmith
-//
-//  Created by SHIH, FREDERIC on 12/7/17.
-//  Copyright © 2017 District196. All rights reserved.
-//
 import UIKit
 
 class CardView: UICollectionViewCell {
+    
+    
     @IBOutlet var cardimage: UIImageView!
     var storedCard:Card
     var isEndOfSpeech = false
@@ -22,10 +17,9 @@ class CardView: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         self.storedCard = Card()
-        super.init(coder: aDecoder)
+        coder = aDecoder
+        super.init(coder: aDecoder)!
     }
-    
-    
     
     //TODO Way to store location of a Card initialized elsewhere
     func isItEndOfSpeech() -> Bool{

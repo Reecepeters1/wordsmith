@@ -263,9 +263,13 @@ class CreateDebateViewController: UIViewController {
         
         if (!judgeTextAr.isEmpty){
             for temp in 0...judgeTextAr.count - 1 {
-                var myIndexPath = IndexPath(row: temp, section: 0)
-                var cell = judgesTable.cellForRow(at: myIndexPath)
-                judgeTextAr[temp] = (cell as! JudgeCellTableViewCell).judgeField.text ?? "Default"
+                let myIndexPath = IndexPath(row: temp, section: 0)
+                let cell = judgesTable.cellForRow(at: myIndexPath)
+                
+                if cell != nil {
+                    //found nil when this cell off screen
+                    judgeTextAr[temp] = ((cell ?? JudgeCellTableViewCell()) as! JudgeCellTableViewCell).judgeField.text ?? "Default"
+                }
             }
         } else {
             return
@@ -301,8 +305,6 @@ extension CreateDebateViewController: UITableViewDataSource {
         
         cell.judgeField.delegate = self
         cell.judgeField.index = indexPath.row
-        cell.currentIndex = indexPath.row
-        cell.deleteJudgeClosure = remove() as! ((Int) -> Void)
         //(cell.contentView as! JudgeContentView).myDeleteFunc = (remove() as! ((_ myIndex: Int) -> ()))
         cell.contentView.isUserInteractionEnabled = true
         //(cell.contentView as! JudgeContentView).myIndex = indexPath.row
@@ -372,6 +374,10 @@ class JudgeCellTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    func setDefaults(){
+        
     }
     
 }
