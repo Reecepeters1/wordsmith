@@ -42,8 +42,7 @@ public class publicindex: NSObject{
 
 class FlowVeiw: UICollectionViewController{
     
-    
-    @IBOutlet var FlowCollectionView: FlowCollectionView!
+
     
     var debateindex:Int = 0
     var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
@@ -67,15 +66,18 @@ class FlowVeiw: UICollectionViewController{
         publicindex.debateindex = debateindex
         publicindex.currentflow = currentflow
         publicindex.cardindex = 0
-        addcard = CardView(coder: aDecoder)!
-        toodles1 = CardView(coder: aDecoder)!
-        toodles2 = CardView(coder: aDecoder)!
-        toodles3 = CardView(coder: aDecoder)!
-        toodles4 = CardView(coder: aDecoder)!
-        toodles5 = CardView(coder: aDecoder)!
-        toodles6 = CardView(coder: aDecoder)!
-        toodles7 = CardView(coder: aDecoder)!
-        toodles8 = CardView(coder: aDecoder)!
+        var temp1 = Speech()
+        var temp2 = Speech()
+        var temp3 = Speech()
+        var addcard = CardView(coder: aDecoder)!
+        var toodles1 = CardView(coder: aDecoder)!
+        var toodles2 = CardView(coder: aDecoder)!
+        var toodles3 = CardView(coder: aDecoder)!
+        var toodles4 = CardView(coder: aDecoder)!
+        var toodles5 = CardView(coder: aDecoder)!
+        var toodles6 = CardView(coder: aDecoder)!
+        var toodles7 = CardView(coder: aDecoder)!
+        var toodles8 = CardView(coder: aDecoder)!
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp1)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp2)
         MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.append(temp3)
@@ -102,9 +104,7 @@ class FlowVeiw: UICollectionViewController{
     }
     
     override func viewDidLoad() {
-        FlowCollectionView.delegate = self
-        FlowCollectionView.setdebateindex(i: debateindex)
-        FlowCollectionView.setcurrentflow(i: currentflow)
+        collectionView?.delegate = self
         if let layout = collectionView?.collectionViewLayout{
             let Flowlayout = layout as! FlowVeiwLayout
             Flowlayout.delegate = self
