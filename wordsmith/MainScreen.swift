@@ -66,12 +66,11 @@ class MainMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("Showing a new DebateDetailView after selecting a row")
-        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        var local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
         print(indexPath.row)
         MainMenuData.index = indexPath.row
         local.debateIndex = indexPath.row
         local.localDebate = MainMenuData.debates[local.debateIndex]
-        local.renderText()
         
         splitViewController?.showDetailViewController(local, sender: nil)
     }
@@ -105,7 +104,6 @@ class MainMenuTableViewController: UITableViewController {
              MainMenuData.index = temp
             local.debateIndex = temp
             local.localDebate = MainMenuData.debates[local.debateIndex]
-            local.renderText()
             splitViewController?.showDetailViewController(local, sender: nil)
             
         }
@@ -153,7 +151,7 @@ class DebateDetailViewController: UIViewController {
     
     func renderText() {
         
-        self.tournament.text = localDebate!.tournament
+        tournament.text = localDebate!.tournament
         roundLabel.text = localDebate!.getRound()
         sideLabel.text = localDebate!.getSide()
         opponentLabel.text = localDebate!.otherTeam
