@@ -23,6 +23,7 @@ class Card {
     
     init(draw: [CAShapeLayer], maybe: Card?) {
         drawing = draw
+        image = createPDFimage()
         previousCard = maybe
     }
     
@@ -78,3 +79,4 @@ class Card {
         isAResponse = hey
     }
 }
+

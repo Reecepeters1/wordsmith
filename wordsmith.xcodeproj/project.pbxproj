@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C717099C20AB3FBE003FF82C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
-		C717099D20AB3FEE003FF82C /* FlowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */; };
+		9753C70120A9F3A30091ADB9 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
+		9753C70220A9F3A40091ADB9 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
+		9753C70320A9F3A90091ADB9 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
+		9753C70420A9F7090091ADB9 /* FlowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */; };
+		97DDB38820A4071C008F2B80 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
+		97DDB38920A4071C008F2B80 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
 		C763EE322062BE72004A136E /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE312062BE72004A136E /* Interpole.swift */; };
 		C763EE362062BEAC004A136E /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE352062BEAC004A136E /* SplineView.swift */; };
 		C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
@@ -337,13 +341,13 @@
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				E40321112076872300BC548A /* (null) in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
-				C717099C20AB3FBE003FF82C /* MainScreen.swift in Sources */,
+				9753C70320A9F3A90091ADB9 /* MainScreen.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift in Sources */,
 				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
 				D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */,
 				D90BB18A204873E1009C7464 /* Speech.swift in Sources */,
-				C717099D20AB3FEE003FF82C /* FlowCollectionView.swift in Sources */,
+				9753C70420A9F7090091ADB9 /* FlowCollectionView.swift in Sources */,
 				E403211320768D4900BC548A /* (null) in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
@@ -363,7 +367,9 @@
 			files = (
 				D9A90EF620616B63005BE47E /* Flow.swift in Sources */,
 				D9A90EFC206174E4005BE47E /* (null) in Sources */,
+				97DDB38820A4071C008F2B80 /* MainScreen.swift in Sources */,
 				D9A90EFA206174E2005BE47E /* (null) in Sources */,
+				9753C70120A9F3A30091ADB9 /* Storyboards.swift in Sources */,
 				D998581C201110660044CB9F /* FlowViewLayoutDelegate.swift in Sources */,
 				C7D74DFF1FD85CDF00261F2D /* (null) in Sources */,
 				D9E37718205ADE1900059825 /* Card.swift in Sources */,
@@ -379,7 +385,9 @@
 			files = (
 				D9A90EF720616B63005BE47E /* Flow.swift in Sources */,
 				D9A90EFD206174E5005BE47E /* (null) in Sources */,
+				97DDB38920A4071C008F2B80 /* MainScreen.swift in Sources */,
 				D9A90EFB206174E2005BE47E /* (null) in Sources */,
+				9753C70220A9F3A40091ADB9 /* Storyboards.swift in Sources */,
 				D998581D201110670044CB9F /* FlowViewLayoutDelegate.swift in Sources */,
 				C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */,
 				D9E37719205ADE1A00059825 /* Card.swift in Sources */,

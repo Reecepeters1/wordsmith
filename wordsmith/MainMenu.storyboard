@@ -385,7 +385,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="customSize" width="250" height="250"/>
                                 <connections>
-                                    <outlet property="cardimage" destination="12a-II-TNM" id="OqJ-WK-Xh1"/>
+                                    <outlet property="cardimage" destination="12a-II-TNM" id="AsH-dd-drP"/>
                                     <segue destination="fPP-rx-r0S" kind="show" id="2T3-yK-z0W"/>
                                 </connections>
                             </collectionViewCell>

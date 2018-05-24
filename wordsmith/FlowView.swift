@@ -42,8 +42,7 @@ public class publicindex: NSObject{
 
 class FlowVeiw: UICollectionViewController{
     
-    
-    @IBOutlet var FlowCollectionView: FlowCollectionView!
+
     
     var debateindex:Int = 0
     var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
@@ -104,9 +103,7 @@ class FlowVeiw: UICollectionViewController{
     }
     
     override func viewDidLoad() {
-        FlowCollectionView.delegate = self
-        FlowCollectionView.setdebateindex(i: debateindex)
-        FlowCollectionView.setcurrentflow(i: currentflow)
+        collectionView?.delegate = self
         if let layout = collectionView?.collectionViewLayout{
             let Flowlayout = layout as! FlowVeiwLayout
             Flowlayout.delegate = self

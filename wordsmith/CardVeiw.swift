@@ -6,16 +6,16 @@ class CardView: UICollectionViewCell {
     @IBOutlet var cardimage: UIImageView!
     var storedCard:Card
     var isEndOfSpeech = false
-    var coder:NSCoder
-    var calcRyoffset:CGFloat = 0
     
-    required init?(coder aDecoder: NSCoder) {
-        self.storedCard = Card()
-        coder = aDecoder
+    init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
+        self.storedCard = Card(draw: draw, maybe: nil)
+        let coder = aDecoder
         super.init(coder: aDecoder)!
     }
     
-    init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
+
+    
+    required init?(coder aDecoder: NSCoder) {
         self.storedCard = Card()
         coder = aDecoder
         super.init(coder: aDecoder)!
