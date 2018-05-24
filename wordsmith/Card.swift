@@ -11,7 +11,7 @@ import QuartzCore
 
 class Card {
     
-    var holder: CardView = CardView(draw: [CAShapeLayer](), coder: NSCoder())!
+
     var responses: [CardView] = []
     var drawing: [CAShapeLayer]
     var speech:Int = -1
@@ -23,6 +23,7 @@ class Card {
     
     init(draw: [CAShapeLayer], maybe: Card?) {
         drawing = draw
+        image = createPDFimage()
         previousCard = maybe
     }
     
@@ -78,3 +79,4 @@ class Card {
         isAResponse = hey
     }
 }
+

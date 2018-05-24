@@ -80,7 +80,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92511334196891193" green="0.92511334196891193" blue="0.92511334196891193" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="displayCell" id="olP-DC-mgi" customClass="DisplayTableCell" customModule="wordsmith" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="displayCell" id="olP-DC-mgi" customClass="DisplayTableCell" customModule="wordsmith" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="509" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="olP-DC-mgi" id="TgE-56-VwG">
@@ -389,8 +389,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="customSize" width="250" height="250"/>
                                 <connections>
-                                    <outlet property="cardimage" destination="12a-II-TNM" id="kQo-Vy-wKQ"/>
-                                    <segue destination="fPP-rx-r0S" kind="show" id="3CP-2e-jkz"/>
+                                    <outlet property="cardimage" destination="12a-II-TNM" id="AsH-dd-drP"/>
+                                    <segue destination="fPP-rx-r0S" kind="show" id="2T3-yK-z0W"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="addspeech" id="32I-8b-anP" customClass="CardView" customModule="wordsmith" customModuleProvider="target">
@@ -844,7 +844,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MKT-cC-Qr6"/>
-        <segue reference="wXv-O8-lIX"/>
+        <segue reference="K9A-yE-sln"/>
+        <segue reference="2T3-yK-z0W"/>
+        <segue reference="wxn-rb-ovg"/>
     </inferredMetricsTieBreakers>
 </document>

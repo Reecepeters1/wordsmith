@@ -8,7 +8,7 @@
 
 import Foundation
 class Speech{
-
+    
     
     var herpes: [CardView]
     
