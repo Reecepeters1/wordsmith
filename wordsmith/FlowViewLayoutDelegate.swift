@@ -4,7 +4,6 @@
 //
 //  Created by SHIH, FREDERIC on 12/18/17.
 //  Copyright © 2017 District196. All rights reserved.
-
 import UIKit
 
 protocol FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
@@ -41,7 +40,18 @@ class FlowVeiwLayout: UICollectionViewLayout{
     var cache = [UICollectionViewLayoutAttributes]()
     
     
-    
+    func y4responses(celloffset: CGFloat, array:[CardView]) -> CGFloat{
+        var y:CGFloat = 0
+        for i in array{
+            if i.storedCard.responses.count != 0{
+                y += y4responses(celloffset: celloffset, array: i.storedCard.responses)
+            }
+            else{
+                y += celloffset
+            }
+        }
+        return y
+    }
     
     override public func prepare(){
         guard cache.isEmpty == true, let collectionView = collectionView else {
@@ -60,8 +70,10 @@ class FlowVeiwLayout: UICollectionViewLayout{
         // actualy proccess by which we auto size card layout
         for var item in 0..<collectionView.numberOfItems(inSection: 0)
         {
+            
             let indexPath = IndexPath(item: item, section: 0)
             publicindex.setindex(index: indexPath)
+            
             let CellHeight = delegate.collectionView(collectionView, heightForCardAtIndexPath: indexPath)
             let CellWidth = CellHeight
             
@@ -72,33 +84,33 @@ class FlowVeiwLayout: UICollectionViewLayout{
             cache.append(attributes)
             
             let flw = MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow]
+            
             //check to see if the card has respones and changes based on that
             if flw.Speeches[publicindex.currentspeech].herpes.count != 0
             {
-                if flw.Speeches[publicindex.currentspeech].herpes[publicindex.cardindex].storedCard.responses.count == 0
+                if flw.Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses.count == 0
                 {
                     yOffset += (CellWidth + CGFloat(30))
                     
                 }
                 else{
-                    for _ in flw.Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses{
-                        yOffset += (CellWidth + CGFloat(30))}
+                    var responses = flw.Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).storedCard.responses
+                    yOffset = y4responses(celloffset: (CellWidth + CGFloat(30)), array: responses)
                 }
+                
             }
             else{
                 yOffset += (CellWidth + CGFloat(30))
             }
             //check if it's the end of the speech and move it adjust x offset accordingly
-            let temp = MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow]
-            if temp.longestcolumn() == 1 || temp.getcard(Speech: publicindex.currentspeech, Index: publicindex.cardindex).isEndOfSpeech == true
+            if flw.longestcolumn() == 1 || flw.Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex).isEndOfSpeech == true
             {
                 xOffset += (CellWidth + CGFloat(20))
-                item = 0
+                yOffset = 50
             }
         }
         //collectionViewContentSize = CGSize(width: yOffset, height: xOffset)
         publicindex.currentspeech = 0
-        
     }
     
     
@@ -108,6 +120,7 @@ class FlowVeiwLayout: UICollectionViewLayout{
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
+        // Loop through the cache and look for items in the rect
         for attributes in cache
         {
             if attributes.frame.intersects(rect)

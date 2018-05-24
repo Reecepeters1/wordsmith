@@ -30,6 +30,7 @@ public class publicindex: NSObject{
                 if count == index.item{
                     publicindex.currentspeech = spch
                     publicindex.cardindex = crd
+                    return
                 }
                 else{
                     count+=1
@@ -137,18 +138,17 @@ extension FlowVeiw{
         
     }
     //this function creates cell and places it at the intend position
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardView
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
-        if MainMenuData.debates[debateindex].positions[currentflow].Speeches.isEmpty{
+        var cell:CardView
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath) as! CardView
+        if MainMenuData.debates[debateindex].positions[currentflow].Speeches[publicindex.currentspeech].herpes.count == 0{
             return cell
         }
-        
         publicindex.setindex(index: indexPath)
-        cell = MainMenuData.debates[debateindex].positions[currentflow].Speeches[publicindex.currentspeech].getcard(Index: publicindex.cardindex)
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath) as! CardView
         
         if cell.isEndOfSpeech == true{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
             return cell
         }
         return cell
@@ -201,9 +201,7 @@ extension FlowVeiw: UICollectionViewDelegateFlowLayout{
         
         let availableHeight = self.view.frame.height
         let heightPerItem = availableHeight / itemsPerColumn
-        
         return CGSize(width: heightPerItem, height: heightPerItem)
-        
     }
     
     
