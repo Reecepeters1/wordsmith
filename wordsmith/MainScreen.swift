@@ -101,7 +101,7 @@ class MainMenuTableViewController: UITableViewController {
             
             print("Showing new DebateDetailViewController do to deletion")
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
-             MainMenuData.index = temp
+            MainMenuData.index = temp
             local.debateIndex = temp
             local.localDebate = MainMenuData.debates[local.debateIndex]
             splitViewController?.showDetailViewController(local, sender: nil)
@@ -142,9 +142,9 @@ class DebateDetailViewController: UIViewController {
         super.viewDidLoad()
         
         debateIndex = MainMenuData.index
-
+        
         localDebate = MainMenuData.debates[debateIndex]
-
+        
         // Do any additional setup after loading the view.
         renderText()
     }
@@ -174,6 +174,26 @@ class DebateDetailViewController: UIViewController {
         performSegue(withIdentifier: "toModifyDebate", sender: self)
     }
     
+    @IBAction func deleteDebate(_ sender: Any) {
+        MainMenuData.debates.remove(at: debateIndex)
+        
+        if (MainMenuData.debates.isEmpty) {
+            performSegue(withIdentifier: "showCreateDebate", sender: self)
+            (splitViewController?.childViewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        } else if (debateIndex == 0) {
+            debateIndex += 1
+            localDebate = MainMenuData.debates[debateIndex]
+            MainMenuData.index = debateIndex
+            renderText()
+            (splitViewController?.childViewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        } else {
+            debateIndex -= 1
+            localDebate = MainMenuData.debates[debateIndex]
+            MainMenuData.index = debateIndex
+            renderText()
+            (splitViewController?.childViewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        }
+    }
     
     
     /*
@@ -346,6 +366,8 @@ extension CreateDebateViewController: UITableViewDataSource {
         
         cell.judgeField.delegate = self
         cell.judgeField.index = indexPath.row
+        cell.currentIndex = indexPath.row
+        cell.deleteJudgeClosure = remove() as! ((Int) -> Void)
         //(cell.contentView as! JudgeContentView).myDeleteFunc = (remove() as! ((_ myIndex: Int) -> ()))
         cell.contentView.isUserInteractionEnabled = true
         //(cell.contentView as! JudgeContentView).myIndex = indexPath.row
@@ -381,7 +403,7 @@ extension CreateDebateViewController: UITextFieldDelegate {
             print(judgeTextAr)
             return true
         }
-            return false
+        return false
     }
     
     
@@ -423,7 +445,7 @@ class JudgeCellTableViewCell: UITableViewCell {
     
 }
 
- 
+
 
 
 class myDelegatedTextField: UITextField {
@@ -458,7 +480,32 @@ class ModifyDebateViewController: UIViewController {
     }
     
     @IBAction func modify(_ sender: Any) {
-        segueToDebateDetail()
+        
+        //let localInt = Int(roundLabel.text ?? "0")
+        
+        //The unwrapping of optionals is handled by the debate class
+        //let localDebate = Debate(ballot: nil, round: nil, otherTeam: nil, judgeName: [nil], tournament: nil)
+        
+        //The date created/date to expire are kept the same across modifications
+        //localDebate.dateCreated = MainMenuData.debates[debateIndex].dateCreated
+        //localDebate.expirationDate = MainMenuData.debates[debateIndex].expirationDate
+        
+        
+        //MainMenuData.debates[debateIndex] = localDebate
+        
+        //This will crash in portrait alignment
+        //splitViewController has a navigation view controller that contains our table view controller. We need to navigate to that part of the view hierarchy,
+        //then we need to refresh the data assosicated with the tableView. The tableView then rengenerates the table to match MainMenuData.debates
+        
+        (splitViewController?.viewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+        
+        
+        //creates a new DebateDetailViewController and then shows that as the new detail view controller
+        let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+        local.debateIndex = debateIndex
+        splitViewController?.showDetailViewController(local, sender: nil)
+        
+        
     }
     
     @IBAction func cancel(_ sender: UIButton) {

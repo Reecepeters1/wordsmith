@@ -16,6 +16,7 @@
 		C763EE322062BE72004A136E /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE312062BE72004A136E /* Interpole.swift */; };
 		C763EE362062BEAC004A136E /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE352062BEAC004A136E /* SplineView.swift */; };
 		C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
+		C7A550C020B7247D00FC7EC5 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A550BF20B7247D00FC7EC5 /* MainMenu.storyboard */; };
 		C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0271FD9BDFB00ADC122 /* Flow.swift */; };
 		C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */; };
@@ -24,7 +25,6 @@
 		C7D74DFF1FD85CDF00261F2D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */; };
 		C7E632A420768872003A7ADB /* transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E632A320768872003A7ADB /* transfer.swift */; };
-		D9006A5120ADE81D00135560 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9006A5020ADE81C00135560 /* MainMenu.storyboard */; };
 		D90BB18A204873E1009C7464 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
 		D90E901120B3328600B41D84 /* FlowDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E901020B3328600B41D84 /* FlowDisplay.swift */; };
 		D90E901320B3329700B41D84 /* CardDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E901220B3329700B41D84 /* CardDisplay.swift */; };
@@ -80,6 +80,7 @@
 		C763EE352062BEAC004A136E /* SplineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplineView.swift; sourceTree = "<group>"; };
 		C77A1FC92018F9AF00060322 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		C787B9FB2045CAA900A3B498 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		C7A550BF20B7247D00FC7EC5 /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainMenu.storyboard; path = "../../../../Downloads/wordsmith-6dc6b0a0b2ce50e8b2479bf5dc20d67b27864f34/wordsmith/MainMenu.storyboard"; sourceTree = "<group>"; };
 		C7A618A61FDB013700062737 /* Debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debate.swift; sourceTree = "<group>"; };
 		C7D5B0231FD9B3D600ADC122 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C7D5B0271FD9BDFB00ADC122 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		C7D74E051FD85CDF00261F2D /* wordsmithUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordsmithUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D74E091FD85CDF00261F2D /* wordsmithUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordsmithUITests.swift; sourceTree = "<group>"; };
 		C7E632A320768872003A7ADB /* transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transfer.swift; sourceTree = "<group>"; };
-		D9006A5020ADE81C00135560 /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainMenu.storyboard; path = ../../../Desktop/MainMenu.storyboard; sourceTree = "<group>"; };
 		D90BB189204873E1009C7464 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		D90E901020B3328600B41D84 /* FlowDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowDisplay.swift; sourceTree = "<group>"; };
 		D90E901220B3329700B41D84 /* CardDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplay.swift; sourceTree = "<group>"; };
@@ -187,11 +187,11 @@
 				C7D5B0231FD9B3D600ADC122 /* Card.swift */,
 				D90BB189204873E1009C7464 /* Speech.swift */,
 				C7D5B0271FD9BDFB00ADC122 /* Flow.swift */,
+				C7A550BF20B7247D00FC7EC5 /* MainMenu.storyboard */,
 				C7A618A61FDB013700062737 /* Debate.swift */,
 				C77A1FC92018F9AF00060322 /* MainScreen.swift */,
 				C7E632A320768872003A7ADB /* transfer.swift */,
 				C787B9FB2045CAA900A3B498 /* Storyboards.swift */,
-				D9006A5020ADE81C00135560 /* MainMenu.storyboard */,
 				C763EE312062BE72004A136E /* Interpole.swift */,
 				C763EE352062BEAC004A136E /* SplineView.swift */,
 				E4E723032085145300B84E76 /* ButtonView.swift */,
@@ -309,9 +309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9006A5120ADE81D00135560 /* MainMenu.storyboard in Resources */,
 				D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */,
 				C7D74DF11FD85CDF00261F2D /* Assets.xcassets in Resources */,
+				C7A550C020B7247D00FC7EC5 /* MainMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
