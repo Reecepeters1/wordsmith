@@ -97,7 +97,7 @@ class MainMenuTableViewController: UITableViewController {
             if (MainMenuData.debates.isEmpty) {
                 let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
                 splitViewController?.showDetailViewController(local, sender: nil)
-            }
+            } else {
             
             print("Showing new DebateDetailViewController do to deletion")
             let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
@@ -105,6 +105,8 @@ class MainMenuTableViewController: UITableViewController {
             local.debateIndex = temp
             local.localDebate = MainMenuData.debates[local.debateIndex]
             splitViewController?.showDetailViewController(local, sender: nil)
+            
+            }
             
         }
     }
@@ -176,22 +178,22 @@ class DebateDetailViewController: UIViewController {
     
     @IBAction func deleteDebate(_ sender: Any) {
         MainMenuData.debates.remove(at: debateIndex)
+        (splitViewController?.childViewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
         
         if (MainMenuData.debates.isEmpty) {
+            
             performSegue(withIdentifier: "showCreateDebate", sender: self)
-            (splitViewController?.childViewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+            
         } else if (debateIndex == 0) {
-            debateIndex += 1
             localDebate = MainMenuData.debates[debateIndex]
-            MainMenuData.index = debateIndex
             renderText()
-            (splitViewController?.childViewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+            
         } else {
             debateIndex -= 1
             localDebate = MainMenuData.debates[debateIndex]
             MainMenuData.index = debateIndex
             renderText()
-            (splitViewController?.childViewControllers[0].childViewControllers[0] as! MainMenuTableViewController).tableView.reloadData()
+            
         }
     }
     
@@ -320,7 +322,9 @@ class CreateDebateViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: UIButton) {
-        performSegue(withIdentifier: "toDebateDetail", sender: self)
+        if (!MainMenuData.debates.isEmpty){
+            performSegue(withIdentifier: "toDebateDetail", sender: self)
+        }
     }
     
     @IBAction func create(_ sender: UIButton) {
@@ -513,6 +517,20 @@ class ModifyDebateViewController: UIViewController {
     }
     //returns to DebateView with no modifications performed
     
+    
+}
+extension ModifyDebateViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+}
+extension ModifyDebateViewController: UITableViewDelegate {
     
 }
 
