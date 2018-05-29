@@ -88,7 +88,7 @@ class MainMenuTableViewController: UITableViewController {
         
         if editingStyle == .delete {
             
-            let temp = indexPath.row - 1
+            var temp = indexPath.row - 1
             
             
             MainMenuData.debates.remove(at: indexPath.row)
@@ -97,15 +97,23 @@ class MainMenuTableViewController: UITableViewController {
             if (MainMenuData.debates.isEmpty) {
                 let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "CreateDebate") as! CreateDebateViewController
                 splitViewController?.showDetailViewController(local, sender: nil)
+            } else if temp >= 0 {
+            
+                print("Showing new DebateDetailViewController do to deletion")
+                let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+                MainMenuData.index = temp
+                local.debateIndex = temp
+                local.localDebate = MainMenuData.debates[local.debateIndex]
+                splitViewController?.showDetailViewController(local, sender: nil)
+            
             } else {
-            
-            print("Showing new DebateDetailViewController do to deletion")
-            let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
-            MainMenuData.index = temp
-            local.debateIndex = temp
-            local.localDebate = MainMenuData.debates[local.debateIndex]
-            splitViewController?.showDetailViewController(local, sender: nil)
-            
+                temp = 0
+                print("Showing new DebateDetailViewController do to deletion")
+                let local = AppStoryboard.MainMenu.instance.instantiateViewController(withIdentifier: "debateView") as! DebateDetailViewController
+                MainMenuData.index = temp
+                local.debateIndex = temp
+                local.localDebate = MainMenuData.debates[local.debateIndex]
+                splitViewController?.showDetailViewController(local, sender: nil)
             }
             
         }
