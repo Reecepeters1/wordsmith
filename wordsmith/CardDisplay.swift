@@ -49,7 +49,7 @@ class CardDisplay: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        
         if MainMenuData.debates[publicindex.debateindex].positions[publicindex.currentflow].Speeches.count == 1
         {
             return 0
@@ -62,7 +62,6 @@ class CardDisplay: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
         return cell
     }
     
