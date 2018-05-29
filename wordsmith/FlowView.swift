@@ -42,7 +42,7 @@ public class publicindex: NSObject{
 
 class FlowVeiw: UICollectionViewController{
     
-
+    
     
     var debateindex:Int = 0
     var sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
@@ -52,7 +52,7 @@ class FlowVeiw: UICollectionViewController{
     var syphilis:Flow
     var generic = UICollectionViewCell()
     var itemsPerColumn:CGFloat
-
+    
     
     
     
@@ -138,16 +138,15 @@ extension FlowVeiw{
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         var cell:CardView
-        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath) as! CardView
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addcard", for: indexPath) as! CardView
         if MainMenuData.debates[debateindex].positions[currentflow].Speeches[publicindex.currentspeech].herpes.count == 0{
+            return cell
+        }
+        if cell.isEndOfSpeech == true{
             return cell
         }
         publicindex.setindex(index: indexPath)
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath) as! CardView
-        
-        if cell.isEndOfSpeech == true{
-            return cell
-        }
         return cell
     }
     
@@ -166,27 +165,22 @@ extension FlowVeiw{
         //this should never run
         return generic as! CardView
     }
-    //sets the public index at the index path
-    
+    /*
+     sets the public index at the index path removes the add card object at the end of every speech and sets the selected index path accordingly if it's out of bounds due to this
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let temp =  collectionView!.indexPathsForSelectedItems![0]
         publicindex.setindex(index: temp)
-        /*
-         if MainMenuData.debates[debateindex].positions[publicindex.debateindex].Speeches[0].herpes.count == 1{
-         temp.item = 0
-         }
-         else{
-         temp.item = MainMenuData.debates[debateindex].positions[publicindex.debateindex].Speeches[0].herpes.count - 1
-         
-         }
-         for flw in MainMenuData.debates[debateindex].positions{
-         for spch in flw.Speeches{
-         if spch.herpes[spch.herpes.count - 1] == addcard{
-         spch.herpes.remove(at: spch.herpes.count - 1)
-         }
-         }
-         }
-         */
+        
+        if publicindex.cardindex != 0 {
+            publicindex.cardindex -= 1
+        }
+        
+        for flw in MainMenuData.debates[debateindex].positions{
+            for spch in flw.Speeches{
+                spch.herpes.remove(at: spch.herpes.count - 1)
+            }
+        }
     }
 }
 extension FlowVeiw: UICollectionViewDelegateFlowLayout{
