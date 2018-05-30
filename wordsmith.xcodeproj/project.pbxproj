@@ -9,14 +9,10 @@
 /* Begin PBXBuildFile section */
 		9753C70120A9F3A30091ADB9 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
 		9753C70220A9F3A40091ADB9 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
-		9753C70320A9F3A90091ADB9 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
 		9753C70420A9F7090091ADB9 /* FlowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */; };
-		97DDB38820A4071C008F2B80 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
-		97DDB38920A4071C008F2B80 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A1FC92018F9AF00060322 /* MainScreen.swift */; };
 		C763EE322062BE72004A136E /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE312062BE72004A136E /* Interpole.swift */; };
 		C763EE362062BEAC004A136E /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE352062BEAC004A136E /* SplineView.swift */; };
 		C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
-		C7A550C020B7247D00FC7EC5 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A550BF20B7247D00FC7EC5 /* MainMenu.storyboard */; };
 		C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0271FD9BDFB00ADC122 /* Flow.swift */; };
 		C7D74DEA1FD85CDF00261F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */; };
@@ -51,6 +47,8 @@
 		D9E3771B205ADE1D00059825 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
 		E40321112076872300BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E403211320768D4900BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E418192420BF0B1400746C5A /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E418192320BF0B1400746C5A /* MainMenu.storyboard */; };
+		E418192620BF0B1800746C5A /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E418192520BF0B1800746C5A /* MainScreen.swift */; };
 		E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BFDD32088FCDE00F95C3F /* Changer.swift */; };
 		E4B878FE207FC468008A0529 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B878FD207FC468008A0529 /* DrawView.swift */; };
 		E4E723042085145300B84E76 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E723032085145300B84E76 /* ButtonView.swift */; };
@@ -78,9 +76,7 @@
 		C72CB80C1FEADA3800662255 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C763EE312062BE72004A136E /* Interpole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpole.swift; sourceTree = "<group>"; };
 		C763EE352062BEAC004A136E /* SplineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplineView.swift; sourceTree = "<group>"; };
-		C77A1FC92018F9AF00060322 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		C787B9FB2045CAA900A3B498 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
-		C7A550BF20B7247D00FC7EC5 /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainMenu.storyboard; path = "../../../../Downloads/wordsmith-6dc6b0a0b2ce50e8b2479bf5dc20d67b27864f34/wordsmith/MainMenu.storyboard"; sourceTree = "<group>"; };
 		C7A618A61FDB013700062737 /* Debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debate.swift; sourceTree = "<group>"; };
 		C7D5B0231FD9B3D600ADC122 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C7D5B0271FD9BDFB00ADC122 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
@@ -101,6 +97,8 @@
 		D98C26311FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewLayoutDelegate.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D9A90EF8206174A7005BE47E /* collectiontester.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = collectiontester.storyboard; sourceTree = "<group>"; };
 		D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E418192320BF0B1400746C5A /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainMenu.storyboard; path = "../../../../Downloads/wordsmith-0a9a88f6a5bdf44d1b897c79b0e175f6eba63593/wordsmith/MainMenu.storyboard"; sourceTree = "<group>"; };
+		E418192520BF0B1800746C5A /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreen.swift; path = "../../../../Downloads/wordsmith-0a9a88f6a5bdf44d1b897c79b0e175f6eba63593/wordsmith/MainScreen.swift"; sourceTree = "<group>"; };
 		E42BFDD32088FCDE00F95C3F /* Changer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changer.swift; sourceTree = "<group>"; };
 		E4B878FD207FC468008A0529 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		E4E723032085145300B84E76 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -187,9 +185,9 @@
 				C7D5B0231FD9B3D600ADC122 /* Card.swift */,
 				D90BB189204873E1009C7464 /* Speech.swift */,
 				C7D5B0271FD9BDFB00ADC122 /* Flow.swift */,
-				C7A550BF20B7247D00FC7EC5 /* MainMenu.storyboard */,
 				C7A618A61FDB013700062737 /* Debate.swift */,
-				C77A1FC92018F9AF00060322 /* MainScreen.swift */,
+				E418192520BF0B1800746C5A /* MainScreen.swift */,
+				E418192320BF0B1400746C5A /* MainMenu.storyboard */,
 				C7E632A320768872003A7ADB /* transfer.swift */,
 				C787B9FB2045CAA900A3B498 /* Storyboards.swift */,
 				C763EE312062BE72004A136E /* Interpole.swift */,
@@ -311,7 +309,7 @@
 			files = (
 				D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */,
 				C7D74DF11FD85CDF00261F2D /* Assets.xcassets in Resources */,
-				C7A550C020B7247D00FC7EC5 /* MainMenu.storyboard in Resources */,
+				E418192420BF0B1400746C5A /* MainMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +339,6 @@
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				E40321112076872300BC548A /* (null) in Sources */,
 				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
-				9753C70320A9F3A90091ADB9 /* MainScreen.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift in Sources */,
 				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
@@ -351,6 +348,7 @@
 				E403211320768D4900BC548A /* (null) in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
+				E418192620BF0B1800746C5A /* MainScreen.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
 				E4B878FE207FC468008A0529 /* DrawView.swift in Sources */,
@@ -367,7 +365,6 @@
 			files = (
 				D9A90EF620616B63005BE47E /* Flow.swift in Sources */,
 				D9A90EFC206174E4005BE47E /* (null) in Sources */,
-				97DDB38820A4071C008F2B80 /* MainScreen.swift in Sources */,
 				D9A90EFA206174E2005BE47E /* (null) in Sources */,
 				9753C70120A9F3A30091ADB9 /* Storyboards.swift in Sources */,
 				D998581C201110660044CB9F /* FlowViewLayoutDelegate.swift in Sources */,
@@ -385,7 +382,6 @@
 			files = (
 				D9A90EF720616B63005BE47E /* Flow.swift in Sources */,
 				D9A90EFD206174E5005BE47E /* (null) in Sources */,
-				97DDB38920A4071C008F2B80 /* MainScreen.swift in Sources */,
 				D9A90EFB206174E2005BE47E /* (null) in Sources */,
 				9753C70220A9F3A40091ADB9 /* Storyboards.swift in Sources */,
 				D998581D201110670044CB9F /* FlowViewLayoutDelegate.swift in Sources */,
