@@ -529,11 +529,13 @@ class ModifyDebateViewController: UIViewController {
 }
 extension ModifyDebateViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return MainMenuData.debates.count
     }
     
+    //REuse Identifier = modifyCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "modifyCell")!
+        return cell
     }
     
     
