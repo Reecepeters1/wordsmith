@@ -10,6 +10,7 @@ import UIKit
 
 class SplineView: UIView {
     
+    var previous: CardView?
     private var color: UIColor
     private var strokeWidth: CGFloat
     private var isDrawing: Bool
@@ -29,6 +30,7 @@ class SplineView: UIView {
         drawLayer = CAShapeLayer()
         storeLayer = [CAShapeLayer]()
         interpolationPoints = [CGPoint]()
+        previous = nil
         
         super.init(coder: aDecoder)
         
@@ -106,6 +108,7 @@ class SplineView: UIView {
         drawLayer.path = path.cgPath
         drawLayer.lineWidth = strokeWidth
         index = 0
+        previous = nil
         
         for i in storeLayer {
             i.removeFromSuperlayer()
@@ -131,15 +134,24 @@ class SplineView: UIView {
         
         drawLayer.removeFromSuperlayer()
         layer.addSublayer(drawLayer)
-        
     }
     
     func getCard() -> Card {
-        return Card(draw: storeLayer, maybe: nil)
+        return Card(draw: storeLayer, maybe: previous)
     }
     
     func setCard(tempCard: Card) {
+        if tempCard.getVeiw().count == 0 {
+            self.newPath()
+        }
+        else
+        {
         storeLayer = tempCard.getVeiw()
+            for i in storeLayer {
+                layer.addSublayer(i)
+            }
+        }
+        previous = tempCard.previousCard
     }
     
     func getLayered() -> [CAShapeLayer] {

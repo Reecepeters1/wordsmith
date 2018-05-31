@@ -122,11 +122,11 @@ extension FlowVeiw{
                                  numberOfItemsInSection section: Int) -> Int {
         var count = 1
         
-        if MainMenuData.debates[debateindex].positions[publicindex.currentspeech].Speeches.count == 0{
+        if MainMenuData.debates[debateindex].positions[publicindex.currentflow].Speeches.count == 0{
             return 1
         }
         for spch in MainMenuData.debates[debateindex].positions[currentflow].Speeches{
-            for crd in spch.herpes
+            for _ in spch.herpes
             {
                 count += 1
             }
@@ -147,6 +147,7 @@ extension FlowVeiw{
         }
         publicindex.setindex(index: indexPath)
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath) as! CardView
+        
         return cell
     }
     
@@ -181,6 +182,20 @@ extension FlowVeiw{
                 spch.herpes.remove(at: spch.herpes.count - 1)
             }
         }
+    }
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        
+        
+        image.draw(in: CGRect(x: 0, y: 0,width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
 }
 extension FlowVeiw: UICollectionViewDelegateFlowLayout{
@@ -230,5 +245,4 @@ extension FlowVeiw: FlowLayoutDelegate {
         return CGFloat(z)
     }
 }
-
 

@@ -1,5 +1,4 @@
 import UIKit
-
 class CardView: UICollectionViewCell {
     
     
@@ -7,6 +6,7 @@ class CardView: UICollectionViewCell {
     var storedCard:Card
     var isEndOfSpeech = false
     var coder:NSCoder
+    
     init?(draw: [CAShapeLayer], coder aDecoder: NSCoder) {
         self.storedCard = Card(draw: draw, maybe: nil)
         self.coder = aDecoder
@@ -34,6 +34,7 @@ class CardView: UICollectionViewCell {
     func displayContent(image: UIImage){
         cardimage.image = image
     }
+    
     
     func showcard(card: Card){
         //main methods to be used for showing card in the cardView

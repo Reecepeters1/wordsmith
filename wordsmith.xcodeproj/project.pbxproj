@@ -10,6 +10,8 @@
 		9753C70120A9F3A30091ADB9 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
 		9753C70220A9F3A40091ADB9 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
 		9753C70420A9F7090091ADB9 /* FlowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */; };
+		C0024DD220BF438B00759FF8 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0024DD120BF438B00759FF8 /* MainMenu.storyboard */; };
+		C0024DD420BF439400759FF8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0024DD320BF439400759FF8 /* MainScreen.swift */; };
 		C763EE322062BE72004A136E /* Interpole.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE312062BE72004A136E /* Interpole.swift */; };
 		C763EE362062BEAC004A136E /* SplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763EE352062BEAC004A136E /* SplineView.swift */; };
 		C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787B9FB2045CAA900A3B498 /* Storyboards.swift */; };
@@ -25,7 +27,7 @@
 		D90E901120B3328600B41D84 /* FlowDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E901020B3328600B41D84 /* FlowDisplay.swift */; };
 		D90E901320B3329700B41D84 /* CardDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E901220B3329700B41D84 /* CardDisplay.swift */; };
 		D96A1F721FDEF8F600965ACD /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
-		D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardVeiw.swift */; };
+		D96B81191FD9B5460045381E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardView.swift */; };
 		D98C26321FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift */; };
 		D998581C201110660044CB9F /* FlowViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift */; };
 		D998581D201110670044CB9F /* FlowViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C26311FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift */; };
@@ -39,16 +41,14 @@
 		D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A618A61FDB013700062737 /* Debate.swift */; };
 		D9E37714205ADDFD00059825 /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
 		D9E37715205ADDFE00059825 /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A1F711FDEF8F600965ACD /* FlowView.swift */; };
-		D9E37716205ADE0E00059825 /* CardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardVeiw.swift */; };
-		D9E37717205ADE0E00059825 /* CardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardVeiw.swift */; };
+		D9E37716205ADE0E00059825 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardView.swift */; };
+		D9E37717205ADE0E00059825 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B81181FD9B5460045381E /* CardView.swift */; };
 		D9E37718205ADE1900059825 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		D9E37719205ADE1A00059825 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D5B0231FD9B3D600ADC122 /* Card.swift */; };
 		D9E3771A205ADE1D00059825 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
 		D9E3771B205ADE1D00059825 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90BB189204873E1009C7464 /* Speech.swift */; };
 		E40321112076872300BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E403211320768D4900BC548A /* (null) in Sources */ = {isa = PBXBuildFile; };
-		E418192420BF0B1400746C5A /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E418192320BF0B1400746C5A /* MainMenu.storyboard */; };
-		E418192620BF0B1800746C5A /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E418192520BF0B1800746C5A /* MainScreen.swift */; };
 		E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BFDD32088FCDE00F95C3F /* Changer.swift */; };
 		E4B878FE207FC468008A0529 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B878FD207FC468008A0529 /* DrawView.swift */; };
 		E4E723042085145300B84E76 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E723032085145300B84E76 /* ButtonView.swift */; };
@@ -73,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCollectionView.swift; sourceTree = "<group>"; };
+		C0024DD120BF438B00759FF8 /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainMenu.storyboard; path = "../../../Downloads/wordsmith-Main/wordsmith/MainMenu.storyboard"; sourceTree = "<group>"; };
+		C0024DD320BF439400759FF8 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreen.swift; path = "../../../Downloads/wordsmith-Main/wordsmith/MainScreen.swift"; sourceTree = "<group>"; };
 		C72CB80C1FEADA3800662255 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C763EE312062BE72004A136E /* Interpole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpole.swift; sourceTree = "<group>"; };
 		C763EE352062BEAC004A136E /* SplineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplineView.swift; sourceTree = "<group>"; };
@@ -93,12 +95,10 @@
 		D90E901020B3328600B41D84 /* FlowDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowDisplay.swift; sourceTree = "<group>"; };
 		D90E901220B3329700B41D84 /* CardDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplay.swift; sourceTree = "<group>"; };
 		D96A1F711FDEF8F600965ACD /* FlowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
-		D96B81181FD9B5460045381E /* CardVeiw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVeiw.swift; sourceTree = "<group>"; };
+		D96B81181FD9B5460045381E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D98C26311FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewLayoutDelegate.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D9A90EF8206174A7005BE47E /* collectiontester.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = collectiontester.storyboard; sourceTree = "<group>"; };
 		D9CF424F1FEAD58200B31A05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E418192320BF0B1400746C5A /* MainMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainMenu.storyboard; path = "../../../../Downloads/wordsmith-0a9a88f6a5bdf44d1b897c79b0e175f6eba63593/wordsmith/MainMenu.storyboard"; sourceTree = "<group>"; };
-		E418192520BF0B1800746C5A /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreen.swift; path = "../../../../Downloads/wordsmith-0a9a88f6a5bdf44d1b897c79b0e175f6eba63593/wordsmith/MainScreen.swift"; sourceTree = "<group>"; };
 		E42BFDD32088FCDE00F95C3F /* Changer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changer.swift; sourceTree = "<group>"; };
 		E4B878FD207FC468008A0529 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		E4E723032085145300B84E76 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 				E42BFDD32088FCDE00F95C3F /* Changer.swift */,
 				E4B878FD207FC468008A0529 /* DrawView.swift */,
 				C7D74DE91FD85CDF00261F2D /* AppDelegate.swift */,
-				D96B81181FD9B5460045381E /* CardVeiw.swift */,
+				D96B81181FD9B5460045381E /* CardView.swift */,
 				C7D74DEB1FD85CDF00261F2D /* TabVeiw.swift */,
 				D96A1F711FDEF8F600965ACD /* FlowView.swift */,
 				9776BAB8208D92B9001A1E31 /* FlowCollectionView.swift */,
@@ -184,10 +184,10 @@
 				C7D74DF51FD85CDF00261F2D /* Info.plist */,
 				C7D5B0231FD9B3D600ADC122 /* Card.swift */,
 				D90BB189204873E1009C7464 /* Speech.swift */,
+				C0024DD320BF439400759FF8 /* MainScreen.swift */,
+				C0024DD120BF438B00759FF8 /* MainMenu.storyboard */,
 				C7D5B0271FD9BDFB00ADC122 /* Flow.swift */,
 				C7A618A61FDB013700062737 /* Debate.swift */,
-				E418192520BF0B1800746C5A /* MainScreen.swift */,
-				E418192320BF0B1400746C5A /* MainMenu.storyboard */,
 				C7E632A320768872003A7ADB /* transfer.swift */,
 				C787B9FB2045CAA900A3B498 /* Storyboards.swift */,
 				C763EE312062BE72004A136E /* Interpole.swift */,
@@ -309,7 +309,7 @@
 			files = (
 				D9CF42501FEAD58200B31A05 /* LaunchScreen.storyboard in Resources */,
 				C7D74DF11FD85CDF00261F2D /* Assets.xcassets in Resources */,
-				E418192420BF0B1400746C5A /* MainMenu.storyboard in Resources */,
+				C0024DD220BF438B00759FF8 /* MainMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +338,7 @@
 				E42BFDD42088FCDE00F95C3F /* Changer.swift in Sources */,
 				D9D84A9B1FE19DE00019328F /* Debate.swift in Sources */,
 				E40321112076872300BC548A /* (null) in Sources */,
-				D96B81191FD9B5460045381E /* CardVeiw.swift in Sources */,
+				D96B81191FD9B5460045381E /* CardView.swift in Sources */,
 				D98C26321FE83E8A004CD5A7 /* FlowViewLayoutDelegate.swift in Sources */,
 				C7E632A420768872003A7ADB /* transfer.swift in Sources */,
 				C763EE322062BE72004A136E /* Interpole.swift in Sources */,
@@ -348,7 +348,7 @@
 				E403211320768D4900BC548A /* (null) in Sources */,
 				C7D74DEC1FD85CDF00261F2D /* TabVeiw.swift in Sources */,
 				C787B9FC2045CAA900A3B498 /* Storyboards.swift in Sources */,
-				E418192620BF0B1800746C5A /* MainScreen.swift in Sources */,
+				C0024DD420BF439400759FF8 /* MainScreen.swift in Sources */,
 				C7D5B0281FD9BDFB00ADC122 /* Flow.swift in Sources */,
 				C7D5B0241FD9B3D600ADC122 /* Card.swift in Sources */,
 				E4B878FE207FC468008A0529 /* DrawView.swift in Sources */,
@@ -371,7 +371,7 @@
 				C7D74DFF1FD85CDF00261F2D /* (null) in Sources */,
 				D9E37718205ADE1900059825 /* Card.swift in Sources */,
 				D9E3771A205ADE1D00059825 /* Speech.swift in Sources */,
-				D9E37716205ADE0E00059825 /* CardVeiw.swift in Sources */,
+				D9E37716205ADE0E00059825 /* CardView.swift in Sources */,
 				D9E37714205ADDFD00059825 /* FlowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,7 +388,7 @@
 				C7D74E0A1FD85CDF00261F2D /* wordsmithUITests.swift in Sources */,
 				D9E37719205ADE1A00059825 /* Card.swift in Sources */,
 				D9E3771B205ADE1D00059825 /* Speech.swift in Sources */,
-				D9E37717205ADE0E00059825 /* CardVeiw.swift in Sources */,
+				D9E37717205ADE0E00059825 /* CardView.swift in Sources */,
 				D9E37715205ADDFE00059825 /* FlowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
